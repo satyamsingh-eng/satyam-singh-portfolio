@@ -1,0 +1,686 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A researched, job-first Japan and Singapore opportunity map for a founder-side AI systems and product operations career.">
+  <title>Global Escape Roadmap — Japan + Singapore</title>
+  <style>
+    :root {
+      --ink: #0b0b0b;
+      --paper: #ffffff;
+      --wash: #f5f5f5;
+      --wash-2: #eeeeee;
+      --line: #d7d7d7;
+      --line-dark: #8f8f8f;
+      --muted: #606060;
+      --muted-2: #777777;
+      --panel: #fafafa;
+      --shadow: 0 12px 34px rgba(0,0,0,.08);
+      --radius: 14px;
+      --font: Arial, Helvetica, sans-serif;
+      --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden !important; max-width: 100vw; }
+    body { margin: 0; max-width: 100vw; overflow-x: hidden !important; background: var(--paper); color: var(--ink); font-family: var(--font); line-height: 1.52; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    ::selection { background: var(--ink); color: var(--paper); }
+
+    .progress { position: fixed; inset: 0 0 auto; z-index: 200; height: 3px; background: var(--ink); transform-origin: left; transform: scaleX(0); }
+    .topbar { position: sticky; top: 0; z-index: 100; height: 52px; background: rgba(255,255,255,.95); border-bottom: 1px solid var(--line); backdrop-filter: blur(10px); }
+    .topbar-inner { max-width: 1360px; height: 100%; margin: 0 auto; padding: 0 40px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .08em; white-space: nowrap; }
+    .brand span { color: var(--muted); font-weight: 400; }
+    .nav { display: flex; align-items: center; gap: 18px; overflow-x: auto; scrollbar-width: none; }
+    .nav::-webkit-scrollbar { display: none; }
+    .nav a { text-decoration: none; color: var(--muted); font-size: 11px; font-weight: 700; letter-spacing: .05em; white-space: nowrap; padding: 17px 0 15px; border-bottom: 2px solid transparent; }
+    .nav a:hover, .nav a.active { color: var(--ink); border-color: var(--ink); }
+    .nav-toggle { display: none; border: 1px solid var(--line); background: var(--paper); width: 44px; height: 44px; border-radius: 8px; font-size: 18px; line-height: 1; }
+
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 40px; }
+    .hero { padding: 86px 0 72px; border-bottom: 1px solid var(--line); }
+    .eyebrow, .section-kicker, .meta-label, .chip, .table-label { font-family: var(--mono); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 700; }
+    .eyebrow { color: var(--muted); margin-bottom: 18px; }
+    h1 { max-width: 920px; margin: 0; font-size: clamp(48px, 7vw, 96px); line-height: .94; letter-spacing: -.065em; font-weight: 800; }
+    h1 em { font-style: normal; color: var(--muted); }
+    .lede { max-width: 760px; margin: 28px 0 0; color: #343434; font-size: clamp(17px, 2vw, 22px); line-height: 1.4; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: 50px; align-items: end; margin-top: 48px; }
+    .decision { border: 1px solid var(--ink); padding: 24px; background: var(--ink); color: var(--paper); }
+    .decision .meta-label { color: #bdbdbd; }
+    .decision strong { display: block; margin-top: 12px; font-size: 22px; line-height: 1.16; letter-spacing: -.02em; }
+    .decision p { color: #d7d7d7; margin: 12px 0 0; font-size: 14px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .button { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border: 1px solid var(--ink); background: var(--ink); color: var(--paper); text-decoration: none; font-size: 12px; font-weight: 700; letter-spacing: .02em; transition: transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease; }
+    .button:hover { transform: translateY(-2px); box-shadow: 0 7px 16px rgba(0,0,0,.14); }
+    .button.secondary { background: var(--paper); color: var(--ink); }
+    .button.small { min-height: 44px; padding: 0 11px; font-size: 11px; }
+    .kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .kpi { padding: 18px 0; border-right: 1px solid var(--line); }
+    .kpi + .kpi { padding-left: 18px; }
+    .kpi:last-child { border-right: 0; }
+    .kpi strong { display: block; font-size: 30px; letter-spacing: -.04em; line-height: 1; }
+    .kpi span { display: block; margin-top: 7px; color: var(--muted); font-family: var(--mono); font-size: 10px; line-height: 1.25; text-transform: uppercase; letter-spacing: .08em; }
+
+    .section { padding: 86px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 70px; }
+    .section.soft { background: var(--wash); }
+    .section-head { display: flex; justify-content: space-between; gap: 26px; align-items: end; margin-bottom: 34px; }
+    .section-kicker { color: var(--muted); margin-bottom: 10px; }
+    h2 { margin: 0; font-size: clamp(30px, 4vw, 52px); line-height: 1; letter-spacing: -.05em; }
+    .section-intro { max-width: 560px; margin: 0; color: var(--muted); font-size: 15px; }
+    .note { color: var(--muted); font-size: 12px; }
+
+    .diagram-card { border: 1px solid var(--ink); background: var(--paper); overflow: hidden; }
+    .diagram-top { display: flex; justify-content: space-between; gap: 20px; align-items: center; padding: 18px 20px; border-bottom: 1px solid var(--line); }
+    .diagram-top strong { font-size: 14px; }
+    .diagram-top span { color: var(--muted); font-size: 12px; }
+    .diagram-wrap { padding: 22px; overflow-x: auto; }
+    .route-svg { display: block; width: 100%; min-width: 900px; height: auto; }
+    .route-svg .line { stroke: #6b6b6b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+    .route-svg .line.dashed { stroke-dasharray: 7 6; }
+    .route-svg .node { fill: #fff; stroke: #0b0b0b; stroke-width: 2; rx: 8; }
+    .route-svg .node.dark { fill: #0b0b0b; }
+    .route-svg text { font-family: Arial, Helvetica, sans-serif; fill: #0b0b0b; }
+    .route-svg .dark-text { fill: #fff; }
+    .route-svg .small { font-family: var(--mono); font-size: 11px; letter-spacing: 1.2px; font-weight: 700; }
+    .route-svg .body { font-size: 14px; font-weight: 700; }
+    .route-svg .sub { font-size: 12px; fill: #606060; }
+    .route-svg .sub.dark-sub { fill: #cfcfcf; }
+    .route-mobile { display: none; }
+    .route-legend { display: flex; flex-wrap: wrap; gap: 16px; padding: 0 22px 22px; color: var(--muted); font-size: 11px; }
+    .legend-item { display: inline-flex; align-items: center; gap: 7px; }
+    .legend-line { width: 24px; border-top: 2px solid var(--ink); }
+    .legend-line.dashed { border-top-style: dashed; border-color: var(--muted); }
+
+    .operator-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .operator-cell { min-height: 178px; padding: 20px; border-right: 1px solid var(--ink); }
+    .operator-cell:last-child { border-right: 0; }
+    .operator-cell strong { display: block; margin-top: 24px; font-size: 17px; letter-spacing: -.02em; }
+    .operator-cell p { margin: 10px 0 0; color: var(--muted); font-size: 13px; }
+    .operator-num { font-family: var(--mono); color: var(--muted); font-size: 11px; }
+
+    .country-tabs, .filter-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 20px; }
+    .filter-label { margin-right: 5px; color: var(--muted); font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: .1em; }
+    .filter { min-height: 44px; border: 1px solid var(--line-dark); background: var(--paper); color: var(--muted); padding: 0 12px; border-radius: 999px; font-size: 11px; font-weight: 700; transition: .2s ease; }
+    .filter:hover, .filter.active { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+    .target-list { display: flex; flex-direction: column; gap: 12px; }
+    .target-card { border: 1px solid var(--line); background: var(--paper); transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .target-card:hover { transform: translateY(-2px); border-color: var(--ink); box-shadow: var(--shadow); }
+    .target-summary { display: grid; grid-template-columns: 86px minmax(0,1fr) auto 140px; gap: 22px; align-items: center; padding: 22px; }
+    .rank { font-family: var(--mono); font-size: 24px; font-weight: 700; letter-spacing: -.08em; }
+    .rank span { display: block; margin-top: 3px; color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+    .target-name { margin: 0; font-size: 21px; letter-spacing: -.03em; }
+    .target-line { margin: 5px 0 0; color: var(--muted); font-size: 13px; }
+    .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 11px; }
+    .chip { padding: 5px 7px; border: 1px solid var(--line); color: var(--muted); letter-spacing: .08em; font-size: 9px; }
+    .score { text-align: right; }
+    .score strong { display: block; font-family: var(--mono); font-size: 27px; line-height: 1; }
+    .score span { display: block; margin-top: 5px; color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: .09em; }
+    .score-bar { height: 5px; margin-top: 9px; background: var(--wash-2); }
+    .score-bar i { display: block; height: 100%; background: var(--ink); }
+    .open-dossier { justify-self: end; }
+    .target-details { display: none; border-top: 1px solid var(--line); padding: 28px 22px 26px; background: var(--panel); }
+    .target-card.open .target-details { display: block; animation: reveal .28s ease both; }
+    @keyframes reveal { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+    .detail-grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 25px; }
+    .detail-block { border-top: 1px solid var(--line); padding-top: 13px; }
+    .detail-block h3 { margin: 0; font-size: 12px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .detail-block p { margin: 9px 0 0; font-size: 13px; color: #333; }
+    .role-list { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+    .role-list span { display: inline-block; padding: 6px 8px; background: var(--wash-2); color: #3e3e3e; font-size: 11px; }
+    .contact-section { margin-top: 26px; border-top: 1px solid var(--ink); }
+    .contact-head { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; padding: 13px 0 9px; }
+    .contact-head strong { font-size: 13px; }
+    .contact-head span { color: var(--muted); font-size: 11px; }
+    .table-wrap { overflow-x: auto; max-width: 100%; }
+    .contact-table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 12px; }
+    .contact-table th { padding: 9px 8px; text-align: left; border-bottom: 1px solid var(--line); color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-table td { padding: 12px 8px; vertical-align: top; border-bottom: 1px solid var(--line); }
+    .contact-table td:first-child { padding-left: 0; }
+    .contact-table th:first-child { padding-left: 0; }
+    .contact-table a { color: var(--ink); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .contact-title { display: block; margin-top: 3px; color: var(--muted); font-size: 11px; }
+    .badge { display: inline-block; margin: 2px 4px 0 0; padding: 4px 5px; background: var(--ink); color: var(--paper); font-family: var(--mono); font-size: 8px; font-weight: 700; letter-spacing: .07em; white-space: nowrap; }
+    .badge.light { background: var(--wash-2); color: var(--ink); }
+    .contact-note { margin: 12px 0 0; color: var(--muted); font-size: 11px; }
+    .source-section { margin-top: 24px; border-top: 1px solid var(--line); padding-top: 16px; }
+    .source-list { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 8px; margin-top: 10px; }
+    .source-link { min-height: 76px; display: block; padding: 10px; background: var(--paper); border: 1px solid var(--line); text-decoration: none; transition: transform .2s ease, border-color .2s ease; }
+    .source-link:hover { transform: translateY(-2px); border-color: var(--ink); }
+    .source-link strong { display: block; font-size: 11px; }
+    .source-link small { display: block; margin-top: 6px; color: var(--muted); font-size: 10px; line-height: 1.35; }
+    .source-status { float: right; font-family: var(--mono); font-size: 8px; }
+    .empty { padding: 30px 0; color: var(--muted); }
+
+    .compare-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
+    .compare-panel { border: 1px solid var(--ink); background: var(--paper); }
+    .compare-panel header { display: flex; justify-content: space-between; padding: 17px 18px; border-bottom: 1px solid var(--ink); }
+    .compare-panel header strong { font-size: 18px; letter-spacing: -.03em; }
+    .compare-panel header span { color: var(--muted); font-family: var(--mono); font-size: 10px; }
+    .compare-row { display: grid; grid-template-columns: 1fr 1.35fr; gap: 16px; padding: 14px 18px; border-bottom: 1px solid var(--line); font-size: 12px; }
+    .compare-row:last-child { border-bottom: 0; }
+    .compare-row b { font-size: 10px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .compare-row span { color: var(--muted); }
+
+    .roadmap { position: relative; display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+    .roadmap-stage { position: relative; min-height: 250px; padding: 20px; border-right: 1px solid var(--ink); }
+    .roadmap-stage:last-child { border-right: 0; }
+    .roadmap-stage::after { content: "→"; position: absolute; top: 17px; right: -10px; z-index: 2; width: 20px; height: 20px; display: grid; place-items: center; background: var(--paper); font-size: 18px; }
+    .roadmap-stage:last-child::after { display: none; }
+    .stage-num { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+    .roadmap-stage h3 { margin: 50px 0 8px; font-size: 18px; letter-spacing: -.03em; }
+    .roadmap-stage p { margin: 0; color: var(--muted); font-size: 12px; }
+    .stage-list { margin: 17px 0 0; padding-left: 16px; color: #333; font-size: 11px; }
+    .stage-list li { margin: 5px 0; }
+
+    .evidence-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+    .evidence-card { border: 1px solid var(--line); padding: 18px; background: var(--paper); }
+    .evidence-card strong { display: block; font-size: 29px; letter-spacing: -.05em; }
+    .evidence-card span { display: block; margin-top: 7px; color: var(--muted); font-family: var(--mono); font-size: 10px; line-height: 1.35; text-transform: uppercase; letter-spacing: .08em; }
+    .evidence-card p { margin: 13px 0 0; color: var(--muted); font-size: 12px; }
+    .ledger { margin-top: 20px; border: 1px solid var(--line); background: var(--paper); }
+    .ledger summary { min-height: 44px; display: flex; justify-content: space-between; gap: 20px; padding: 16px 18px; cursor: pointer; list-style: none; font-size: 13px; font-weight: 700; }
+    .ledger summary::-webkit-details-marker { display: none; }
+    .ledger summary::after { content: "+"; color: var(--muted); font-family: var(--mono); font-size: 18px; }
+    .ledger[open] summary::after { content: "−"; }
+    .ledger-body { padding: 0 18px 18px; }
+    .ledger-note { padding: 12px; border-left: 3px solid var(--ink); background: var(--wash); color: #333; font-size: 12px; }
+    .ledger-table { width: 100%; border-collapse: collapse; font-size: 11px; }
+    .ledger-table th, .ledger-table td { padding: 9px 7px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+    .ledger-table th { color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: .07em; }
+    .ledger-table a { overflow-wrap: anywhere; }
+    .limits { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; margin-top: 20px; }
+    .limit { border: 1px solid var(--line-dark); padding: 15px; }
+    .limit strong { display: block; font-size: 12px; }
+    .limit p { margin: 7px 0 0; color: var(--muted); font-size: 12px; }
+
+    .footer { padding: 28px 0 42px; color: var(--muted); font-size: 11px; }
+    .footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid var(--line); padding-top: 16px; }
+    .footer a { text-underline-offset: 3px; }
+
+    .modal-backdrop { position: fixed; inset: 0; z-index: 300; display: none; align-items: center; justify-content: center; padding: 22px; background: rgba(0,0,0,.52); }
+    .modal-backdrop.open { display: flex; }
+    .modal { width: min(720px, 100%); max-height: min(760px, 90vh); overflow-y: auto; background: var(--paper); border: 1px solid var(--ink); box-shadow: 0 24px 70px rgba(0,0,0,.24); }
+    .modal-head { display: flex; justify-content: space-between; align-items: start; gap: 20px; padding: 22px; border-bottom: 1px solid var(--ink); }
+    .modal-head h2 { font-size: 25px; }
+    .close { width: 44px; height: 44px; border: 1px solid var(--line-dark); background: var(--paper); font-size: 21px; line-height: 1; }
+    .modal-body { padding: 22px; }
+    .modal-body p { color: #333; font-size: 13px; }
+    .modal-body ol { margin: 18px 0; padding-left: 20px; color: #333; font-size: 13px; }
+    .modal-body li { margin: 9px 0; }
+    .modal-callout { background: var(--ink); color: var(--paper); padding: 14px; font-size: 12px; }
+
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    @media print {
+      @page { margin: 14mm; }
+      html, body { background: #fff !important; color: #000 !important; overflow: visible !important; }
+      .topbar, .progress, .hero-actions, .filter-row, .open-dossier, .modal-backdrop, .footer a { display: none !important; }
+      .hero, .section { padding: 24px 0 !important; border-color: #999 !important; }
+      .target-details { display: block !important; background: #fff !important; }
+      .target-card, .compare-panel, .roadmap-stage, .evidence-card, .ledger, table, tr { break-inside: avoid !important; page-break-inside: avoid !important; }
+      .target-card { border-color: #888 !important; }
+      .button, .decision { background: #fff !important; color: #000 !important; border-color: #000 !important; }
+      .decision p, .decision .meta-label { color: #333 !important; }
+      .source-link { color: #000 !important; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+    @media (max-width: 980px) {
+      .container, .topbar-inner { padding-left: 24px; padding-right: 24px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 28px; }
+      .operator-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .operator-cell:nth-child(2) { border-right: 0; }
+      .operator-cell:nth-child(-n+2) { border-bottom: 1px solid var(--ink); }
+      .compare-grid { grid-template-columns: 1fr; }
+      .roadmap { grid-template-columns: 1fr; }
+      .roadmap-stage { min-height: 0; border-right: 0; border-bottom: 1px solid var(--ink); padding: 18px; }
+      .roadmap-stage:last-child { border-bottom: 0; }
+      .roadmap-stage::after { content: "↓"; top: auto; bottom: -11px; right: calc(50% - 10px); }
+      .roadmap-stage h3 { margin-top: 24px; }
+    }
+    @media (max-width: 768px) {
+      .diagram-wrap { padding: 12px; overflow-x: hidden; }
+      .route-desktop { display: none; }
+      .route-mobile { display: block; width: 100%; min-width: 0; }
+    }
+    @media (max-width: 720px) {
+      .topbar { height: auto; min-height: 52px; }
+      .topbar-inner { min-height: 52px; }
+      .brand { font-size: 10px; }
+      .nav-toggle { display: block; flex: 0 0 auto; }
+      .nav { display: none; position: absolute; top: 52px; left: 0; right: 0; padding: 8px 24px 13px; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .nav.open { display: flex; }
+      .nav a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .nav a:last-child { border-bottom: 0; }
+      .hero { padding: 60px 0 52px; }
+      h1 { font-size: clamp(47px, 15vw, 75px); }
+      .kpis { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .kpi { border-bottom: 1px solid var(--line); }
+      .kpi:nth-child(2) { border-right: 0; }
+      .kpi:nth-child(3), .kpi:nth-child(4) { border-bottom: 0; }
+      .section { padding: 60px 0; }
+      .section-head { display: block; }
+      .section-intro { margin-top: 16px; }
+      .diagram-wrap { padding: 12px; overflow-x: hidden; }
+      .route-desktop { display: none; }
+      .route-mobile { display: block; width: 100%; min-width: 0; }
+      .contact-table { min-width: 0; font-size: 13px; }
+      .contact-table thead { display: none; }
+      .contact-table, .contact-table tbody, .contact-table tr, .contact-table td { display: block; width: 100%; }
+      .contact-table tr { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .contact-table tr:last-child { border-bottom: 0; }
+      .contact-table td, .contact-table td:first-child { padding: 4px 0; border: 0; word-break: break-word; }
+      .contact-table td::before { display: inline-block; width: 104px; color: var(--muted); font-family: var(--mono); font-size: 9px; text-transform: uppercase; letter-spacing: .08em; vertical-align: top; }
+      .contact-table td:nth-child(1)::before { content: "Decision maker"; }
+      .contact-table td:nth-child(2)::before { content: "Public contact route"; }
+      .contact-table td:nth-child(3)::before { content: "Reach-out description"; }
+      .operator-grid { grid-template-columns: 1fr; }
+      .operator-cell, .operator-cell:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--ink); }
+      .operator-cell:last-child { border-bottom: 0; }
+      .target-summary { grid-template-columns: 58px minmax(0,1fr); gap: 14px; }
+      .score { grid-column: 2; text-align: left; display: flex; align-items: center; gap: 10px; }
+      .score-bar { flex: 0 0 110px; margin-top: 0; }
+      .score span { margin-top: 0; }
+      .open-dossier { grid-column: 2; justify-self: start; }
+      .detail-grid, .source-list, .evidence-grid, .limits { grid-template-columns: 1fr; }
+      .compare-row { grid-template-columns: 1fr; gap: 4px; }
+      .footer-row { display: block; }
+      .footer-row > * + * { margin-top: 9px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#top">GLOBAL ESCAPE <span>/ RESEARCHED ROUTE</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">≡</button>
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <a href="index.html">Portfolio home</a>
+        <a href="work.html">Selected work</a>
+        <a href="job-internship.html">Job / internship</a>
+        <a href="university-education.html">University / education</a>
+        <a href="#route">Route</a>
+        <a href="#targets">Targets</a>
+        <a href="#plan">Plan</a>
+        <a href="#proof">Proof</a>
+        <a href="GLOBAL_ESCAPE_MASTER_PLAN.html">7-nation matrix</a>
+        <a href="FULLY_FUNDED_OPPORTUNITIES.html">Funded programs</a>
+        <a href="evidence/index.html">Evidence library</a>
+        <a href="GLOBAL_ESCAPE_ENTRY_STRATEGY.excalidraw" download>Diagram file</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">JOB-FIRST RELOCATION SYSTEM / <span id="reportDate">RESEARCHED</span></div>
+        <h1>Japan first.<br><em>Singapore second.</em><br>Master’s later.</h1>
+        <p class="lede">A controlled route into a new country: earn the right to stay through useful work, test the workplace and daily life, then decide whether a foreign Master’s is still worth the cost.</p>
+        <div class="hero-grid">
+          <div>
+            <div class="hero-actions">
+              <a class="button" href="#targets">Open ranked targets <span aria-hidden="true">→</span></a>
+              <button class="button secondary" data-action="open-method">How this was verified</button>
+            </div>
+          </div>
+          <aside class="decision">
+            <div class="meta-label">CURRENT DECISION</div>
+            <strong>Run two country experiments. Do not buy the degree first.</strong>
+            <p>Japan is the initial target because it aligns with the long-term country thesis. Singapore is the English-first control group with a cleaner operating-language test and a higher cost floor.</p>
+          </aside>
+        </div>
+        <div class="kpis" style="margin-top:42px">
+          <div class="kpi"><strong id="kpiCompanies">20</strong><span>target companies</span></div>
+          <div class="kpi"><strong id="kpiContacts">60</strong><span>Apollo-gated contacts</span></div>
+          <div class="kpi"><strong id="kpiCountries">2</strong><span>country experiments</span></div>
+          <div class="kpi"><strong id="kpiDirect">58</strong><span>official pages direct-ok</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="route">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">01 / THE ROUTE</div><h2>Turn proof into a country test.</h2></div>
+          <p class="section-intro">The objective is not “get abroad” as a vague wish. It is a sequence of evidence gates that prevents a costly, irreversible decision.</p>
+        </div>
+        <div class="diagram-card">
+          <div class="diagram-top"><strong>ENTRY SYSTEM / DECISION FLOW</strong><span>Solid line = primary path · dashed line = parallel control</span></div>
+          <div class="diagram-wrap">
+            <svg class="route-svg route-desktop" viewBox="0 0 1320 360" role="img" aria-label="Career entry route from proof base to country test and Master's decision">
+              <defs>
+                <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b0b0b"></path></marker>
+              </defs>
+              <path class="line" d="M215 176 H310"></path>
+              <path class="line" d="M555 176 H660"></path>
+              <path class="line" d="M890 176 H995"></path>
+              <path class="line dashed" d="M432 218 V290 H660 V218"></path>
+              <path class="line" d="M1125 218 V292 H1175 V218"></path>
+              <rect class="node dark" x="28" y="126" width="187" height="100"></rect>
+              <text class="small dark-text" x="50" y="151">01 / PROOF BASE</text>
+              <text class="body dark-text" x="50" y="179">C3A + portfolio</text>
+              <text class="sub dark-sub" x="50" y="202">systems, outcomes, QA</text>
+              <rect class="node" x="310" y="126" width="245" height="100"></rect>
+              <text class="small" x="334" y="151">02 / OPEN DOORS</text>
+              <text class="body" x="334" y="179">Japan P0 outreach</text>
+              <text class="sub" x="334" y="202">English-first where possible</text>
+              <rect class="node" x="660" y="126" width="230" height="100"></rect>
+              <text class="small" x="684" y="151">03 / EARN ENTRY</text>
+              <text class="body" x="684" y="179">Interview → offer</text>
+              <text class="sub" x="684" y="202">role, language, pass checked</text>
+              <rect class="node" x="995" y="126" width="260" height="100"></rect>
+              <text class="small" x="1019" y="151">04 / TEST THE COUNTRY</text>
+              <text class="body" x="1019" y="179">90-day work + life scorecard</text>
+              <text class="sub" x="1019" y="202">workplace, safety, cost, fit</text>
+              <rect class="node" x="385" y="290" width="170" height="52"></rect>
+              <text class="small" x="408" y="312">CONTROL GROUP</text>
+              <text class="body" x="408" y="332">Singapore P0</text>
+              <rect class="node" x="1110" y="290" width="145" height="52"></rect>
+              <text class="small" x="1126" y="312">DECIDE</text>
+              <text class="body" x="1126" y="332">Master’s / stay</text>
+            </svg>
+            <svg class="route-svg route-mobile" viewBox="0 0 360 1060" role="img" aria-label="Vertical career entry route from proof base to Japan or Singapore, offer, country test, and Master's decision">
+              <defs><marker id="arrowMobile" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#0b0b0b"></path></marker></defs>
+              <path class="line" marker-end="url(#arrowMobile)" d="M180 146 V190"></path>
+              <path class="line dashed" marker-end="url(#arrowMobile)" d="M180 330 V374"></path>
+              <path class="line" marker-end="url(#arrowMobile)" d="M180 514 V558"></path>
+              <path class="line" marker-end="url(#arrowMobile)" d="M180 698 V742"></path>
+              <path class="line" marker-end="url(#arrowMobile)" d="M180 882 V926"></path>
+              <rect class="node dark" x="35" y="26" width="290" height="120"></rect>
+              <text class="small dark-text" x="55" y="55">01 / PROOF BASE</text><text class="body dark-text" x="55" y="84">C3A systems work</text><text class="sub dark-sub" x="55" y="108">portfolio + outcomes + QA</text>
+              <rect class="node" x="35" y="190" width="290" height="140"></rect>
+              <text class="small" x="55" y="220">02A / PRIMARY</text><text class="body" x="55" y="250">Japan P0 outreach</text><text class="sub" x="55" y="276">English-first AI teams</text><text class="sub" x="55" y="298">learn Japanese in parallel</text>
+              <rect class="node" x="35" y="374" width="290" height="140"></rect>
+              <text class="small" x="55" y="404">02B / CONTROL</text><text class="body" x="55" y="434">Singapore P0 outreach</text><text class="sub" x="55" y="460">English-first fintech + AI</text><text class="sub" x="55" y="482">work pass checked early</text>
+              <rect class="node" x="35" y="558" width="290" height="140"></rect>
+              <text class="small" x="55" y="588">03 / EARN ENTRY</text><text class="body" x="55" y="618">Interview → offer</text><text class="sub" x="55" y="644">role, language, pass checked</text><text class="sub" x="55" y="666">before relocation</text>
+              <rect class="node" x="35" y="742" width="290" height="140"></rect>
+              <text class="small" x="55" y="772">04 / TEST THE COUNTRY</text><text class="body" x="55" y="802">90-day work + life scorecard</text><text class="sub" x="55" y="828">workplace, safety, cost, fit</text><text class="sub" x="55" y="850">manager quality + savings</text>
+              <rect class="node dark" x="35" y="926" width="290" height="108"></rect>
+              <text class="small dark-text" x="55" y="956">05 / DECIDE</text><text class="body dark-text" x="55" y="986">Master’s / stay / switch</text><text class="sub dark-sub" x="55" y="1010">choose from lived evidence</text>
+            </svg>
+            </div>
+            <div class="route-legend"><span class="legend-item"><i class="legend-line"></i> Japan-first path</span><span class="legend-item"><i class="legend-line dashed"></i> Singapore control path</span><span class="legend-item">No degree commitment before a real country test.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">02 / POSITIONING</div><h2>Sell the operating system, not a narrow title.</h2></div>
+          <p class="section-intro">The through-line across C3A, Lunar Pixels, PowerScale, and Mitta is the same: understand the real gap, convert it into a system, and ship it toward a measurable outcome.</p>
+        </div>
+        <div class="operator-grid">
+          <div class="operator-cell"><span class="operator-num">01</span><strong>Translate founder intent</strong><p>Turn unstructured business explanations into an executable product or operating brief.</p></div>
+          <div class="operator-cell"><span class="operator-num">02</span><strong>Build the working layer</strong><p>Configure AI workflows, web surfaces, integrations, documentation, and internal systems.</p></div>
+          <div class="operator-cell"><span class="operator-num">03</span><strong>Make it trustworthy</strong><p>Test, audit, QA, and add human approval so the system can be used in real operations.</p></div>
+          <div class="operator-cell"><span class="operator-num">04</span><strong>Drive the outcome</strong><p>Stay close to the founder, client, user, or hiring manager until the work produces leverage.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="targets">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">03 / TARGET MAP</div><h2>20 companies. 60 doors.</h2></div>
+          <p class="section-intro">Ranked for this specific operator profile: role fit, direct access, English signal, early-career entry, and the possibility of a real country test. A score is a prioritization tool—not an offer probability.</p>
+        </div>
+        <div class="filter-row" aria-label="Target filters">
+          <span class="filter-label">Country</span>
+          <button class="filter active" data-filter-country="all">All 20</button>
+          <button class="filter" data-filter-country="Japan">Japan 10</button>
+          <button class="filter" data-filter-country="Singapore">Singapore 10</button>
+          <span class="filter-label" style="margin-left:12px">Priority</span>
+          <button class="filter active" data-filter-tier="all">All</button>
+          <button class="filter" data-filter-tier="P0">P0 first wave</button>
+          <button class="filter" data-filter-tier="P1">P1 second wave</button>
+          <button class="filter" data-filter-tier="P2">P2 stretch</button>
+        </div>
+        <div class="target-list" id="targetList" aria-live="polite" aria-atomic="true"></div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">04 / COUNTRY COMPARISON</div><h2>Two experiments, different truths.</h2></div>
+          <p class="section-intro">Japan tests long-term country fit and language investment. Singapore tests English-first employability, speed, and whether the cost premium is justified.</p>
+        </div>
+        <div class="compare-grid">
+          <div class="compare-panel">
+            <header><strong>Japan</strong><span>INITIAL TARGET</span></header>
+            <div class="compare-row"><b>Why it is first</b><span>Long-term country thesis, lower-cost routes than Singapore, and a meaningful English-first startup niche.</span></div>
+            <div class="compare-row"><b>Best opening</b><span>Small AI teams, applied research, product systems, technical program work, and venture studios.</span></div>
+            <div class="compare-row"><b>Main friction</b><span>Japanese becomes important quickly outside international technical teams; many business roles state Japanese requirements.</span></div>
+            <div class="compare-row"><b>Working rule</b><span>Never assume English-only from a company name. Read the exact role, then confirm sponsorship and language.</span></div>
+          </div>
+          <div class="compare-panel">
+            <header><strong>Singapore</strong><span>CONTROL GROUP</span></header>
+            <div class="compare-row"><b>Why it matters</b><span>English-first operating environment and direct relevance to fintech, compliance AI, payments, and wealthtech.</span></div>
+            <div class="compare-row"><b>Best opening</b><span>Applied AI, solutions, product operations, regulated workflows, and regional platform teams.</span></div>
+            <div class="compare-row"><b>Main friction</b><span>High living cost and employer-sponsored work authorization; no automatic open right to work should be assumed.</span></div>
+            <div class="compare-row"><b>Working rule</b><span>Ask the employer about the exact work pass before treating an internship or offer as executable.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">05 / EXECUTION PLAN</div><h2>Build the escape route like a product launch.</h2></div>
+          <p class="section-intro">One clear proof pack, two country waves, one scorecard. The first result is not relocation; it is a high-signal conversation.</p>
+        </div>
+        <div class="roadmap" id="roadmapStages"></div>
+      </div>
+    </section>
+
+    <section class="section soft" id="proof">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">06 / PROOF LEDGER</div><h2>Strong where verified. Quiet where blocked.</h2></div>
+          <p class="section-intro">This page keeps Apollo enrichment, official page checks, and LinkedIn access limitations separate. A blocked page is not upgraded into a confirmed fact.</p>
+        </div>
+        <div class="evidence-grid">
+          <div class="evidence-card"><strong id="proofContacts">60 / 60</strong><span>contacts passed the hard Apollo gate</span><p>Verified work email, LinkedIn URL, and current-employer match.</p></div>
+          <div class="evidence-card"><strong id="proofPages">58 / 60</strong><span>official URLs resolved directly</span><p>Two Carro pages returned 403 from the site’s access layer and are visibly marked.</p></div>
+          <div class="evidence-card"><strong id="proofLinkedin">60 / 60</strong><span>LinkedIn URL checks attempted</span><p>LinkedIn returned HTTP 999 or 429; no public profile body is claimed as independently readable.</p></div>
+        </div>
+        <details class="ledger">
+          <summary>Read the method and evidence limits</summary>
+          <div class="ledger-body">
+            <div class="ledger-note">The 60 people below are points of contact, not confirmed open requisitions. Apollo’s “verified” status supports the contact route; it does not prove that a person is currently hiring this profile. Public LinkedIn access was rate-limited, so the report preserves the canonical URL and reports the HTTP result instead of inventing a second confirmation.</div>
+            <table class="ledger-table" style="margin-top:14px">
+              <thead><tr><th>Layer</th><th>Result</th><th>What it supports</th></tr></thead>
+              <tbody id="methodRows"></tbody>
+            </table>
+          </div>
+        </details>
+        <div class="limits">
+          <div class="limit"><strong>Not included: Active.Ai</strong><p>Current hiring/company identity did not clear the research gate. It was replaced rather than padded with stale contacts.</p></div>
+          <div class="limit"><strong>Not included: Advance Intelligence Group</strong><p>The available contact set did not clear the exact three-person verification gate. It was replaced by Nium.</p></div>
+          <div class="limit"><strong>Hypotenuse careers subdomain: 404</strong><p>Kept as a speculative target because the product/contact surfaces and Apollo contacts are usable; do not treat it as a confirmed live opening.</p></div>
+          <div class="limit"><strong>Visa: employer-dependent</strong><p>Singapore and Japan entries require role-level work authorization checks. The roadmap is not immigration advice or a sponsorship guarantee.</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-row">
+        <span>GLOBAL ESCAPE ROADMAP / local working research</span>
+        <span>Evidence: <a href="evidence/opportunity-map.json">opportunity map</a> · <a href="GLOBAL_ESCAPE_ROADMAP_DATA.js">roadmap data JS</a> · <a href="evidence/company-research.json">deep research packet</a></span>
+        <span>Owner: Satyam Singh Rajput · <span id="footerDate"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="methodModal" role="dialog" aria-modal="true" aria-labelledby="methodTitle">
+    <div class="modal">
+      <div class="modal-head"><div><div class="section-kicker">RESEARCH METHOD</div><h2 id="methodTitle">What “verified” means here.</h2></div><button class="close" data-action="close-method" aria-label="Close">×</button></div>
+      <div class="modal-body">
+        <p>This is a research instrument for deciding where to spend outreach time. It separates company evidence from contact evidence and keeps the blocked parts visible.</p>
+        <ol id="methodList"></ol>
+        <div class="modal-callout">The clean next move is not to mass-email 60 people. Start with the P0 list, send one tailored proof pack, and use the first reply to learn whether the role, language, and work authorization are real.</div>
+      </div>
+    </div>
+  </div>
+
+  <script src="GLOBAL_ESCAPE_ROADMAP_DATA.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const DATA = window.ESCAPE_MAP_DATA;
+      const companies = Array.isArray(DATA?.companies) ? DATA.companies : [];
+      const account = DATA?.research_accounting || {};
+      const esc = (value) => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+      const safeUrl = (value) => {
+        try {
+          const u = new URL(value, window.location.href);
+          return ['http:','https:','mailto:','file:'].includes(u.protocol) ? u.href : '#';
+        } catch { return '#'; }
+      };
+      const link = (url, label, extra='') => `<a href="${esc(safeUrl(url))}" target="_blank" rel="noopener noreferrer" ${extra}>${esc(label)}</a>`;
+      const allContacts = companies.flatMap(company => company.contacts.map(contact => ({...contact, company: company.name, country: company.country, companyId: company.id})));
+      const state = { country: 'all', tier: 'all' };
+
+      document.getElementById('reportDate').textContent = (DATA.report_date_label || 'RESEARCHED').toUpperCase();
+      document.getElementById('footerDate').textContent = DATA.report_date_label || '';
+      document.getElementById('kpiCompanies').textContent = account.companies ?? companies.length;
+      document.getElementById('kpiContacts').textContent = account.contacts_passing_apollo_gate ?? allContacts.length;
+      document.getElementById('kpiCountries').textContent = account.countries ?? 2;
+      document.getElementById('kpiDirect').textContent = account.official_urls_direct_2xx_3xx ?? '—';
+      document.getElementById('proofContacts').textContent = `${account.contacts_passing_apollo_gate ?? allContacts.length} / ${account.contacts_required ?? allContacts.length}`;
+      document.getElementById('proofPages').textContent = `${account.official_urls_direct_2xx_3xx ?? '—'} / ${account.official_urls_checked ?? '—'}`;
+      document.getElementById('proofLinkedin').textContent = `${account.linkedin_public_http_checks ?? allContacts.length} / ${allContacts.length}`;
+
+      function companyCard(company) {
+        const packet = company.deep_research_packet || {};
+        const tierText = company.tier === 'P0' ? 'FIRST WAVE' : company.tier === 'P1' ? 'SECOND WAVE' : 'STRETCH';
+        const companySocials = (company.company_socials || []).map(item => link(item.url, item.label || 'Open company profile ↗')).join('<br>') || '<span class="note">No separately verified company social handles</span>';
+        const sources = (company.sources || []).map(source => {
+          const status = source.status === 'direct_ok' ? 'DIRECT OK' : source.status === 'access_limited' ? `HTTP ${source.http_status}` : 'CHECK';
+          return `<a class="source-link" href="${esc(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer"><strong>${esc(source.label)} <span class="source-status">${esc(status)}</span></strong><small>${esc(source.title || source.url)}<br>${esc(source.what_it_proves || '')}</small></a>`;
+        }).join('');
+        const contacts = (company.contacts || []).map(contact => {
+          const publicCheck = contact.linkedin_public_check || {};
+          const liStatus = publicCheck.http_status ? `HTTP ${publicCheck.http_status}` : 'CHECKED';
+          const approach = contact.contact_description || contact.route || 'Professional access route.';
+          return `<tr>
+            <td><strong>${esc(contact.name)}</strong><span class="contact-title">${esc(contact.title || contact.current_title || 'Role not exposed')}</span></td>
+            <td>${contact.linkedin_url ? link(contact.linkedin_url, 'Open LinkedIn ↗') : '<span class="note">Not found / not verified</span>'}<br><span class="badge">PRIVATE EMAIL VERIFIED</span><span class="badge light">CURRENT MATCH</span><span class="badge light">${esc(liStatus)}</span></td>
+            <td>${esc(approach)}</td>
+          </tr>`;
+        }).join('');
+        return `<article class="target-card" data-company-id="${esc(company.id)}" data-country="${esc(company.country)}" data-tier="${esc(company.tier)}">
+          <div class="target-summary">
+            <div class="rank">${String(company.rank).padStart(2,'0')}<span>${esc(company.country)}</span></div>
+            <div><h3 class="target-name">${esc(company.name)}</h3><p class="target-line">${esc(company.one_liner)}</p><div class="chips"><span class="chip">${esc(company.tier)} / ${esc(tierText)}</span><span class="chip">${esc(company.city)}</span><span class="chip">${esc((company.role_lanes || [])[0] || 'AI systems')}</span></div></div>
+            <div class="score"><strong>${esc(company.score)}</strong><span>priority / 100</span><div class="score-bar" aria-hidden="true"><i style="width:${Math.max(0, Math.min(100, Number(company.score) || 0))}%"></i></div></div>
+            <button class="button small secondary open-dossier" data-action="toggle-card" aria-expanded="false">Open dossier <span aria-hidden="true">+</span></button>
+          </div>
+          <div class="target-details">
+            <div class="detail-grid">
+              <div class="detail-block"><h3>Company profile</h3><p>${esc(company.overview)}</p></div>
+              <div class="detail-block"><h3>Funding / capital signal</h3><p>${esc(company.funding_signal || 'No funding figure was surfaced in the current evidence packet; do not infer one.')}</p></div>
+              <div class="detail-block"><h3>Why this fits</h3><p>${esc(company.fit)}</p></div>
+              <div class="detail-block"><h3>Entry route</h3><p>${esc(company.entry_route)}</p></div>
+              <div class="detail-block"><h3>Language + relocation</h3><p><strong>Language:</strong> ${esc(company.language_signal)}<br><br><strong>Relocation:</strong> ${esc(company.relocation_signal)}</p></div>
+            </div>
+            <div class="detail-block" style="margin-top:18px"><h3>Company socials and public surfaces</h3><p>${companySocials}</p></div>
+            <div class="detail-block" style="margin-top:24px"><h3>Role lanes to search</h3><div class="role-list">${(company.role_lanes || []).map(role => `<span>${esc(role)}</span>`).join('')}</div></div>
+            <div class="detail-block" style="margin-top:18px"><h3>Next move</h3><p>${esc(company.next_action)}</p></div>
+            <div class="contact-section"><div class="contact-head"><strong>Points of contact — ranked</strong><span>3 people · private Apollo email gate · not a hiring guarantee</span></div><div class="table-wrap"><table class="contact-table"><thead><tr><th>Decision maker</th><th>Public contact route</th><th>Reach-out description</th></tr></thead><tbody>${contacts}</tbody></table></div><p class="contact-note">Apollo verification and work-email fields remain in the local-only research archive. The public release keeps names, titles, LinkedIn routes, employer-match status, and the verification limitation; it does not expose private email addresses.</p></div>
+            <div class="source-section"><h3 class="table-label">Primary evidence links</h3><div class="source-list">${sources}</div></div>
+          </div>
+        </article>`;
+      }
+
+      function renderTargets() {
+        const filtered = companies.filter(company => (state.country === 'all' || company.country === state.country) && (state.tier === 'all' || company.tier === state.tier)).sort((a,b) => a.country.localeCompare(b.country) || a.rank - b.rank);
+        const list = document.getElementById('targetList');
+        list.innerHTML = filtered.length ? filtered.map(companyCard).join('') : '<div class="empty">No targets match this filter.</div>';
+      }
+      renderTargets();
+
+      const methodModal = document.getElementById('methodModal');
+      let methodTrigger = null;
+      const closeMethod = () => {
+        methodModal.classList.remove('open');
+        document.body.style.overflow = '';
+        if (methodTrigger && typeof methodTrigger.focus === 'function') methodTrigger.focus();
+      };
+      document.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-action]');
+        if (!button) return;
+        const action = button.dataset.action;
+        if (action === 'toggle-card') {
+          const card = button.closest('.target-card');
+          const open = card.classList.toggle('open');
+          button.setAttribute('aria-expanded', String(open));
+          button.innerHTML = open ? 'Close dossier <span aria-hidden="true">−</span>' : 'Open dossier <span aria-hidden="true">+</span>';
+        }
+        if (action === 'open-method') {
+          methodTrigger = button;
+          methodModal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          requestAnimationFrame(() => methodModal.querySelector('.close')?.focus());
+        }
+        if (action === 'close-method') closeMethod();
+      });
+      methodModal.addEventListener('click', event => { if (event.target === methodModal) closeMethod(); });
+      document.addEventListener('keydown', event => {
+        if (!methodModal.classList.contains('open')) return;
+        if (event.key === 'Escape') { event.preventDefault(); closeMethod(); return; }
+        if (event.key === 'Tab') {
+          const focusable = [...methodModal.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])')].filter(el => !el.disabled && el.offsetParent !== null);
+          if (!focusable.length) return;
+          const first = focusable[0]; const last = focusable[focusable.length - 1];
+          if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+          else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+        }
+      });
+
+      document.querySelectorAll('[data-filter-country]').forEach(button => button.addEventListener('click', () => {
+        state.country = button.dataset.filterCountry;
+        document.querySelectorAll('[data-filter-country]').forEach(item => item.classList.toggle('active', item === button));
+        renderTargets();
+      }));
+      document.querySelectorAll('[data-filter-tier]').forEach(button => button.addEventListener('click', () => {
+        state.tier = button.dataset.filterTier;
+        document.querySelectorAll('[data-filter-tier]').forEach(item => item.classList.toggle('active', item === button));
+        renderTargets();
+      }));
+
+      const stages = DATA.roadmap || [];
+      document.getElementById('roadmapStages').innerHTML = stages.map(stage => `<article class="roadmap-stage"><span class="stage-num">${esc(stage.stage)} / ${esc(stage.window)}</span><h3>${esc(stage.label)}</h3><p>${esc(stage.objective)}</p><ul class="stage-list">${(stage.deliverables || []).map(item => `<li>${esc(item)}</li>`).join('')}</ul></article>`).join('');
+      const methodRows = [
+        ['Local evidence','Portfolio, resume, and role-alignment files reviewed before external discovery.','Candidate positioning and proof base.'],
+        ['Web search','Company/careers pages discovered through multiple search batches.','Discovery only; official pages were fetched directly before inclusion.'],
+        ['Official pages',`${account.official_urls_direct_2xx_3xx ?? 0} of ${account.official_urls_checked ?? 0} direct 2xx/3xx; ${account.official_urls_access_limited ?? 0} access-limited.`, 'Company overview, career path, role or program proof.'],
+        ['Apollo people',`${account.contacts_passing_apollo_gate ?? 0} of ${account.contacts_required ?? 0} passed.`, 'Verified work email, canonical LinkedIn URL, current employer match.'],
+        ['LinkedIn public recheck',JSON.stringify(account.linkedin_public_http_counts || {}), 'HTTP result recorded; blocked/rate-limited responses are not public-page proof.'],
+      ];
+      document.getElementById('methodRows').innerHTML = methodRows.map(row => `<tr><td><strong>${esc(row[0])}</strong></td><td>${esc(row[1])}</td><td>${esc(row[2])}</td></tr>`).join('');
+      document.getElementById('methodList').innerHTML = (DATA.methodology || []).map(item => `<li>${esc(item)}</li>`).join('');
+
+      const progress = document.getElementById('progress');
+      const updateProgress = () => { const max = document.documentElement.scrollHeight - window.innerHeight; const value = max > 0 ? Math.round((window.scrollY / max) * 100) : 0; progress.style.transform = `scaleX(${value / 100})`; progress.setAttribute('aria-valuenow', String(value)); };
+      window.addEventListener('scroll', updateProgress, {passive:true}); updateProgress();
+      const sections = [...document.querySelectorAll('main section[id]')];
+      const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => { if (entry.isIntersecting) navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`)); }), {rootMargin:'-25% 0px -65% 0px',threshold:0});
+      sections.forEach(section => observer.observe(section));
+      const nav = document.getElementById('nav'); const navToggle = document.getElementById('navToggle');
+      navToggle.addEventListener('click', () => { const open = nav.classList.toggle('open'); navToggle.setAttribute('aria-expanded', String(open)); });
+      nav.addEventListener('click', event => { if (event.target.matches('a')) { nav.classList.remove('open'); navToggle.setAttribute('aria-expanded','false'); } });
+    })();
+  </script>
+</body>
+</html>

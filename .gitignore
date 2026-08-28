@@ -1,0 +1,19 @@
+# Local-only material — never publish
+PRIVATE/
+
+# OS/editor/cache noise
+.DS_Store
+Icon*
+*.swp
+*.tmp
+
+# Runtime/build output
+__pycache__/
+*.py[cod]
+.venv/
+node_modules/
+.pytest_cache/
+
+# Local QA captures/logs
+*.log
+RESEARCH/qa_*.png

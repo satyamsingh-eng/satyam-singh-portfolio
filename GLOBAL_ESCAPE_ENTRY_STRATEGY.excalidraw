@@ -1,0 +1,632 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "hermes-agent",
+  "elements": [
+    {
+      "type": "text",
+      "id": "title",
+      "x": 70,
+      "y": 40,
+      "width": 620,
+      "height": 38,
+      "text": "JOB-FIRST COUNTRY ENTRY STRATEGY",
+      "fontSize": 28,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "originalText": "JOB-FIRST COUNTRY ENTRY STRATEGY",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "x": 72,
+      "y": 82,
+      "width": 670,
+      "height": 28,
+      "text": "Prove value → earn entry → test daily life → decide on the Master’s",
+      "fontSize": 18,
+      "fontFamily": 1,
+      "strokeColor": "#656565",
+      "originalText": "Prove value → earn entry → test daily life → decide on the Master’s",
+      "autoResize": true
+    },
+    {
+      "type": "arrow",
+      "id": "a_proof_japan",
+      "x": 300,
+      "y": 230,
+      "width": 110,
+      "height": -72,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          110,
+          -72
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "proof",
+        "fixedPoint": [
+          1,
+          0.35
+        ]
+      },
+      "endBinding": {
+        "elementId": "japan",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "a_proof_sg",
+      "x": 300,
+      "y": 270,
+      "width": 110,
+      "height": 72,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          110,
+          72
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "proof",
+        "fixedPoint": [
+          1,
+          0.65
+        ]
+      },
+      "endBinding": {
+        "elementId": "singapore",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      },
+      "strokeStyle": "dashed"
+    },
+    {
+      "type": "arrow",
+      "id": "a_japan_offer",
+      "x": 660,
+      "y": 158,
+      "width": 160,
+      "height": 82,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          160,
+          82
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "japan",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "offer",
+        "fixedPoint": [
+          0,
+          0.35
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "a_sg_offer",
+      "x": 660,
+      "y": 372,
+      "width": 160,
+      "height": -82,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          160,
+          -82
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "singapore",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "offer",
+        "fixedPoint": [
+          0,
+          0.65
+        ]
+      },
+      "strokeStyle": "dashed"
+    },
+    {
+      "type": "arrow",
+      "id": "a_offer_test",
+      "x": 990,
+      "y": 240,
+      "width": 150,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          150,
+          0
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "offer",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "test",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "a_test_decide",
+      "x": 1280,
+      "y": 240,
+      "width": 155,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          155,
+          0
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "test",
+        "fixedPoint": [
+          1,
+          0.5
+        ]
+      },
+      "endBinding": {
+        "elementId": "decide",
+        "fixedPoint": [
+          0,
+          0.5
+        ]
+      }
+    },
+    {
+      "type": "arrow",
+      "id": "a_learn",
+      "x": 1185,
+      "y": 370,
+      "width": -760,
+      "height": 0,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          -500,
+          120
+        ],
+        [
+          -760,
+          0
+        ]
+      ],
+      "strokeColor": "#4d4d4d",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "endArrowhead": "arrow",
+      "startBinding": {
+        "elementId": "test",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "endBinding": {
+        "elementId": "proof",
+        "fixedPoint": [
+          0.5,
+          1
+        ]
+      },
+      "strokeStyle": "dashed"
+    },
+    {
+      "type": "rectangle",
+      "id": "proof",
+      "x": 70,
+      "y": 170,
+      "width": 230,
+      "height": 150,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#1e1e1e",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "t_proof",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_proof",
+      "x": 80,
+      "y": 180,
+      "width": 210,
+      "height": 130,
+      "text": "PROOF BASE\nC3A systems work\nportfolio + outcomes",
+      "fontSize": 22,
+      "fontFamily": 1,
+      "strokeColor": "#ffffff",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "PROOF BASE\nC3A systems work\nportfolio + outcomes",
+      "autoResize": true,
+      "containerId": "proof"
+    },
+    {
+      "type": "rectangle",
+      "id": "japan",
+      "x": 410,
+      "y": 90,
+      "width": 250,
+      "height": 135,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#f4f4f4",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "t_japan",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_japan",
+      "x": 420,
+      "y": 100,
+      "width": 230,
+      "height": 115,
+      "text": "JAPAN / PRIMARY\nEnglish-first AI teams\nlearn Japanese in parallel",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "JAPAN / PRIMARY\nEnglish-first AI teams\nlearn Japanese in parallel",
+      "autoResize": true,
+      "containerId": "japan"
+    },
+    {
+      "type": "rectangle",
+      "id": "singapore",
+      "x": 410,
+      "y": 285,
+      "width": 250,
+      "height": 135,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#e8e8e8",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "t_singapore",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_singapore",
+      "x": 420,
+      "y": 295,
+      "width": 230,
+      "height": 115,
+      "text": "SINGAPORE / CONTROL\nEnglish-first fintech + AI\nwork pass checked early",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "SINGAPORE / CONTROL\nEnglish-first fintech + AI\nwork pass checked early",
+      "autoResize": true,
+      "containerId": "singapore"
+    },
+    {
+      "type": "rectangle",
+      "id": "offer",
+      "x": 820,
+      "y": 165,
+      "width": 170,
+      "height": 150,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#ffffff",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "t_offer",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_offer",
+      "x": 830,
+      "y": 175,
+      "width": 150,
+      "height": 130,
+      "text": "OFFER\nrole + manager\nlanguage + pass",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "OFFER\nrole + manager\nlanguage + pass",
+      "autoResize": true,
+      "containerId": "offer"
+    },
+    {
+      "type": "rectangle",
+      "id": "test",
+      "x": 1130,
+      "y": 165,
+      "width": 150,
+      "height": 150,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#f4f4f4",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "t_test",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_test",
+      "x": 1140,
+      "y": 175,
+      "width": 130,
+      "height": 130,
+      "text": "90-DAY\nCOUNTRY TEST\nwork + life",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "90-DAY\nCOUNTRY TEST\nwork + life",
+      "autoResize": true,
+      "containerId": "test"
+    },
+    {
+      "type": "rectangle",
+      "id": "decide",
+      "x": 1435,
+      "y": 165,
+      "width": 165,
+      "height": 150,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "#1e1e1e",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "roughness": 1,
+      "roundness": {
+        "type": 3
+      },
+      "boundElements": [
+        {
+          "id": "t_decide",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "t_decide",
+      "x": 1445,
+      "y": 175,
+      "width": 145,
+      "height": 130,
+      "text": "DECIDE\nMaster’s\nor stay",
+      "fontSize": 20,
+      "fontFamily": 1,
+      "strokeColor": "#ffffff",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "DECIDE\nMaster’s\nor stay",
+      "autoResize": true,
+      "containerId": "decide"
+    },
+    {
+      "type": "text",
+      "id": "l_japan",
+      "x": 680,
+      "y": 120,
+      "width": 135,
+      "height": 28,
+      "text": "primary route",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#4d4d4d",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "primary route",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "l_sg",
+      "x": 680,
+      "y": 385,
+      "width": 145,
+      "height": 28,
+      "text": "parallel route",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#4d4d4d",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "parallel route",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "l_test",
+      "x": 1005,
+      "y": 210,
+      "width": 110,
+      "height": 28,
+      "text": "earn entry",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#4d4d4d",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "earn entry",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "l_learn",
+      "x": 760,
+      "y": 505,
+      "width": 360,
+      "height": 30,
+      "text": "learn → improve proof → repeat",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#4d4d4d",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "learn → improve proof → repeat",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "n1",
+      "x": 75,
+      "y": 360,
+      "width": 310,
+      "height": 54,
+      "text": "Rule: do not pay for a foreign degree before a real country test.",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "Rule: do not pay for a foreign degree before a real country test.",
+      "autoResize": true
+    },
+    {
+      "type": "text",
+      "id": "n2",
+      "x": 1130,
+      "y": 360,
+      "width": 425,
+      "height": 54,
+      "text": "Score workplace, safety, cost, language, manager quality, and savings—not only prestige.",
+      "fontSize": 16,
+      "fontFamily": 1,
+      "strokeColor": "#1e1e1e",
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "originalText": "Score workplace, safety, cost, language, manager quality, and savings—not only prestige.",
+      "autoResize": true
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": 20,
+    "gridStep": 5,
+    "zenModeEnabled": false,
+    "objectsSnapModeEnabled": true
+  },
+  "files": {}
+}

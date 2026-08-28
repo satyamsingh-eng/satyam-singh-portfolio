@@ -1,0 +1,1548 @@
+{
+  "schema_version": "2.0",
+  "as_of_date": "2026-08-28",
+  "as_of_label": "28 Aug 2026",
+  "title": "Seven-Nation Supported Opportunity Map",
+  "candidate_context": {
+    "education": "Final-year BCA, Cloud Computing and Cybersecurity, Sri Balaji University Pune; parallel online BBA",
+    "work": "Multi-function operator at C3A Labs; primary Product, R&D and Systems; secondary Hiring, Frontend Development Support, QA and Strategic Sales Support",
+    "correction": "Satyam is not a founder or co-founder of C3A Labs. Sai Casula is the founder.",
+    "evidence": [
+      "Published AI/cybersecurity research on Zenodo",
+      "QA/Software Engineering experience",
+      "Production product, workflow, research and portfolio work",
+      "English professional; Hindi native; Marathi; Japanese beginner"
+    ]
+  },
+  "scope": [
+    "Estonia",
+    "Japan",
+    "UAE",
+    "Germany",
+    "Netherlands",
+    "Singapore",
+    "Russia"
+  ],
+  "hard_filter": {
+    "rule": "Retain only an opportunity with at least one explicit support item: tuition waiver, stipend/salary, travel/airfare, housing/relocation, health insurance, or visa/work-authorisation support.",
+    "excluded_if": [
+      "No explicit support on the official source",
+      "Only an international-student invitation with no funding or authorisation evidence",
+      "Past deadline with no current or next-cycle action value",
+      "Sponsorship inferred only from an employer's size, reputation, or Apollo record"
+    ]
+  },
+  "scoring": {
+    "formula": "10 × (0.25 technical_fit + 0.20 eligibility_fit + 0.15 support_strength + 0.15 deadline_actionability + 0.10 language_fit + 0.10 route_realism + 0.05 × (10 - country_risk))",
+    "scale": "Each component is 0–10. The result is a prioritisation score, not an offer probability or visa guarantee.",
+    "components": [
+      "technical_fit",
+      "eligibility_fit",
+      "support_strength",
+      "deadline_actionability",
+      "language_fit",
+      "route_realism",
+      "country_risk"
+    ]
+  },
+  "country_profiles": [
+    {
+      "country": "Estonia",
+      "role_in_plan": "Fast European test route",
+      "route_thesis": "Use the national scholarship only if an Estonian admission letter already exists; otherwise target a qualified startup or scale-up willing to use the talent route.",
+      "language": "English is common in the technology sector; local-language requirements remain role-specific.",
+      "visa_or_authorisation": "Startup/Scale-up Visa talent route is employer-dependent. Startup Estonia states preferential conditions for eligible non-EU startup employees.",
+      "funding_reality": "The national master's scholarship is a €350/month contribution, not full funding.",
+      "country_risk": 3,
+      "sources": [
+        "https://www.studyinestonia.ee/master-degree-scholarships",
+        "https://startupestonia.ee/startup-visa/startup/",
+        "https://startupestonia.ee/startup-visa/estonian-scale-up/"
+      ]
+    },
+    {
+      "country": "Japan",
+      "role_in_plan": "Primary long-term country thesis",
+      "route_thesis": "Use OIST as the immediate supported country test and MEXT as the full Master's route. Keep employer outreach separate from scholarship evidence.",
+      "language": "English-first research and selected technical roles exist; Japanese becomes important for many business and client-facing positions.",
+      "visa_or_authorisation": "Student/research status or employer-supported work status; confirm exact route for each placement.",
+      "funding_reality": "MEXT is the strongest full-support route. OIST provides an unusually concrete funded internship package.",
+      "country_risk": 2,
+      "sources": [
+        "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships",
+        "https://www.oist.jp/admissions/research-internship/apply-research-internship"
+      ]
+    },
+    {
+      "country": "UAE",
+      "role_in_plan": "High-support AI degree route",
+      "route_thesis": "MBZUAI is the strongest direct AI-specialist opportunity, but its current M.Sc. funding language is conditional on faculty/government funding; do not assume every offer is fully funded.",
+      "language": "English is the operating language of the target graduate institutions.",
+      "visa_or_authorisation": "MBZUAI's published benefits include UAE residence visa support for funded graduate students; confirm in the final offer.",
+      "funding_reality": "Very strong if funded; MBZUAI's 2027 M.Sc. cost and funding terms are still being finalised on the current admissions page.",
+      "country_risk": 3,
+      "sources": [
+        "https://mbzuai.ac.ae/study/graduate-admission-process/",
+        "https://mbzuai.ac.ae/study/",
+        "https://www.ku.ac.ae/scholarship/graduate-research-teaching-scholarship-for-international-students"
+      ]
+    },
+    {
+      "country": "Germany",
+      "role_in_plan": "Research-funded European route",
+      "route_thesis": "Target DAAD plus an English-taught public university or research-based programme. Treat tuition as a separate check; DAAD explicitly does not cover tuition fees in the all-disciplines Master's call.",
+      "language": "English-taught programmes exist; proof of the programme's teaching language is required. German improves daily-life and employer options.",
+      "visa_or_authorisation": "Scholarship/education route first; work route requires a separate offer and immigration assessment.",
+      "funding_reality": "DAAD provides a meaningful stipend and allowances, but a tuition and living-gap budget is still required.",
+      "country_risk": 2,
+      "sources": [
+        "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database?detail=50026200",
+        "https://www.daad.de/en/information-services-for-higher-education-institutions/further-information-on-daad-programmes/epos"
+      ]
+    },
+    {
+      "country": "Netherlands",
+      "role_in_plan": "Selective, high-cost European route",
+      "route_thesis": "Use University of Twente as the most actionable partial-funding route. Treat Radboud and TU Delft as next-cycle watchlists unless the 2027 pages are published.",
+      "language": "English-taught Master's programmes are common in technology; no Dutch assumption is needed for study, but it helps for local employment.",
+      "visa_or_authorisation": "Study and employer routes are separate. An employer must be an IND recognised sponsor for the highly skilled migrant route.",
+      "funding_reality": "Partial awards are common; a scholarship does not automatically remove the large non-EU tuition and living gap.",
+      "country_risk": 2,
+      "sources": [
+        "https://www.utwente.nl/en/education/scholarship-finder/university-of-twente-scholarship/",
+        "https://www.ru.nl/en/education/scholarships/radboud-scholarship-programme",
+        "https://ind.nl/en/about-us/background-articles/national-highly-skilled-migrant-scheme"
+      ]
+    },
+    {
+      "country": "Singapore",
+      "role_in_plan": "English-first control group",
+      "route_thesis": "Target research Master's routes at NUS and NTU, not the expensive coursework MComp route unless separate funding is secured.",
+      "language": "English-first academic and business environment.",
+      "visa_or_authorisation": "Student Pass for study; Employment Pass for work is employer-dependent. Never assume an open right to work.",
+      "funding_reality": "NUS and NTU research scholarships can combine tuition coverage with monthly support, but they are competitive and faculty/programme-specific.",
+      "country_risk": 2,
+      "sources": [
+        "https://nusgs.nus.edu.sg/scholarships/nus-research-scholarship/",
+        "https://www.ntu.edu.sg/admissions/graduate/financialmatters/scholarships/rss",
+        "https://www.ntu.edu.sg/admissions/graduate/radmissionguide"
+      ]
+    },
+    {
+      "country": "Russia",
+      "role_in_plan": "Funded fallback with high geopolitical risk",
+      "route_thesis": "Open Doors is the only immediately actionable supported route found. Skoltech is a next-cycle watchlist. Apply only after checking travel, payments, insurance, sanctions and career-mobility consequences.",
+      "language": "Open Doors can be entered online without a language certificate; university-level programme language and daily-life requirements vary.",
+      "visa_or_authorisation": "Study/residence steps depend on the host university and current rules; do not treat a scholarship win as a complete relocation package.",
+      "funding_reality": "Open Doors covers tuition and a monthly stipend, but the official page says travel, accommodation, insurance and personal costs remain the student's responsibility.",
+      "country_risk": 8,
+      "sources": [
+        "https://od.globaluni.ru/",
+        "https://od.globaluni.ru/news/341",
+        "https://www.skoltech.ru/en/admissions/"
+      ]
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "EE-01",
+      "country": "Estonia",
+      "provider": "Education and Youth Board / Study in Estonia",
+      "name": "National Scholarship for Foreign Students — Master's Degree",
+      "type": "Government degree scholarship",
+      "status": "DEADLINE SOON — CONDITIONAL",
+      "status_code": "deadline_soon",
+      "application_window": "The guideline states the annual application opens one month before 1 September and closes at 23:59 Estonia time on 1 September.",
+      "deadline": "2026-09-01T23:59:00+03:00",
+      "start_or_period": "2026/2027 academic year",
+      "support": [
+        {
+          "type": "stipend",
+          "amount": "€350 per month",
+          "duration": "up to 12 months",
+          "evidence": "official guideline"
+        },
+        {
+          "type": "cost_purpose",
+          "amount": "intended for accommodation and transport",
+          "evidence": "official guideline"
+        }
+      ],
+      "support_boundary": "Other costs are not covered. This is not a full tuition-and-living scholarship.",
+      "eligibility": "Foreign students seeking degree study at an Estonian higher-education institution; India is listed in Group B of the official guideline. An admission confirmation must accompany the application by the deadline.",
+      "visa_support": "Not included in this scholarship record.",
+      "fit_summary": "Conditional fit. Your cloud/cybersecurity and systems profile fits Estonian technology programmes, but the route is not executable without an admission letter and the €350/month award leaves a substantial funding gap.",
+      "why_it_fits": [
+        "BCA technical background maps to English-taught computing programmes",
+        "Published research and C3A systems work strengthen the motivation letter",
+        "Very near deadline makes it a useful immediate eligibility check"
+      ],
+      "prep": [
+        "Confirm whether an Estonian university has already issued an admission letter",
+        "Prepare passport/ID copy",
+        "Write a focused motivation letter tied to a named Master's programme",
+        "Translate non-English documents into English or Estonian",
+        "Build a separate tuition/living-gap budget",
+        "Submit only if the admission prerequisite is satisfied"
+      ],
+      "next_step": "Do not submit a rushed application without admission proof. If not admitted, move this to the 2027/2028 watchlist and target an Estonian admission first.",
+      "effort_weeks": 1,
+      "competitiveness": "Medium; eligibility gate is the main blocker",
+      "fit_components": {
+        "technical_fit": 6,
+        "eligibility_fit": 4,
+        "support_strength": 3,
+        "deadline_actionability": 10,
+        "language_fit": 8,
+        "route_realism": 5,
+        "country_risk": 3
+      },
+      "fit_score": 59,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "Study in Estonia — Master's scholarships",
+          "url": "https://www.studyinestonia.ee/master-degree-scholarships",
+          "what_it_proves": "The national scholarship supports Master's studies and publishes the 350-euro monthly rate; other costs are not covered."
+        },
+        {
+          "label": "Official scholarship guideline PDF",
+          "url": "https://www.studyinestonia.ee/sites/default/files/Scholarship%20guideline%20for%20foreign%20students%202021.pdf",
+          "what_it_proves": "Annual 1 September deadline, admission-confirmation requirement, support purpose, and India in Group B."
+        },
+        {
+          "label": "Application environment",
+          "url": "https://taotlused.edu.ee/",
+          "what_it_proves": "Official application environment named by the guideline."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "EE-02",
+      "country": "Estonia",
+      "provider": "Startup Estonia plus an eligible Estonian startup or scale-up",
+      "name": "Startup/Scale-up Visa Talent Route",
+      "type": "Employer-supported work authorisation route",
+      "status": "ROLLING — ONLY AFTER A QUALIFYING OFFER",
+      "status_code": "rolling_after_offer",
+      "application_window": "No fixed programme deadline; the employer and Startup Committee route determine timing.",
+      "deadline": null,
+      "start_or_period": "After a qualifying employment offer",
+      "support": [
+        {
+          "type": "work_authorisation",
+          "amount": "Preferential process for eligible non-EU startup talent",
+          "duration": "role/residence dependent",
+          "evidence": "Startup Estonia"
+        },
+        {
+          "type": "immigration_conditions",
+          "amount": "No immigration quota and no minimum salary requirement under the stated startup employee conditions",
+          "duration": "eligibility dependent",
+          "evidence": "Startup Estonia"
+        }
+      ],
+      "support_boundary": "This is not a job or a stipend. A qualified employer must hire and use the route; ordinary companies do not automatically qualify.",
+      "eligibility": "Non-EU talent hired by a startup or scale-up that is pre-included or approved under the Estonian framework.",
+      "visa_support": "Employer-supported; confirm the employer's qualification and exact permit before treating it as a relocation route.",
+      "fit_summary": "A practical employment route for an AI/product/QA generalist if paired with a real Estonian startup offer. It is more realistic for you than treating a digital-nomad visa as local employment.",
+      "why_it_fits": [
+        "Your cross-functional operator profile suits small startup teams",
+        "English-first technology teams are a plausible target",
+        "The route directly addresses the non-EU work-authorisation barrier"
+      ],
+      "prep": [
+        "Create a one-page AI Systems Operator profile",
+        "Build two proof packs: SARVAX workflow systems and QA/reliability work",
+        "Target only startups whose product and hiring page are current",
+        "Verify the company on Startup Estonia's eligible/pre-included surface",
+        "Ask the employer in writing whether it will sponsor the exact permit"
+      ],
+      "next_step": "Use as the Estonia employment lane, not as a generic visa application. Require a written sponsor confirmation before outreach is treated as a viable route.",
+      "effort_weeks": 4,
+      "competitiveness": "High at the offer stage; route friction is lower than ordinary employer immigration if the startup qualifies",
+      "fit_components": {
+        "technical_fit": 8,
+        "eligibility_fit": 5,
+        "support_strength": 4,
+        "deadline_actionability": 7,
+        "language_fit": 9,
+        "route_realism": 5,
+        "country_risk": 2
+      },
+      "fit_score": 65,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "Startup Estonia — startup talent",
+          "url": "https://startupestonia.ee/startup-visa/startup/",
+          "what_it_proves": "Eligible Estonian startups can use preferential conditions to hire non-EU employees, including no quota and no minimum salary under stated conditions."
+        },
+        {
+          "label": "Startup Estonia — scale-up talent",
+          "url": "https://startupestonia.ee/startup-visa/estonian-scale-up/",
+          "what_it_proves": "Qualified scale-ups can sponsor non-EU talent under a preferential route; employer qualification is required."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "JP-01",
+      "country": "Japan",
+      "provider": "MEXT / Embassy of Japan in India / Japanese universities",
+      "name": "Japanese Government MEXT Scholarship — Research Students / Master's Path",
+      "type": "Government scholarship",
+      "status": "2027 NEW APPLICATION CLOSED — TARGET 2028; 2027 PROCESS CONTINUES FOR SHORTLISTED CANDIDATES",
+      "status_code": "next_cycle",
+      "application_window": "The 2027 embassy process opened around April 2026; the exact Indian mission deadline varies. The official process then runs through first screening, provisional acceptance, placement, and results.",
+      "deadline": "2027-04-15",
+      "start_or_period": "2027 process: April 2027 arrival for the April term; next new cycle expected around April 2027 for 2028 entry, subject to the official India call.",
+      "support": [
+        {
+          "type": "monthly_allowance",
+          "amount": "¥143,000/month for preparatory/non-regular research students; ¥144,000/month for regular Master's students",
+          "duration": "scholarship-period dependent",
+          "evidence": "MEXT 2027 guidelines"
+        },
+        {
+          "type": "tuition",
+          "amount": "Entrance examination, matriculation and tuition fees waived",
+          "duration": "standard scholarship period",
+          "evidence": "MEXT 2027 guidelines"
+        },
+        {
+          "type": "travel",
+          "amount": "Economy-class airline ticket to Japan and return ticket under stated conditions",
+          "duration": "arrival/return conditions apply",
+          "evidence": "MEXT 2027 guidelines"
+        }
+      ],
+      "support_boundary": "MEXT benefits are conditional on selection, placement, compliance and the published terms. The India mission controls the local submission deadline.",
+      "eligibility": "Generally under 35 and eligible for admission to a Japanese graduate school; the field should correspond to the applicant's prior study. Final-year BCA timing and degree-completion date must be checked against the specific intake.",
+      "visa_support": "Student-status process is part of the scholarship/university placement route; follow the embassy and host-university instructions.",
+      "fit_summary": "Highest long-term fit for your Japan thesis. Your cybersecurity/cloud background, C3A systems work, Zenodo publication, and existing UTRiP/Japan networking can become a coherent research narrative, but the proposal must be specific rather than a generic AI statement.",
+      "why_it_fits": [
+        "Full support is materially stronger than partial university awards",
+        "Research publication and technical projects support research potential",
+        "Japan is already a stated long-term destination",
+        "The route rewards a defined field-of-study and research plan"
+      ],
+      "prep": [
+        "Select one research problem at the intersection of AI systems, cybersecurity, reliable agents or data-driven analysis",
+        "Write a two-page research plan with question, method, data, evaluation and expected contribution",
+        "Identify 5-8 Japanese supervisors/programmes and map fit",
+        "Prepare transcripts, expected-graduation proof, passport, CV, recommendation letters and language proof",
+        "Use the Embassy of Japan in India page as the deadline authority",
+        "Build a 2028 calendar rather than treating the 2027 call as still open"
+      ],
+      "next_step": "If you did not already pass the 2027 Indian embassy screening, do not label yourself as a 2027 applicant. Build the 2028 pack from September 2026 and monitor the embassy page from April 2027.",
+      "effort_weeks": 24,
+      "competitiveness": "Very high",
+      "fit_components": {
+        "technical_fit": 9,
+        "eligibility_fit": 7,
+        "support_strength": 10,
+        "deadline_actionability": 6,
+        "language_fit": 6,
+        "route_realism": 8,
+        "country_risk": 2
+      },
+      "fit_score": 78,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "MEXT 2027 Research Student Guidelines",
+          "url": "https://www.mext.go.jp/content/20260420-mxt-kotokoku01-000049243_02.pdf",
+          "what_it_proves": "Eligibility, ¥143k–¥145k monthly allowance, tuition waiver, travel support, and official selection timeline."
+        },
+        {
+          "label": "Embassy of Japan in India — Research Students 2027",
+          "url": "https://www.in.emb-japan.go.jp/Education/Research_Student.html",
+          "what_it_proves": "India-specific official recruitment surface and application materials."
+        },
+        {
+          "label": "Study in Japan — MEXT",
+          "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships",
+          "what_it_proves": "Embassy and university recommendation routes."
+        }
+      ],
+      "excluded_note": "The old report's 2027 entry was treated as active without distinguishing the India application window from the later placement process. This version separates those states."
+    },
+    {
+      "id": "JP-02",
+      "country": "Japan",
+      "provider": "Okinawa Institute of Science and Technology",
+      "name": "OIST Research Internship — Spring 2027",
+      "type": "Funded research internship",
+      "status": "OPEN — DEADLINE 15 OCT 2026",
+      "status_code": "open",
+      "application_window": "Current official schedule lists the Spring 2027 round with a 15 October 2026 deadline.",
+      "deadline": "2026-10-15T23:59:00+09:00",
+      "start_or_period": "1 April 2027 to 30 September 2027; placement is 4–6 months.",
+      "support": [
+        {
+          "type": "daily_allowance",
+          "amount": "¥2,400 per working day",
+          "duration": "internship period",
+          "evidence": "OIST official programme material"
+        },
+        {
+          "type": "travel",
+          "amount": "One direct round-trip air ticket",
+          "duration": "placement travel",
+          "evidence": "OIST official programme description"
+        },
+        {
+          "type": "housing",
+          "amount": "Furnished accommodation on or off campus funded by OIST or the research unit",
+          "duration": "placement period",
+          "evidence": "OIST official programme description"
+        },
+        {
+          "type": "visa_admin",
+          "amount": "Certificate of Eligibility support for visa application",
+          "duration": "placement onboarding",
+          "evidence": "OIST official programme material"
+        }
+      ],
+      "support_boundary": "The application fee is ¥5,000 and is non-refundable. Insurance and eligibility conditions must be checked in the current application instructions.",
+      "eligibility": "Designed for undergraduate and Master's students in STEM; selection depends on academic background, host-lab fit, available funding and space.",
+      "visa_support": "OIST provides CoE/visa-administration support; this is not a guarantee of visa issuance.",
+      "fit_summary": "Best immediate Japan country-test opportunity. It combines research, a named host lab, housing, flight and a daily allowance. Your BCA, cloud/security work and Zenodo paper are useful, but you need a genuine computational/scientific research match rather than a business-automation pitch.",
+      "why_it_fits": [
+        "Concrete support package reduces relocation risk",
+        "4–6 months gives real lived evidence before a Master's decision",
+        "Published research improves credibility",
+        "English-first international research environment"
+      ],
+      "prep": [
+        "Review faculty/project availability for April–September 2027",
+        "Choose 2-3 computational or data-intensive labs",
+        "Write a lab-specific statement explaining your technical contribution",
+        "Prepare transcript, CV, recommendation letters and research evidence in English",
+        "Confirm whether your English-medium BCA removes the standard language-test requirement; otherwise prepare IELTS/TOEFL",
+        "Submit before 15 October 2026 and keep the ¥5,000 fee in the budget"
+      ],
+      "next_step": "Treat OIST as the first Japan application to complete. A strong lab match matters more than listing many unrelated skills.",
+      "effort_weeks": 7,
+      "competitiveness": "Very high",
+      "fit_components": {
+        "technical_fit": 9,
+        "eligibility_fit": 8,
+        "support_strength": 9,
+        "deadline_actionability": 10,
+        "language_fit": 9,
+        "route_realism": 8,
+        "country_risk": 1
+      },
+      "fit_score": 88,
+      "evidence_confidence": "VERY HIGH",
+      "sources": [
+        {
+          "label": "OIST application schedule",
+          "url": "https://www.oist.jp/admissions/research-internship/apply-research-internship",
+          "what_it_proves": "Spring 2027 deadline, internship period, application fee and application process."
+        },
+        {
+          "label": "OIST programme description",
+          "url": "https://www.oist.jp/admissions/research-internship/program-description",
+          "what_it_proves": "4–6 month placement, research-lab selection, airfare, funded furnished accommodation and administration support."
+        },
+        {
+          "label": "OIST research intern support material",
+          "url": "https://www.oist.jp/sites/default/files/2025-12/Research%20Intern%20Program.202512.pdf",
+          "what_it_proves": "¥2,400 working-day allowance, accommodation, travel, insurance and CoE support details."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "UAE-01",
+      "country": "UAE",
+      "provider": "Mohamed bin Zayed University of Artificial Intelligence",
+      "name": "MBZUAI M.Sc. — Funded Graduate Route",
+      "type": "AI Master's with conditional institutional/faculty funding",
+      "status": "OPENS 7 SEP 2026 — DEADLINE 15 DEC 2026",
+      "status_code": "opens_soon",
+      "application_window": "Portal opens 7 September 2026 at 08:00 GST; final deadline 15 December 2026 at 17:00 GST.",
+      "deadline": "2026-12-15T17:00:00+04:00",
+      "start_or_period": "Fall 2027; decisions by 31 March 2027 and offer response by 15 April 2027.",
+      "support": [
+        {
+          "type": "tuition",
+          "amount": "100% tuition stated on MBZUAI's study page for funded full-time graduate students",
+          "duration": "programme-dependent",
+          "evidence": "official study page"
+        },
+        {
+          "type": "monthly_allowance",
+          "amount": "Monthly allowance; current M.Sc. amount is not stated on the current admissions page",
+          "duration": "programme/funding dependent",
+          "evidence": "official study page and admissions page"
+        },
+        {
+          "type": "housing",
+          "amount": "On-campus accommodation stated for funded graduate students",
+          "duration": "funding dependent",
+          "evidence": "official study page"
+        },
+        {
+          "type": "health",
+          "amount": "Health insurance stated",
+          "duration": "funding dependent",
+          "evidence": "official study page"
+        },
+        {
+          "type": "visa",
+          "amount": "UAE residence visa stated",
+          "duration": "funding dependent",
+          "evidence": "official study page"
+        }
+      ],
+      "support_boundary": "Critical correction: the current admissions page says M.Sc. funding depends on a faculty-sponsored research/teaching assistantship or approved government scholarship. Fall 2027 M.Sc. costs are still being finalised. Do not treat the package as unconditional until the offer names funding.",
+      "eligibility": "STEM background and graduate admission requirements apply; the current page requires official degree/transcript or expected-graduation evidence, CV, and two referee recommendations for M.Sc. applicants. A screening exam and possible technical interview apply.",
+      "visa_support": "Residence visa is a published benefit for funded graduate students; confirm exact sponsorship in the offer.",
+      "fit_summary": "Excellent technical fit for AI systems, evaluation, cybersecurity-adjacent workflows and product operations. The main question is academic equivalency: confirm that the four-year BCA and mathematics/programming coursework satisfy the chosen M.Sc. programme.",
+      "why_it_fits": [
+        "AI-dedicated institution directly matches the AI/agent direction",
+        "Full-time graduate funding can cover multiple cost categories",
+        "Screening and technical interview reward demonstrable technical preparation",
+        "Your systems portfolio differentiates you from purely academic applicants"
+      ],
+      "prep": [
+        "Select one M.Sc. track such as NLP, computer vision, machine learning or robotics only after checking prerequisites",
+        "Prepare Python, data structures, probability, linear algebra and machine-learning screening topics",
+        "Build a two-page systems case study with measurable evaluation results",
+        "Prepare CV, official transcript/expected graduation letter, SOP and two strong references",
+        "Create the MBZUAI portal account when it opens on 7 September",
+        "Ask the admissions team in writing whether your BCA is accepted for the exact track and what funding condition applies"
+      ],
+      "next_step": "Start screening preparation now; submit only after confirming degree equivalency and the funding condition for the selected M.Sc.",
+      "effort_weeks": 16,
+      "competitiveness": "Very high",
+      "fit_components": {
+        "technical_fit": 10,
+        "eligibility_fit": 7,
+        "support_strength": 9,
+        "deadline_actionability": 9,
+        "language_fit": 10,
+        "route_realism": 7,
+        "country_risk": 3
+      },
+      "fit_score": 86,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "MBZUAI graduate admission process",
+          "url": "https://mbzuai.ac.ae/study/graduate-admission-process/",
+          "what_it_proves": "7 Sep opening, 15 Dec deadline, 31 Mar decision, application materials and conditional M.Sc. funding language."
+        },
+        {
+          "label": "MBZUAI study and scholarships page",
+          "url": "https://mbzuai.ac.ae/study/",
+          "what_it_proves": "Funded full-time graduate benefits including tuition, allowance, accommodation, health insurance and residence visa."
+        }
+      ],
+      "excluded_note": "The old report presented MBZUAI as automatically fully funded. The current admissions page is more conditional, so this entry is retained but explicitly downgraded from guaranteed to conditional."
+    },
+    {
+      "id": "UAE-02",
+      "country": "UAE",
+      "provider": "Khalifa University of Science and Technology",
+      "name": "M.Sc. Computer Science — International Scholarship",
+      "type": "University scholarship",
+      "status": "PROGRAM-SPECIFIC — VERIFY CURRENT INTAKE",
+      "status_code": "program_specific",
+      "application_window": "The university publishes postgraduate admissions and scholarship information, but a single 2027 deadline was not surfaced in the current evidence pass.",
+      "deadline": null,
+      "start_or_period": "Programme intake dependent",
+      "support": [
+        {
+          "type": "tuition",
+          "amount": "Full tuition fee waiver during the Master's period according to the current postgraduate scholarship page",
+          "duration": "typically one-year Master's period; confirm programme terms",
+          "evidence": "official postgraduate scholarship page"
+        },
+        {
+          "type": "visa_fee",
+          "amount": "Visa application fee coverage stated in the scholarship FAQ",
+          "duration": "international student onboarding",
+          "evidence": "official FAQ"
+        },
+        {
+          "type": "materials",
+          "amount": "Textbooks provided according to the FAQ",
+          "duration": "programme dependent",
+          "evidence": "official FAQ"
+        }
+      ],
+      "support_boundary": "The current official page says no stipend is provided during the Master's stage. Living costs remain the student's responsibility.",
+      "eligibility": "Relevant Bachelor's degree and programme-specific admissions requirements; exact international scholarship tier is assessed through admission.",
+      "visa_support": "Visa fee coverage is stated; exact residence processing must be confirmed with admissions.",
+      "fit_summary": "Moderate fit as a lower-risk UAE backup. Computer Science includes AI and cybersecurity-adjacent career outcomes, but the absence of a Master's stipend makes it financially weaker than MBZUAI.",
+      "why_it_fits": [
+        "Direct Computer Science route",
+        "Computing and cybersecurity career alignment",
+        "English-medium environment",
+        "Tuition support removes one major cost bucket"
+      ],
+      "prep": [
+        "Check current M.Sc. CS intake and international scholarship tier",
+        "Prepare degree-equivalency documents, transcript, CV and SOP",
+        "Ask for the full cost-of-living and visa-fee package before applying",
+        "Do not commit without a living-cost funding plan"
+      ],
+      "next_step": "Keep as a backup only; request written confirmation of the current scholarship tier and intake date.",
+      "effort_weeks": 8,
+      "competitiveness": "Medium to high",
+      "fit_components": {
+        "technical_fit": 8,
+        "eligibility_fit": 6,
+        "support_strength": 5,
+        "deadline_actionability": 5,
+        "language_fit": 10,
+        "route_realism": 6,
+        "country_risk": 3
+      },
+      "fit_score": 66,
+      "evidence_confidence": "MEDIUM-HIGH",
+      "sources": [
+        {
+          "label": "Khalifa international graduate scholarship",
+          "url": "https://www.ku.ac.ae/scholarship/graduate-research-teaching-scholarship-for-international-students",
+          "what_it_proves": "International Master's scholarship route and admission-linked assessment."
+        },
+        {
+          "label": "Khalifa postgraduate scholarships",
+          "url": "https://www.ku.ac.ae/scholarships-postgraduate",
+          "what_it_proves": "Current distinction between Master's tuition waiver and no Master's stipend."
+        },
+        {
+          "label": "Khalifa scholarship FAQ",
+          "url": "https://www.ku.ac.ae/scholarship-faqs",
+          "what_it_proves": "Visa-fee and textbook support information."
+        },
+        {
+          "label": "M.Sc. Computer Science",
+          "url": "https://www.ku.ac.ae/academics/graduate-programs/master-of-science-in-computer-science",
+          "what_it_proves": "Programme alignment with AI, data analysis and cybersecurity-related career outcomes."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "DE-01",
+      "country": "Germany",
+      "provider": "DAAD",
+      "name": "Study Scholarships — Master's Studies for All Academic Disciplines",
+      "type": "Government-funded Master's scholarship",
+      "status": "OPEN — DEADLINE 2 NOV 2026",
+      "status_code": "open",
+      "application_window": "Current DAAD database record shows a 2 November 2026 application deadline, selection in February–March 2027 and funding from October 2027.",
+      "deadline": "2026-11-02T23:59:00+01:00",
+      "start_or_period": "Funding usually begins 1 October 2027; support can run 10–24 months depending on programme length.",
+      "support": [
+        {
+          "type": "monthly_allowance",
+          "amount": "€992/month",
+          "duration": "10–24 months",
+          "evidence": "DAAD official database"
+        },
+        {
+          "type": "insurance",
+          "amount": "Health, accident and personal-liability insurance payments",
+          "duration": "scholarship period",
+          "evidence": "DAAD official database"
+        },
+        {
+          "type": "travel",
+          "amount": "Travel allowance upon application",
+          "duration": "programme conditions",
+          "evidence": "DAAD official database"
+        },
+        {
+          "type": "housing",
+          "amount": "Monthly rent subsidy may be available",
+          "duration": "programme conditions",
+          "evidence": "DAAD official database"
+        },
+        {
+          "type": "language",
+          "amount": "Language-course and test support under stated conditions",
+          "duration": "programme conditions",
+          "evidence": "DAAD official database"
+        }
+      ],
+      "support_boundary": "DAAD explicitly states that tuition fees are not covered. Check whether the selected German programme charges tuition and budget the gap.",
+      "eligibility": "Graduates with a first academic degree; the selected programme, country filter, language proof and admission requirements must all match. India-specific eligibility should be confirmed in the DAAD database record before submission.",
+      "visa_support": "No blanket visa sponsorship is stated in this scholarship record; the award can support proof of funds, but immigration requirements remain separate.",
+      "fit_summary": "Strong research and systems fit, especially for English-taught AI, cybersecurity, software systems or data programmes. Your strongest differentiators are the upward academic trend, C3A product systems work and published research.",
+      "why_it_fits": [
+        "Meaningful monthly support plus travel/insurance/rent mechanisms",
+        "Germany has a deep research and applied-engineering ecosystem",
+        "Your technical and QA evidence supports the selection criteria",
+        "The 2 November deadline is actionable from today"
+      ],
+      "prep": [
+        "Select an English-taught Master's whose curriculum matches your prior degree",
+        "Confirm India and programme eligibility in the live DAAD database",
+        "Prepare language proof accepted by the exact course",
+        "Write a programme-specific study plan and motivation letter",
+        "Collect complete transcripts, CV, references, passport and admission evidence",
+        "Create a tuition/living-gap budget because tuition is not covered"
+      ],
+      "next_step": "Use DAAD as the main Germany application. Finish programme selection and language-proof planning before October; do not wait until the 2 November deadline.",
+      "effort_weeks": 10,
+      "competitiveness": "High",
+      "fit_components": {
+        "technical_fit": 8,
+        "eligibility_fit": 7,
+        "support_strength": 7,
+        "deadline_actionability": 9,
+        "language_fit": 8,
+        "route_realism": 7,
+        "country_risk": 2
+      },
+      "fit_score": 77,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "DAAD scholarship database record",
+          "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database?detail=50026200",
+          "what_it_proves": "2 Nov 2026 deadline, 2027 funding start, €992/month, travel/insurance/rent/language support and no tuition coverage."
+        },
+        {
+          "label": "DAAD programme overview",
+          "url": "https://www.daad.de/en/information-services-for-higher-education-institutions/further-information-on-daad-programmes/epos",
+          "what_it_proves": "EPOS is a separate development-related programme and should not be conflated with the all-disciplines Master's call."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "DE-02",
+      "country": "Germany",
+      "provider": "DAAD plus selected German universities",
+      "name": "Development-Related Postgraduate Courses (EPOS)",
+      "type": "Course-specific development scholarship",
+      "status": "WATCHLIST — COURSE-SPECIFIC DEADLINES",
+      "status_code": "watchlist",
+      "application_window": "Each participating course sets its own deadline; the current EPOS course list and call must be checked individually.",
+      "deadline": null,
+      "start_or_period": "Course-specific; usually next academic-year intake",
+      "support": [
+        {
+          "type": "scholarship",
+          "amount": "Course-specific scholarship package",
+          "duration": "course-specific",
+          "evidence": "DAAD EPOS official overview"
+        }
+      ],
+      "support_boundary": "Do not assume the same amount or conditions across courses. Many EPOS courses expect relevant professional experience; this must be checked against each course and may make the route weak for a final-year applicant.",
+      "eligibility": "Applicants from developing countries for selected development-related postgraduate courses; course-specific academic and professional requirements apply.",
+      "visa_support": "Not a blanket visa sponsorship statement.",
+      "fit_summary": "Potentially useful only if a participating course accepts your degree and experience profile. It is not a first-wave application because the course and experience gate are unresolved.",
+      "why_it_fits": [
+        "Cybersecurity, digital transformation and development technology can intersect with selected courses",
+        "Scholarship route exists for eligible developing-country applicants"
+      ],
+      "prep": [
+        "Search the current EPOS course list",
+        "Read the exact course's professional-experience rule",
+        "Map C3A systems work to the course's development impact theme",
+        "Do not spend application time until the experience requirement is confirmed"
+      ],
+      "next_step": "Keep as a Germany backup; do not rank above the general DAAD Master's scholarship until a course-specific eligibility check passes.",
+      "effort_weeks": 12,
+      "competitiveness": "High and course-dependent",
+      "fit_components": {
+        "technical_fit": 7,
+        "eligibility_fit": 3,
+        "support_strength": 8,
+        "deadline_actionability": 4,
+        "language_fit": 7,
+        "route_realism": 5,
+        "country_risk": 2
+      },
+      "fit_score": 58,
+      "evidence_confidence": "MEDIUM-HIGH",
+      "sources": [
+        {
+          "label": "DAAD EPOS programme",
+          "url": "https://www.daad.de/en/information-services-for-higher-education-institutions/further-information-on-daad-programmes/epos",
+          "what_it_proves": "EPOS purpose, developing-country target and selected-course structure."
+        },
+        {
+          "label": "DAAD EPOS database",
+          "url": "https://www2.daad.de/deutschland/stipendium/datenbank/en/21148-scholarship-database/?detail=50076777",
+          "what_it_proves": "Official course-specific scholarship database entry."
+        }
+      ],
+      "excluded_note": "Kept as a conditional watchlist item rather than an active recommendation because course-specific experience and deadline requirements are not yet matched."
+    },
+    {
+      "id": "NL-01",
+      "country": "Netherlands",
+      "provider": "University of Twente",
+      "name": "University of Twente Scholarship (UTS) — September 2027",
+      "type": "University Master's scholarship",
+      "status": "OPENS 15 OCT 2026 — DEADLINE 1 APR 2027",
+      "status_code": "opens_soon",
+      "application_window": "Application form opens 15 October 2026 at 09:00 CET and closes 1 April 2027 at 16:00 CET for programmes starting September 2027.",
+      "deadline": "2027-04-01T16:00:00+02:00",
+      "start_or_period": "September 2027 Master's intake; award is for one year.",
+      "support": [
+        {
+          "type": "scholarship",
+          "amount": "€3,000–€22,000 for one year",
+          "duration": "one year",
+          "evidence": "University of Twente official page"
+        }
+      ],
+      "support_boundary": "This is partial funding and may not cover the full non-EU tuition/living bill. Two-year applicants must plan for the second year separately.",
+      "eligibility": "Excellent non-EU/EEA applicants applying for an eligible Master's programme; admission and scholarship applications are separate but linked.",
+      "visa_support": "No separate visa/relocation support was evidenced on the scholarship page.",
+      "fit_summary": "Good technical and English-language fit for AI, software, data and cybersecurity-related Master's programmes, but financial feasibility depends on the award amount and the exact programme tuition.",
+      "why_it_fits": [
+        "Clear 2027 dates from October 2026",
+        "Non-EU applicants explicitly included",
+        "University research and technology environment matches the profile",
+        "Award can reduce, but not eliminate, the cost gap"
+      ],
+      "prep": [
+        "Choose an eligible Master's and verify degree equivalency",
+        "Build a high-quality motivation letter and academic CV",
+        "Prepare English test and complete admission documents before the scholarship deadline",
+        "Calculate the remaining tuition/living gap for €3k, €10k and €22k award scenarios",
+        "Apply from 15 October rather than waiting for April"
+      ],
+      "next_step": "Use Twente as the Netherlands first-wave partial-funding route. Do not call it fully funded in applications or planning.",
+      "effort_weeks": 20,
+      "competitiveness": "High",
+      "fit_components": {
+        "technical_fit": 8,
+        "eligibility_fit": 7,
+        "support_strength": 5,
+        "deadline_actionability": 8,
+        "language_fit": 9,
+        "route_realism": 7,
+        "country_risk": 2
+      },
+      "fit_score": 74,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "University of Twente Scholarship",
+          "url": "https://www.utwente.nl/en/education/scholarship-finder/university-of-twente-scholarship/",
+          "what_it_proves": "Non-EU Master's eligibility, €3k–€22k amount and 15 Oct 2026–1 Apr 2027 application window."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "NL-02",
+      "country": "Netherlands",
+      "provider": "Radboud University",
+      "name": "Radboud Scholarship Programme — Next Cycle Watchlist",
+      "type": "University scholarship",
+      "status": "2026/27 CLOSED — 2027/28 DATE NOT YET PUBLISHED",
+      "status_code": "next_cycle",
+      "application_window": "The current official page states that the 2026/27 deadline passed on 31 January 2026. Monitor the same page for the next cycle.",
+      "deadline": "2027-01-31",
+      "start_or_period": "Next cycle expected to align with a future September intake; exact date must be confirmed when published.",
+      "support": [
+        {
+          "type": "tuition_reduction",
+          "amount": "Tuition reduced to €2,694 in the 2026/27 example instead of approximately €18,000 depending on programme",
+          "duration": "programme-specific",
+          "evidence": "Radboud official page"
+        },
+        {
+          "type": "visa",
+          "amount": "Visa and residence-permit costs covered",
+          "duration": "programme-specific",
+          "evidence": "Radboud official page"
+        },
+        {
+          "type": "insurance",
+          "amount": "Health and liability insurance covered",
+          "duration": "programme-specific",
+          "evidence": "Radboud official page"
+        }
+      ],
+      "support_boundary": "Living and study costs are not covered. The scholarship is highly selective and admission does not imply scholarship selection.",
+      "eligibility": "Non-EEA applicants with outstanding results applying to an eligible English-taught Master's programme.",
+      "visa_support": "Visa/residence costs are explicitly included in the published scholarship benefits.",
+      "fit_summary": "Strong academic and technical fit for Computing/AI routes, but it is not an active 2026 opportunity and remains a partial-funding plan.",
+      "why_it_fits": [
+        "Computing/AI programme alignment is plausible",
+        "Visa and insurance support reduces administrative friction",
+        "Your published research and extracurricular leadership help the selection narrative"
+      ],
+      "prep": [
+        "Monitor the official page for the 2027/28 call",
+        "Prepare a sharp motivation letter with measurable C3A and research evidence",
+        "Identify eligible English-taught Computing/AI programmes",
+        "Plan for the remaining living-cost and tuition gap"
+      ],
+      "next_step": "Keep in the next-cycle tracker; do not spend current deadline effort until the 2027/28 call is live.",
+      "effort_weeks": 16,
+      "competitiveness": "Very high; maximum 33 awards in the published 2026/27 cycle",
+      "fit_components": {
+        "technical_fit": 8,
+        "eligibility_fit": 7,
+        "support_strength": 6,
+        "deadline_actionability": 5,
+        "language_fit": 9,
+        "route_realism": 7,
+        "country_risk": 2
+      },
+      "fit_score": 71,
+      "evidence_confidence": "HIGH for 2026/27; MEDIUM for next-cycle date",
+      "sources": [
+        {
+          "label": "Radboud Scholarship Programme",
+          "url": "https://www.ru.nl/en/education/scholarships/radboud-scholarship-programme",
+          "what_it_proves": "Partial tuition, visa/residence/insurance support, selection limits and passed 2026/27 deadline."
+        },
+        {
+          "label": "IND recognised sponsor route",
+          "url": "https://ind.nl/en/about-us/background-articles/national-highly-skilled-migrant-scheme",
+          "what_it_proves": "Employer sponsorship mechanics for a later Netherlands work route; not scholarship proof."
+        }
+      ],
+      "excluded_note": "Retained as a transparent next-cycle watchlist item, not an active opportunity."
+    },
+    {
+      "id": "SG-01",
+      "country": "Singapore",
+      "provider": "National University of Singapore",
+      "name": "NUS Research Scholarship — Master's by Research",
+      "type": "University research scholarship",
+      "status": "FACULTY-SPECIFIC — RESEARCH ROUTE",
+      "status_code": "faculty_specific",
+      "application_window": "There is no single university-wide deadline on the scholarship page; each faculty/programme publishes its admissions window. Incoming applicants should indicate scholarship interest in the admission application.",
+      "deadline": null,
+      "start_or_period": "Typically up to two years for Master's research students; intake depends on faculty.",
+      "support": [
+        {
+          "type": "monthly_stipend",
+          "amount": "S$3,000/month for international Master's research students",
+          "duration": "typically two years",
+          "evidence": "NUS Graduate School official page"
+        },
+        {
+          "type": "tuition",
+          "amount": "Full waiver of tuition fees",
+          "duration": "scholarship period",
+          "evidence": "NUS Graduate School official page"
+        }
+      ],
+      "support_boundary": "International scholars must fulfil the Graduate Assistantship Programme requirements. This is for research-based graduate study, not the expensive coursework MComp route.",
+      "eligibility": "International Master's by Research applicants with strong academic potential and research interest; GPA, research statement, references and programme-specific requirements apply.",
+      "visa_support": "Student Pass information is handled through the admission route; no employment sponsorship is implied.",
+      "fit_summary": "Strong fit if you convert C3A systems work and Zenodo research into a serious research question. Weak fit if you want a purely coursework Master's or avoid supervisor-led research.",
+      "why_it_fits": [
+        "Full tuition plus S$3,000/month is a strong support package",
+        "English-first environment",
+        "Research publication and systems evaluation work strengthen the application",
+        "NUS offers computing/security research depth"
+      ],
+      "prep": [
+        "Choose a research Master's programme and potential supervisor",
+        "Write a focused research proposal, not a generic AI career essay",
+        "Prepare transcripts, CV, SOP, references and English test if required",
+        "Ask the faculty for the exact intake deadline and scholarship competition date",
+        "Keep coursework MComp separate because its page requires proof of funds and does not evidence this scholarship"
+      ],
+      "next_step": "Contact the relevant NUS research faculty through the official admissions page, then build the application around supervisor fit.",
+      "effort_weeks": 18,
+      "competitiveness": "Very high",
+      "fit_components": {
+        "technical_fit": 9,
+        "eligibility_fit": 6,
+        "support_strength": 9,
+        "deadline_actionability": 6,
+        "language_fit": 10,
+        "route_realism": 6,
+        "country_risk": 2
+      },
+      "fit_score": 77,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "NUS Research Scholarship",
+          "url": "https://nusgs.nus.edu.sg/scholarships/nus-research-scholarship/",
+          "what_it_proves": "Master's research eligibility, S$3,000/month international stipend, full tuition waiver and two-year maximum."
+        },
+        {
+          "label": "NUS research programme applications",
+          "url": "https://cde.nus.edu.sg/graduate/graduate-programmes-by-research/how-to-apply",
+          "what_it_proves": "Faculty-specific intake deadlines and research application route."
+        },
+        {
+          "label": "NUS MComp application",
+          "url": "https://www.comp.nus.edu.sg/programmes/pg/mcs/application",
+          "what_it_proves": "Coursework MComp is a separate route with an application fee and funding proof requirement; do not conflate it with the research scholarship."
+        }
+      ],
+      "excluded_note": "NUS Amgen and coursework-MComp entries from the old report were not promoted because the current pages did not prove the required support package."
+    },
+    {
+      "id": "SG-02",
+      "country": "Singapore",
+      "provider": "Nanyang Technological University",
+      "name": "NTU Research Scholarship — August 2027 Intake",
+      "type": "University research scholarship",
+      "status": "OPENS 1 OCT 2026 — DEADLINE 31 JAN 2027",
+      "status_code": "opens_soon",
+      "application_window": "NTU's research admission guide lists 1 October 2026–31 January 2027 for the August 2027 intake; candidates should indicate scholarship interest in the admission application.",
+      "deadline": "2027-01-31T23:59:00+08:00",
+      "start_or_period": "August 2027; Master's scholarship maximum is two years, subject to school and funding conditions.",
+      "support": [
+        {
+          "type": "monthly_stipend",
+          "amount": "S$2,900/month for international Master's students under the revised 2026 stipend table",
+          "duration": "scholarship period",
+          "evidence": "NTU official scholarship page"
+        },
+        {
+          "type": "tuition",
+          "amount": "Annual tuition fee covered under the award terms",
+          "duration": "scholarship period",
+          "evidence": "NTU official scholarship page"
+        }
+      ],
+      "support_boundary": "The scholarship is initially awarded for one year and renewable subject to progress, school recommendation and research funding. It is a research programme, not a guaranteed coursework award.",
+      "eligibility": "Local or international full-time graduate research applicants; exact school requirements, supervisor availability and English/GRE/GATE rules vary.",
+      "visa_support": "Student Pass is handled with the admission route; no work-pass sponsorship is implied.",
+      "fit_summary": "One of the best English-first supported routes in the seven-country set. It aligns with your AI systems, cloud, security and research profile if you are willing to produce a rigorous proposal and work with a supervisor.",
+      "why_it_fits": [
+        "Clear 2027 application window",
+        "Tuition plus monthly support",
+        "English-first environment",
+        "Strong applied AI, systems and engineering ecosystem"
+      ],
+      "prep": [
+        "Select an NTU school and research area before October",
+        "Identify supervisors whose work matches agent reliability, cybersecurity, cloud systems or AI evaluation",
+        "Prepare research proposal, transcripts, CV, references and English proof",
+        "Check whether GRE/GATE is required for the exact school; NTU pages state Indian applicants may use GATE in some programmes",
+        "Submit early because scholarship places can be allocated during review"
+      ],
+      "next_step": "Build the NTU research shortlist in September and submit in the first month of the portal window if the supervisor fit is real.",
+      "effort_weeks": 20,
+      "competitiveness": "Very high",
+      "fit_components": {
+        "technical_fit": 9,
+        "eligibility_fit": 7,
+        "support_strength": 9,
+        "deadline_actionability": 9,
+        "language_fit": 10,
+        "route_realism": 7,
+        "country_risk": 2
+      },
+      "fit_score": 84,
+      "evidence_confidence": "HIGH",
+      "sources": [
+        {
+          "label": "NTU Research Scholarship",
+          "url": "https://www.ntu.edu.sg/admissions/graduate/financialmatters/scholarships/rss",
+          "what_it_proves": "Research scholarship eligibility, international Master's stipend table and tuition coverage."
+        },
+        {
+          "label": "NTU Research Admission Guide",
+          "url": "https://www.ntu.edu.sg/admissions/graduate/radmissionguide",
+          "what_it_proves": "August 2027 application window of 1 Oct 2026–31 Jan 2027."
+        }
+      ],
+      "excluded_note": null
+    },
+    {
+      "id": "RU-01",
+      "country": "Russia",
+      "provider": "Association of Global Universities / Russian Ministry of Science and Higher Education",
+      "name": "Open Doors Russian Scholarship Project — 2026 Master's Track",
+      "type": "Government-quota scholarship competition",
+      "status": "OPEN — REGISTRATION/PORTFOLIO DEADLINE 1 NOV 2026",
+      "status_code": "open",
+      "application_window": "Official project calendar: registration began 20 August 2026; account and portfolio edits close 1 November 2026; second-stage registration closes 16 November 2026.",
+      "deadline": "2026-11-01T23:59:00+03:00",
+      "start_or_period": "2027 study placement process; final university and programme steps follow the competition.",
+      "support": [
+        {
+          "type": "tuition",
+          "amount": "Tuition-free admission within the Russian government quota for winners and runners-up",
+          "duration": "degree duration",
+          "evidence": "official Open Doors site/news"
+        },
+        {
+          "type": "monthly_stipend",
+          "amount": "Official site states the scholarship provides a monthly stipend; amount is not stated on the current public page",
+          "duration": "degree conditions",
+          "evidence": "official Open Doors site"
+        }
+      ],
+      "support_boundary": "The official site says travel, accommodation, insurance, food and personal costs remain the student's responsibility. Payment, travel and mobility risk must be assessed separately.",
+      "eligibility": "International students and stateless persons can participate; Master's subject areas include Computer and Data Science and Applied Mathematics and AI.",
+      "visa_support": "No universal travel/visa package is promised on the current official page; host-university procedures apply.",
+      "fit_summary": "Technically strong and immediately actionable, but strategic risk is high. It can provide a funded academic entry, yet it is a poor default if your long-term objective is unrestricted global mobility.",
+      "why_it_fits": [
+        "Computer/Data Science and AI tracks match your technical profile",
+        "Online competition avoids an initial relocation cost",
+        "Tuition plus monthly stipend passes the support gate",
+        "Portfolio and research evidence can be used in the first stage"
+      ],
+      "prep": [
+        "Register on the official Open Doors platform",
+        "Choose Computer and Data Science or Applied Mathematics and AI",
+        "Build a portfolio of coursework, Zenodo research, Cyber Shell and systems work",
+        "Study the official subject-area test topics",
+        "Write a concise motivation statement",
+        "Before accepting, check insurance, payments, travel advisories, sanctions and future degree portability"
+      ],
+      "next_step": "If you use this route, treat it as a high-risk funded fallback, not the default country plan. Complete the portfolio before 1 November.",
+      "effort_weeks": 8,
+      "competitiveness": "High; large international pool",
+      "fit_components": {
+        "technical_fit": 9,
+        "eligibility_fit": 8,
+        "support_strength": 7,
+        "deadline_actionability": 10,
+        "language_fit": 7,
+        "route_realism": 7,
+        "country_risk": 8
+      },
+      "fit_score": 79,
+      "evidence_confidence": "HIGH for support and dates; MEDIUM for exact stipend amount",
+      "sources": [
+        {
+          "label": "Open Doors official home and calendar",
+          "url": "https://od.globaluni.ru/",
+          "what_it_proves": "Current 2026 calendar, tuition-free route, subject areas and support boundary."
+        },
+        {
+          "label": "Open Doors 2026 announcement",
+          "url": "https://od.globaluni.ru/news/341",
+          "what_it_proves": "2026 competition scope, international eligibility and Master's track."
+        },
+        {
+          "label": "Open Doors official rules",
+          "url": "https://od.globaluni.ru/rules",
+          "what_it_proves": "Competition mechanics; older calendar details are not used when they conflict with the current home page."
+        }
+      ],
+      "excluded_note": "A university mirror reported a different registration start date. The project home/calendar is treated as authoritative and the discrepancy is disclosed."
+    },
+    {
+      "id": "RU-02",
+      "country": "Russia",
+      "provider": "Skolkovo Institute of Science and Technology",
+      "name": "Skoltech Master's Scholarship — 2027 Pre-Open",
+      "type": "Institutional graduate scholarship",
+      "status": "2026 CLOSED — 2027 APPLICATION TO REOPEN IN AUTUMN 2026",
+      "status_code": "next_cycle",
+      "application_window": "The official admissions page says the current Master's/PhD application period is closed and applicants for the 2027 start should check back in autumn.",
+      "deadline": null,
+      "start_or_period": "2027 start; exact application dates not yet published on the current official page.",
+      "support": [
+        {
+          "type": "monthly_scholarship",
+          "amount": "40,000 RUB/month for Master's students; higher support may be available to top-scoring applicants depending on the cycle",
+          "duration": "programme conditions",
+          "evidence": "Skoltech official admissions page"
+        },
+        {
+          "type": "insurance",
+          "amount": "International students are covered by insurance according to the official admissions information",
+          "duration": "programme conditions",
+          "evidence": "Skoltech official admissions page"
+        }
+      ],
+      "support_boundary": "The 2027 page is not yet live; tuition, housing, travel and exact scholarship terms must be confirmed when the new call opens.",
+      "eligibility": "International Master's applicants with programme-specific academic and selection requirements; English is the language of instruction and communication.",
+      "visa_support": "No universal visa/relocation package was evidenced in the current source.",
+      "fit_summary": "Good technical and research fit, particularly for data science, AI and systems programmes, but it is a watchlist item until the 2027 call confirms dates and support.",
+      "why_it_fits": [
+        "English-first research environment",
+        "AI/data/systems orientation",
+        "Industrial immersion and startup exposure align with the operator profile",
+        "Monthly support passes the minimum support gate"
+      ],
+      "prep": [
+        "Subscribe to the 2027 admissions notification",
+        "Prepare English CV, transcripts, recommendations and research statement",
+        "Review current MSc tracks and selection format",
+        "Keep a risk-adjusted Russia decision note that includes travel, payments and mobility constraints",
+        "Re-check tuition and housing terms when the call opens"
+      ],
+      "next_step": "Do not submit based on third-party 'fully funded' summaries. Re-open the official page in autumn 2026 and update the support record.",
+      "effort_weeks": 12,
+      "competitiveness": "High",
+      "fit_components": {
+        "technical_fit": 9,
+        "eligibility_fit": 7,
+        "support_strength": 6,
+        "deadline_actionability": 5,
+        "language_fit": 9,
+        "route_realism": 6,
+        "country_risk": 8
+      },
+      "fit_score": 69,
+      "evidence_confidence": "MEDIUM-HIGH",
+      "sources": [
+        {
+          "label": "Skoltech admissions",
+          "url": "https://www.skoltech.ru/en/admissions/",
+          "what_it_proves": "2027 pre-open status, Master's monthly scholarship information, English environment and international insurance signal."
+        },
+        {
+          "label": "Skoltech education",
+          "url": "https://www.skoltech.ru/en/education",
+          "what_it_proves": "Current programme and education surface to re-check when the 2027 call opens."
+        }
+      ],
+      "excluded_note": "Retained as a next-cycle supported watchlist item; no unverified 2027 tuition or travel promise is included."
+    }
+  ],
+  "timeline": [
+    {
+      "date": "2026-08-28",
+      "label": "BASELINE DAY",
+      "country": "All",
+      "action": "Create the universal dossier: CV, portfolio, transcript, expected-graduation proof, passport, references, research evidence and English-test plan.",
+      "priority": "P0",
+      "confidence": "operational"
+    },
+    {
+      "date": "2026-09-01",
+      "label": "ESTONIA DEADLINE",
+      "country": "Estonia",
+      "action": "Apply only if an Estonian admission confirmation already exists; otherwise move to next cycle.",
+      "priority": "P0",
+      "confidence": "official guideline"
+    },
+    {
+      "date": "2026-09-07",
+      "label": "MBZUAI OPENS",
+      "country": "UAE",
+      "action": "Create application, confirm BCA equivalency and begin screening-exam preparation.",
+      "priority": "P1",
+      "confidence": "official admissions page"
+    },
+    {
+      "date": "2026-10-01",
+      "label": "NTU OPENS",
+      "country": "Singapore",
+      "action": "Begin August 2027 research application; supervisor and proposal should already be prepared.",
+      "priority": "P1",
+      "confidence": "official admission guide"
+    },
+    {
+      "date": "2026-10-15",
+      "label": "OIST + TWENTE",
+      "country": "Japan / Netherlands",
+      "action": "OIST Spring 2027 deadline is 15 Oct; Twente UTS portal opens 15 Oct. Submit OIST first if lab fit is ready.",
+      "priority": "P0",
+      "confidence": "official pages"
+    },
+    {
+      "date": "2026-11-01",
+      "label": "OPEN DOORS PORTFOLIO FREEZE",
+      "country": "Russia",
+      "action": "Finish account and portfolio edits for the Master's competition.",
+      "priority": "P1",
+      "confidence": "official project calendar"
+    },
+    {
+      "date": "2026-11-02",
+      "label": "DAAD DEADLINE",
+      "country": "Germany",
+      "action": "Submit the all-disciplines Master's scholarship application after course and language-proof checks.",
+      "priority": "P0",
+      "confidence": "official DAAD record"
+    },
+    {
+      "date": "2026-11-16",
+      "label": "OPEN DOORS STAGE 2",
+      "country": "Russia",
+      "action": "Complete second-stage registration if advanced.",
+      "priority": "P1",
+      "confidence": "official project calendar"
+    },
+    {
+      "date": "2026-12-15",
+      "label": "MBZUAI FINAL DEADLINE",
+      "country": "UAE",
+      "action": "Submit complete M.Sc. application and confirm the funding condition.",
+      "priority": "P1",
+      "confidence": "official admissions page"
+    },
+    {
+      "date": "2027-01-31",
+      "label": "NTU DEADLINE",
+      "country": "Singapore",
+      "action": "Complete the August 2027 research-scholarship application.",
+      "priority": "P1",
+      "confidence": "official admission guide"
+    },
+    {
+      "date": "2027-04-01",
+      "label": "TWENTE DEADLINE",
+      "country": "Netherlands",
+      "action": "Submit UTS and programme application; run the tuition/living-gap scenarios before accepting.",
+      "priority": "P2",
+      "confidence": "official UTS page"
+    },
+    {
+      "date": "2027-04-15",
+      "label": "MEXT WATCH WINDOW",
+      "country": "Japan",
+      "action": "Begin monitoring the Embassy of Japan in India for the 2028 Research Student call. Date is an expected seasonal window, not a published deadline.",
+      "priority": "P1",
+      "confidence": "seasonal estimate; verify"
+    }
+  ],
+  "universal_preparation": [
+    {
+      "phase": "Now → 7 Sep 2026",
+      "deliverables": [
+        "One-page AI Systems Operator CV",
+        "Two case studies: C3A/SARVAX systems work and QA/reliability work",
+        "Clean GitHub/portfolio links",
+        "Official transcripts and expected-graduation letter",
+        "Passport and document naming standard",
+        "Reference-request list"
+      ]
+    },
+    {
+      "phase": "Sep → Oct 2026",
+      "deliverables": [
+        "OIST lab-specific application",
+        "MBZUAI screening preparation",
+        "NTU supervisor shortlist and research proposal",
+        "DAAD programme shortlist and language proof",
+        "Open Doors Computer/Data Science portfolio"
+      ]
+    },
+    {
+      "phase": "Nov 2026 → Jan 2027",
+      "deliverables": [
+        "DAAD submission",
+        "MBZUAI complete application",
+        "Open Doors stage progress",
+        "NTU application submission",
+        "Financial-gap decision sheet for partial awards"
+      ]
+    },
+    {
+      "phase": "Feb → Apr 2027",
+      "deliverables": [
+        "Twente application and scholarship",
+        "MEXT 2028 research plan refresh",
+        "Decision matrix comparing funded offers by support, visa, language, cost and career mobility"
+      ]
+    }
+  ],
+  "country_preparation": {
+    "Estonia": [
+      "Admission first",
+      "English programme proof",
+      "€350 scholarship gap budget",
+      "Startup Estonia employer eligibility check"
+    ],
+    "Japan": [
+      "Research proposal",
+      "Supervisor/lab fit",
+      "Japanese basics in parallel",
+      "MEXT/OIST document precision",
+      "Role-specific visa and language confirmation"
+    ],
+    "UAE": [
+      "Math/programming screening",
+      "Four-year STEM equivalency",
+      "Two strong references",
+      "Funding-condition confirmation",
+      "SOP tied to an AI track"
+    ],
+    "Germany": [
+      "English-taught programme selection",
+      "DAAD language proof",
+      "Motivation letter and study plan",
+      "Tuition-gap check",
+      "Public-university fee verification"
+    ],
+    "Netherlands": [
+      "Apply before scholarship deadline",
+      "High academic presentation",
+      "English proof",
+      "Partial-award cashflow scenarios",
+      "IND route kept separate from study funding"
+    ],
+    "Singapore": [
+      "Research-only route selection",
+      "Supervisor outreach",
+      "Research proposal",
+      "English/GRE/GATE rule check",
+      "Student Pass versus Employment Pass distinction"
+    ],
+    "Russia": [
+      "Online competition portfolio",
+      "Subject-test preparation",
+      "Travel/payment/insurance risk review",
+      "No assumption of housing or airfare",
+      "Global mobility impact assessment"
+    ]
+  },
+  "apollo_cross_check": {
+    "purpose": "Organization discovery and employer identity cross-check only; not proof of funding, hiring or visa sponsorship.",
+    "account": "Composio Apollo new_apollo",
+    "organizations_checked": [
+      {
+        "name": "Sakana AI",
+        "domain": "sakana.ai",
+        "apollo_city": "Tokyo",
+        "apollo_country": "Japan",
+        "apollo_estimated_employees": 230,
+        "official_role_support": "Official careers evidence in prior packet states role-specific visa assistance; verify the exact live opening."
+      },
+      {
+        "name": "Algomatic",
+        "domain": "algomatic.jp",
+        "apollo_city": "Tokyo",
+        "apollo_country": "Japan",
+        "apollo_estimated_employees": 42,
+        "official_role_support": "No current sponsorship package evidenced in this pass; excluded from supported-opportunity shortlist."
+      },
+      {
+        "name": "Kotoba",
+        "domain": "kotoba.tech",
+        "apollo_city": "Chiyoda",
+        "apollo_country": "Japan",
+        "apollo_estimated_employees": 18,
+        "official_role_support": "No current sponsorship package evidenced in this pass; excluded from supported-opportunity shortlist."
+      },
+      {
+        "name": "LayerX",
+        "domain": "layerx.co.jp",
+        "apollo_city": "Chuo",
+        "apollo_country": "Japan",
+        "apollo_estimated_employees": 350,
+        "official_role_support": "No current sponsorship package evidenced in this pass; excluded from supported-opportunity shortlist."
+      },
+      {
+        "name": "MBZUAI",
+        "domain": "mbzuai.ac.ae",
+        "apollo_city": "Abu Dhabi",
+        "apollo_country": "United Arab Emirates",
+        "apollo_estimated_employees": 1100,
+        "official_role_support": "Academic institution identity cross-check; official admissions pages govern funding."
+      },
+      {
+        "name": "Aleph Alpha",
+        "domain": "aleph-alpha.com",
+        "apollo_city": "Heidelberg",
+        "apollo_country": "Germany",
+        "apollo_estimated_employees": 330,
+        "official_role_support": "Employer identity only; no supported role promoted without official sponsorship evidence."
+      },
+      {
+        "name": "ASML",
+        "domain": "asml.com",
+        "apollo_city": "Veldhoven",
+        "apollo_country": "Netherlands",
+        "apollo_estimated_employees": 44000,
+        "official_role_support": "Employer identity only; no supported role promoted without official sponsorship evidence."
+      },
+      {
+        "name": "NUS",
+        "domain": "nus.edu.sg",
+        "apollo_city": "Singapore",
+        "apollo_country": "Singapore",
+        "apollo_estimated_employees": 19000,
+        "official_role_support": "Academic institution identity cross-check; official scholarship page governs support."
+      },
+      {
+        "name": "NTU Singapore",
+        "domain": "ntu.edu.sg",
+        "apollo_city": "Singapore",
+        "apollo_country": "Singapore",
+        "apollo_estimated_employees": 12000,
+        "official_role_support": "Academic institution identity cross-check; official scholarship page governs support."
+      },
+      {
+        "name": "Yandex",
+        "domain": "yandex.com",
+        "apollo_city": "Moscow",
+        "apollo_country": "Russia",
+        "apollo_estimated_employees": 27000,
+        "official_role_support": "Employer identity only; no supported role promoted without official sponsorship evidence."
+      },
+      {
+        "name": "Skolkovo Institute of Science and Technology",
+        "domain": "skoltech.ru",
+        "apollo_city": "Moskva",
+        "apollo_country": "Russia",
+        "apollo_estimated_employees": 1500,
+        "official_role_support": "Academic institution identity cross-check; official admissions page governs support."
+      }
+    ],
+    "interpretation": "Apollo records were used to validate entity/domain identity and to identify employer watchlist candidates. Apollo estimates are not market share, offer probability, funding proof or visa sponsorship."
+  },
+  "excluded_items": [
+    {
+      "item": "Old 34-card fully-funded list",
+      "reason": "Multiple cards stated stipend not specified or had no official support evidence; removed from the qualifying list."
+    },
+    {
+      "item": "MBZUAI UGRIP/VUSREP/TII cards",
+      "reason": "The checked public pages did not prove the required stipend, housing, airfare or visa package for the listed cycle."
+    },
+    {
+      "item": "NUS Amgen card",
+      "reason": "Current source pass did not prove a support package; not promoted."
+    },
+    {
+      "item": "Generic Japan startup cards such as Algomatic and Kotoba",
+      "reason": "Apollo identity exists, but no current official sponsorship/relocation package was evidenced. They remain employer watchlist items, not supported opportunities."
+    },
+    {
+      "item": "Pactum AI Estonia claim",
+      "reason": "Apollo mapped pactum.ai to Mountain View, United States and the current pass did not validate an Estonia-based supported opportunity; removed from Estonia country claims."
+    },
+    {
+      "item": "Radboud 2026/27",
+      "reason": "Official deadline 31 January 2026 has passed; retained only as a next-cycle watchlist."
+    },
+    {
+      "item": "MEXT 2027 new India application",
+      "reason": "The later placement timeline remains active for shortlisted candidates, but a new applicant cannot be presented as having an open 2027 embassy window on 28 August 2026."
+    },
+    {
+      "item": "Skoltech 2027 exact dates",
+      "reason": "Official page says the cycle is closed and to check back in autumn; third-party dates were not used."
+    }
+  ],
+  "limitations": [
+    "Scholarship eligibility depends on the exact degree, university, nationality rule, academic equivalency and intake; fit scores do not replace an admissions decision.",
+    "Some 2027/28 cycles publish dates later. A seasonal estimate is explicitly labelled as an estimate.",
+    "Apollo organization data is third-party estimated data and was not used as proof of sponsorship.",
+    "No outbound emails, LinkedIn messages or applications were sent.",
+    "Native currency figures are shown without INR conversions to avoid stale exchange-rate assumptions."
+  ],
+  "source_reachability": {
+    "checked_at": "2026-08-28",
+    "unique_official_urls": 33,
+    "http_200": 31,
+    "access_limited": 1,
+    "timeouts": 1,
+    "access_limited_urls": [
+      "https://www.in.emb-japan.go.jp/Education/Research_Student.html"
+    ],
+    "timeout_urls": [
+      "https://taotlused.edu.ee/"
+    ],
+    "interpretation": "Reachability is an HTTP/Chromium check, not a claim that the underlying official programme is invalid. Access-limited sources remain linked and are not treated as independently fetched page body evidence."
+  }
+}

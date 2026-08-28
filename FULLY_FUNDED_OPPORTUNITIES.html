@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Evidence-filtered supported study, research, and work-authorisation routes across Estonia, Japan, UAE, Germany, the Netherlands, Singapore, and Russia.">
+  <title>Supported Opportunity Map — Seven Nations</title>
+  <style>
+    :root {
+      --ink:#000; --paper:#fff; --wash:#f5f5f7; --wash-2:#ebebef; --line:#d6d6db;
+      --line-dark:#8a8a92; --muted:#65656d; --muted-strong:#45454c; --blue:#0071e3;
+      --green:#1d7f47; --amber:#9a5b00; --red:#b42318; --font:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif;
+      --display:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",Arial,sans-serif;
+      --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+      --max:1360px; --radius:14px; --shadow:0 8px 24px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:hidden!important;max-width:100vw}
+    body{margin:0;max-width:100vw;overflow-x:hidden!important;background:var(--paper);color:var(--ink);font-family:var(--font);line-height:1.52;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-underline-offset:3px}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    :focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+    .progress{position:fixed;inset:0 0 auto;z-index:300;height:3px;background:var(--blue);transform:scaleX(0);transform-origin:left}
+    .topbar{position:sticky;top:0;z-index:200;min-height:52px;background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+    .topbar-inner{max-width:var(--max);min-height:52px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:12px;font-weight:800;letter-spacing:.09em;text-decoration:none;white-space:nowrap}.brand span{font-weight:400;color:var(--muted)}
+    .nav{display:flex;align-items:center;gap:20px;overflow-x:auto;scrollbar-width:none}.nav::-webkit-scrollbar{display:none}
+    .nav a{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--muted);text-decoration:none;white-space:nowrap;padding:17px 0 15px;border-bottom:2px solid transparent}.nav a:hover,.nav a.active{color:var(--ink);border-color:var(--ink)}
+    .nav-toggle{display:none;min-width:44px;min-height:44px;border:1px solid var(--line-dark);background:var(--paper);color:var(--ink);font-size:20px}
+    .container{max-width:var(--max);margin:0 auto;padding:0 40px}
+    .hero{padding:88px 0 72px;border-bottom:1px solid var(--line)}
+    .eyebrow,.kicker,.meta-label,.chip,.status,.support-label{font-family:var(--mono);font-size:10px;font-weight:700;line-height:1.25;letter-spacing:.12em;text-transform:uppercase}
+    .eyebrow{color:var(--muted);margin-bottom:18px}
+    h1,h2,h3,p{margin-top:0} h1,h2,h3{font-family:var(--display)}
+    h1{max-width:980px;margin-bottom:0;font-size:clamp(54px,8vw,112px);line-height:.91;letter-spacing:-.075em;font-weight:800} h1 em{font-style:normal;color:var(--muted)}
+    .lede{max-width:780px;margin:28px 0 0;color:#33333a;font-size:clamp(17px,2vw,22px);line-height:1.4}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:48px;align-items:end;margin-top:48px}
+    .decision{padding:25px;background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+    .decision .meta-label{color:#b7b7bf}.decision strong{display:block;margin-top:12px;font-size:23px;line-height:1.15;letter-spacing:-.025em}.decision p{margin:12px 0 0;color:#d7d7dc;font-size:14px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.button{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:0 16px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;font-size:12px;font-weight:750;transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease}.button:hover{transform:translateY(-2px);box-shadow:0 6px 14px rgba(0,0,0,.16)}.button.secondary{background:var(--paper);color:var(--ink)}
+    .kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:44px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.kpi{padding:18px 0;border-right:1px solid var(--line)}.kpi+.kpi{padding-left:18px}.kpi:last-child{border-right:0}.kpi strong{display:block;font-family:var(--display);font-size:34px;line-height:1;letter-spacing:-.06em}.kpi span{display:block;margin-top:7px;color:var(--muted);font-family:var(--mono);font-size:10px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase}
+    .section{padding:88px 0;border-bottom:1px solid var(--line);scroll-margin-top:72px}.section.soft{background:var(--wash)}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:34px}.kicker{color:var(--muted);margin-bottom:10px}h2{margin-bottom:0;font-size:clamp(32px,4vw,58px);line-height:.98;letter-spacing:-.06em}.section-intro{max-width:590px;margin:0;color:var(--muted-strong);font-size:15px}.note{color:var(--muted);font-size:12px}
+    .proof-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.proof-cell{min-height:180px;padding:22px;border-right:1px solid var(--ink)}.proof-cell:last-child{border-right:0}.proof-cell .num{font-family:var(--mono);color:var(--muted);font-size:11px}.proof-cell h3{margin:43px 0 8px;font-size:18px;letter-spacing:-.035em}.proof-cell p{margin:0;color:var(--muted-strong);font-size:13px}
+    .diagram-card{border:1px solid var(--ink);background:var(--paper);overflow:hidden}.diagram-head{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:17px 20px;border-bottom:1px solid var(--line)}.diagram-head strong{font-size:13px}.diagram-head span{font-family:var(--mono);font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em}.diagram-wrap{padding:24px;overflow-x:auto}.decision-svg{display:block;width:100%;min-width:920px;height:auto}.decision-svg .node{fill:#fff;stroke:#000;stroke-width:2}.decision-svg .node.dark{fill:#000}.decision-svg .edge{fill:none;stroke:#000;stroke-width:2;marker-end:url(#arrow)}.decision-svg .edge.dashed{stroke:#696970;stroke-dasharray:8 6}.decision-svg text{font-family:var(--font);fill:#000}.decision-svg .dark-text{fill:#fff}.decision-svg .small{font-family:var(--mono);font-size:10px;letter-spacing:1.1px;font-weight:700}.decision-svg .body{font-size:14px;font-weight:750}.decision-svg .sub{font-size:11px;fill:#5e5e66}.decision-svg .dark-sub{fill:#d3d3d8}.route-note{display:flex;flex-wrap:wrap;gap:16px;padding:0 24px 22px;color:var(--muted);font-size:11px}.route-note span{display:inline-flex;align-items:center;gap:7px}.route-note i{width:22px;border-top:2px solid var(--ink)}.route-note i.dashed{border-top-style:dashed;border-color:#696970}
+    .timeline{position:relative;display:grid;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}.timeline:before{content:"";position:absolute;left:142px;top:0;bottom:0;border-left:1px solid var(--line-dark)}.event{position:relative;display:grid;grid-template-columns:142px minmax(0,1fr);gap:0;min-height:108px;border-bottom:1px solid var(--line)}.event:last-child{border-bottom:0}.event-date{padding:20px 22px 20px 0;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase}.event-body{padding:20px 20px 20px 28px}.event-body:before{content:"";position:absolute;left:136px;top:27px;width:11px;height:11px;border:2px solid var(--ink);background:var(--paper);border-radius:50%}.event-body h3{margin:0 0 5px;font-size:19px;letter-spacing:-.03em}.event-body p{max-width:840px;margin:0;color:var(--muted-strong);font-size:14px}.event .tag{display:inline-block;margin-right:8px;padding:4px 7px;border:1px solid var(--line-dark);font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase}.event .tag.p0{border-color:var(--ink);color:var(--ink)}.event .tag.p1{color:var(--amber);border-color:#c9a36a}.event .tag.p2{color:var(--muted)}
+    .filters{display:grid;grid-template-columns:minmax(200px,1.5fr) repeat(3,minmax(140px,.7fr));gap:10px;margin-bottom:22px}.field{min-width:0}.field label{display:block;margin:0 0 6px;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.field input,.field select{width:100%;min-height:46px;height:46px;padding:0 12px;border:1px solid var(--line-dark);border-radius:0;background:var(--paper);color:var(--ink);font-size:16px}.field input::placeholder{color:#8b8b92}.result-count{margin:0 0 18px;color:var(--muted);font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase}
+    .opportunity-list{display:flex;flex-direction:column;gap:14px}.opportunity{border:1px solid var(--line);background:var(--paper);transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease}.opportunity:hover{transform:translateY(-2px);border-color:var(--ink);box-shadow:var(--shadow)}.opp-summary{display:grid;grid-template-columns:78px minmax(0,1fr) 150px 142px;gap:20px;align-items:center;padding:21px 22px}.opp-id{font-family:var(--mono);font-size:22px;font-weight:700;letter-spacing:-.08em}.opp-id span{display:block;margin-top:4px;color:var(--muted);font-size:9px;letter-spacing:.08em;text-transform:uppercase}.opp-title{margin:0;font-size:21px;line-height:1.12;letter-spacing:-.035em}.opp-provider{margin:5px 0 0;color:var(--muted);font-size:13px}.opp-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}.chip{display:inline-block;padding:5px 7px;color:var(--muted-strong);border:1px solid var(--line);font-size:9px;letter-spacing:.08em}.status{display:inline-block;padding:5px 7px;border:1px solid var(--line-dark);font-size:9px;letter-spacing:.07em}.status.open,.status.deadline_soon{color:var(--green);border-color:#7ab691}.status.opens_soon,.status.faculty_specific,.status.program_specific,.status.rolling_after_offer{color:var(--amber);border-color:#c9a36a}.status.next_cycle,.status.watchlist{color:var(--muted-strong);border-color:var(--line-dark)}.opp-deadline strong,.opp-score strong{display:block;font-family:var(--mono);font-size:12px}.opp-deadline span,.opp-score span{display:block;margin-top:5px;color:var(--muted);font-family:var(--mono);font-size:9px;line-height:1.25;letter-spacing:.08em;text-transform:uppercase}.opp-score{text-align:right}.score-number{font-size:29px!important;letter-spacing:-.08em}.score-bar{height:5px;margin-top:9px;background:var(--wash-2)}.score-bar i{display:block;height:100%;background:var(--ink)}.opp-toggle{justify-self:end;min-height:44px;padding:0 11px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font-size:11px;font-weight:750}.opp-toggle:hover{background:var(--ink);color:var(--paper)}.opp-details{display:none;border-top:1px solid var(--line);padding:27px 22px 25px;background:#fafafa}.opportunity.open .opp-details{display:block}.detail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 32px}.detail{border-top:1px solid var(--line);padding-top:12px}.detail h3{margin:0 0 7px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.detail p{margin:0;color:#33333a;font-size:14px}.detail ul{margin:0;padding-left:19px;color:#33333a;font-size:14px}.detail li+li{margin-top:5px}.support-list{display:grid;gap:8px}.support-item{padding:11px 12px;border:1px solid var(--line);background:var(--paper)}.support-item strong{display:block;font-size:13px}.support-item span{display:block;margin-top:3px;color:var(--muted-strong);font-size:12px}.boundary{margin-top:18px;padding:14px 15px;border-left:3px solid var(--ink);background:var(--wash);color:#33333a;font-size:13px}.sources{display:flex;flex-wrap:wrap;gap:8px}.sources a{min-height:44px;display:inline-flex;align-items:center;padding:0 11px;border:1px solid var(--line-dark);background:var(--paper);font-size:12px;font-weight:700}.sources a:hover{border-color:var(--ink)}.next-move{margin-top:20px;padding:16px;background:var(--ink);color:var(--paper);font-size:14px}.next-move strong{display:block;margin-bottom:5px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#c8c8cf}.next-move p{margin:0;color:#e4e4e8}
+    .country-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.country-card{padding:21px;border:1px solid var(--line);background:var(--paper)}.country-card h3{display:flex;justify-content:space-between;gap:15px;margin:0 0 17px;font-size:24px;letter-spacing:-.04em}.risk{font-family:var(--mono);font-size:9px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.country-card dl{display:grid;grid-template-columns:132px minmax(0,1fr);gap:10px 15px;margin:0;font-size:13px}.country-card dt{font-family:var(--mono);font-size:9px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}.country-card dd{margin:0;color:#33333a}.country-card .source-mini{margin-top:16px;padding-top:12px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}
+    .prep-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px}.prep-card{border:1px solid var(--line);background:var(--paper);padding:21px}.prep-card h3{margin:0 0 15px;font-size:22px;letter-spacing:-.04em}.prep-card ol,.prep-card ul{margin:0;padding-left:20px;color:#33333a;font-size:14px}.prep-card li+li{margin-top:8px}.prep-phase{padding:14px 0;border-top:1px solid var(--line)}.prep-phase:first-child{border-top:0;padding-top:0}.prep-phase strong{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase}.prep-phase p{margin:7px 0 0;color:var(--muted-strong);font-size:13px}
+    .evidence-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.evidence-card{padding:21px;border:1px solid var(--line);background:var(--paper)}.evidence-card strong{display:block;font-family:var(--display);font-size:34px;line-height:1;letter-spacing:-.06em}.evidence-card span{display:block;margin-top:8px;color:var(--muted);font-family:var(--mono);font-size:10px;line-height:1.3;letter-spacing:.08em;text-transform:uppercase}.evidence-card p{margin:13px 0 0;color:var(--muted-strong);font-size:13px}.ledger{margin-top:14px;border:1px solid var(--line);background:var(--paper)}.ledger summary{min-height:46px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;cursor:pointer;font-size:13px;font-weight:750;list-style:none}.ledger summary::-webkit-details-marker{display:none}.ledger summary:after{content:"+";font-family:var(--mono);font-size:17px;color:var(--muted)}.ledger[open] summary:after{content:"−"}.ledger-body{padding:0 16px 18px}.ledger-body p{color:var(--muted-strong);font-size:13px}.exclusion{display:grid;grid-template-columns:190px minmax(0,1fr);gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:13px}.exclusion strong{font-family:var(--mono);font-size:10px;letter-spacing:.07em;text-transform:uppercase}.exclusion span{color:var(--muted-strong)}
+    .footer{padding:28px 0 46px;color:var(--muted);font-size:11px}.footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:16px}.footer a{text-decoration-thickness:1px}
+    .empty{padding:28px 0;color:var(--muted);font-size:14px}.reveal{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:980px){.container,.topbar-inner{padding-left:24px;padding-right:24px}.hero-grid{grid-template-columns:1fr;gap:28px}.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.proof-cell:nth-child(2){border-right:0}.proof-cell:nth-child(-n+2){border-bottom:1px solid var(--ink)}.proof-cell:nth-child(3){border-right:1px solid var(--ink)}.filters{grid-template-columns:1fr 1fr}.filters .field:first-child{grid-column:1/-1}.country-grid,.prep-grid{grid-template-columns:1fr}.evidence-grid{grid-template-columns:1fr}.opp-summary{grid-template-columns:68px minmax(0,1fr) 130px}.opp-score{grid-column:3;grid-row:1;text-align:right}.opp-toggle{grid-column:2;grid-row:2;justify-self:start}.opp-deadline{grid-column:2;grid-row:2}.opp-toggle{margin-left:152px}}
+    @media(max-width:768px){.topbar-inner{position:relative}.nav-toggle{display:block}.nav{display:none;position:absolute;top:52px;left:0;right:0;padding:7px 24px 12px;background:var(--paper);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}.nav.open{display:flex}.nav a{padding:12px 0;border-bottom:1px solid var(--line)}.nav a:last-child{border-bottom:0}.brand{font-size:10px}.hero{padding:60px 0 52px}h1{font-size:clamp(47px,15vw,80px)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi{border-bottom:1px solid var(--line)}.kpi:nth-child(2){border-right:0}.kpi:nth-child(3),.kpi:nth-child(4){border-bottom:0}.section{padding:60px 0}.section-head{display:block}.section-intro{margin-top:16px}.diagram-wrap{padding:15px;overflow-x:hidden}.decision-svg{min-width:0}.route-note{padding:0 15px 15px;display:grid;gap:8px}.timeline:before{left:91px}.event{grid-template-columns:91px minmax(0,1fr);min-height:128px}.event-date{padding:17px 14px 17px 0;font-size:9px}.event-body{padding:17px 0 17px 20px}.event-body:before{left:85px;top:23px;width:10px;height:10px}.event-body h3{font-size:17px}.event-body p{font-size:13px}.filters{display:block}.field{margin-bottom:10px}.opp-summary{grid-template-columns:54px minmax(0,1fr);gap:12px;padding:18px}.opp-title{font-size:18px}.opp-provider{font-size:12px}.opp-meta{margin-top:8px}.opp-deadline,.opp-score,.opp-toggle{grid-column:2;grid-row:auto;justify-self:start;text-align:left;margin-left:0}.opp-score{display:flex;align-items:center;gap:10px}.score-bar{width:110px;margin-top:0}.opp-toggle{width:auto}.opp-details{padding:21px 18px}.detail-grid{grid-template-columns:1fr;gap:19px}.country-grid{grid-template-columns:1fr}.country-card h3{font-size:21px}.country-card dl{grid-template-columns:112px minmax(0,1fr);gap:9px 11px}.prep-grid{grid-template-columns:1fr}.proof-grid{grid-template-columns:1fr}.proof-cell,.proof-cell:nth-child(2),.proof-cell:nth-child(3){border-right:0;border-bottom:1px solid var(--ink)}.proof-cell:last-child{border-bottom:0}.exclusion{grid-template-columns:1fr;gap:5px}.footer-row{display:block}.footer-row>*+*{margin-top:9px}}
+    @media print{html,body{background:#fff!important;color:#000!important;overflow:visible!important}.topbar,.progress,.actions,.filters,.opp-toggle,.footer a{display:none!important}.hero,.section{padding:24px 0!important;border-color:#999!important}.reveal{opacity:1!important;transform:none!important}.decision{background:#fff!important;color:#000!important}.decision p,.decision .meta-label{color:#333!important}.opp-details{display:block!important;background:#fff!important}.opportunity,.country-card,.prep-card,.evidence-card,.event,.detail,.support-item,table,tr{break-inside:avoid!important;page-break-inside:avoid!important}.source-link{color:#000!important}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress" role="progressbar" aria-label="Reading progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"></div>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html">SATYAM <span>/ FUNDED ROUTES</span></a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation" aria-expanded="false">≡</button>
+      <nav class="nav" id="nav" aria-label="Primary navigation">
+        <a href="index.html">Portfolio home</a><a href="work.html">Selected work</a><a href="job-internship.html">Job / internship</a><a href="university-education.html">University / education</a><a href="GLOBAL_ESCAPE_ROADMAP.html">Primary roadmap</a><a href="GLOBAL_ESCAPE_MASTER_PLAN.html">7-nation matrix</a><a href="#overview">Overview</a><a href="#timeline">Timeline</a><a href="#opportunities">Routes</a><a href="#preparation">Preparation</a><a href="#evidence">Evidence</a><a href="evidence/index.html">Evidence library</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">SUPPORTED OPPORTUNITY INTELLIGENCE / AS-OF 28 AUG 2026</div>
+        <h1>Fund the move.<br><em>Test the country.</em></h1>
+        <p class="lede">A seven-nation decision system for an Indian AI, cloud and cybersecurity builder. Every retained route has an explicit support component. Every deadline is separated into open, upcoming, conditional or closed.</p>
+        <div class="hero-grid">
+          <div>
+            <div class="actions"><a class="button" href="#timeline">Open the timeline <span aria-hidden="true">→</span></a><a class="button secondary" href="#opportunities">Filter supported routes</a><a class="button secondary" href="evidence/decision-diagram.html">Open route diagram</a></div>
+          </div>
+          <aside class="decision">
+            <div class="meta-label">HARD FILTER</div>
+            <strong>No support, no shortlist.</strong>
+            <p>Funding, tuition coverage, salary, travel, housing, insurance or work authorisation must be visible in an official source. Apollo is used only for entity discovery and employer identity—not as proof of funding or visa sponsorship.</p>
+          </aside>
+        </div>
+        <div class="kpis" aria-label="Research totals">
+          <div class="kpi"><strong id="kpiCountries">—</strong><span>countries in scope</span></div>
+          <div class="kpi"><strong id="kpiRoutes">—</strong><span>qualifying routes</span></div>
+          <div class="kpi"><strong id="kpiOpen">—</strong><span>open or near deadline</span></div>
+          <div class="kpi"><strong id="kpiStrong">—</strong><span>multi-support routes</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">01 / OPERATING THESIS</div><h2>One profile. Seven different gates.</h2></div><p class="section-intro">The same CV cannot be sent unchanged to every country. Each route rewards a different proof: research depth, technical screening, language, supervisor fit, or financial planning.</p></div>
+        <div class="proof-grid reveal">
+          <div class="proof-cell"><span class="num">01</span><h3>Japan is the anchor</h3><p>OIST is the strongest immediate country test. MEXT is the long-term full-support Master's route.</p></div>
+          <div class="proof-cell"><span class="num">02</span><h3>Singapore is the control</h3><p>NUS and NTU test an English-first research route with clear tuition-plus-stipend packages.</p></div>
+          <div class="proof-cell"><span class="num">03</span><h3>UAE is the AI sprint</h3><p>MBZUAI is technically powerful, but M.Sc. funding is conditional—read the offer, not the headline.</p></div>
+          <div class="proof-cell"><span class="num">04</span><h3>Russia is funded risk</h3><p>Open Doors passes the support gate, but travel, payments, insurance and mobility risk remain material.</p></div>
+        </div>
+        <div class="diagram-card reveal" style="margin-top:28px">
+          <div class="diagram-head"><strong>SUPPORTED ROUTE / DECISION FLOW</strong><span>solid = primary sequence · dashed = fallback route</span></div>
+          <div class="diagram-wrap">
+            <svg class="decision-svg" viewBox="0 0 1240 300" role="img" aria-label="Decision flow from profile proof through support gate, application, offer and country test">
+              <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#000"></path></marker></defs>
+              <path class="edge" d="M190 146 H270"></path><path class="edge" d="M475 146 H555"></path><path class="edge" d="M760 146 H840"></path><path class="edge" d="M1045 146 H1125"></path><path class="edge dashed" d="M372 198 V252 H655 V198"></path>
+              <rect class="node dark" x="24" y="91" width="166" height="110" rx="8"></rect><text class="small dark-text" x="45" y="117">01 / PROOF</text><text class="body dark-text" x="45" y="146">CV + portfolio</text><text class="sub dark-sub" x="45" y="172">systems · QA · research</text>
+              <rect class="node" x="270" y="91" width="205" height="110" rx="8"></rect><text class="small" x="292" y="117">02 / SUPPORT GATE</text><text class="body" x="292" y="146">Funding is visible</text><text class="sub" x="292" y="172">tuition · stipend · visa</text>
+              <rect class="node" x="555" y="91" width="205" height="110" rx="8"></rect><text class="small" x="577" y="117">03 / FIT GATE</text><text class="body" x="577" y="146">Eligibility is real</text><text class="sub" x="577" y="172">degree · language · lab</text>
+              <rect class="node" x="840" y="91" width="205" height="110" rx="8"></rect><text class="small" x="862" y="117">04 / APPLY</text><text class="body" x="862" y="146">Prepare by date</text><text class="sub" x="862" y="172">documents · tests · proposal</text>
+              <rect class="node dark" x="1125" y="91" width="91" height="110" rx="8"></rect><text class="small dark-text" x="1138" y="117">05</text><text class="body dark-text" x="1138" y="146">Test</text><text class="sub dark-sub" x="1138" y="172">country</text>
+              <rect class="node" x="410" y="252" width="245" height="34" rx="7"></rect><text class="small" x="432" y="274">FALLBACK / RE-CHECK OR DROP</text>
+            </svg>
+          </div>
+          <div class="route-note"><span><i></i> Route survives the evidence gate</span><span><i class="dashed"></i> Conditional route requires another check</span><span>No application is treated as an offer.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="timeline">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">02 / FROM TODAY</div><h2>The next 8 months, in order.</h2></div><p class="section-intro">Start with the nearest evidence-backed deadline, then build the slower routes. The timeline uses the research date of 28 August 2026; unpublished seasonal dates are marked as estimates.</p></div>
+        <div class="timeline reveal" id="timelineList" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section" id="opportunities">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">03 / QUALIFYING ROUTES</div><h2>Support is the entry ticket.</h2></div><p class="section-intro">Open each route for the exact support package, eligibility gate, fit rationale, preparation sequence and official evidence. Native currencies are retained; no stale INR conversion is shown.</p></div>
+        <div class="filters" aria-label="Opportunity filters">
+          <div class="field"><label for="search">Search routes</label><input id="search" type="search" placeholder="Country, provider, skill or programme"></div>
+          <div class="field"><label for="countryFilter">Country</label><select id="countryFilter"><option value="all">All seven countries</option></select></div>
+          <div class="field"><label for="statusFilter">Status</label><select id="statusFilter"><option value="all">All statuses</option><option value="open">Open now</option><option value="deadline_soon">Deadline soon</option><option value="opens_soon">Opens soon</option><option value="faculty_specific">Faculty-specific</option><option value="next_cycle">Next cycle</option><option value="watchlist">Watchlist</option><option value="program_specific">Program-specific</option><option value="rolling_after_offer">After an offer</option></select></div>
+          <div class="field"><label for="supportFilter">Support</label><select id="supportFilter"><option value="all">Any explicit support</option><option value="multi">Three or more support items</option><option value="tuition">Tuition support</option><option value="stipend">Stipend or salary</option><option value="travel">Travel or housing</option><option value="visa">Visa or authorisation</option></select></div>
+        </div>
+        <p class="result-count" id="resultCount" role="status" aria-live="polite"></p>
+        <div class="opportunity-list" id="opportunityList" aria-live="polite" aria-atomic="false"></div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">04 / COUNTRY PACKETS</div><h2>What each country actually rewards.</h2></div><p class="section-intro">These are country-level operating notes, not generic relocation advice. Use them to decide where your effort belongs before tailoring the application.</p></div>
+        <div class="country-grid" id="countryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="preparation">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">05 / PREPARATION SYSTEM</div><h2>Prepare once. Tailor seven times.</h2></div><p class="section-intro">The universal dossier prevents repetitive work. The country layer determines what gets emphasised and what gets cut.</p></div>
+        <div class="prep-grid">
+          <div class="prep-card"><h3>Universal dossier</h3><div id="universalPrep"></div></div>
+          <div class="prep-card"><h3>Country-specific emphasis</h3><div class="field"><label for="prepCountry">Select a country</label><select id="prepCountry"></select></div><div id="countryPrep" style="margin-top:17px"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="evidence">
+      <div class="container">
+        <div class="section-head"><div><div class="kicker">06 / PROOF LEDGER</div><h2>Quiet where unverified.</h2></div><p class="section-intro">The report keeps funding proof, Apollo identity data, current deadlines and limitations in separate lanes.</p></div>
+        <div class="evidence-grid reveal">
+          <div class="evidence-card"><strong id="evidenceSources">—</strong><span>official URLs reachable</span><p>HTTP/Chromium check of unique official sources; access-limited and timed-out pages remain disclosed.</p></div>
+          <div class="evidence-card"><strong id="evidenceApollo">—</strong><span>Apollo identity checks</span><p>Organization discovery and employer identity only. Apollo does not establish funding, hiring or visa support.</p></div>
+          <div class="evidence-card"><strong id="evidenceExcluded">—</strong><span>items excluded</span><p>Old cards, stale dates, unsupported funding claims and unverified employer routes are kept out of the shortlist.</p></div>
+        </div>
+        <details class="ledger reveal"><summary>Read exclusions and limitations</summary><div class="ledger-body"><p><strong>Method boundary:</strong> The retained list is not a guarantee of admission, employment, visa issuance or financial sufficiency. It is an evidence-filtered research shortlist as of 28 August 2026.</p><div id="exclusionList"></div><p style="margin-top:16px"><strong>Research sources:</strong> Official government, university and programme pages were preferred. Mixed web searches were used for discovery. Playwright/browser scraping was used where pages were dynamic. Apollo Composio enrichment was used for organization identity cross-checks. No applications, emails or messages were sent.</p></div></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-row"><span>SUPPORTED OPPORTUNITY MAP / SEVEN NATIONS</span><span><a href="evidence/education-opportunities.json">Source dataset</a> · <a href="evidence/education-opportunities-runtime.js">Runtime payload</a> · <a href="evidence/index.html">Evidence library</a> · <a href="GLOBAL_ESCAPE_ROADMAP.html">Primary route</a></span><span>As-of <span id="footerDate">28 Aug 2026</span></span></div></div></footer>
+
+  <script src="evidence/education-opportunities-runtime.js"></script>
+  <script>
+    (() => {
+      'use strict';
+      const DATA = window.SEVEN_NATION_OPPORTUNITIES;
+      if (!DATA || !Array.isArray(DATA.opportunities)) {
+        document.getElementById('opportunityList').innerHTML = '<p class="empty">The central opportunity dataset could not be loaded.</p>';
+        return;
+      }
+      const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+      const safeUrl = value => { try { const u = new URL(value, window.location.href); return ['http:','https:','mailto:'].includes(u.protocol) ? u.href : '#'; } catch { return '#'; } };
+      const sourceLink = source => `<a href="${esc(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">${esc(source.label)} <span aria-hidden="true">↗</span></a>`;
+      const statusLabel = code => ({open:'OPEN',deadline_soon:'DEADLINE SOON',opens_soon:'OPENS SOON',faculty_specific:'FACULTY-SPECIFIC',program_specific:'PROGRAM-SPECIFIC',next_cycle:'NEXT CYCLE',watchlist:'WATCHLIST',rolling_after_offer:'AFTER AN OFFER'}[code] || 'CHECK');
+      const statusClass = code => ['open','deadline_soon','opens_soon','faculty_specific','program_specific','next_cycle','watchlist','rolling_after_offer'].includes(code) ? code : 'watchlist';
+      const all = DATA.opportunities;
+      const fullSupport = item => item.support.length >= 3 || item.support.some(x => ['housing','travel','visa','visa_admin'].includes(x.type)) && item.support.some(x => ['tuition','monthly_stipend','monthly_allowance','stipend','daily_allowance','monthly_scholarship'].includes(x.type));
+      const hasType = (item, filter) => {
+        if (filter === 'all') return true;
+        if (filter === 'multi') return item.support.length >= 3;
+        if (filter === 'tuition') return item.support.some(x => x.type.includes('tuition') || x.type === 'fee_offset' || x.type === 'scholarship');
+        if (filter === 'stipend') return item.support.some(x => ['stipend','monthly_stipend','monthly_allowance','daily_allowance','monthly_scholarship','scholarship'].includes(x.type));
+        if (filter === 'travel') return item.support.some(x => ['travel','housing','cost_purpose'].includes(x.type));
+        if (filter === 'visa') return item.support.some(x => ['visa','visa_admin','work_authorisation','immigration_conditions','visa_fee'].includes(x.type));
+        return true;
+      };
+      const search = document.getElementById('search');
+      const countryFilter = document.getElementById('countryFilter');
+      const statusFilter = document.getElementById('statusFilter');
+      const supportFilter = document.getElementById('supportFilter');
+      const list = document.getElementById('opportunityList');
+      const resultCount = document.getElementById('resultCount');
+      const queryText = item => [item.id,item.country,item.provider,item.name,item.type,item.fit_summary,item.eligibility,...item.prep].join(' ').toLowerCase();
+      function renderKpis(){
+        document.getElementById('kpiCountries').textContent = DATA.scope.length;
+        document.getElementById('kpiRoutes').textContent = all.length;
+        document.getElementById('kpiOpen').textContent = all.filter(x => ['open','deadline_soon','opens_soon'].includes(x.status_code)).length;
+        document.getElementById('kpiStrong').textContent = all.filter(fullSupport).length;
+        const reach = DATA.source_reachability || {};
+        document.getElementById('evidenceSources').textContent = `${reach.http_200 ?? '—'} / ${reach.unique_official_urls ?? '—'}`;
+        document.getElementById('evidenceApollo').textContent = DATA.apollo_cross_check.organizations_checked.length;
+        document.getElementById('evidenceExcluded').textContent = DATA.excluded_items.length;
+      }
+      function renderFilters(){
+        DATA.scope.forEach(country => { countryFilter.insertAdjacentHTML('beforeend', `<option value="${esc(country)}">${esc(country)}</option>`); });
+      }
+      function formatSupport(item){ return item.support.map(x => x.amount).slice(0,3).join(' · '); }
+      function renderCard(item){
+        const support = item.support.map(x => `<div class="support-item"><strong>${esc(x.amount)}</strong><span>${esc(x.type.replaceAll('_',' '))} · ${esc(x.duration || 'conditions vary')} · ${esc(x.evidence)}</span></div>`).join('');
+        const prep = item.prep.map(x => `<li>${esc(x)}</li>`).join('');
+        const sources = item.sources.map(sourceLink).join('');
+        const tags = [item.type, `${item.effort_weeks} wk prep`, `confidence ${item.evidence_confidence}`].map(x => `<span class="chip">${esc(x)}</span>`).join('');
+        return `<article id="${esc(item.id)}" class="opportunity reveal" data-id="${esc(item.id)}">
+          <div class="opp-summary">
+            <div class="opp-id">${esc(item.id)}<span>${esc(item.country)}</span></div>
+            <div><h3 class="opp-title">${esc(item.name)}</h3><p class="opp-provider">${esc(item.provider)}</p><div class="opp-meta"><span class="status ${statusClass(item.status_code)}">${esc(statusLabel(item.status_code))}</span>${tags}</div></div>
+            <div class="opp-deadline"><strong>${esc(item.deadline ? item.deadline.slice(0,10) : 'DATE TBC')}</strong><span>deadline / timing</span></div>
+            <div class="opp-score"><strong class="score-number">${esc(item.fit_score)}</strong><span>fit / 100</span><div class="score-bar" aria-hidden="true"><i style="width:${Math.max(0,Math.min(100,Number(item.fit_score)||0))}%"></i></div></div>
+            <button class="opp-toggle" type="button" data-action="toggle" aria-expanded="false">Open route <span aria-hidden="true">+</span></button>
+          </div>
+          <div class="opp-details">
+            <div class="detail-grid">
+              <div class="detail"><h3>What it offers</h3><div class="support-list">${support}</div></div>
+              <div class="detail"><h3>When to apply</h3><p>${esc(item.application_window)}<br><br><strong>Period:</strong> ${esc(item.start_or_period)}</p></div>
+              <div class="detail"><h3>Why it fits</h3><p>${esc(item.fit_summary)}</p><ul style="margin-top:10px">${item.why_it_fits.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+              <div class="detail"><h3>Eligibility and visa</h3><p><strong>Eligibility:</strong> ${esc(item.eligibility)}<br><br><strong>Visa / authorisation:</strong> ${esc(item.visa_support)}</p></div>
+              <div class="detail"><h3>How to prepare</h3><ul>${prep}</ul></div>
+              <div class="detail"><h3>Evidence confidence</h3><p>${esc(item.evidence_confidence)}<br><br><strong>Competitiveness:</strong> ${esc(item.competitiveness)}<br><br><strong>Estimated preparation:</strong> ${esc(item.effort_weeks)} weeks</p></div>
+            </div>
+            <div class="boundary"><strong>Funding boundary:</strong> ${esc(item.support_boundary)}</div>
+            <div class="next-move"><strong>Next move</strong><p>${esc(item.next_step)}</p></div>
+            <div class="detail" style="margin-top:20px"><h3>Official evidence</h3><div class="sources">${sources}</div></div>
+          </div>
+        </article>`;
+      }
+      function renderList(){
+        const q = (search.value || '').trim().toLowerCase(); const c = countryFilter.value; const s = statusFilter.value; const f = supportFilter.value;
+        const filtered = all.filter(item => (!q || queryText(item).includes(q)) && (c === 'all' || item.country === c) && (s === 'all' || item.status_code === s) && hasType(item,f)).sort((a,b) => b.fit_score - a.fit_score || a.country.localeCompare(b.country));
+        resultCount.textContent = `${filtered.length} of ${all.length} supported routes shown · every retained route has explicit support evidence`;
+        list.innerHTML = filtered.length ? filtered.map(renderCard).join('') : '<p class="empty">No qualifying route matches this filter. The item may be excluded because support was not evidenced.</p>';
+        observeReveals();
+      }
+      function renderTimeline(){
+        document.getElementById('timelineList').innerHTML = DATA.timeline.map(event => `<article class="event"><div class="event-date">${esc(event.date)}</div><div class="event-body"><div><span class="tag ${event.priority.toLowerCase()}">${esc(event.priority)}</span><span class="tag">${esc(event.country)}</span><span class="tag">${esc(event.confidence)}</span></div><h3>${esc(event.label)}</h3><p>${esc(event.action)}</p></div></article>`).join('');
+      }
+      function renderCountries(){
+        document.getElementById('countryGrid').innerHTML = DATA.country_profiles.map(country => { const count=all.filter(x=>x.country===country.country).length; return `<article class="country-card reveal"><h3>${esc(country.country)} <span class="risk">risk ${esc(country.country_risk)}/10 · ${count} routes</span></h3><dl><dt>Role in plan</dt><dd>${esc(country.role_in_plan)}</dd><dt>Route thesis</dt><dd>${esc(country.route_thesis)}</dd><dt>Language</dt><dd>${esc(country.language)}</dd><dt>Visa / authorisation</dt><dd>${esc(country.visa_or_authorisation)}</dd><dt>Funding reality</dt><dd>${esc(country.funding_reality)}</dd></dl><div class="source-mini">Official starting points: ${country.sources.map(x=>`<a href="${esc(safeUrl(x))}" target="_blank" rel="noopener noreferrer">source ↗</a>`).join(' · ')}</div></article>`; }).join('');
+      }
+      function renderPreparation(){
+        document.getElementById('universalPrep').innerHTML = DATA.universal_preparation.map(phase => `<div class="prep-phase"><strong>${esc(phase.phase)}</strong><ul>${phase.deliverables.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div>`).join('');
+        const prepCountry=document.getElementById('prepCountry'), countryPrep=document.getElementById('countryPrep'); DATA.scope.forEach(country=>prepCountry.insertAdjacentHTML('beforeend',`<option value="${esc(country)}">${esc(country)}</option>`));
+        function update(){ const items=DATA.country_preparation[prepCountry.value] || []; countryPrep.innerHTML = items.length ? `<ul>${items.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>` : '<p class="note">No country-specific preparation recorded.</p>'; }
+        prepCountry.addEventListener('change',update); update();
+      }
+      function renderExclusions(){ document.getElementById('exclusionList').innerHTML = DATA.excluded_items.map(x=>`<div class="exclusion"><strong>${esc(x.item)}</strong><span>${esc(x.reason)}</span></div>`).join(''); }
+      function observeReveals(){ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches; document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{ if(reduce){el.classList.add('visible');return;} const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.disconnect();}}),{threshold:.08}); io.observe(el); }); }
+      document.addEventListener('click', event => { const btn=event.target.closest('[data-action="toggle"]'); if(!btn)return; const card=btn.closest('.opportunity'); const open=card.classList.toggle('open'); btn.setAttribute('aria-expanded',String(open)); btn.innerHTML=open?'Close route <span aria-hidden="true">−</span>':'Open route <span aria-hidden="true">+</span>'; });
+      [search,countryFilter,statusFilter,supportFilter].forEach(el=>el.addEventListener(el===search?'input':'change',renderList));
+      const nav=document.getElementById('nav'), navToggle=document.getElementById('navToggle'); navToggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');navToggle.setAttribute('aria-expanded',String(open));}); nav.addEventListener('click',e=>{if(e.target.matches('a')){nav.classList.remove('open');navToggle.setAttribute('aria-expanded','false');}});
+      const progress=document.getElementById('progress'); const updateProgress=()=>{const max=document.documentElement.scrollHeight-window.innerHeight;const value=max>0?Math.round((window.scrollY/max)*100):0;progress.style.transform=`scaleX(${value/100})`;progress.setAttribute('aria-valuenow',String(value));}; window.addEventListener('scroll',updateProgress,{passive:true}); updateProgress();
+      const navLinks=[...document.querySelectorAll('.nav a')], sections=[...document.querySelectorAll('main section[id]')]; const sectionObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)navLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${entry.target.id}`));}),{rootMargin:'-25% 0px -65% 0px',threshold:0}); sections.forEach(section=>sectionObserver.observe(section));
+      renderKpis(); renderFilters(); renderTimeline(); renderList(); renderCountries(); renderPreparation(); renderExclusions(); observeReveals();
+    })();
+  </script>
+</body>
+</html>

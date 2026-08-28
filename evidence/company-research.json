@@ -1,0 +1,598 @@
+{
+  "companies": [
+    {
+      "name": "Sakana AI",
+      "country": "Japan",
+      "official_site": "https://sakana.ai/",
+      "careers_url": "https://sakana.ai/careers/",
+      "overview": "Tokyo-based frontier AI research and development lab founded in 2023 by former Google Brain researchers David Ha and Llion Jones alongside former Mercari executive Ren Ito. Sakana AI develops nature-inspired foundation models, evolutionary model merging architectures, automated scientific discovery systems (The AI Scientist), and Japanese foundation models (Marlin, Namazu, Fugu). Beyond pure research, they build enterprise platform infrastructure and autonomous multi-agent systems deployed for Japanese enterprise and public-sector environments.",
+      "fit_for_candidate": "Strong fit for a founder-side AI systems and product builder. Satyam's background at C3A Labs designing autonomous agent loops, multi-model pipelines, MCP tool calling, and systematic evaluation harnesses matches Sakana's Product Software Engineering and R&D Systems needs. These roles bridge cutting-edge research prototypes into stable internal tooling, evaluation frameworks, and scalable user-facing applications without confining him to a narrow enterprise FDE role.",
+      "language_signal": "Official evidence: Core R&D, engineering, and platform job descriptions are published in English, and internal research operations run English-first given the multinational founding and technical team. Official listings for client-facing/Applied teams specifically denote 'Japanese (Business) & English', whereas core engineering and platform roles do not mandate Japanese fluency.",
+      "international_hiring_signal": "Explicitly evidenced. Sakana AI's official careers documentation explicitly guarantees visa support: 'Candidates will be expected to be physically based in Tokyo, but we will provide assistance with the Visa application process if needed.' The lab actively maintains structured hiring pathways spanning 4-month internships, visiting researchers, and full-time software engineering and research positions.",
+      "likely_job_families": [
+        "Product Software Engineer (Product & Prototyping)",
+        "Software Engineer (Research & Development / Benchmarking Systems)",
+        "Software Engineer (Platform & Agent Infrastructure)",
+        "AI Technical Program / Systems Operations"
+      ],
+      "contact_functions": [
+        "David Ha (Chief Executive Officer & Co-Founder)",
+        "Llion Jones (Chief Technology Officer & Co-Founder)",
+        "Ren Ito (Chairman & Co-Founder)",
+        "Head of Talent / Corporate Recruiting Team"
+      ],
+      "sources": [
+        "https://sakana.ai/",
+        "https://sakana.ai/careers/",
+        "https://sakana.ai/company-info/",
+        "https://sakana.ai/careers/software-engineer-research-and-development/",
+        "https://sakana.ai/careers/software-engineer-platform/"
+      ]
+    },
+    {
+      "name": "Kotoba Technologies",
+      "country": "Japan",
+      "official_site": "https://site.kotoba.tech/",
+      "careers_url": "https://site.kotoba.tech/company#careers",
+      "overview": "U.S.-Japan cross-border voice AI startup founded in 2023 by CS PhDs Noriyuki Kojima (Cornell) and Jungo Kasai (University of Washington), with dual headquarters in San Francisco and principal R&D in Otemachi, Chiyoda-ku, Tokyo. Kotoba develops 'Koto,' an end-to-end proprietary voice AI foundation model engineered for ultra-low latency real-time speech (sub-50ms TTS, streaming STT, and speech-to-speech simultaneous interpretation across East Asian and Western languages). Their technology powers the Kotoba translation application (100k+ users), developer API/SDK suites, and enterprise integrations including Salesforce Japan's Agentforce Voice.",
+      "fit_for_candidate": "High alignment with founder-side product engineering and technical operations. Satyam's hands-on experience integrating LLM/voice pipelines, testing agent APIs, building automated workflows, and managing rapid feature rollouts at C3A Labs directly maps to Kotoba's Full-Stack Engineering, Application ML, and Technical Account / Solutions roles bridging speech models into production applications.",
+      "language_signal": "Official evidence: Kotoba operates as an English-forward bilingual cross-border company across Tokyo and San Francisco. Official job postings for engineering and infrastructure roles in Tokyo explicitly state 'Business-level English' as a primary operating requirement.",
+      "international_hiring_signal": "Partially evidenced via cross-border operational structure. Kotoba actively maintains an internationally distributed engineering workforce (Tokyo, US, Chile) and invites direct global applications via [REDACTED]. While explicit visa sponsorship text is not itemized on the public landing page (flagged as unavailable from static web text), the company's US-Japan entity structure, bilingual operations, and institutional venture backing (Kindred Ventures, Salesforce Ventures, Sony) make it structurally friendly to foreign hires.",
+      "likely_job_families": [
+        "Full-Stack Engineer (Application & Product Integration)",
+        "Application ML Engineer (Voice Agents & Multimodal Workflows)",
+        "Technical Account Manager / Solutions Prototyper",
+        "Cloud Infrastructure & MLOps Engineer"
+      ],
+      "contact_functions": [
+        "Noriyuki Kojima (Chief Executive Officer & Co-Founder)",
+        "Jungo Kasai (Chief Technology Officer & Co-Founder)",
+        "Yusuke Shimomura (Chief Business Officer)",
+        "Kotoba Talent Acquisition Team ([REDACTED])"
+      ],
+      "sources": [
+        "https://site.kotoba.tech/",
+        "https://site.kotoba.tech/company",
+        "https://site.kotoba.tech/news/kotoba-technologies-raises-11.83-million-in-second-seed-round",
+        "https://site.kotoba.tech/news/announcing-the-kotoba-api-sdk-alpha-speech-to-speech-streaming-stt-and-tts-for-builders",
+        "https://site.kotoba.tech/news/natural-japanese-over-the-phone-koto-powers-agentforce-voice-in-japan"
+      ]
+    },
+    {
+      "name": "LayerX",
+      "country": "Japan",
+      "official_site": "https://layerx.co.jp/",
+      "careers_url": "https://jobs.layerx.co.jp/",
+      "overview": "Prominent Tokyo-based enterprise AI SaaS and digital workflow company (headquartered in Chuo-ku, Tokyo) founded by Yoshinori Fukushima. LayerX develops the 'Bakuraku' (バクラク) AI-driven back-office SaaS suite (automating corporate expense, invoice processing, approval workflows, and HR/labor operations) and operates 'Ai Workforce,' a dedicated enterprise division building autonomous LLM agents that execute complex business operations end-to-end. They also manage an AI-driven digital asset management joint venture with Mitsui & Co.",
+      "fit_for_candidate": "Exceptional functional and philosophical alignment with the candidate's SARVAX work at C3A Labs. SARVAX's focus on 'AI operates work' and autonomous business role automation matches LayerX's 'Ai Workforce' mission directly. Satyam's experience with prompt orchestration, tool execution, and QA pipelines fits their autonomous agent development needs, provided the candidate can navigate their domestic-market business focus.",
+      "language_signal": "Official evidence: Predominantly Japanese-language operating environment. Job listings, documentation, and organizational media on Talentio and HERP are in Japanese. While AI/LLM R&D engineers review English research literature, internal team collaboration and product execution require strong Japanese conversational and written proficiency (JLPT N2/N1 equivalent).",
+      "international_hiring_signal": "Limited official evidence. LayerX recruits heavily from the domestic tech market. Openings for the AI/LLM division do not explicitly state English-only visa sponsorship or relocation packages on public career pages, though overseas technical talent with deep AI systems experience is reviewed on merit. Relocation support is not guaranteed for general applicants without Japanese skills.",
+      "likely_job_families": [
+        "AI/LLM Division Research Engineer (Ai Workforce)",
+        "Product Engineer (AI Agent & Workflow Orchestration)",
+        "Internal AI Systems & Automation Builder",
+        "AI Product Manager / Dev PM (Agentic SaaS)"
+      ],
+      "contact_functions": [
+        "Yoshinori Fukushima (Representative Director & CEO)",
+        "Takaya Ishiguro (Chief Human Resources Officer / CHRO)",
+        "Ai Workforce Division Hiring Managers / Lead Engineers"
+      ],
+      "sources": [
+        "https://layerx.co.jp/",
+        "https://jobs.layerx.co.jp/",
+        "https://open.talentio.com/r/1/c/layerx/homes/3589",
+        "https://open.talentio.com/r/1/c/layerx/pages/112891",
+        "https://bakuraku.jp/news/20260803/"
+      ]
+    },
+    {
+      "name": "ABEJA",
+      "country": "Japan",
+      "official_site": "https://abejainc.com/",
+      "careers_url": "https://careers.abejainc.com/",
+      "overview": "Pioneering Tokyo-based AI platform and enterprise transformation firm founded in 2012 by Yosuke Okada, headquartered in Minato-ku (Mita / Azabu-Juban) and listed on the Tokyo Stock Exchange Growth Market (5574). ABEJA provides the 'ABEJA Platform' (Enterprise Platform Business), enabling enterprises to integrate machine learning, computer vision, and generative AI models into core operational workflows with human-in-the-loop validation. The company also handles specialized AI verification services (such as ATLA autonomous robotics contracts) and global operations via ABEJA Global in Singapore.",
+      "fit_for_candidate": "Solid fit for enterprise AI platform integration, AI operations, and automation architecture. Satyam's experience at C3A Labs establishing benchmarking pipelines, integrating multi-model APIs, and managing human-in-the-loop evaluation frameworks maps directly into ABEJA Platform's operational integration and continuous AI optimization pipelines.",
+      "language_signal": "Official and ecosystem evidence: Mixed bilingual environment. ABEJA's core engineering and data science teams historically support English-speaking foreign engineers, while enterprise consulting, client management, and domestic digital transformation divisions operate strictly in Japanese.",
+      "international_hiring_signal": "Explicitly evidenced. ABEJA has a verified history of hiring foreign nationals and sponsoring work visas for engineering and data science personnel in Japan (documented across Japanese recruitment databases including Japan Dev and FindVisaSponsors, alongside international operations in Singapore).",
+      "likely_job_families": [
+        "AI Platform Engineer (MLOps & API Integration)",
+        "AI Systems & Solutions Engineer (Enterprise Platform Division)",
+        "AI Operations & Evaluation Pipeline Engineer",
+        "Data Science & Generative AI Application Engineer"
+      ],
+      "contact_functions": [
+        "Yosuke Okada (Representative Director & CEO)",
+        "Kazuki Hanataka (Director & CFO)",
+        "Head of People & Culture / Engineering Hiring Lead"
+      ],
+      "sources": [
+        "https://abejainc.com/",
+        "https://careers.abejainc.com/",
+        "https://herp.careers/careers/companies/abeja/jobs",
+        "https://japan-dev.com/companies/abeja",
+        "https://findvisasponsors.com/company/abeja"
+      ]
+    },
+    {
+      "name": "Algomatic",
+      "country": "Japan",
+      "official_site": "https://algomatic.jp/",
+      "careers_url": "https://recruiting.algomatic.jp/",
+      "overview": "High-velocity generative AI startup studio founded in April 2023 by Shunsuke Ono (former Algoage founder) with 2 billion yen in seed capital. Algomatic utilizes an internal multi-company structure (カンパニー制) to rapidly incubate and scale AI-native products concurrently. Operating divisions include NeoSales Company (sales AI agent 'Apodori'), Algomatic Works (B2B workplace automation and LLM agent tooling), Algomatic Global (multilingual video and translation applications), and AI Transformation / AX (enterprise generative AI consulting and custom agent builds).",
+      "fit_for_candidate": "Strong conceptual and role archetype match with a founder-side AI systems builder. Satyam's C3A Labs background—building autonomous agent architectures (KARAX/SARVAX), running fast zero-to-one product experiments, and implementing internal operational tooling—mirrors Algomatic's 'AI Builder' and 'Business Producer' positions. However, practical feasibility is constrained by the company's domestic operational language.",
+      "language_signal": "Official evidence: High Japanese language dependency. Recruitment portals, business roadmaps, podcasts, tech blogs, and company presentations are published entirely in Japanese. Algomatic Global creates multilingual software, but internal team management and executive workflows require professional Japanese proficiency (JLPT N2/N1).",
+      "international_hiring_signal": "Not officially evidenced. Algomatic's public careers portals (HERP / Notion) do not feature international relocation programs or explicit visa sponsorship guarantees for non-Japanese speakers. Hiring is currently concentrated on domestic bilinguals or Japanese-fluent professionals.",
+      "likely_job_families": [
+        "AI Builder (Generative AI Prototyping & Low-Code Implementation)",
+        "AI Engineer / LLM Agent Developer (Algomatic Works / NeoSales)",
+        "Technical Product Prototyper & Internal Automation Engineer",
+        "Business Producer / AI Transformation (AX) Lead"
+      ],
+      "contact_functions": [
+        "Shunsuke Ono (Representative Director & CEO)",
+        "Yuki Nanri (Director & Board Member)",
+        "Katsuki Noda (CXO / Algomatic Global Business Lead)",
+        "Hiroyuki Takahashi (CHRO / VP of Sales)"
+      ],
+      "sources": [
+        "https://algomatic.jp/",
+        "https://recruiting.algomatic.jp/",
+        "https://jobs.algomatic.jp/",
+        "https://herp.careers/careers/companies/algomatic/jobs",
+        "https://note.com/ono_shunsuke/n/n19587ced9b49"
+      ]
+    },
+    {
+      "name": "Mercari",
+      "country": "Japan",
+      "overview": "Mercari operates Japan's largest C2C marketplace platform, alongside Merpay (mobile payments/fintech), Mercoin (crypto/blockchain assets), and cross-border e-commerce services. Under its declared 'AI-Native Company' strategy, Mercari develops large-scale recommendation engines, automated listing/pricing tools, multimodal fraud prevention systems, and internal LLM developer toolchains.",
+      "official_site": "https://about.mercari.com/en/",
+      "careers_url": "https://careers.mercari.com/en/",
+      "fit_for_candidate": "Strong fit for a founder-side AI systems builder with C3A Labs background. Rather than a narrow FDE title, candidate aligns with roles in AI Platform & Internal Automation Engineering, AI Product Management (e.g., AI Listing/Search), Technical Operations / Solutions Builder, or QA & Automated Evals Engineering. C3A Labs experience shipping autonomous agent pipelines, MCP integrations, and founder-level operational automations maps directly to Mercari's AI-Native company overhaul led jointly by CAIO and CTO.",
+      "language_signal": "English-friendly / Bilingual. Mercari is home to employees from 50+ nationalities; engineering documentation, architecture reviews, and team communications operate in English or bilingual formats. Japanese proficiency is not mandatory for software engineering and AI roles, though the company provides comprehensive in-house Language and Cultural Exchange (GOT) training.",
+      "international_hiring_signal": "Explicitly evidenced. Mercari maintains a dedicated 'Work in Japan' relocation framework (https://careers.mercari.com/en/work-in-japan/). Official benefits cover work visa sponsorship (Certificate of Eligibility / COE), inbound international flights to Tokyo, temporary furnished company accommodation upon arrival, settling-in assistance (resident registration at ward office, bank account setup, mobile contracts), and a relocation lump-sum allowance. Hires new graduates and interns overseas.",
+      "likely_job_families": [
+        "AI Platform & Internal Tooling Engineering",
+        "AI Product Management (Marketplace / AI Innovation)",
+        "Software Engineering (Backend / Systems Architecture)",
+        "Technical Operations & Workflow Automation",
+        "QA, Testing & Reliability Engineering"
+      ],
+      "contact_functions": [
+        "Taichi Nakashima (Executive Officer, CTO Japan Business & VP of Engineering Marketplace New Business)",
+        "Shunya Kimura (Executive Officer, CHRO & Chief AI Officer / CAIO)",
+        "Carlos Donderis (Vice President of Engineering, AI Innovation)",
+        "Global Engineering Talent Acquisition Function"
+      ],
+      "sources": [
+        "https://about.mercari.com/en/",
+        "https://careers.mercari.com/en/",
+        "https://careers.mercari.com/en/work-in-japan/",
+        "https://careers.mercari.com/en/new-graduates/",
+        "https://about.mercari.com/en/about/leadership"
+      ]
+    },
+    {
+      "name": "Rakuten Group",
+      "country": "Japan",
+      "overview": "Rakuten Group is a global internet ecosystem conglomerate operating 70+ businesses across e-commerce (Rakuten Ichiba), fintech (Rakuten Card, Bank, Securities), digital content, and telecommunications (Rakuten Mobile / Open RAN). Through its AI & Data Division, it builds proprietary enterprise LLMs, conversational AI agents, personalized search/recommendation engines, and business IT automation systems.",
+      "official_site": "https://global.rakuten.com/corp/",
+      "careers_url": "https://japan-job-en.rakuten.careers/",
+      "fit_for_candidate": "Direct match for candidate's blend of AI product vision, prompt/eval workflows, and enterprise systems automation. Optimal fit for AI Agent Product Manager (e.g. Client Product Management / Business Support Development Department), Product Manager for AI & SaaS Productivity Tools (Corporate IT Service Dept), AI Solutions Consultant, or Internal Tools Systems Builder. Candidate's experience architecting SARVAX (B2B business role automation) and KARAX directly translates to Rakuten's internal AI agent and merchant tool rollouts.",
+      "language_signal": "English-first (Official company language). Under CEO Hiroshi Mikitani's company-wide 'Englishnization' mandate instituted in 2010, English is the required official working language for all internal communications, meetings, emails, documentation, and executive syncs. No Japanese proficiency is required for engineering or product roles.",
+      "international_hiring_signal": "Explicitly evidenced. Rakuten recruits internationally at scale across university new-graduate pipelines and experienced tech roles. Provides full Japanese work visa sponsorship (COE processing), flight coverage to Tokyo, temporary accommodation at corporate housing/hotels upon arrival, and comprehensive administrative relocation onboarding at Rakuten Crimson House in Setagaya-ku, Tokyo.",
+      "likely_job_families": [
+        "AI Agent & Client Platform Product Management",
+        "Product Management (AI & SaaS Productivity Tools / Corporate IT)",
+        "AI Systems & GPU Optimization Engineering",
+        "Technical Solutions & Operations Architecture",
+        "Software Engineering (Enterprise Automation & Web Platforms)"
+      ],
+      "contact_functions": [
+        "Hiroshi 'Mickey' Mikitani (Chairman and CEO, Rakuten Group)",
+        "Ting Cai (Chief Data Officer / Head of AI & Data Division)",
+        "Global Human Resources Supervisory Department (GHRD - Engineering & New Graduate Recruiting)"
+      ],
+      "sources": [
+        "https://global.rakuten.com/corp/",
+        "https://japan-job-en.rakuten.careers/",
+        "https://global.rakuten.com/corp/careers/graduates/recruit_engineer/",
+        "https://rakuten.today/blog/englishnization-embracing-global-vision.html",
+        "https://global.rakuten.com/corp/about/management.html"
+      ]
+    },
+    {
+      "name": "Woven by Toyota",
+      "country": "Japan",
+      "overview": "Woven by Toyota (formerly Woven Planet Holdings) is the dedicated advanced mobility and software development subsidiary of Toyota Motor Corporation. It builds Arene (the operating platform for software-defined vehicles), automated driving / ADAS safety software, the Woven City smart city testbed in Shizuoka, and large-scale Cloud & AI mobility data platforms.",
+      "official_site": "https://woven.toyota/en/",
+      "careers_url": "https://www.woven.toyota/en/careers",
+      "fit_for_candidate": "Strong fit on AI/ML platform infrastructure, internal simulation tools, data pipeline operations, and technical product operations. Rather than a pure robotics/control algorithm FDE, candidate's C3A Labs background in agent orchestration, test harnesses, QA/evals automation, and full-stack web platforms maps to roles supporting Arene cloud platforms, autonomous driving dataset infrastructure, and internal developer tooling.",
+      "language_signal": "English-first. Operating with an international Silicon Valley-style engineering culture, English is the primary official working language across engineering, product management, and leadership. Japanese language skills are not required for software and AI engineering roles.",
+      "international_hiring_signal": "Explicitly evidenced with structured overseas internship & hiring tracks (https://woven.toyota/en/careers/internship/). Category 4 on the official portal specifically covers 'Overseas Students Without a Japan Work Permit': provides round-trip international flights, Japanese work visa sponsorship, and 3 months of fully paid company accommodation in Tokyo. High-performing interns receive expedited conversion to full-time engineering roles with comprehensive relocation packages.",
+      "likely_job_families": [
+        "AI / Cloud Platform & Data Infrastructure Engineering",
+        "Internal Developer Tooling & Simulation Automation",
+        "Technical Operations & Autonomous Fleet Data Systems",
+        "QA, Verification & Systems Evals Engineering",
+        "Software Engineering (Backend & Distributed Infrastructure)"
+      ],
+      "contact_functions": [
+        "Hajime Kumabe (Chief Executive Officer & Representative Director)",
+        "John Absmeier (Chief Technology Officer & Director)",
+        "University Relations & Early Career Talent Acquisition Team at Woven by Toyota"
+      ],
+      "sources": [
+        "https://woven.toyota/en/",
+        "https://www.woven.toyota/en/careers",
+        "https://woven.toyota/en/careers/internship/",
+        "https://www.woven.toyota/en/company/leadership/",
+        "https://jobs.lever.co/woven-by-toyota"
+      ]
+    },
+    {
+      "name": "Turing",
+      "country": "Japan",
+      "overview": "Turing Inc. is an ambitious Tokyo-based autonomous driving AI startup with the stated mission to 'Overtake Tesla' through camera-only End-to-End (E2E) deep learning and multimodal physical foundation models. The company builds generative VLA (Vision-Language-Action) models (including Heron multimodal LLM, RACER causal reasoning, and DriveTiTok tokenizer), 3DGS-based closed-loop driving simulators, automated MLOps pipelines, and custom in-vehicle compute hardware.",
+      "official_site": "https://tur.ing/en/",
+      "careers_url": "https://jobs.tur.ing/en/",
+      "fit_for_candidate": "Exceptional fit for an agile AI systems, MLOps, and operations builder. Given Turing's fast-moving startup environment (co-founded by AI pioneers Issei Yamamoto and Shunsuke Aoki), candidate's hands-on experience building multi-model pipelines, rapid MVPs, MCP agent integrations, automated QA test suites, and internal operations directly fits roles in MLOps/Data Pipelines, Simulation Automation, AI Infrastructure, or Technical Operations. Fits candidate's founder-side versatility over rigid corporate specialization.",
+      "language_signal": "Bilingual / English-accessible. The entire careers portal, engineering technical roles, research publications (ICLR, AAAI, CVPR), and international hiring workflows are presented in English. ML research and AI infrastructure teams operate in English and Japanese. Japanese is helpful for local test fleet coordination but not a strict prerequisite for software, MLOps, or foundation model teams.",
+      "international_hiring_signal": "Explicitly evidenced. Official careers site features a comprehensive 'Relocation Support (Work in Japan)' program (https://jobs.tur.ing/en/workplace/relocation-support/). Turing provides full work visa (COE) sponsorship, dependent visa assistance, flight arrangements, 1st-month temporary furnished accommodation in Tokyo, long-term housing search assistance, bilingual city office/bank account/mobile setup support, and a one-time relocation bonus.",
+      "likely_job_families": [
+        "MLOps & Autonomous Driving Data Pipeline Engineering",
+        "AI Systems & GPU Training Infrastructure",
+        "Simulation, Evals & Automated QA Tooling",
+        "Technical Operations & Fleet Data Pipeline Coordination",
+        "Software Engineering (Machine Learning Systems & Cloud Tools)"
+      ],
+      "contact_functions": [
+        "Issei Yamamoto (Chief Executive Officer & Co-founder)",
+        "Shunsuke Aoki (Chief Technology Officer & Co-founder, Ph.D. Carnegie Mellon)",
+        "Kento Sasaki (Foundation AI Team Lead)",
+        "Talent Acquisition & Recruiting Lead at Turing"
+      ],
+      "sources": [
+        "https://tur.ing/en/",
+        "https://jobs.tur.ing/en/",
+        "https://jobs.tur.ing/en/newgrad-intern/",
+        "https://jobs.tur.ing/en/workplace/relocation-support/",
+        "https://jobs.tur.ing/en/positions/"
+      ]
+    },
+    {
+      "name": "CADDi",
+      "country": "Japan",
+      "overview": "CADDi is a high-growth industrial tech and manufacturing AI unicorn headquartered in Tokyo. Its flagship SaaS platform, CADDi Drawer, uses computer vision, multimodal deep learning, and NLP to digitize, index, and analyze complex 2D engineering drawings, CAD files, and supply-chain procurement records, enabling global manufacturers to eliminate duplicate designs, reduce procurement costs, and automate quotation workflows (CADDi Quote).",
+      "official_site": "https://caddi.com/",
+      "careers_url": "https://careers.caddi.com/en",
+      "fit_for_candidate": "Exceptional alignment with candidate's B2B AI systems and product operations background. CADDi's mission of transforming enterprise physical operations via AI mirrors C3A Labs' work on SARVAX (B2B AI agent workflow automation) and KARAX. Candidate fits roles in AI Solutions & Technical Operations, Internal Automation & Tooling, Product Management / Operations, or QA & Automated Testing for Global Product Teams, leveraging strong business acumen and rapid prototyping abilities.",
+      "language_signal": "English-friendly Global Product Team / Bilingual Company. CADDi's Global Product & Engineering organization is led by native English-speaking CTO Aki Kobashi and operates primarily in English ('No Japanese required' for international engineering roles on TokyoDev/Japan Dev). Domestic sales and Japanese supply chain operations use Japanese, creating an English-first development pod within a Japanese market leader.",
+      "international_hiring_signal": "Explicitly evidenced. CADDi actively recruits overseas software engineers and new graduates for its Tokyo headquarters. The company provides full Japanese work visa sponsorship (COE support), international relocation packages (flight tickets, initial accommodation support, and moving assistance), and dedicated onboarding programs for foreign engineers relocating to Tokyo.",
+      "likely_job_families": [
+        "AI Solutions & Platform Engineering (Global Product Team)",
+        "Product Operations & Technical Product Management",
+        "Internal Tooling & Workflow Automation Engineering",
+        "QA & Test Automation Engineering / SRE",
+        "Full-Stack & Backend Systems Engineering"
+      ],
+      "contact_functions": [
+        "Yushiro Kato (Representative Director & CEO)",
+        "Aki Kobashi (Co-founder & Chief Technology Officer / CTO)",
+        "Shigemoto Fujikura (Vice President of Engineering / VPoE)",
+        "Global Talent Acquisition & Tech Recruiting Team at CADDi"
+      ],
+      "sources": [
+        "https://caddi.com/",
+        "https://careers.caddi.com/en",
+        "https://tech.caddi.com/en",
+        "https://japan-dev.com/companies/caddi",
+        "https://www.tokyodev.com/companies/caddi"
+      ]
+    },
+    {
+      "name": "Hypotenuse AI",
+      "country": "Singapore",
+      "overview": "Hypotenuse AI develops an AI-native operating system and automated catalog intelligence platform for enterprise e-commerce brands. The platform uses autonomous AI agent workflows to ingest raw product data, enrich attributes, generate brand-aligned multilingual marketing copy, and batch-edit product imagery at scale.",
+      "official_site": "https://www.hypotenuse.ai",
+      "careers_url": "https://careers.hypotenuse.ai",
+      "fit_for_candidate": "Exceptional fit for a founder-side AI systems and operations builder from C3A Labs. Hypotenuse actively hires for agile, cross-functional roles such as Growth & Ops Intern (embedded directly in the Founder's Office), Product Architect (Forward Deployed / Operations), and AI Solutions Builder. Candidate's background architecting autonomous multi-agent pipelines (KARAX/SARVAX), managing QA/evals, implementing MCP tool integrations, and driving internal workflow automation matches Hypotenuse's explicit criteria for entrepreneurial speed, scrappiness, and high-ownership product-operations execution rather than narrow siloed engineering.",
+      "language_signal": "English is the official working language across product documentation, internal team operations, global Fortune 500 client accounts, and job postings across its Singapore and San Francisco offices.",
+      "international_hiring_signal": "Official job postings on YC Work at a Startup explicitly state 'US citizenship/visa not required' and 'open to candidates in Singapore or those willing to relocate'. As a lean startup (approx 15-20 team members), junior/intern foreign candidates typically leverage the Singapore Work Holiday Pass (WHP) or Training Employment Pass (TEP), while full-time roles require meeting Singapore Ministry of Manpower (MOM) Employment Pass (EP) benchmarks (inferred). Direct founder-office pitching via [REDACTED] is explicitly invited.",
+      "likely_job_families": [
+        "Founder's Office / Growth & Operations",
+        "Product Architect & Forward Deployed Solutions",
+        "AI Systems & Workflow Automation",
+        "Product Operations & AI Evals/QA",
+        "Full-Stack / AI Solutions Engineering"
+      ],
+      "contact_functions": [
+        "Joshua Wong (Founder & CEO)",
+        "Zeke Anouna (Head of Go-to-Market)",
+        "Shi Ng (Growth & Product Marketing Lead)",
+        "Founder's Office / Talent Acquisition ([REDACTED])"
+      ],
+      "sources": [
+        "https://www.hypotenuse.ai",
+        "https://careers.hypotenuse.ai/",
+        "https://www.ycombinator.com/companies/hypotenuse-ai/jobs",
+        "https://ycombinator.com/companies/hypotenuse-ai/jobs/lUGrmMH-growth-ops-intern",
+        "https://ycombinator.com/companies/hypotenuse-ai/jobs/rGZqkiK-product-architect-forward-deployed"
+      ]
+    },
+    {
+      "name": "PatSnap",
+      "country": "Singapore",
+      "overview": "PatSnap is a global AI-powered innovation intelligence and intellectual property (IP) analytics SaaS platform (Series E unicorn founded in Singapore). Indexing over 200 million patents, scientific papers, and market intelligence data points, PatSnap provides domain-specific LLMs, research agents, and AI copilots (Hiro) to assist R&D and legal teams with prior art searches, patent drafting, competitive technology landscaping, and material discovery.",
+      "official_site": "https://www.patsnap.com",
+      "careers_url": "https://careers.patsnap.com",
+      "fit_for_candidate": "Strong fit within AI Solutions Consulting, R&D Intelligence Operations, and Product Architecture. Given the candidate's track record at C3A Labs in structured research workflows, agentic tool orchestration, prompt evaluations, and product QA, he aligns directly with PatSnap's 'AI Solutions Engineer (IP / Life Sciences)', 'AI Product Operations', and 'Technical Enablement' tracks, bridging enterprise client requirements with complex AI data pipelines.",
+      "language_signal": "English is the primary international corporate and operational language across its Singapore global headquarters, UK, Canada, and US offices serving over 18,000 global enterprise clients.",
+      "international_hiring_signal": "PatSnap is an established enterprise (800+ employees globally) with corporate infrastructure capable of sponsoring Singapore Employment Passes (EP) for eligible technical hires. However, entry-level international hiring without Singapore university degrees or significant tenure faces MOM Compass point framework and salary threshold barriers (inferred; explicit visa sponsorship guarantees for junior roles are not advertised on public job boards).",
+      "likely_job_families": [
+        "AI Solutions Engineering",
+        "AI Product Operations & Systems Enablement",
+        "Customer Solutions & Technical Consulting",
+        "R&D AI Workflow Architecture",
+        "Product Management (AI / Search Systems)"
+      ],
+      "contact_functions": [
+        "Jeffrey Tiong (Founder & CEO)",
+        "Guan Dian (Co-Founder & APAC Commercial Leader)",
+        "May Gu (COO & VP of Global Talent)",
+        "Global Talent Acquisition Team ([REDACTED])"
+      ],
+      "sources": [
+        "https://www.patsnap.com",
+        "https://careers.patsnap.com/",
+        "https://careers.patsnap.com/o/ai-solutions-engineer-intellectual-property",
+        "https://www.patsnap.com/about-us",
+        "https://sg.linkedin.com/in/jeffreytiong"
+      ]
+    },
+    {
+      "name": "Tookitaki",
+      "country": "Singapore",
+      "overview": "Tookitaki is a Singapore-headquartered RegTech and financial crime prevention company (majority acquired by cross-border payments company Thunes). Tookitaki develops FinCense, an enterprise AI-driven Anti-Money Laundering (AML), fraud detection, Smart Screening, and transaction monitoring platform integrated with a decentralized Anti-Financial Crime (AFC) community typology repository.",
+      "official_site": "https://www.tookitaki.com",
+      "careers_url": "https://www.tookitaki.com/careers",
+      "fit_for_candidate": "Direct match for Business Solutions Expert, Client Enablement, and Product Operations tracks. Tookitaki explicitly seeks 'builder-operators' who can translate complex business/compliance problems into functional specifications, work across data science and delivery teams, and implement automated client workflows. Candidate's experience at C3A Labs managing founder requirements, deploying multi-step AI pipelines, and conducting rigorous QA aligns squarely with FinCense services delivery and solutions engineering.",
+      "language_signal": "English is the standard operational and technical language across all Singapore headquarters operations, MyCareersFuture Singapore filings, and international Tier-1 banking deployments.",
+      "international_hiring_signal": "Tookitaki maintains dual major operational hubs in Singapore (HQ) and Bengaluru (India). While public Singapore postings adhere to local Fair Consideration and EP requirements, Tookitaki's established India-Singapore operational corridor presents a clear internal mobility and cross-border deployment mechanism for India-based technical builders, though direct Singapore visa sponsorship for entry-level overseas applicants is constrained by MOM EP salary baselines.",
+      "likely_job_families": [
+        "Business Solutions & Client Delivery",
+        "Client Enablement & Solution Architecture",
+        "Product Operations & Integration Engineering",
+        "AI/AML Workflow Implementation",
+        "Data Systems & QA Operations"
+      ],
+      "contact_functions": [
+        "Abhishek Chatterjee (Founder & CEO)",
+        "Director of Client Enablement / Head of Services Delivery",
+        "Subhasis Bandyopadhyay (VP Engineering / Forward Engineering Lead)",
+        "Global HR & Talent Team ([REDACTED])"
+      ],
+      "sources": [
+        "https://www.tookitaki.com",
+        "https://www.tookitaki.com/careers",
+        "https://www.mycareersfuture.gov.sg/companies/tookitaki-holding-201433918M",
+        "https://www.thunes.com/news/thunes-and-tookitaki-form-powerful-global-alliance-for-safe-secure-payments",
+        "https://sg.linkedin.com/in/abhishek-chatterjee-tookitaki"
+      ]
+    },
+    {
+      "name": "Silent Eight",
+      "country": "Singapore",
+      "overview": "Silent Eight is a Singapore-headquartered enterprise artificial intelligence company developing explainable, policy-bound AI agents for Financial Crime Compliance (FCC). Its core platform, Iris, automates complex sanctions screening, transaction monitoring, adverse media investigations, and adjudication audits for Tier-1 global institutions including HSBC and Standard Chartered.",
+      "official_site": "https://www.silenteight.com",
+      "careers_url": "https://silenteight.teamtailor.com",
+      "fit_for_candidate": "High alignment for AI Systems QA, Model Evaluation, and Solutions Delivery. Silent Eight's Iris platform relies on rigorous agentic decisioning, automated sampling, and explainable audit trails. Candidate's expertise at C3A Labs in deterministic agent pipelines, guardrail enforcement, rigorous QA evaluations, and automation systems translates directly to their Product Operations, AI Governance, and Technical Integration teams.",
+      "language_signal": "English is the exclusive working language for all global banking deployments, corporate operations, and technical documentation across Singapore (HQ), Warsaw, London, and New York offices.",
+      "international_hiring_signal": "Silent Eight officially champions a 'Remote FOREVER' global policy on its Teamtailor careers portal while operating major regional hubs including Singapore HQ. Direct visa sponsorship to Singapore is not explicitly promised for entry-level candidates on open job listings; however, candidates can be hired remotely globally or pursue hub mobility and work passes upon established performance.",
+      "likely_job_families": [
+        "AI Systems QA & Model Evaluation",
+        "Solutions Delivery & Forward Engineering",
+        "Product Operations & Governance",
+        "Technical Implementation Specialist",
+        "Integration & Agent Workflow Engineering"
+      ],
+      "contact_functions": [
+        "Martin Markiewicz (Co-Founder & CEO)",
+        "Julia Markiewicz (Co-Founder & COO)",
+        "Michael Wilkowski (Co-Founder & CTO)",
+        "Global Talent Acquisition Team (silenteight.teamtailor.com)"
+      ],
+      "sources": [
+        "https://www.silenteight.com",
+        "https://silenteight.teamtailor.com/",
+        "https://www.silenteight.com/contact",
+        "https://thefinancialtechnologyreport.com/top-companies/silent-eight/",
+        "https://yespress.io/silent-eight"
+      ]
+    },
+    {
+      "name": "Active.Ai",
+      "country": "Singapore",
+      "overview": "Active.Ai is a Singapore-incorporated conversational AI fintech platform (Active Intelligence Pte. Ltd., acquired by conversational automation leader Gupshup in April 2022). It developed the Triniti AI engine and Conversational Banking as a Service (CBaaS) suite, enabling commercial banks and fintechs across 43 countries to automate customer onboarding, servicing, transactions, and intelligent dialogues across WhatsApp, voicebots, and mobile applications.",
+      "official_site": "https://www.gupshup.ai",
+      "careers_url": "https://www.gupshup.ai/careers",
+      "fit_for_candidate": "Strong product and operational fit for Conversational AI systems building, LLM integrations, and customer workflow automation. Given candidate's hands-on experience developing AI agents, MCP tool integrations, prompt architectures, and web interfaces at C3A Labs, he is well suited for Conversational Solutions Engineering, Product Operations, and BFSI Implementation roles within Gupshup's conversational banking division.",
+      "language_signal": "English is the primary language across product interfaces, NLP dialogue training, global enterprise client contracts, and corporate communications across Singapore, India, and the US.",
+      "international_hiring_signal": "Following its 2022 acquisition, Active.Ai's hiring is managed under Gupshup Inc. Core engineering and product development are centered in Bengaluru (India), with business development and regional leadership in Singapore. Standalone Singapore visa sponsorship for entry-level candidates is unavailable directly; however, joining Gupshup's Indian engineering team provides a structured internal pathway for APAC client deployments and regional transfers.",
+      "likely_job_families": [
+        "Conversational AI & Agent Systems Engineering",
+        "BFSI Solutions Consulting & Technical Enablement",
+        "Product Operations & Workflow Automation",
+        "Full-Stack Integration Engineering",
+        "Conversational UX & Prompt Architecture"
+      ],
+      "contact_functions": [
+        "Beerud Sheth (Co-Founder & CEO, Gupshup)",
+        "Ravi Shankar (Co-Founder & Former CEO, Active.Ai)",
+        "Shankar Narayanan (Co-Founder & Former COO, Active.Ai)",
+        "Gupshup Global Talent Acquisition ([REDACTED])"
+      ],
+      "sources": [
+        "https://www.gupshup.ai",
+        "https://www.gupshup.ai/resources/press-releases/gupshup-acquires-conversational-bfsi-platform-active-ai/",
+        "https://www.businesswire.com/news/home/20220403005138/en/Gupshup-Acquires-Active.Ai-the-Leading-Conversational-AI-Platform-for-Banks-and-Fintech-Companies",
+        "https://builtin.com/company/activeai-gupshup-inc-company",
+        "https://en.wikipedia.org/wiki/Active_Intelligence_Pte_Ltd"
+      ]
+    },
+    {
+      "name": "Trax Retail",
+      "country": "Singapore",
+      "overview": "Trax (Trax Technology Solutions Pte. Ltd.) is a global retail-technology unicorn founded in Singapore in 2010. Trax digitizes physical retail store shelves using computer vision, IoT shelf cameras, and retail data science. Its enterprise solutions—including Trax In-Store Execution, Dynamic Merchandising, Retail Watch autonomous shelf monitoring, and Shopkick—convert shelf images into real-time SKU-level analytics, out-of-stock alerts, planogram compliance tracking, and market measurement data for major FMCG/CPG enterprises including Coca-Cola, Nestlé, P&G, and Heineken.",
+      "official_site": "https://traxretail.com/",
+      "careers_url": "https://traxretail.com/careers/",
+      "fit_for_candidate": "Strong operational and technical systems alignment for a founder-side AI systems builder rather than a narrow FDE title. Satyam's track record at C3A Labs building autonomous AI workflows, MCP integrations, QA/evals pipelines, and client-facing dashboards directly matches Trax's AI Operations, Recognition Services, and Solutions Delivery teams. In these functions, operators translate enterprise FMCG business requirements into automated data collection flows, recognition pipeline quality assurance, and client reporting systems.",
+      "language_signal": "English is the official global business, product management, and engineering language across Trax's Singapore headquarters, Tel Aviv R&D center, and international offices. Multilingual requirements (e.g., Portuguese, French, German) appear only for localized regional field execution roles, while Singapore HQ and global technical operations operate strictly in English.",
+      "international_hiring_signal": "Singapore Headquarters: 135 Cecil Street, #10-01, Singapore 069536. Official Evidence vs. Inference: Trax is a Singapore-registered multinational that sponsors Singapore Employment Passes (EP) for specialized technical, data, and operational talent under the Ministry of Manpower (MOM) COMPASS points framework. Explicit entry-level international visa sponsorship or relocation for offshore candidates without prior local work authorization is not publicly advertised on general job listings. Foreign degree holders must clear the MOM EP qualifying salary benchmark (minimum S$5,600/month). Pre-graduation foreign internships in Singapore are constrained by MOM visa regulations unless eligible for a Work Holiday Pass.",
+      "likely_job_families": [
+        "AI Operations & Recognition Services",
+        "Solutions Engineering & Technical Implementation",
+        "Technical Product Operations",
+        "Data Acquisition & Systems Workflow Engineering",
+        "Business Operations & Strategy"
+      ],
+      "contact_functions": [
+        "Gary Laben (Chief Executive Officer)",
+        "Karan Khanna (Chief Product & Technology Officer)",
+        "Joel Bar-El (Co-Founder & Executive Chairman)",
+        "Global Talent Acquisition & People Operations Team"
+      ],
+      "sources": [
+        "https://traxretail.com/",
+        "https://traxretail.com/company/about-us/",
+        "https://traxretail.com/careers/",
+        "https://traxretail.com/recruitment-privacy-policy/",
+        "https://en.wikipedia.org/wiki/Trax_Retail"
+      ]
+    },
+    {
+      "name": "Advance Intelligence Group",
+      "country": "Singapore",
+      "overview": "Advance Intelligence Group is a Singapore-headquartered AI-native fintech unicorn (valued at $2B+, backed by SoftBank Vision Fund 2, Warburg Pincus, EDBI, and Northstar). Founded in 2016, the group operates three core business pillars across Asia: (1) ADVANCE.AI (enterprise digital identity verification, eKYC/eKYB, fraud prevention, and risk automation for 700+ banks and fintechs); (2) Atome Financial (Southeast Asia's leading Buy-Now-Pay-Later platform Atome and digital lending platform Kredit Pintar); and (3) Ginee (omnichannel e-commerce merchant management ERP).",
+      "official_site": "https://www.advancegroup.com/",
+      "careers_url": "https://www.advancegroup.com/career",
+      "fit_for_candidate": "Exceptional fit for a founder-side AI systems, product, and operations builder. Given Satyam's background at C3A Labs developing AI agent architectures, internal automation tools, MCP connectors, and structured QA validation, his profile maps directly into ADVANCE.AI's AI Product Operations, Commercial Operations, Platform Solutions Architecture, and Technical Product Management. These roles bridge enterprise client integrations, identity/fraud ML pipelines, and business workflows.",
+      "language_signal": "English is the official corporate, engineering, and operational language in Singapore HQ and across cross-border business units. Regional languages (Bahasa, Tagalog, Mandarin) are utilized for local market merchant and customer support, but technical architecture, executive leadership, product roadmaps, and business operations are conducted in English.",
+      "international_hiring_signal": "Singapore Headquarters: 80 Robinson Road, #09-01, Singapore 068898. Official Evidence vs. Inference: Advance Intelligence Group maintains over 1,400+ employees across 11 countries and sponsors Singapore Employment Passes (EP) for mid-to-senior tech and product hires meeting MOM COMPASS benchmarks. While the company regularly posts Singapore-based internships and analyst roles in Product, Commercial Operations, and Engineering, these predominantly target local university students or candidates with existing Singapore work rights. Offshore visa sponsorship for entry-level candidates requires meeting the statutory S$5,600+ monthly EP threshold. Direct junior overseas relocation packages are not explicitly guaranteed on public job boards.",
+      "likely_job_families": [
+        "AI Product Operations & Commercial Operations",
+        "Solutions Architecture & Technical Support Engineering",
+        "AI Systems & Workflow Automation",
+        "Product Management (Financial Systems / Risk Intelligence)",
+        "Business Operations & Strategy Analyst"
+      ],
+      "contact_functions": [
+        "Jefferson Chen (Co-Founder, Group Chairman & CEO; CEO of Atome Financial)",
+        "Shou Dong (Group Co-Founder & CEO of ADVANCE.AI)",
+        "Chun Dong Chau (Group Co-Founder)",
+        "Dennis Martin (CEO of Credit Bureau / Credit Reporting Lead, ADVANCE.AI)",
+        "Group Talent Acquisition Team ([REDACTED])"
+      ],
+      "sources": [
+        "https://www.advancegroup.com/",
+        "https://www.advancegroup.com/about-us/",
+        "https://www.advancegroup.com/career",
+        "https://www.advance.ai/",
+        "https://www.atome.sg/"
+      ]
+    },
+    {
+      "name": "Grab",
+      "country": "Singapore",
+      "overview": "Grab (Grab Holdings Limited, NASDAQ: GRAB) is Southeast Asia's leading superapp, operating across Deliveries (GrabFood, GrabMart, GrabExpress), Mobility (ride-hailing), Financial Services (GrabPay, GrabFin, and digital banking via GXS Bank in partnership with Singtel), and Enterprise Services (GrabMaps / Geo location intelligence, GrabAds). Grab's platform is powered by massive-scale AI/ML routing, dynamic pricing algorithms, computer vision, agentic LLM assistants, and automated driver/merchant operations serving millions of daily active users across 8 Southeast Asian countries.",
+      "official_site": "https://www.grab.com/sg/",
+      "careers_url": "https://www.grab.careers/en/",
+      "fit_for_candidate": "High-impact alignment for a builder who combines product intuition, business operations, and AI systems implementation. Satyam's experience at C3A Labs building AI workflow automation, eval harnesses, and operational dashboards fits Grab's Platform Excellence & Automation, Technical Product Operations (Geo/GrabMaps, Deliveries, Mobility), Solutions Engineering, and Business Operations Strategy. These teams focus on automating operational touchpoints between physical dispatch and software platforms.",
+      "language_signal": "English is the official working and business language across Grab globally and within its Singapore headquarters. All engineering RFCs, product requirements documents (PRDs), executive communications, and job specifications are in English.",
+      "international_hiring_signal": "Singapore Headquarters: Global HQ at 3 Media Close, One-North, Singapore 138498 and Marina One. Official Evidence vs. Inference: Grab is one of Singapore's largest international tech sponsors, routinely hiring international software engineers, product managers, and data scientists on Singapore Employment Passes (EP) scored via the COMPASS framework. For early-career candidates, Grab runs formal Tech Graduate and Internship Programs in Singapore, primarily targeted at students with local work authorization or from local universities (NUS/NTU/SMU). Direct overseas entry-level visa sponsorship requires passing MOM COMPASS points with minimum monthly compensation of S$5,600+; lateral internal transfers via Grab's India R&D center (Bangalore) or direct full-time hiring for verified builders represent the primary international pathways.",
+      "likely_job_families": [
+        "Platform Automation & Operations Excellence",
+        "AI Product Operations & Systems Integration",
+        "Technical Product Operations (Geo / GrabMaps / Deliveries / Mobility)",
+        "Solutions Engineering & Workflow Automation",
+        "Business Operations & Strategy Analyst"
+      ],
+      "contact_functions": [
+        "Anthony Tan (Group CEO & Co-Founder)",
+        "Alex Hungate (President & Chief Operating Officer)",
+        "Suthen Thomas (Chief Technology Officer)",
+        "Philipp Kandal (Chief Product Officer)",
+        "Global Campus Recruitment & Tech Talent Acquisition Team"
+      ],
+      "sources": [
+        "https://www.grab.com/sg/",
+        "https://www.grab.careers/en/",
+        "https://www.grab.careers/en/locations/singapore/",
+        "https://investors.grab.com/corporate-governance/executive-management/default.aspx"
+      ]
+    },
+    {
+      "name": "Sea / Shopee",
+      "country": "Singapore",
+      "overview": "Sea Limited (NYSE: SE) is Southeast Asia's largest consumer internet company, headquartered in Singapore. Sea operates three market-leading pillars: (1) Shopee, Southeast Asia and Taiwan's largest e-commerce platform featuring integrated logistics (SPX Express) and live shopping (Shopee Live); (2) Monee / SeaMoney (including MariBank in Singapore and SeaBank regionally), providing digital banking, consumer financing (SPayLater), and payment infrastructure; (3) Garena, a global digital entertainment developer (Free Fire); and (4) Sea AI Lab (SAIL), conducting foundational AI/ML research in NLP, computer vision, and decision intelligence.",
+      "official_site": "https://www.sea.com/",
+      "careers_url": "https://career.sea.com/",
+      "fit_for_candidate": "Strong fit for a founder-side AI systems and operational workflow architect. Satyam's capability to design end-to-end AI pipelines, automate business logic, build testing/eval harnesses, and create internal tools maps directly into Shopee Operations (Cross-Border Operations, Fraud & Risk Operations, Seller Workflow Automation), Sea AI Lab Product Operations, and Internal Tools / Systems Engineering. These functions bridge high-throughput operational problems with AI/software systems.",
+      "language_signal": "English is the official working and corporate language at Sea, Shopee, and Garena in Singapore. While Mandarin capability is occasionally noted as a plus for specific cross-border e-commerce merchant functions interacting with Greater China suppliers, core engineering, product management, operational architecture, and corporate leadership operate completely in English.",
+      "international_hiring_signal": "Singapore Headquarters: 1 Fusionopolis Place, #17-10, Galaxis, Singapore 138522. Official Evidence vs. Inference: Sea/Shopee is one of Singapore's most active sponsors of Singapore Employment Passes (EP) for international tech, product, and data professionals. Sea runs the prestigious Sea Global Management Associate Program (MAP) in Singapore across Shopee, Garena, and Finance, as well as Shopee Graduate and Internship tracks. Official hiring pathways exist for international graduates meeting MOM COMPASS standards (qualifying salary threshold S$5,600/month). Unadvertised/restricted: Direct pre-graduation internships in Singapore for non-local university students without Singapore student passes or Work Holiday Pass eligibility cannot be sponsored directly due to MOM immigration guidelines.",
+      "likely_job_families": [
+        "E-Commerce Operations & Process Automation",
+        "AI Product Operations & Model Evaluation (Sea AI Lab / Shopee AI)",
+        "Cross-Border Business Operations & Logistics Systems",
+        "Product Management & Systems Analyst",
+        "Solutions & Internal Tools Engineering"
+      ],
+      "contact_functions": [
+        "Forrest Li (Founder, Chairman & Group Chief Executive Officer)",
+        "Gang Ye (Chief Operating Officer)",
+        "Chris Feng (President, Sea)",
+        "David Chen (Chief Product Officer, Shopee)",
+        "Sea Global Campus Recruitment & Shopee People Team"
+      ],
+      "sources": [
+        "https://www.sea.com/",
+        "https://career.sea.com/",
+        "https://career.sea.com/programs",
+        "https://careers.shopee.sg/",
+        "https://www.sea.com/aboutus/leadership/management/ForrestLi"
+      ]
+    },
+    {
+      "name": "Endowus",
+      "country": "Singapore",
+      "overview": "Endowus (Endowus Pte. Ltd.) is Asia's leading independent digital wealth platform and wealthtech unicorn, headquartered in Singapore and licensed by the Monetary Authority of Singapore (MAS) and the SFC in Hong Kong. Endowus is the first digital advisor in Singapore to span personal savings, private wealth, and public pension schemes (CPF & SRS). Managing over S$7+ billion in client assets, it delivers conflict-free, trailer-fee-rebating wealth advisory, institutional portfolio algorithms (partnering with Dimensional, PIMCO, BlackRock, Bridgewater), and private market / hedge fund access for retail, high-net-worth, and family office clients.",
+      "official_site": "https://endowus.com/",
+      "careers_url": "https://endowus.com/careers",
+      "fit_for_candidate": "Exceptional high-leverage fit for a founder-side AI systems, product, and operations builder. At Endowus's nimble scale (~150-250 employees), cross-functional builders who can automate compliance workflows, build internal operational tools, integrate AI agent pipelines, and design client-facing data dashboards provide immediate ROI. Satyam's background at C3A Labs in AI evals, agentic workflow automation, and rapid product prototyping directly aligns with Endowus's Platform Operations, Client Technologies, Product Operations, and Automation Systems Engineering.",
+      "language_signal": "English is the official working and statutory language across Endowus Singapore. Regulatory filings with the Monetary Authority of Singapore (MAS), investment advisory materials, engineering architecture, product specifications, and company communications are conducted 100% in English. Cantonese/Mandarin is utilized as an auxiliary language for Hong Kong expansion.",
+      "international_hiring_signal": "Singapore Headquarters: Located in Singapore's Central Business District (18 Robinson Road / Cecil Street area). Official Evidence vs. Inference: Endowus has an international team spanning Singapore, Hong Kong, and India (Hyderabad engineering/QA hub) and sponsors Singapore Employment Passes (EP) for key technical, investment, and operational talent under the MOM COMPASS framework. Internship and junior openings are actively posted in Singapore for Product, Client Experience, and Operations, but primarily target local university students or candidates with valid local work status. Offshore entry-level visa sponsorship requires clearing the MOM EP minimum salary threshold (S$5,600+ monthly). Pre-graduation visa sponsorship for foreign undergraduate interns is not offered.",
+      "likely_job_families": [
+        "Platform Operations & Workflow Automation",
+        "Client Technology & Product Operations",
+        "AI / Automation Systems Engineering",
+        "Wealth Operations & Compliance Automation",
+        "Technical Product Management / Systems Analyst"
+      ],
+      "contact_functions": [
+        "Gregory Van (Co-Founder & Chief Executive Officer)",
+        "Samuel Rhee (Co-Founder, Chairman & Group Chief Investment Officer)",
+        "Deepak Sarda (Chief Technology Officer)",
+        "John Li (Head of Client Technologies)",
+        "Dominic Ong (Chief Financial Officer)",
+        "People & Talent Acquisition Team (Endowus HR)"
+      ],
+      "sources": [
+        "https://endowus.com/",
+        "https://endowus.com/team",
+        "https://endowus.com/careers",
+        "https://endowus.com/en-hk/team"
+      ]
+    }
+  ]
+}
