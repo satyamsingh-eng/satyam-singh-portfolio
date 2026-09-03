@@ -9,11 +9,9 @@
 
 ## Quick Launch Interfaces
 
-1. **Universal Desktop Command Hub:** [`index.html`](index.html)  
-   *Full side-by-side matrices, countdown clocks, executive overview.*
-2. **Universal Mobile Command Hub (Phone-First):** [`MOBILE_UNIVERSAL_DASHBOARD.html`](MOBILE_UNIVERSAL_DASHBOARD.html)  
-   *Monochromatic Swiss Grotesk UI, dark/light toggle, live search, bottom dock, persistent checklists.*
-3. **Master Workspace Guidance:** [`GUIDANCE.md`](GUIDANCE.md)  
+1. **Universal Command Hub:** [`index.html`](index.html)  
+   *Single canonical dashboard: monochromatic Swiss UI, dark/light toggle, live search, bottom dock, persistent action tracker.*
+2. **Master Workspace Guidance:** [`GUIDANCE.md`](GUIDANCE.md)  
    *Complete directory rules, drag-and-drop guidelines, admissions matrices, and verification standards.*
 
 ---
@@ -48,13 +46,10 @@ PORTFOLIO/ (Desktop Root)
 │
 ├── OUTPUT/                        # Central Distribution & PDF Exports
 │   ├── SATYAM_SINGH_RESUME.pdf    # Satyam Executive Resume
-│   ├── SHRAVANI_VEER_RESUME.pdf   # Shravani Executive Resume
-│   ├── UNIVERSAL_DASHBOARD.html   # Desktop dashboard copy
-│   └── MOBILE_UNIVERSAL_DASHBOARD.html # Phone-optimized dashboard copy
+│   └── SHRAVANI_VEER_RESUME.pdf   # Shravani Executive Resume
 │
 ├── assets/                        # Shared Swiss Grotesk stylesheets & runtime scripts
-├── index.html                     # Root Desktop Hub (GitHub Pages entry)
-├── MOBILE_UNIVERSAL_DASHBOARD.html # Root Mobile Hub
+├── index.html                     # Single Canonical Command Hub (GitHub Pages entry)
 ├── GUIDANCE.md                    # Master Workspace Guidance & Operational Directives
 └── README.md                      # This Document
 ```

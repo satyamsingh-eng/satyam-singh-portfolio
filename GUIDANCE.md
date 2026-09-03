@@ -38,13 +38,10 @@ PORTFOLIO/ (Desktop Root)
 │
 ├── OUTPUT/                        # Central pickup folder for all final exports
 │   ├── SATYAM_SINGH_RESUME.pdf    # Canonical Satyam resume (Plus Jakarta Sans / Inter)
-│   ├── SHRAVANI_VEER_RESUME.pdf   # Canonical Shravani resume (Plus Jakarta Sans / Inter)
-│   ├── UNIVERSAL_DASHBOARD.html   # Desktop command center copy
-│   └── MOBILE_UNIVERSAL_DASHBOARD.html # Phone-optimized command center copy
+│   └── SHRAVANI_VEER_RESUME.pdf   # Canonical Shravani resume (Plus Jakarta Sans / Inter)
 │
 ├── assets/                        # Shared Swiss Grotesk stylesheets & runtime scripts
-├── index.html                     # Primary desktop command hub (GitHub Pages entry)
-├── MOBILE_UNIVERSAL_DASHBOARD.html # Mobile/phone command hub
+├── index.html                     # Single canonical command hub (Desktop & Mobile)
 ├── GUIDANCE.md                    # This document
 └── README.md                      # GitHub landing readme
 ```
