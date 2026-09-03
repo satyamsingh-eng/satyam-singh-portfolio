@@ -1,0 +1,82 @@
+{
+  "student_info": {
+    "full_name": "Satyam Singh Rajput",
+    "roll_number": "BCA2302091",
+    "class_and_division": "Fourth Year \u2014 Division C (FOBCA-C)",
+    "semester": "Semester VII (Sem-VII)",
+    "specialization": "Cloud Computing and Security",
+    "program": "Bachelor of Computer Applications (BCA 4-Year CBCS/OBE)",
+    "school": "School of Computer Studies (SCS)",
+    "university": "Sri Balaji University, Pune (SBUP)"
+  },
+  "academic_performance": {
+    "semester_5_cgpa": 8.46,
+    "semester_6_cgpa": 8.27,
+    "attendance_status": "Special Consideration Requested due to Full-Time Employment"
+  },
+  "contact_and_accounts": {
+    "personal_email": "satyam25613@gmail.com",
+    "work_email": "Satyam.singh@c3alabs.com",
+    "phone": "+91 9730153661",
+    "whatsapp_id": "31400673689742@lid"
+  },
+  "professional_role": {
+    "title": "Strategic Analyst & Consultant",
+    "company": "C3aLabs (USA / India)",
+    "reporting_to": "Sai Casula (Founder)",
+    "working_hours": "5:00 PM \u2013 2:00 AM IST"
+  },
+  "career_vision": {
+    "target": "Japan AI Career via funded startup internship -> AI research -> Master's degree"
+  },
+  "semester_vii_subjects": [
+    {
+      "code": "BCA230701",
+      "name": "Software Project Management",
+      "credits": 2,
+      "faculty": "Dr. Anup Shivanechari"
+    },
+    {
+      "code": "BCA230702",
+      "name": "Research Methodology",
+      "credits": 4,
+      "faculty": "Dr. Rajasmita Panda"
+    },
+    {
+      "code": "BCA230715",
+      "name": "Computer Graphics and Multimedia",
+      "credits": 4,
+      "faculty": "Prof. Debidutta Sharma"
+    },
+    {
+      "code": "BCA230711",
+      "name": "Salesforce (Theory)",
+      "credits": 4,
+      "faculty": "Prof. Ashlesha Deole"
+    },
+    {
+      "code": "BCA230712",
+      "name": "Ethical Hacking (Theory)",
+      "credits": 4,
+      "faculty": "Dr. Priyanka Sawale"
+    },
+    {
+      "code": "BCA230713",
+      "name": "Computer Laboratory 1 \u2013 Salesforce",
+      "credits": 1,
+      "faculty": "Prof. Ashlesha Deole"
+    },
+    {
+      "code": "BCA230714",
+      "name": "Computer Laboratory 2 \u2013 Ethical Hacking",
+      "credits": 1,
+      "faculty": "Dr. Priyanka Sawale"
+    },
+    {
+      "code": "BCA2307XX",
+      "name": "MOOC Course / Research Paper Publication",
+      "credits": 2,
+      "faculty": "Dr. Anita Desai"
+    }
+  ]
+}

@@ -4,11 +4,11 @@
 
 This folder maintains a job-first relocation route for a founder-side AI systems, product, and operations builder. The route tests a country through useful work before a foreign Master’s commitment.
 
-Canonical presentation: [`../GLOBAL_ESCAPE_ROADMAP.html`](../GLOBAL_ESCAPE_ROADMAP.html)
+Canonical presentation: [`../../00_WEBSITE/GLOBAL_ESCAPE_ROADMAP.html`](../../00_WEBSITE/GLOBAL_ESCAPE_ROADMAP.html)
 
 Central data layer: [`education-opportunities.json`](education-opportunities.json)
 
-Supported opportunity presentation: [`FULLY_FUNDED_OPPORTUNITIES.html`](../FULLY_FUNDED_OPPORTUNITIES.html)
+Supported opportunity presentation: [`FULLY_FUNDED_OPPORTUNITIES.html`](../../00_WEBSITE/FULLY_FUNDED_OPPORTUNITIES.html)
 
 Decision diagram: [`decision-diagram.html`](decision-diagram.html)
 
@@ -16,7 +16,7 @@ Parallel company research packet: [`company-research.json`](company-research.jso
 
 The public company packet is sanitized; raw primary checks remain local-only.
 
-Editable strategy diagram: [`../GLOBAL_ESCAPE_ENTRY_STRATEGY.excalidraw`](../GLOBAL_ESCAPE_ENTRY_STRATEGY.excalidraw)
+Editable strategy diagram: [`GLOBAL_ESCAPE_ENTRY_STRATEGY.excalidraw`](GLOBAL_ESCAPE_ENTRY_STRATEGY.excalidraw)
 
 ## Current Curation (v2, 28 August 2026)
 
@@ -64,4 +64,4 @@ The private research workflow used business contact details obtained through Apo
 
 ## Maintenance boundary
 
-The raw Apollo/search payloads, scripts, screenshots, private application documents, and regeneration commands are retained in the local-only archive. The public release exposes only the curated evidence files linked from [`evidence/index.html`](index.html). Re-run the full private research workflow before changing a public ranking or deadline.
+The raw Apollo/search payloads, scripts, screenshots, private application documents, and regeneration commands are retained in the local-only archive. The public release exposes only the curated evidence files linked from [`index.html`](index.html). Re-run the full private research workflow before changing a public ranking or deadline.

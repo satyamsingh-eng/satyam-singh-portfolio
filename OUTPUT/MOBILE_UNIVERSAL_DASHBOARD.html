@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>Universal Mobile Command Hub — Satyam &amp; Shravani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F5F5F7;
+      --card-bg: #FFFFFF;
+      --card-bg-elevated: #FFFFFF;
+      --ink: #000000;
+      --text-main: #1D1D1F;
+      --text-muted: #6E6E73;
+      --text-subtle: #86868B;
+      --border: #D2D2D7;
+      --border-light: #E5E5EA;
+      --hairline: 1px solid var(--border-light);
+      --wash: #F2F2F7;
+      --wash-dark: #1C1C1E;
+      --pill-bg: #000000;
+      --pill-text: #FFFFFF;
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.08);
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg: #000000;
+      --card-bg: #121214;
+      --card-bg-elevated: #1C1C1E;
+      --ink: #FFFFFF;
+      --text-main: #F5F5F7;
+      --text-muted: #A1A1A6;
+      --text-subtle: #86868B;
+      --border: #333336;
+      --border-light: #242426;
+      --wash: #1C1C1E;
+      --wash-dark: #2C2C2E;
+      --pill-bg: #FFFFFF;
+      --pill-text: #000000;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.5);
+      --shadow-md: 0 4px 14px rgba(0,0,0,0.7);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+      padding-top: calc(env(safe-area-inset-top) + 16px);
+      padding-bottom: calc(env(safe-area-inset-bottom) + 84px);
+      padding-left: 16px;
+      padding-right: 16px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .app-shell {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Sticky Mobile Top Header */
+    .mobile-header {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 20px 20px 16px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .live-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: var(--wash);
+      color: var(--text-main);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+    }
+
+    .live-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--ink);
+      border-radius: 50%;
+    }
+
+    .theme-toggle-btn {
+      background: var(--wash);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .header-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 5.5vw, 30px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .header-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+
+    /* Search Bar */
+    .search-wrapper {
+      position: relative;
+      margin-bottom: 12px;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 44px;
+      background: var(--wash);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 0 14px 0 38px;
+      font-family: var(--font-body);
+      font-size: 13.5px;
+      color: var(--text-main);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--ink);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 13px;
+      font-size: 14px;
+      color: var(--text-subtle);
+    }
+
+    /* Quick Action Horizontal Scroll */
+    .quick-actions-scroll {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding-bottom: 2px;
+    }
+    .quick-actions-scroll::-webkit-scrollbar { display: none; }
+
+    .quick-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      height: 34px;
+      padding: 0 12px;
+      background: var(--wash);
+      border: 1px solid var(--border-light);
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .quick-btn:active {
+      transform: scale(0.97);
+    }
+
+    /* Top Countdown Strip */
+    .countdown-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .countdown-strip {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .countdown-box {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .cd-label {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .cd-val {
+      font-family: var(--font-display);
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 2px;
+    }
+
+    .cd-sub {
+      font-size: 10.5px;
+      color: var(--text-subtle);
+      line-height: 1.25;
+    }
+
+    /* Tab Switcher Pills */
+    .tab-pills-row {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin-bottom: 16px;
+      padding-bottom: 2px;
+    }
+    .tab-pills-row::-webkit-scrollbar { display: none; }
+
+    .nav-pill {
+      height: 38px;
+      padding: 0 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-muted);
+      white-space: nowrap;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      transition: all 0.15s ease;
+    }
+
+    .nav-pill.active {
+      background: var(--pill-bg);
+      color: var(--pill-text);
+      border-color: var(--pill-bg);
+    }
+
+    /* Tab Panels */
+    .tab-view { display: none; }
+    .tab-view.active { display: block; animation: panelFade 0.2s ease; }
+    @keyframes panelFade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Section Cards */
+    .mobile-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .card-kicker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .card-title {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .badge-mono {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      background: var(--wash);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 16px;
+    }
+
+    /* Opportunity Item */
+    .opportunity-card {
+      background: var(--wash);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-bottom: 12px;
+      transition: transform 0.15s ease;
+    }
+
+    .opportunity-card:active {
+      transform: scale(0.99);
+    }
+
+    .opp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .opp-name {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .opp-target-tag {
+      font-family: var(--font-mono);
+      font-size: 9.5px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      color: var(--text-main);
+      white-space: nowrap;
+    }
+
+    .opp-meta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .opp-pill {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      padding: 2px 6px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-light);
+      border-radius: 4px;
+      color: var(--text-muted);
+    }
+
+    .opp-body {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+
+    .opp-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .action-btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 36px;
+      padding: 0 14px;
+      background: var(--ink);
+      color: var(--card-bg);
+      border: 1px solid var(--ink);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .action-btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      height: 36px;
+      padding: 0 12px;
+      background: var(--card-bg);
+      color: var(--text-main);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Checklist */
+    .check-block {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--wash);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-light);
+    }
+
+    .check-row input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      accent-color: var(--ink);
+      cursor: pointer;
+    }
+
+    .check-content strong {
+      display: block;
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .check-content span {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    /* Fixed App Bottom Dock */
+    .bottom-dock {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border-light);
+      padding: 8px 12px calc(env(safe-area-inset-bottom) + 8px);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0 -4px 16px rgba(0,0,0,0.06);
+      z-index: 9999;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .dock-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 8px;
+      min-width: 54px;
+    }
+
+    .dock-btn .dock-icon {
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .dock-btn .dock-label {
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .dock-btn.active {
+      color: var(--ink);
+    }
+
+    .dock-btn.active .dock-icon {
+      transform: scale(1.1);
+    }
+
+    /* Search highlight */
+    .hidden-by-search { display: none !important; }
+  </style>
+</head>
+<body data-theme="light">
+
+  <div class="app-shell">
+    
+    <!-- Top Mobile Header -->
+    <header class="mobile-header">
+      <div class="header-top-row">
+        <div class="live-status">
+          <span class="live-dot"></span>
+          <span>DUAL SPRINT · SINGAPORE 2026/27</span>
+        </div>
+        <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle Dark Mode">DARK / LIGHT</button>
+      </div>
+
+      <h1 class="header-title">Universal Strategic Hub</h1>
+      <p class="header-subtitle">
+        Satyam Singh Rajput &amp; Shravani Sharad Veer &bull; Google Cloud AI Builder Cup 2026, Singapore Master's &amp; Verified Portfolios.
+      </p>
+
+      <!-- Live Search Bar -->
+      <div class="search-wrapper">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="liveSearch" class="search-input" placeholder="Search opportunities, universities, links, tags...">
+      </div>
+
+      <!-- Quick Jump Scroll -->
+      <div class="quick-actions-scroll">
+        <a class="quick-btn" href="SATYAM%20PORTFOLIO/00_WEBSITE/index.html">Satyam Portfolio ↗</a>
+        <a class="quick-btn" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html">Shravani Portfolio ↗</a>
+        <a class="quick-btn" href="OUTPUT/SATYAM_SINGH_RESUME.pdf" target="_blank">Satyam Resume (PDF)</a>
+        <a class="quick-btn" href="OUTPUT/SHRAVANI_VEER_RESUME.pdf" target="_blank">Shravani Resume (PDF)</a>
+        <a class="quick-btn" href="00_MASTER_OPPORTUNITY_REGISTRY/MASTER_OPPORTUNITY_INDEX.md">Verified Ledger ↗</a>
+      </div>
+    </header>
+
+    <!-- Top Countdown Strip -->
+    <div class="countdown-strip">
+      <div class="countdown-box">
+        <div class="cd-label">GCP BUILDER CUP</div>
+        <div class="cd-val">Oct 4, 2026</div>
+        <div class="cd-sub">Hard prototype submission</div>
+      </div>
+      <div class="countdown-box">
+        <div class="cd-label">SINGAPORE FINALE</div>
+        <div class="cd-val">Dec 4, 2026</div>
+        <div class="cd-sub">Live Demo Day (Sponsored ✈️)</div>
+      </div>
+      <div class="countdown-box">
+        <div class="cd-label">NTU RESEARCH PORTAL</div>
+        <div class="cd-val">Oct 1, 2026</div>
+        <div class="cd-sub">Full scholarship portal opens</div>
+      </div>
+      <div class="countdown-box">
+        <div class="cd-label">CASH PRIZE POOL</div>
+        <div class="cd-val">USD 30,000</div>
+        <div class="cd-sub">+ Google credits &amp; certs</div>
+      </div>
+    </div>
+
+    <!-- Navigation Pills -->
+    <div class="tab-pills-row" role="tablist">
+      <button class="nav-pill active" data-tab="tab-gcp">🏆 Google Cloud Cup</button>
+      <button class="nav-pill" data-tab="tab-singapore">🇸🇬 Singapore Master's</button>
+      <button class="nav-pill" data-tab="tab-japan">🇯🇵 Japan Research</button>
+      <button class="nav-pill" data-tab="tab-portfolios">🚀 Dual Portfolios</button>
+      <button class="nav-pill" data-tab="tab-tracker">📅 Action Tracker</button>
+    </div>
+
+    <!-- ==================== TAB 1: GOOGLE CLOUD AI BUILDER CUP ==================== -->
+    <div class="tab-view active" id="tab-gcp">
+      <div class="mobile-card">
+        <div class="card-header-bar">
+          <div>
+            <div class="card-kicker">JAPAC HACKATHON · HACK2SKILL &amp; GOOGLE CLOUD</div>
+            <h2 class="card-title">Google Cloud AI Builder Cup 2026</h2>
+          </div>
+          <span class="badge-mono">USD 30,000</span>
+        </div>
+        <p class="card-desc">
+          Build a functional Generative AI prototype on Google Cloud Vertex AI. Shortlisted teams send <strong>2 members to Singapore on December 4, 2026</strong> with fully sponsored flights and accommodation.
+        </p>
+
+        <!-- Compliance Banner -->
+        <div style="background: var(--wash); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 16px;">
+          <strong style="font-size: 12px; display: block; margin-bottom: 2px;">🛡️ Working Professional Eligibility Protocol:</strong>
+          <p style="font-size: 11.5px; color: var(--text-muted); margin: 0;">
+            Rules strictly state working professionals only. Satyam registers under <strong>C3A Labs / Lunar Pixels</strong> (<code>satyam.singh@c3alabs.com</code>). Shravani registers under <strong>Aanshi Associates</strong> (<code>shravaniveer75@gmail.com</code>).
+          </p>
+        </div>
+
+        <!-- Official Links & Proofs -->
+        <div class="opp-actions" style="margin-bottom: 16px;">
+          <a class="action-btn-primary" href="https://hack2skill.com/event/aibuildercup2026/registration?isExternalLinkRedirection=true" target="_blank">Direct Registration Portal ↗</a>
+          <a class="action-btn-secondary" href="https://aibuildercup.com/" target="_blank">Official Landing Page ↗</a>
+          <a class="action-btn-secondary" href="https://aibuildercup.com/themes.html" target="_blank">Themes &amp; Rules ↗</a>
+          <a class="action-btn-secondary" href="https://aibuildercup.com/rewards.html" target="_blank">Prize Table ↗</a>
+        </div>
+
+        <!-- Problem Themes Accordion Items -->
+        <h3 style="font-size: 14px; font-weight: 700; margin-bottom: 10px;">Select From 6 Official Challenge Themes:</h3>
+        
+        <div class="opportunity-card" data-search="bfsi financial risk fraud wealth advisory vertex ai sarvax">
+          <div class="opp-top">
+            <span class="opp-name">1. BFSI: Intelligent Risk, Fraud &amp; Financial Experiences</span>
+            <span class="opp-target-tag">Recommended ⭐️</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">Vertex AI</span>
+            <span class="opp-pill">Gemini 1.5/2.0</span>
+            <span class="opp-pill">Cloud Run</span>
+          </div>
+          <p class="opp-body">
+            Automating complex advisory processes, detecting risk, improving retail investor engagement. Matches Shravani’s wealth marketing at Aanshi Associates and Satyam’s SARVAX engine.
+          </p>
+        </div>
+
+        <div class="opportunity-card" data-search="retail commerce customer business experiences supply chain">
+          <div class="opp-top">
+            <span class="opp-name">2. Retail &amp; Commerce: Intelligent Customer Experiences</span>
+            <span class="opp-target-tag">Theme 2</span>
+          </div>
+          <p class="opp-body">
+            Transforming conversational shopping, demand planning, customer insights, and personalized discovery.
+          </p>
+        </div>
+
+        <div class="opportunity-card" data-search="future work enterprise productivity agents collaboration">
+          <div class="opp-top">
+            <span class="opp-name">3. Future of Work &amp; Enterprise Productivity</span>
+            <span class="opp-target-tag">Theme 3</span>
+          </div>
+          <p class="opp-body">
+            Autonomous multi-agent execution, enterprise knowledge access, and decision workflows.
+          </p>
+        </div>
+
+        <!-- Hackathon Submission Checklist -->
+        <h3 style="font-size: 14px; font-weight: 700; margin-top: 18px; margin-bottom: 8px;">Execution Checklist</h3>
+        <div class="check-block">
+          <div class="check-row">
+            <input type="checkbox" id="mchk-1">
+            <div class="check-content">
+              <strong>Individual Registration on Hack2skill</strong>
+              <span>Register via <a href="https://hack2skill.com/event/aibuildercup2026/registration" target="_blank">hack2skill.com</a> using C3A Labs &amp; Aanshi Associates titles.</span>
+            </div>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="mchk-2">
+            <div class="check-content">
+              <strong>Team Formation &amp; Jersey Prompt</strong>
+              <span>Link 2-person team on dashboard; prompt jersey using Gemini/Imagen (#AIBuilderCup).</span>
+            </div>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="mchk-3">
+            <div class="check-content">
+              <strong>Build Prototype on Vertex AI &amp; Cloud Run</strong>
+              <span>Develop working backend with Gemini APIs and public Cloud Run endpoint.</span>
+            </div>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="mchk-4">
+            <div class="check-content">
+              <strong>Submit Video Pitch &amp; Repo (Oct 4 Deadline)</strong>
+              <span>Submit 3-min YouTube/Drive video, public GitHub repo, and PDF proposal.</span>
+            </div>
+          </div>
+          <div class="check-row">
+            <input type="checkbox" id="mchk-5">
+            <div class="check-content">
+              <strong>Singapore Demo Day (Dec 4)</strong>
+              <span>Demo live to Google Cloud leadership and venture capitalists in Singapore!</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== TAB 2: SINGAPORE MASTER'S ==================== -->
+    <div class="tab-view" id="tab-singapore">
+      <div class="mobile-card">
+        <div class="card-header-bar">
+          <div>
+            <div class="card-kicker">AUG 2027 INTAKE · VERIFIED UNIVERSITY DIRECTORY</div>
+            <h2 class="card-title">Singapore Dual Admissions Matrix</h2>
+          </div>
+          <span class="badge-mono">Official Links</span>
+        </div>
+        <p class="card-desc">
+          Top-tier degree programs in Singapore with primary source URLs, admission odds, and direct contact details.
+        </p>
+
+        <!-- Executive Contact Card -->
+        <div class="opportunity-card" style="background: var(--card-bg); border: 1px solid var(--border);" data-search="ali nus ihealthtech professor healthtec singapore contact">
+          <div class="opp-top">
+            <span class="opp-name">Dr. Ali Asgar Saleem Bhagat (NUS iHealthtech)</span>
+            <span class="opp-target-tag">Direct Faculty Bridge</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">Deputy Director</span>
+            <span class="opp-pill">Director, HealthTEC.SG</span>
+            <span class="opp-pill">ali@nus.edu.sg</span>
+          </div>
+          <p class="opp-body">
+            Associate Professor (Practice) &amp; Deputy Director at Institute for Health Innovation &amp; Technology (iHealthtech), National University of Singapore. Office: +65 6516 1132 &bull; Block E7, 15 Kent Ridge Crescent.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="mailto:ali@nus.edu.sg">Email Dr. Ali ✉️</a>
+            <a class="action-btn-secondary" href="https://ihealthtech.nus.edu.sg/" target="_blank">iHealthtech Website ↗</a>
+          </div>
+        </div>
+
+        <h3 style="font-size: 15px; font-weight: 700; margin: 18px 0 10px;">Satyam Singh Rajput — Computing &amp; Research Pathways</h3>
+
+        <div class="opportunity-card" data-search="ntu research scholarship rss npgs scse fully funded stipend">
+          <div class="opp-top">
+            <span class="opp-name">NTU Research Scholarship (RSS) — Funded M.Sc. / Ph.D.</span>
+            <span class="opp-target-tag">Odds: 70% ⭐️</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">100% Tuition Waiver</span>
+            <span class="opp-pill">S$2,200–2,700/mo</span>
+            <span class="opp-pill">Portal: Oct 1 – Jan 31</span>
+          </div>
+          <p class="opp-body">
+            School of Computer Science and Engineering. Rigorous funding package covering full fees plus monthly tax-free living stipend. Backed by Satyam's Zenodo paper on Cyber Shell Threat Modeling.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://www.ntu.edu.sg/admissions/graduate/financialmatters/scholarships/rss" target="_blank">Official NTU RSS Portal ↗</a>
+            <a class="action-btn-secondary" href="https://www.ntu.edu.sg/admissions/graduate/financialmatters/scholarships/npgs" target="_blank">NPGS Scholarship ↗</a>
+          </div>
+        </div>
+
+        <div class="opportunity-card" data-search="nus aidf fintech digital financial technology computing business mas">
+          <div class="opp-top">
+            <span class="opp-name">NUS Asian Institute of Digital Finance (AIDF) — MSc DFinTech</span>
+            <span class="opp-target-tag">Odds: 70–75%</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">Joint Computing &amp; B-School</span>
+            <span class="opp-pill">MAS &amp; NRF Founded</span>
+            <span class="opp-pill">1.5 Years</span>
+          </div>
+          <p class="opp-body">
+            Designed for AI software developers and quantitative FinTech builders. Direct fit for Satyam's 12-agent SARVAX advisory platform and CAS parsers.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://www.comp.nus.edu.sg/programmes/pg/mdft/" target="_blank">NUS DFinTech Official ↗</a>
+            <a class="action-btn-secondary" href="https://www.aidf.nus.edu.sg/" target="_blank">AIDF Institute Home ↗</a>
+          </div>
+        </div>
+
+        <h3 style="font-size: 15px; font-weight: 700; margin: 20px 0 10px;">Shravani Sharad Veer — Pre-Experience Management (MiM)</h3>
+
+        <div class="opportunity-card" data-search="smu mim management lee kong chian freshers admissions test gmat">
+          <div class="opp-top">
+            <span class="opp-name">SMU Lee Kong Chian — Master of Science in Management (MiM)</span>
+            <span class="opp-target-tag">Odds: 75–85% ⭐️</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">0–2 Years Experience</span>
+            <span class="opp-pill">SMU Test Accepted</span>
+            <span class="opp-pill">R1: Nov 2026</span>
+          </div>
+          <p class="opp-body">
+            Top FT ranked program specifically engineered for freshers. Accepts internal SMU test. Shravani's Year 3 SGPA 8.36/8.30 and Class Representative record provide strong competitive advantage.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://business.smu.edu.sg/master-management" target="_blank">SMU MiM Program Page ↗</a>
+            <a class="action-btn-secondary" href="https://admissions.smu.edu.sg/" target="_blank">Admissions Portal ↗</a>
+          </div>
+        </div>
+
+        <div class="opportunity-card" data-search="essec smib strategy management international business singapore one north">
+          <div class="opp-top">
+            <span class="opp-name">ESSEC Asia-Pacific — MSc in Strategy &amp; Management (SMIB)</span>
+            <span class="opp-target-tag">Odds: 70–75%</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">#2 Globally (FT)</span>
+            <span class="opp-pill">One-North Campus</span>
+            <span class="opp-pill">German A2 Match</span>
+          </div>
+          <p class="opp-body">
+            Pre-eminent international business strategy degree located at Nepal Hill, Singapore. Aligns directly with her BBA International Business and German language coursework.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://www.essec.edu/en/program/master-strategy-management-international-business/" target="_blank">ESSEC SMIB Official ↗</a>
+          </div>
+        </div>
+
+        <div class="opportunity-card" data-search="nus bschool mim marketing analytics insights cems">
+          <div class="opp-top">
+            <span class="opp-name">NUS Business School — M.Sc. in Management &amp; Marketing Analytics</span>
+            <span class="opp-target-tag">Odds: 50–60%</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">CEMS Double Degree</span>
+            <span class="opp-pill">GMAT Focus / GRE</span>
+          </div>
+          <p class="opp-body">
+            Premier Asian business school. High applicant volume; boosted to 75%+ with a strong GMAT Focus (645+) score.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://mim.nus.edu.sg/" target="_blank">NUS MiM Official ↗</a>
+            <a class="action-btn-secondary" href="https://bschool.nus.edu.sg/msc-mkt/" target="_blank">Marketing Analytics ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== TAB 3: JAPAN RESEARCH ==================== -->
+    <div class="tab-view" id="tab-japan">
+      <div class="mobile-card">
+        <div class="card-header-bar">
+          <div>
+            <div class="card-kicker">SPRING 2027 / FALL 2027 · FULLY FUNDED JAPAN</div>
+            <h2 class="card-title">Japan Research Pathways (Satyam)</h2>
+          </div>
+          <span class="badge-mono">100% Funded</span>
+        </div>
+
+        <div class="opportunity-card" data-search="oist okinawa research internship stipend flights housing">
+          <div class="opp-top">
+            <span class="opp-name">OIST Research Internship (Okinawa Institute of Science &amp; Tech)</span>
+            <span class="opp-target-tag">Deadline: Oct 15, 2026</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">Free Flights &amp; Apartment</span>
+            <span class="opp-pill">2,400 JPY / Day</span>
+            <span class="opp-pill">Spring 2027</span>
+          </div>
+          <p class="opp-body">
+            Fully funded research internship working under world-renowned professors. Covers round-trip airfare, free furnished housing on campus, visa support, and daily living stipend.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://admissions.oist.jp/apply-research-internship" target="_blank">OIST Application Portal ↗</a>
+            <a class="action-btn-secondary" href="https://www.oist.jp/admissions" target="_blank">Admissions Home ↗</a>
+          </div>
+        </div>
+
+        <div class="opportunity-card" data-search="mext japanese government scholarship university recommendation">
+          <div class="opp-top">
+            <span class="opp-name">MEXT Japanese Government Scholarship (University Recommendation)</span>
+            <span class="opp-target-tag">Tuition + Stipend</span>
+          </div>
+          <div class="opp-meta-row">
+            <span class="opp-pill">100% Tuition Waiver</span>
+            <span class="opp-pill">144,000 JPY / Mo</span>
+            <span class="opp-pill">Flights Covered</span>
+          </div>
+          <p class="opp-body">
+            Direct university recommendation via national universities (UTokyo, Tokyo Tech, Kyoto). Fall 2027 entry.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="https://www.studyinjapan.go.jp/en/planning/scholarship/mext-scholarships/" target="_blank">Study in Japan Official ↗</a>
+            <a class="action-btn-secondary" href="https://www.mext.go.jp/en/" target="_blank">MEXT Ministry ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== TAB 4: DUAL PORTFOLIOS ==================== -->
+    <div class="tab-view" id="tab-portfolios">
+      <div class="mobile-card">
+        <div class="card-header-bar">
+          <div>
+            <div class="card-kicker">VERIFIED WORK &amp; DELIVERABLES</div>
+            <h2 class="card-title">Dual Portfolios &amp; Documents</h2>
+          </div>
+          <span class="badge-mono">Apple Swiss</span>
+        </div>
+
+        <!-- Satyam Card -->
+        <div class="opportunity-card" style="margin-bottom: 16px;">
+          <div class="opp-top">
+            <span class="opp-name">Satyam Singh Rajput — Master Portfolio</span>
+            <span class="opp-target-tag">AI &amp; Cyber</span>
+          </div>
+          <p class="opp-body">
+            Strategic Analyst &amp; AI Systems Operator at C3A Labs. BCA SEM-VII at SBUP (Roll: BCA2302091). Zenodo published author, Cyber Shell threat modeler, builder of SARVAX.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="SATYAM%20PORTFOLIO/00_WEBSITE/index.html">Open Operating Website ↗</a>
+            <a class="action-btn-secondary" href="OUTPUT/SATYAM_SINGH_RESUME.pdf" target="_blank">Resume PDF ↗</a>
+            <a class="action-btn-secondary" href="SATYAM%20PORTFOLIO/SATYAM_MASTER_PORTFOLIO_DOSSIER.md">Dossier ↗</a>
+          </div>
+        </div>
+
+        <!-- Shravani Card -->
+        <div class="opportunity-card">
+          <div class="opp-top">
+            <span class="opp-name">Shravani Sharad Veer — Master Portfolio</span>
+            <span class="opp-target-tag">BBA Int. Business</span>
+          </div>
+          <p class="opp-body">
+            Final-year BBA International Business at SBUP (PRN: BBA2302265). Year 3 SGPA Sem V 8.36 / Sem VI 8.30 (CGPA 7.54). Marketing intern at Aanshi Associates, elected Class Representative, German A2.
+          </p>
+          <div class="opp-actions">
+            <a class="action-btn-primary" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html">Open Operating Website ↗</a>
+            <a class="action-btn-secondary" href="OUTPUT/SHRAVANI_VEER_RESUME.pdf" target="_blank">Resume PDF ↗</a>
+            <a class="action-btn-secondary" href="SHRAVU%20-%20PORTFOLIO/02_EDUCATION_ACADEMICS/SHRAVANI_VEER_MARKSHEET_YEAR_3.md">Marksheet ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ==================== TAB 5: ACTION TRACKER ==================== -->
+    <div class="tab-view" id="tab-tracker">
+      <div class="mobile-card">
+        <div class="card-header-bar">
+          <div>
+            <div class="card-kicker">EXECUTION PROTOCOL · SAVES AUTOMATICALLY</div>
+            <h2 class="card-title">Synchronized Action Tracker</h2>
+          </div>
+          <span class="badge-mono">Local Persistence</span>
+        </div>
+
+        <div class="check-block" id="mobileTrackerBlock">
+          <div class="check-row">
+            <input type="checkbox" id="mact-1">
+            <div class="check-content">
+              <strong>Sept 2026: Google Cloud Hack2skill Team Registration</strong>
+              <span>Register via <a href="https://hack2skill.com/event/aibuildercup2026/registration" target="_blank">hack2skill</a> using C3A Labs &amp; Aanshi Associates titles.</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-2">
+            <div class="check-content">
+              <strong>Oct 1, 2026: NTU Singapore Scholarship Portal Opens</strong>
+              <span>Satyam prepares research statement and references for funded M.Sc. (SCSE).</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-3">
+            <div class="check-content">
+              <strong>Oct 4, 2026: Google Cloud AI Builder Cup Hard Submission</strong>
+              <span>Submit functional Vertex AI prototype, Cloud Run live URL, and 3-min video pitch.</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-4">
+            <div class="check-content">
+              <strong>Oct 15, 2026: OIST Research Internship Deadline</strong>
+              <span>Satyam submits application for funded Spring 2027 research internship in Okinawa.</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-5">
+            <div class="check-content">
+              <strong>Oct 2026: Direct Academic Outreach to Dr. Ali (NUS)</strong>
+              <span>Send research proposal linking ArtRX and agentic workflows to ali@nus.edu.sg.</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-6">
+            <div class="check-content">
+              <strong>Nov 7, 2026: Google Cloud Finalists Announcement</strong>
+              <span>Finalists selected; sponsored travel arrangements to Singapore.</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-7">
+            <div class="check-content">
+              <strong>Nov 2026: Shravani SMU MiM &amp; ESSEC SMIB Priority Round</strong>
+              <span>Submit official Year 3 marksheet (8.36 / 8.30 SGPA) and take SMU Admissions Test.</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-8">
+            <div class="check-content">
+              <strong>Dec 4, 2026: LIVE GRAND FINALE IN SINGAPORE</strong>
+              <span>Present prototype live before Google Cloud leaders; visit NUS and SMU in person!</span>
+            </div>
+          </div>
+
+          <div class="check-row">
+            <input type="checkbox" id="mact-9">
+            <div class="check-content">
+              <strong>August 2027: DUAL INTAKE IN SINGAPORE</strong>
+              <span>Commence master's studies in Singapore!</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mobile Bottom App Dock -->
+  <nav class="bottom-dock" aria-label="Mobile Navigation">
+    <button class="dock-btn active" data-target="tab-gcp">
+      <span class="dock-icon">🏆</span>
+      <span class="dock-label">Hackathon</span>
+    </button>
+    <button class="dock-btn" data-target="tab-singapore">
+      <span class="dock-icon">🇸🇬</span>
+      <span class="dock-label">Singapore</span>
+    </button>
+    <button class="dock-btn" data-target="tab-japan">
+      <span class="dock-icon">🇯🇵</span>
+      <span class="dock-label">Japan</span>
+    </button>
+    <button class="dock-btn" data-target="tab-portfolios">
+      <span class="dock-icon">🚀</span>
+      <span class="dock-label">Portfolios</span>
+    </button>
+    <button class="dock-btn" data-target="tab-tracker">
+      <span class="dock-icon">📅</span>
+      <span class="dock-label">Tracker</span>
+    </button>
+  </nav>
+
+  <script>
+    // Tab switching logic (both pills and bottom dock)
+    const navPills = document.querySelectorAll('.nav-pill');
+    const dockBtns = document.querySelectorAll('.dock-btn');
+    const tabViews = document.querySelectorAll('.tab-view');
+
+    function switchTab(tabId) {
+      tabViews.forEach(v => v.classList.remove('active'));
+      navPills.forEach(p => p.classList.remove('active'));
+      dockBtns.forEach(d => d.classList.remove('active'));
+
+      const targetView = document.getElementById(tabId);
+      if (targetView) targetView.classList.add('active');
+
+      navPills.forEach(p => {
+        if (p.dataset.tab === tabId) p.classList.add('active');
+      });
+      dockBtns.forEach(d => {
+        if (d.dataset.target === tabId) d.classList.add('active');
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    navPills.forEach(pill => {
+      pill.addEventListener('click', () => switchTab(pill.dataset.tab));
+    });
+    dockBtns.forEach(btn => {
+      btn.addEventListener('click', () => switchTab(btn.dataset.target));
+    });
+
+    // Dark/Light Theme Toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('mobile_hub_theme') || 'light';
+    document.body.setAttribute('data-theme', currentTheme);
+
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      const nextTheme = isDark ? 'light' : 'dark';
+      document.body.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('mobile_hub_theme', nextTheme);
+    });
+
+    // Real-Time Live Search
+    const searchInput = document.getElementById('liveSearch');
+    searchInput.addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase().trim();
+      const oppCards = document.querySelectorAll('.opportunity-card');
+
+      oppCards.forEach(card => {
+        const text = card.textContent.toLowerCase() + ' ' + (card.dataset.search || '');
+        if (!q || text.includes(q)) {
+          card.classList.remove('hidden-by-search');
+        } else {
+          card.classList.add('hidden-by-search');
+        }
+      });
+    });
+
+    // Checkbox LocalStorage Persistence
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(chk => {
+      const saved = localStorage.getItem('mhub_chk_' + chk.id);
+      if (saved === 'true') chk.checked = true;
+
+      chk.addEventListener('change', () => {
+        localStorage.setItem('mhub_chk_' + chk.id, chk.checked);
+      });
+    });
+  </script>
+</body>
+</html>
