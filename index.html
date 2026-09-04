@@ -13,13 +13,17 @@
       --surface: #101014;
       --panel: #16161D;
       --panel-hover: #1E1E28;
-      --crimson: #E02424;
-      --crimson-dark: #4A0E12;
-      --crimson-glow: rgba(224, 36, 36, 0.25);
+      --apple-blue: #0071E3;
+      --apple-blue-bright: #2997FF;
+      --apple-blue-glow: rgba(41, 151, 255, 0.35);
+      --space-gray: #1C1C1E;
+      --space-gray-light: #2C2C2E;
+      --titanium: #86868B;
+      --titanium-light: #D2D2D7;
       --ink: #FFFFFF;
       --ink-dim: #D1D1D6;
-      --text-muted: #8E8E93;
-      --text-subtle: #545458;
+      --text-muted: #A1A1A6;
+      --text-subtle: #7C7C82;
       --line: rgba(255, 255, 255, 0.08);
       --line-bright: rgba(255, 255, 255, 0.16);
       --font-display: "Bebas Neue", sans-serif;
@@ -35,7 +39,7 @@
     html { scroll-behavior: smooth; background: var(--bg); color: var(--ink); }
     body {
       font-family: var(--font-body);
-      background: radial-gradient(circle at 50% -10%, #1A1A26 0%, #070709 70%);
+      background: radial-gradient(circle at 50% -10%, #0F1D2E 0%, #070709 70%);
       color: var(--ink);
       line-height: 1.6;
       overflow-x: hidden;
@@ -69,7 +73,7 @@
       align-items: center;
       gap: 10px;
     }
-    .brand-logo span { color: var(--crimson); }
+    .brand-logo span { color: var(--apple-blue-bright); }
 
     .nav-pill-group {
       display: flex;
@@ -131,7 +135,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       margin-bottom: 12px;
       display: flex;
       align-items: center;
@@ -142,7 +146,7 @@
       display: inline-block;
       width: 20px;
       height: 2px;
-      background: var(--crimson);
+      background: var(--apple-blue-bright);
     }
 
     .hero-title-giant {
@@ -155,9 +159,9 @@
       margin-bottom: 24px;
       user-select: none;
     }
-    .hero-title-giant .crimson-stroke {
+    .hero-title-giant .blue-stroke {
       color: transparent;
-      -webkit-text-stroke: 2px var(--crimson);
+      -webkit-text-stroke: 2px var(--apple-blue-bright);
     }
 
     .hero-subrow {
@@ -190,7 +194,7 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: var(--crimson);
+      background: var(--apple-blue-bright);
       color: #FFFFFF;
       font-family: var(--font-mono);
       font-size: 12px;
@@ -200,12 +204,12 @@
       text-decoration: none;
       padding: 12px 22px;
       border-radius: var(--radius-pill);
-      border: 1px solid var(--crimson);
+      border: 1px solid var(--apple-blue-bright);
       transition: all 0.2s ease;
-      box-shadow: 0 4px 20px var(--crimson-glow);
+      box-shadow: 0 4px 20px var(--apple-blue-glow);
     }
     .btn-action-primary:hover {
-      background: #C41523;
+      background: #0071E3;
       transform: translateY(-2px);
     }
 
@@ -254,7 +258,7 @@
       font-family: var(--font-display);
       font-size: 48px;
       line-height: 1;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       margin-bottom: 6px;
       letter-spacing: 0.02em;
     }
@@ -331,7 +335,7 @@
       transform: translateY(-2px);
     }
     .capsule-link span.arrow {
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       transition: transform 0.2s ease;
     }
     .capsule-link:hover span.arrow {
@@ -351,7 +355,7 @@
       font-weight: 700;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       margin-bottom: 6px;
     }
 
@@ -403,7 +407,7 @@
       text-transform: uppercase;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      background: var(--crimson);
+      background: var(--apple-blue-bright);
       color: #FFFFFF;
     }
 
@@ -483,12 +487,12 @@
       border-color: #FFFFFF;
     }
     .sub-btn.primary {
-      background: var(--crimson);
+      background: var(--apple-blue-bright);
       color: #FFFFFF;
-      border-color: var(--crimson);
+      border-color: var(--apple-blue-bright);
     }
     .sub-btn.primary:hover {
-      background: #C41523;
+      background: #0071E3;
       color: #FFFFFF;
     }
 
@@ -545,14 +549,14 @@
       height: 32px;
       border-radius: 50%;
       background: var(--panel);
-      border: 1px solid var(--crimson);
+      border: 1px solid var(--apple-blue-bright);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 800;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       flex-shrink: 0;
     }
 
@@ -602,7 +606,7 @@
     .project-idx {
       font-family: var(--font-display);
       font-size: 28px;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
     }
     .project-tag {
       font-family: var(--font-mono);
@@ -629,18 +633,19 @@
 
     /* Featured Statement Quote Card (The Rayhan Red Card) */
     .statement-quote-card {
-      background: radial-gradient(circle at 100% 0%, var(--crimson-dark) 0%, #15080A 80%);
-      border: 1px solid rgba(224, 36, 36, 0.4);
+      background: linear-gradient(135deg, #1C1C1F 0%, #121215 100%);
+      border: 1px solid rgba(41, 151, 255, 0.35);
       border-radius: var(--radius-card);
       padding: 36px 40px;
       margin-bottom: 48px;
       position: relative;
+      box-shadow: 0 10px 40px rgba(0, 113, 227, 0.12);
     }
     .quote-glyph {
       font-family: var(--font-display);
       font-size: 80px;
       line-height: 0.7;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       margin-bottom: 12px;
       user-select: none;
     }
@@ -718,7 +723,7 @@
       color: #FFFFFF;
       margin-bottom: 32px;
     }
-    .footer-huge-title span { color: var(--crimson); }
+    .footer-huge-title span { color: var(--apple-blue-bright); }
 
     .footer-grid {
       display: grid;
@@ -732,7 +737,7 @@
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: var(--crimson);
+      color: var(--apple-blue-bright);
       margin-bottom: 12px;
     }
     .footer-col p {
@@ -789,7 +794,7 @@
       <div class="hero-kicker">SYNCHRONIZED 2027 RELOCATION PROTOCOL · INDIA &rarr; GLOBAL</div>
       
       <h1 class="hero-title-giant">
-        DUAL <span class="crimson-stroke">HORIZON</span>
+        DUAL <span class="blue-stroke">HORIZON</span>
       </h1>
 
       <div class="hero-subrow">
@@ -855,7 +860,7 @@
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#hackathons">
-          <span>06 &bull; GLOBAL TRAVEL COMPETITIONS</span>
+          <span>06 &bull; APPLY TOGETHER AS A TEAM</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#architecture">
@@ -924,7 +929,7 @@
         <div class="card-stepper">
           <div class="stepper-header">
             <span>ENGINEERING PROCESS</span>
-            <span style="color: var(--crimson);">04 PHASES</span>
+            <span style="color: var(--apple-blue-bright);">04 PHASES</span>
           </div>
 
           <div class="stepper-list">
@@ -1011,7 +1016,7 @@
         <div class="card-stepper">
           <div class="stepper-header">
             <span>OPERATIONS PROCESS</span>
-            <span style="color: var(--crimson);">04 PHASES</span>
+            <span style="color: var(--apple-blue-bright);">04 PHASES</span>
           </div>
 
           <div class="stepper-list">
@@ -1198,15 +1203,25 @@
       </table>
     </section>
 
-    <!-- CHAPTER 06: GLOBAL TRAVEL COMPETITIONS -->
+    <!-- CHAPTER 06: APPLY TOGETHER AS A DUAL TEAM -->
     <section class="content-chapter" id="hackathons">
-      <div class="chapter-tag">CHAPTER 06 &bull; TRAVEL SPONSORSHIPS &bull; HACKATHONS</div>
-      <h2 class="chapter-title">GLOBAL COMPETITIONS</h2>
+      <div class="chapter-tag">CHAPTER 06 &bull; DUAL CO-FOUNDER PIPELINE &bull; APPLY AS A TEAM</div>
+      <h2 class="chapter-title">APPLY TOGETHER AS A TEAM</h2>
       <p class="chapter-desc">
-        High-prestige developer competitions offering fully funded flights and cash prizes to Singapore and Dubai:
+        <strong>University Master&rsquo;s degrees are individual admissions; these opportunities are distinct.</strong> This curated list consists of elite global competitions, travel grants, and accelerator programs where Satyam &amp; Shravani apply together as a 2-person co-founder team (Technical AI Architect + Strategic Operations Lead):
       </p>
 
-      <div class="bento-3col">
+      <div class="statement-quote-card" style="margin-bottom: 28px; padding: 24px 30px;">
+        <div style="font-family: var(--font-mono); font-size: 11px; font-weight: 700; color: var(--apple-blue-bright); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;">
+          CO-FOUNDER TEAM FORMATION &bull; SATYAM &amp; SHRAVANI
+        </div>
+        <p style="font-size: 14px; color: var(--ink-dim); margin-bottom: 0;">
+          <strong>Satyam Singh Rajput:</strong> Technical Architecture, AI Agents, Threat Modeling &amp; Cloud Deployment.<br>
+          <strong>Shravani Sharad Veer:</strong> Commercial Strategy, Market Expansion, Trade Compliance, Financial Modeling &amp; Pitch Delivery.
+        </p>
+      </div>
+
+      <div class="bento-3col" style="margin-bottom: 24px;">
         <div class="project-card">
           <div>
             <div class="project-top-meta">
@@ -1215,10 +1230,10 @@
             </div>
             <h4 class="project-title">GOOGLE CLOUD AI CUP</h4>
             <p class="project-desc">
-              $30,000 cash pool + 100% sponsored flights and hotel stay in Singapore for 2 finalists. Deadline: Oct 4, 2026.
+              <strong>Team Size: 2&ndash;4 Members.</strong> $30,000 cash pool + <strong>100% sponsored flights and hotel stay in Singapore for 2 representatives</strong>. Deadline: Oct 4, 2026.
             </p>
           </div>
-          <a class="sub-btn primary" href="https://hack2skill.com/event/aibuildercup2026/registration?isExternalLinkRedirection=true" target="_blank">Register on Hack2skill &nearr;</a>
+          <a class="sub-btn primary" href="https://hack2skill.com/event/aibuildercup2026/registration?isExternalLinkRedirection=true" target="_blank">Register Dual Team &nearr;</a>
         </div>
 
         <div class="project-card">
@@ -1229,7 +1244,7 @@
             </div>
             <h4 class="project-title">SFF FINTECH HACKCELERATOR</h4>
             <p class="project-desc">
-              Monetary Authority of Singapore (MAS). SGD 20,000 stipend per finalist team to demo live in Singapore.
+              <strong>Team Size: Innovator Cohort.</strong> Monetary Authority of Singapore (MAS). <strong>SGD 20,000 stipend per finalist team</strong> to pitch live at the Singapore FinTech Festival.
             </p>
           </div>
           <a class="sub-btn" href="https://www.fintechfestival.sg/global-fintech-hackcelerator" target="_blank">SFF Portal &nearr;</a>
@@ -1243,10 +1258,54 @@
             </div>
             <h4 class="project-title">DUBAI AI &amp; WEB3 CHALLENGE</h4>
             <p class="project-desc">
-              DIFC Innovation Hub. $100K in equity-free grants, sponsored travel to Dubai, and fast-track commercial licensing.
+              <strong>Team Size: 2 Co-Founders.</strong> DIFC Innovation Hub. <strong>$100,000 in equity-free grants</strong>, sponsored travel and stay in Dubai, and fast-track UAE licensing.
             </p>
           </div>
           <a class="sub-btn" href="https://innovationhub.difc.ae/" target="_blank">DIFC Portal &nearr;</a>
+        </div>
+      </div>
+
+      <div class="bento-3col">
+        <div class="project-card">
+          <div>
+            <div class="project-top-meta">
+              <span class="project-idx">04</span>
+              <span class="project-tag">GLOBAL &bull; DEEPMIND</span>
+            </div>
+            <h4 class="project-title">GEMINI API DEVELOPER CHALLENGE</h4>
+            <p class="project-desc">
+              <strong>Team Size: Open.</strong> <strong>$1,000,000+ prize pool</strong> + Custom Electric 1981 DeLorean + Google DeepMind mentorship for multimodal long-context agents.
+            </p>
+          </div>
+          <a class="sub-btn" href="https://ai.google.dev/" target="_blank">AI Studio &nearr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-top-meta">
+              <span class="project-idx">05</span>
+              <span class="project-tag">BERLIN &bull; GERMANY</span>
+            </div>
+            <h4 class="project-title">FALLING WALLS VENTURE</h4>
+            <p class="project-desc">
+              <strong>Team Size: 2 Young Innovators.</strong> <strong>Sponsored trip to Berlin</strong> for the Falling Walls Science Summit + international venture capital pitches.
+            </p>
+          </div>
+          <a class="sub-btn" href="https://falling-walls.com/lab/" target="_blank">Falling Walls &nearr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-top-meta">
+              <span class="project-idx">06</span>
+              <span class="project-tag">SINGAPORE &bull; NUS</span>
+            </div>
+            <h4 class="project-title">NUS GRIP VENTURE ACCELERATOR</h4>
+            <p class="project-desc">
+              <strong>Team Size: Tech + Biz Founders.</strong> <strong>Up to S$100,000 milestone seed funding</strong> + incubation at NUS Kent Ridge campus (Direct link via Dr. Ali Bhagat lab).
+            </p>
+          </div>
+          <a class="sub-btn" href="https://ihealthtech.nus.edu.sg/" target="_blank">iHealthtech Venture &nearr;</a>
         </div>
       </div>
     </section>
@@ -1268,13 +1327,13 @@
               <stop offset="100%" stop-color="#0E0E14"/>
             </linearGradient>
             <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-              <path d="M 0 1 L 8 5 L 0 9 z" fill="#E02424"/>
+              <path d="M 0 1 L 8 5 L 0 9 z" fill="#2997FF"/>
             </marker>
           </defs>
 
           <!-- Node 1: Client Ingress -->
           <rect x="30" y="50" width="200" height="280" rx="8" fill="url(#boxGrad)" stroke="#2D2D3E" stroke-width="1.5"/>
-          <text x="50" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#E02424">LAYER 01 // INGRESS</text>
+          <text x="50" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#2997FF">LAYER 01 // INGRESS</text>
           <text x="50" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">Client &amp; API Gateway</text>
           <text x="50" y="145" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Next.js 14 Web UI</text>
           <text x="50" y="170" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Cloud Run FastAPI</text>
@@ -1284,11 +1343,11 @@
           <text x="65" y="280" font-family="'JetBrains Mono', monospace" font-size="11" fill="#34C759">HEALTH: 200 OK</text>
 
           <!-- Connector 1 -->
-          <path d="M 230 190 L 300 190" stroke="#E02424" stroke-width="2" marker-end="url(#arrow)"/>
+          <path d="M 230 190 L 300 190" stroke="#2997FF" stroke-width="2" marker-end="url(#arrow)"/>
 
           <!-- Node 2: DAG Orchestrator -->
           <rect x="310" y="50" width="240" height="280" rx="8" fill="url(#boxGrad)" stroke="#2D2D3E" stroke-width="1.5"/>
-          <text x="330" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#E02424">LAYER 02 // ORCHESTRATION</text>
+          <text x="330" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#2997FF">LAYER 02 // ORCHESTRATION</text>
           <text x="330" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">Agent DAG Engine</text>
           <text x="330" y="145" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Intent Router &amp; Classifier</text>
           <text x="330" y="170" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Firestore Session Store</text>
@@ -1298,25 +1357,25 @@
           <text x="345" y="280" font-family="'JetBrains Mono', monospace" font-size="11" fill="#FFFFFF">DISPATCH: ACTIVE</text>
 
           <!-- Connector 2 -->
-          <path d="M 550 190 L 620 190" stroke="#E02424" stroke-width="2" marker-end="url(#arrow)"/>
+          <path d="M 550 190 L 620 190" stroke="#2997FF" stroke-width="2" marker-end="url(#arrow)"/>
 
           <!-- Node 3: Model Cascades -->
           <rect x="630" y="50" width="240" height="280" rx="8" fill="url(#boxGrad)" stroke="#2D2D3E" stroke-width="1.5"/>
-          <text x="650" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#E02424">LAYER 03 // INTELLIGENCE</text>
+          <text x="650" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#2997FF">LAYER 03 // INTELLIGENCE</text>
           <text x="650" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">Vertex AI Cascade</text>
           <text x="650" y="145" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Gemini 1.5 Flash (Fast)</text>
           <text x="650" y="170" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Gemini 1.5 Pro (Deep)</text>
           <text x="650" y="195" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Function Calling API</text>
           <text x="650" y="220" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; 2M Context Evaluation</text>
           <rect x="650" y="255" width="200" height="40" rx="4" fill="#14141C" stroke="#3D3D4E"/>
-          <text x="665" y="280" font-family="'JetBrains Mono', monospace" font-size="11" fill="#E02424">CASCADE: OPTIMIZED</text>
+          <text x="665" y="280" font-family="'JetBrains Mono', monospace" font-size="11" fill="#2997FF">CASCADE: OPTIMIZED</text>
 
           <!-- Connector 3 -->
-          <path d="M 870 190 L 930 190" stroke="#E02424" stroke-width="2" marker-end="url(#arrow)"/>
+          <path d="M 870 190 L 930 190" stroke="#2997FF" stroke-width="2" marker-end="url(#arrow)"/>
 
           <!-- Node 4: Grounding & Storage -->
           <rect x="940" y="50" width="190" height="280" rx="8" fill="url(#boxGrad)" stroke="#2D2D3E" stroke-width="1.5"/>
-          <text x="955" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#E02424">LAYER 04 // DATA</text>
+          <text x="955" y="85" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" fill="#2997FF">LAYER 04 // DATA</text>
           <text x="955" y="115" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#FFFFFF">Grounding</text>
           <text x="955" y="145" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Vector Search (ScaNN)</text>
           <text x="955" y="170" font-family="'Inter', sans-serif" font-size="12" fill="#8E8E93">&bull; Cloud Storage Lake</text>
