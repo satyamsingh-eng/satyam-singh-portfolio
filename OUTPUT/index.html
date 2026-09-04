@@ -38,8 +38,9 @@
       --shadow-ambient: 0 20px 50px rgba(0, 0, 0, 0.6);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; background: #000000 !important; color: var(--ink); }
+    * { box-sizing: border-box; margin: 0; padding: 0; min-width: 0; }
+    html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+    html, body { scroll-behavior: smooth; background: #000000 !important; color: var(--ink); overflow-x: hidden; width: 100%; max-width: 100%; margin: 0; padding: 0; }
     body {
       font-family: var(--font-body);
       background: #000000 !important;
@@ -136,31 +137,39 @@
       font-family: var(--font-mono);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--apple-blue-bright);
       margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: block;
+      white-space: normal;
+      word-break: break-word;
+      line-height: 1.5;
     }
     .hero-kicker::before {
-      content: "";
-      display: inline-block;
-      width: 20px;
-      height: 2px;
-      background: var(--apple-blue-bright);
+      content: "■ ";
+      color: var(--apple-blue-bright);
     }
 
     .hero-title-giant {
       font-family: var(--font-display);
-      font-size: clamp(76px, 15vw, 190px);
+      font-size: clamp(64px, 14vw, 180px);
       line-height: 0.86;
       letter-spacing: -0.01em;
       text-transform: uppercase;
       color: var(--ink);
       margin-bottom: 24px;
       user-select: none;
+      word-break: break-word;
+      max-width: 100%;
+    }
+    .mobile-break { display: none; }
+    @media (max-width: 768px) {
+      .mobile-break { display: block; }
+      .hero-title-giant {
+        font-size: clamp(44px, 16vw, 72px) !important;
+        line-height: 0.9 !important;
+      }
     }
     .hero-title-giant .blue-stroke {
       color: transparent;
@@ -168,18 +177,23 @@
     }
 
     .hero-subrow {
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 32px;
-      align-items: end;
-      margin-bottom: 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-bottom: 36px;
+      width: 100%;
     }
 
     .hero-lead-text {
-      font-size: 19px;
+      font-size: 15px;
       font-weight: 400;
       color: var(--ink-dim);
-      line-height: 1.5;
+      line-height: 1.55;
+      overflow-wrap: break-word;
+      word-break: normal;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 100%;
     }
     .hero-lead-text strong {
       color: #FFFFFF;
@@ -188,9 +202,29 @@
 
     .hero-actions {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: flex-end;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+    }
+
+    @media (min-width: 960px) {
+      .hero-subrow {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 32px;
+        align-items: end;
+        margin-bottom: 48px;
+      }
+      .hero-lead-text {
+        font-size: 19px;
+      }
+      .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 12px;
+        width: auto;
+      }
     }
 
     .btn-action-primary {
@@ -669,6 +703,26 @@
     }
 
     /* Tabular Programs & Admissions Matrix */
+        .table-scroll-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      background: var(--surface);
+    }
+    .table-scroll-wrap .matrix-table {
+      margin-bottom: 0;
+      border: none;
+      min-width: 600px;
+      max-width: none;
+    }
+    .table-scroll-wrap {
+      max-width: 100%;
+      overflow-x: auto;
+    }
     .matrix-table {
       width: 100%;
       border-collapse: collapse;
@@ -753,19 +807,156 @@
       text-underline-offset: 3px;
     }
 
-    /* Responsive */
+    /* Responsive — Mobile First Bulletproof */
     @media (max-width: 960px) {
-      .hero-subrow { grid-template-columns: 1fr; }
-      .hero-actions { justify-content: flex-start; }
-      .metric-counter-bar { grid-template-columns: repeat(2, 1fr); }
-      .metric-block:nth-child(2) { border-right: 0; }
-      .metric-block:nth-child(1), .metric-block:nth-child(2) { border-bottom: 1px solid var(--line); }
-      .toc-capsule-grid { grid-template-columns: 1fr; }
-      .profile-bento-grid { grid-template-columns: 1fr; }
-      .bento-3col { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
+      body { overflow-x: hidden; }
+      .container { padding: 0 16px; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .hero-section { padding: 40px 0 24px; }
+      .hero-title-giant { font-size: clamp(44px, 14vw, 84px); line-height: 0.9; margin-bottom: 18px; word-break: break-word; }
+      .hero-subrow { grid-template-columns: 1fr; gap: 20px; margin-bottom: 32px; }
+      .hero-lead-text { font-size: 16px; line-height: 1.5; }
+      .hero-actions { display: flex; flex-direction: column; width: 100%; gap: 10px; }
+      .btn-action-primary, .btn-action-ghost { width: 100%; justify-content: center; text-align: center; box-sizing: border-box; }
+      
+      .metric-counter-bar { grid-template-columns: 1fr; width: 100%; margin-bottom: 40px; }
+      .metric-block { border-right: 0 !important; border-bottom: 1px solid var(--line); padding: 18px 20px; }
+      .metric-block:last-child { border-bottom: 0; }
+      .metric-num { font-size: 38px; }
+      
+      .toc-section { padding: 24px 16px; width: 100%; box-sizing: border-box; margin-bottom: 56px; }
+      .toc-header { font-size: 32px; }
+      .toc-capsule-grid { grid-template-columns: 1fr; gap: 10px; }
+      
+      .content-chapter { margin-bottom: 64px; }
+      .chapter-title { font-size: clamp(38px, 10vw, 60px); }
+      
+      .profile-bento-grid { grid-template-columns: 1fr; gap: 18px; }
+      .card-profile, .card-stepper { padding: 22px 16px; box-sizing: border-box; }
+      .profile-name-large { font-size: 34px; }
+      .profile-details-list { grid-template-columns: 1fr; gap: 10px; padding: 12px; }
+      .profile-button-row { display: flex; flex-direction: column; width: 100%; gap: 8px; }
+      .sub-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+      
+      .bento-3col { grid-template-columns: 1fr; gap: 16px; }
+      .statement-quote-card { padding: 24px 18px; }
+      
+          .table-scroll-wrap {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-card);
+      background: var(--surface);
+    }
+    .table-scroll-wrap .matrix-table {
+      margin-bottom: 0;
+      border: none;
+      min-width: 600px;
+    }
+    .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .table-scroll-wrap .matrix-table th, .table-scroll-wrap .matrix-table td { white-space: normal; padding: 12px 14px; }
+      
+      .arch-container { padding: 12px; width: 100%; box-sizing: border-box; }
+      .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .footer-huge-title { font-size: clamp(42px, 12vw, 80px); }
+      
       .top-nav { padding: 0 16px; }
       .nav-pill-group { display: none; }
+    }
+      /* Strict Mobile Reset & Anti-Overflow */
+    @media (max-width: 768px) {
+      html, body {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+      }
+      .top-nav {
+        padding: 0 12px !important;
+        height: 50px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .brand-logo {
+        font-size: 17px !important;
+        gap: 6px !important;
+      }
+      .nav-status {
+        font-size: 10px !important;
+        gap: 6px !important;
+      }
+      .container {
+        padding: 0 14px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        box-sizing: border-box !important;
+      }
+      .hero-section {
+        padding: 28px 0 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-kicker {
+        font-size: 10px !important;
+        line-height: 1.4 !important;
+        letter-spacing: 0.06em !important;
+        margin-bottom: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        word-break: break-word !important;
+      }
+      .hero-title-giant {
+        font-size: 48px !important;
+        line-height: 0.9 !important;
+        margin-bottom: 14px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .hero-subrow {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 16px !important;
+        margin-bottom: 24px !important;
+      }
+      .hero-lead-text {
+        font-size: 14px !important;
+        line-height: 1.6 !important;
+        width: 100% !important;
+        max-width: calc(100vw - 44px) !important;
+        overflow-wrap: anywhere !important;
+        word-break: normal !important;
+        padding-right: 16px !important;
+        box-sizing: border-box !important;
+      }
+      .hero-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        gap: 8px !important;
+      }
+      .btn-action-primary, .btn-action-ghost {
+        width: 100% !important;
+        padding: 10px 16px !important;
+        font-size: 11px !important;
+        justify-content: center !important;
+        box-sizing: border-box !important;
+      }
+      .metric-counter-bar {
+        grid-template-columns: 1fr !important;
+        width: 100% !important;
+        margin-bottom: 32px !important;
+      }
+      .metric-block {
+        padding: 14px 16px !important;
+      }
+      .metric-num {
+        font-size: 34px !important;
+      }
     }
   </style>
 </head>
@@ -797,7 +988,7 @@
       <div class="hero-kicker">SYNCHRONIZED 2027 RELOCATION PROTOCOL · INDIA &rarr; GLOBAL</div>
       
       <h1 class="hero-title-giant">
-        DUAL <span class="blue-stroke">HORIZON</span>
+        DUAL<br class="mobile-break"> <span class="blue-stroke">HORIZON</span>
       </h1>
 
       <div class="hero-subrow">
@@ -897,33 +1088,34 @@
           </div>
           <h3 class="profile-name-large">SATYAM SINGH RAJPUT</h3>
           <p class="profile-bio-text">
-            Strategic Analyst &amp; AI Systems Operator at C3A Labs. BCA SEM-VII at Sri Balaji University, Pune. Architect of autonomous B2B workflows, published Zenodo academic researcher (DOI indexed), and creator of Cyber Shell enterprise threat modeling.
+            Strategic Analyst &amp; AI Systems Operator at C3A Labs. BCA SEM-VII at Sri Balaji University, Pune. Architect of autonomous B2B workflows, published Zenodo researcher (AI-assisted phishing detection), author of a published book, and creator of Cyber Shell enterprise threat modeling.
           </p>
 
           <div class="profile-details-list">
             <div class="detail-item">
-              <strong>Academic Record</strong>
-              <span>Sem 5 (8.27) &rarr; Sem 6 (8.36)</span>
+              <strong>Six-Semester Trajectory</strong>
+              <span>5.95 &rarr; 5.82 &rarr; 6.82 &rarr; 6.91 &rarr; 8.27 &rarr; 8.36</span>
             </div>
             <div class="detail-item">
-              <strong>Corporate Entity</strong>
-              <span>C3A Labs (KARAX &amp; SARVAX)</span>
+              <strong>Corporate &amp; Studio</strong>
+              <span>C3A Labs (KARAX/SARVAX) &bull; Lunar Pixels Founder</span>
             </div>
             <div class="detail-item">
               <strong>Direct Contacts</strong>
-              <span>satyam.singh@c3alabs.com</span>
+              <span>satyam.singh@c3alabs.com &bull; +91 97301 53661</span>
             </div>
             <div class="detail-item">
-              <strong>Target Route</strong>
-              <span>NUS AIDF &bull; NTU RSS &bull; TUM Informatics</span>
+              <strong>Parallel Target Route</strong>
+              <span>Singapore (NUS AIDF/NTU) &bull; Japan (UTRiP/MEXT) &bull; Germany (TUM)</span>
             </div>
           </div>
 
           <div class="profile-button-row">
             <a class="sub-btn primary" href="SATYAM%20PORTFOLIO/00_WEBSITE/index.html">Open Satyam Portfolio &rarr;</a>
-            <a class="sub-btn" href="OUTPUT/SATYAM_SINGH_RESUME.pdf" target="_blank">Cloud Resume (PDF) &nearr;</a>
-            <a class="sub-btn" href="SATYAM%20PORTFOLIO/00_WEBSITE/work.html">Selected Work &nearr;</a>
-            <a class="sub-btn" href="SATYAM%20PORTFOLIO/00_WEBSITE/job-internship.html">Job Track &nearr;</a>
+            <a class="sub-btn" href="OUTPUT/SATYAM_SINGH_RESUME.pdf" target="_blank">Resume (PDF) &nearr;</a>
+            <a class="sub-btn" href="https://zenodo.org/records/17073589" target="_blank">Zenodo Paper &nearr;</a>
+            <a class="sub-btn" href="https://github.com/Satyam25613" target="_blank">GitHub &nearr;</a>
+            <a class="sub-btn" href="https://linkedin.com/in/satyam-singh25613" target="_blank">LinkedIn &nearr;</a>
             <a class="sub-btn" href="SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_ROADMAP.html">Relocation Roadmap &nearr;</a>
           </div>
         </div>
@@ -985,33 +1177,33 @@
           </div>
           <h3 class="profile-name-large">SHRAVANI SHARAD VEER</h3>
           <p class="profile-bio-text">
-            Final-year BBA student in International Business at Sri Balaji University, Pune. Marketing operations intern at Aanshi Associates. Multilingual (English, Hindi, Marathi, German A2), elected Class Representative, and university fest emcee.
+            Final-year BBA (International Business) student at SBUP. Marketing operations intern at Aanshi Associates (wealth advisory outreach), B2B consultancy field researcher at Ambition Learning, elected Class Representative, fest emcee, and inter-college dance winner. Multilingual: English, Hindi, Marathi, German A2.
           </p>
 
           <div class="profile-details-list">
             <div class="detail-item">
               <strong>Verified Performance</strong>
-              <span>Sem V 8.36 &bull; Sem VI 8.30 (42 cr)</span>
+              <span>Sem V 8.36 &bull; Sem VI 8.30 &bull; CGPA 7.54 (42 cr, 350 GP)</span>
             </div>
             <div class="detail-item">
               <strong>Coursework Honors</strong>
-              <span>Int. Business 89/100 (A+) &bull; Decision 85</span>
+              <span>Int. Business Ops 89 A+ &bull; Decision Making 85 A+ &bull; Int. Banking 83 A+</span>
             </div>
             <div class="detail-item">
-              <strong>Direct Contacts</strong>
-              <span>shravaniveer75@gmail.com</span>
+              <strong>Education &amp; Certs</strong>
+              <span>XII 76% (Symbiosis) &bull; Coursera Teams &amp; Projects &bull; German A2</span>
             </div>
             <div class="detail-item">
               <strong>Target Route</strong>
-              <span>SMU MiM &bull; ESSEC SMIB &bull; Mannheim MMM</span>
+              <span>SMU MiM &bull; ESSEC SMIB &bull; NUS MiM &bull; NTU Mkt Science</span>
             </div>
           </div>
 
           <div class="profile-button-row">
             <a class="sub-btn primary" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html">Open Shravani Portfolio &rarr;</a>
-            <a class="sub-btn" href="OUTPUT/SHRAVANI_VEER_RESUME.pdf" target="_blank">Cloud Resume (PDF) &nearr;</a>
+            <a class="sub-btn" href="OUTPUT/SHRAVANI_VEER_RESUME.pdf" target="_blank">Resume (PDF) &nearr;</a>
             <a class="sub-btn" href="SHRAVU%20-%20PORTFOLIO/02_EDUCATION_ACADEMICS/SHRAVANI_VEER_BBA_YEAR_3_MARKSHEET_SEM_V_VI.jpg" target="_blank">SBUP Marksheet &nearr;</a>
-            <a class="sub-btn" href="SHRAVU%20-%20PORTFOLIO/SHRAVANI_VEER_MASTER_PROFILE.md">Master Profile &nearr;</a>
+            <a class="sub-btn" href="https://linkedin.com/in/shravani-veer-388a46284" target="_blank">LinkedIn &nearr;</a>
           </div>
         </div>
 
@@ -1108,6 +1300,52 @@
         </div>
       </div>
 
+      <!-- Credibility: Published Work & Verified Public Assets -->
+      <h3 style="font-family: var(--font-display); font-size: 24px; letter-spacing: 0.04em; text-transform: uppercase; margin: 8px 0 14px;">Published Work &amp; Verified Public Assets</h3>
+      <div class="bento-3col" style="margin-bottom: 28px;">
+        <div class="project-card">
+          <div>
+            <div class="project-top-meta">
+              <span class="project-idx">04</span>
+              <span class="project-tag">AUTHORSHIP &bull; BOOK</span>
+            </div>
+            <h4 class="project-title">THE LOVE SHE NEVER KNEW</h4>
+            <p class="project-desc">
+              Published novel by Satyam Singh Rajput, distributed via Pothi with print-on-demand and global retail channels.
+            </p>
+          </div>
+          <a class="sub-btn" href="https://store.pothi.com/book/satyam-singh-rajput-love-she-never-knew/" target="_blank">View on Pothi &nearr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-top-meta">
+              <span class="project-idx">05</span>
+              <span class="project-tag">ACADEMIC &bull; ZENODO DOI</span>
+            </div>
+            <h4 class="project-title">AI PHISHING DETECTION</h4>
+            <p class="project-desc">
+              Peer-indexed research on AI-assisted phishing detection and threat analysis. Zenodo record 17073589 (verified live).
+            </p>
+          </div>
+          <a class="sub-btn" href="https://zenodo.org/records/17073589" target="_blank">Read on Zenodo &nearr;</a>
+        </div>
+
+        <div class="project-card">
+          <div>
+            <div class="project-top-meta">
+              <span class="project-idx">06</span>
+              <span class="project-tag">LEGACY &bull; LIVE SITE</span>
+            </div>
+            <h4 class="project-title">ORIGIN PORTFOLIO</h4>
+            <p class="project-desc">
+              The original GitHub Pages portfolio that started the journey — kept live as a public engineering timeline.
+            </p>
+          </div>
+          <a class="sub-btn" href="https://satyam25613.github.io/MY-PORTFOLIO/" target="_blank">Visit Live Site &nearr;</a>
+        </div>
+      </div>
+
       <!-- Featured Statement Quote Card (The Rayhan Red Quote Card) -->
       <div class="statement-quote-card">
         <div class="quote-glyph">&ldquo;</div>
@@ -1126,7 +1364,7 @@
         Coordinated admission targets in Singapore. Compact 45-km metropolitan ecosystem allowing shared housing and concurrent study at NUS, NTU, SMU, and ESSEC.
       </p>
 
-      <table class="matrix-table">
+      <div class="table-scroll-wrap"><table class="matrix-table">
         <thead>
           <tr>
             <th>Candidate</th>
@@ -1166,8 +1404,14 @@
             <td>Consistently Top 5 worldwide MiM (Financial Times). One-North Singapore innovation campus.</td>
             <td><a href="https://www.essec.edu/en/program/master-strategy-management-international-business/" target="_blank" style="color:#FFF;">ESSEC SMIB Portal &nearr;</a></td>
           </tr>
+          <tr>
+            <td><strong>Satyam</strong></td>
+            <td><strong>Japan Parallel Track</strong><br>UTRiP 2026 (UTokyo) &bull; MEXT / JASSO funded research &rarr; Master's</td>
+            <td>Funded research internship pipeline: UTokyo, Waseda, KUAS, Tohoku. Scholarships: MEXT, JASSO, ADB-JSP.</td>
+            <td><a href="https://www.s.u-tokyo.ac.jp/en/utrip/apply-now/" target="_blank" style="color:#FFF;">UTRiP Apply Portal &nearr;</a></td>
+          </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <!-- CHAPTER 05: SECONDARY TRACK — GERMANY -->
@@ -1178,7 +1422,7 @@
         Tuition-free master's education at Germany's premier public universities with an 18-month post-study work visa leading directly to the EU Blue Card.
       </p>
 
-      <table class="matrix-table">
+      <div class="table-scroll-wrap"><table class="matrix-table">
         <thead>
           <tr>
             <th>Hub / City</th>
@@ -1203,7 +1447,7 @@
             <td><a href="https://www.uni-mannheim.de/en/academics/programs/mannheim-master-in-management/" target="_blank" style="color:#FFF;">Mannheim MMM &nearr;</a></td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <!-- CHAPTER 06: APPLY TOGETHER AS A DUAL TEAM -->
@@ -1400,7 +1644,7 @@
         All generated foreign intelligence dossiers, executive resumes, and technical blueprints strictly organized in <code>/Users/satyyy/Desktop/PORTFOLIO/OUTPUT/</code>:
       </p>
 
-      <table class="matrix-table" id="resumes">
+      <div class="table-scroll-wrap"><table class="matrix-table" id="resumes">
         <thead>
           <tr>
             <th>Deliverable Name</th>
@@ -1435,7 +1679,7 @@
             <td><a class="sub-btn" href="OUTPUT/HACKATHON_ARCHITECTURE_BLUEPRINT.html" target="_blank">View Blueprint &nearr;</a></td>
           </tr>
         </tbody>
-      </table>
+      </table></div>
     </section>
 
     <!-- FOOTER / CONTACT (The Rayhan Big Footer) -->
