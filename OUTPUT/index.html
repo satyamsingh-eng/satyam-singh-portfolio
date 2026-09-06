@@ -1120,6 +1120,111 @@
     .lg-line { background: rgba(41,151,255,0.5); border-radius: 2px; }
     .lg-outline { background: transparent; border: 1px solid rgba(41,151,255,0.5); }
 
+  
+    /* --- Mixed dual-track points (home screen) --- */
+    .mixed-points-section {
+      padding: 34px 0 8px;
+    }
+    .mp-header { text-align: center; margin-bottom: 20px; }
+    .mp-kicker {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      color: #2997FF;
+      text-transform: uppercase;
+    }
+    .mp-title {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: clamp(34px, 6vw, 54px);
+      letter-spacing: 0.04em;
+      color: #F5F5F7;
+      margin-top: 6px;
+    }
+    .mixed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      max-width: 100%;
+    }
+    .mp-card {
+      position: relative;
+      padding: 18px 18px 16px 20px;
+      border-radius: 16px;
+      background: var(--surface, #121215);
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      overflow: hidden;
+    }
+    .mp-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+    }
+    .mp-satyam::before { background: #2997FF; }
+    .mp-shravani::before { background: #C7C7CC; }
+    .mp-joint::before { background: linear-gradient(180deg, #2997FF, #C7C7CC); }
+    .mp-badge {
+      display: inline-block;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .mp-satyam .mp-badge { color: #2997FF; border: 1px solid rgba(41,151,255,0.4); }
+    .mp-shravani .mp-badge { color: #C7C7CC; border: 1px solid rgba(199,199,204,0.35); }
+    .mp-joint .mp-badge { color: #F5F5F7; border: 1px solid rgba(245,245,247,0.3); background: rgba(41,151,255,0.12); }
+    .mp-point {
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 14px;
+      line-height: 1.55;
+      color: #A1A1A6;
+    }
+    .mp-point strong { color: #F5F5F7; font-weight: 700; }
+
+    /* --- Site Pages: separated panels --- */
+    .pages-panel {
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-radius: 20px;
+      padding: 20px 18px 18px;
+      margin: 18px 0;
+      background: rgba(18,18,21,0.55);
+    }
+    .pages-panel-satyam { border-top: 3px solid #2997FF; }
+    .pages-panel-shravani { border-top: 3px solid #C7C7CC; }
+    .pages-panel-shared { border-top: 3px solid transparent; border-image: linear-gradient(90deg, #0071E3, #2997FF) 1; }
+    .pages-panel-head {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      padding-bottom: 12px;
+      border-bottom: 1px dashed rgba(255,255,255,0.10);
+    }
+    .pages-panel-name {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: 30px;
+      letter-spacing: 0.05em;
+      color: #F5F5F7;
+    }
+    .pages-panel-sub {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      color: #7C7C82;
+      text-transform: uppercase;
+    }
+    .pages-panel-satyam .pages-panel-name { color: #2997FF; }
+    .pages-panel-shravani .pages-panel-name { color: #C7C7CC; }
+    .pages-panel-shared .pages-panel-name { color: #F5F5F7; }
+    @media (max-width: 640px) {
+      .mixed-grid { grid-template-columns: 1fr; }
+      .pages-panel { padding: 16px 12px 14px; }
+    }
+
   </style>
 </head>
 <body>
@@ -1195,49 +1300,96 @@
     </section>
 
     <!-- Table of Contents (The Brigitte Schwartz Capsule Grid) -->
+
+    <!-- MIXED DUAL-TRACK POINTS (home screen) -->
+    <section class="mixed-points-section" id="points">
+      <div class="mp-header">
+        <span class="mp-kicker">DUAL TRACK &bull; KEY POINTS</span>
+        <h2 class="mp-title">WHY THIS TEAM WORKS</h2>
+      </div>
+      <div class="mixed-grid">
+        <div class="mp-card mp-satyam">
+          <span class="mp-badge">SATYAM</span>
+          <p class="mp-point">Twin <strong>8.36 SGPA</strong> semester scores &mdash; matching momentum on both tracks.</p>
+        </div>
+        <div class="mp-card mp-shravani">
+          <span class="mp-badge">SHRAVANI</span>
+          <p class="mp-point"><strong>CGPA 7.54</strong> with A+ honors in Int. Business Ops (89) &amp; Decision Making (85).</p>
+        </div>
+        <div class="mp-card mp-satyam">
+          <span class="mp-badge">SATYAM</span>
+          <p class="mp-point"><strong>Published researcher</strong> &mdash; Zenodo DOI-indexed AI phishing detection paper.</p>
+        </div>
+        <div class="mp-card mp-shravani">
+          <span class="mp-badge">SHRAVANI</span>
+          <p class="mp-point"><strong>German A2 + Coursera certified</strong> &mdash; multilingual, EU-ready from day one.</p>
+        </div>
+        <div class="mp-card mp-satyam">
+          <span class="mp-badge">SATYAM</span>
+          <p class="mp-point"><strong>C3A Labs founder</strong> &mdash; ships SARVAX, a live B2B AI agents platform.</p>
+        </div>
+        <div class="mp-card mp-shravani">
+          <span class="mp-badge">SHRAVANI</span>
+          <p class="mp-point"><strong>Field-tested ops</strong> &mdash; Aanshi Associates wealth-advisory outreach + Ambition Learning research.</p>
+        </div>
+        <div class="mp-card mp-joint">
+          <span class="mp-badge">JOINT</span>
+          <p class="mp-point"><strong>One coordinated move</strong> &mdash; Singapore (NUS/NTU/SMU) + Germany (TUM/Mannheim) routes locked for 2027.</p>
+        </div>
+        <div class="mp-card mp-joint">
+          <span class="mp-badge">JOINT</span>
+          <p class="mp-point"><strong>7 team applications</strong> ready &mdash; hackathons &amp; grants where they enter as one unit.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="toc-section" id="toc">
       <h2 class="toc-header">TABLE OF CONTENTS</h2>
       <div class="toc-subtitle">DIRECT NAVIGATION &bull; OPERATING OS REGISTRY</div>
 
       <div class="toc-capsule-grid">
+        <a class="capsule-link" href="#points">
+          <span>01 &bull; KEY POINTS &bull; WHY THIS TEAM</span>
+          <span class="arrow">&rarr;</span>
+        </a>
         <a class="capsule-link" href="#satyam">
-          <span>01 &bull; MASTER ANCHOR : SATYAM</span>
+          <span>02 &bull; MASTER ANCHOR : SATYAM</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#shravani">
-          <span>02 &bull; STRATEGY LEAD : SHRAVANI</span>
+          <span>03 &bull; STRATEGY LEAD : SHRAVANI</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#singapore">
-          <span>03 &bull; PRIMARY TRACK : SINGAPORE</span>
+          <span>04 &bull; PRIMARY TRACK : SINGAPORE</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#germany">
-          <span>04 &bull; SECONDARY TRACK : GERMANY</span>
+          <span>05 &bull; SECONDARY TRACK : GERMANY</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#projects">
-          <span>05 &bull; SELECTED SYSTEMS &amp; VENTURES</span>
+          <span>06 &bull; SELECTED SYSTEMS &amp; VENTURES</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#hackathons">
-          <span>06 &bull; APPLY TOGETHER AS A TEAM</span>
+          <span>07 &bull; APPLY TOGETHER AS A TEAM</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#architecture">
-          <span>07 &bull; TECHNICAL SVG BLUEPRINT</span>
+          <span>08 &bull; TECHNICAL SVG BLUEPRINT</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#resumes">
-          <span>08 &bull; CLOUD EXECUTIVE RESUMES</span>
+          <span>09 &bull; CLOUD EXECUTIVE RESUMES</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#pages">
-          <span>09 &bull; SITE PAGES &amp; PORTFOLIO MAP</span>
+          <span>10 &bull; SITE PAGES &amp; PORTFOLIO MAP</span>
           <span class="arrow">&rarr;</span>
         </a>
         <a class="capsule-link" href="#deliverables">
-          <span>10 &bull; CENTRAL OUTPUT MANIFEST</span>
+          <span>11 &bull; CENTRAL OUTPUT MANIFEST</span>
           <span class="arrow">&rarr;</span>
         </a>
       </div>
@@ -1245,7 +1397,7 @@
 
     <!-- CHAPTER 01: SATYAM SINGH RAJPUT -->
     <section class="content-chapter" id="satyam">
-      <div class="chapter-tag">CHAPTER 01 &bull; TECHNICAL LEAD &bull; MASTER ANCHOR</div>
+      <div class="chapter-tag">CHAPTER 02 &bull; TECHNICAL LEAD &bull; MASTER ANCHOR</div>
       <h2 class="chapter-title">SATYAM SINGH RAJPUT</h2>
       <p class="chapter-desc">
         AI Systems Operator &amp; Cybersecurity Researcher. Designing deterministic multi-agent orchestration, stateful DAG pipelines, and enterprise risk models at C3A Labs (KARAX / SARVAX).
@@ -1334,7 +1486,7 @@
 
     <!-- CHAPTER 02: SHRAVANI SHARAD VEER -->
     <section class="content-chapter" id="shravani">
-      <div class="chapter-tag">CHAPTER 02 &bull; STRATEGY LEAD &bull; MODULAR SUBFOLDER</div>
+      <div class="chapter-tag">CHAPTER 03 &bull; STRATEGY LEAD &bull; MODULAR SUBFOLDER</div>
       <h2 class="chapter-title">SHRAVANI SHARAD VEER</h2>
       <p class="chapter-desc">
         International Business Operations &amp; Market Expansion. Final-year BBA candidate with verified 8.36/8.30 SGPA, German A2 proficiency, and marketing operations experience.
@@ -1421,7 +1573,7 @@
 
     <!-- CHAPTER 03: SELECTED SYSTEMS & VENTURES -->
     <section class="content-chapter" id="projects">
-      <div class="chapter-tag">CHAPTER 03 &bull; PRODUCTION SYSTEMS &bull; VENTURE FOOTPRINT</div>
+      <div class="chapter-tag">CHAPTER 04 &bull; PRODUCTION SYSTEMS &bull; VENTURE FOOTPRINT</div>
       <h2 class="chapter-title">SELECTED SYSTEMS</h2>
       <p class="chapter-desc">
         Deployed applications, autonomous workflow platforms, and healthcare web infrastructure authored in this ecosystem:
@@ -1529,7 +1681,7 @@
 
     <!-- CHAPTER 04: PRIMARY TRACK — SINGAPORE -->
     <section class="content-chapter" id="singapore">
-      <div class="chapter-tag">CHAPTER 04 &bull; PRIMARY RELOCATION &bull; ASIA EXPEDITION</div>
+      <div class="chapter-tag">CHAPTER 05 &bull; PRIMARY RELOCATION &bull; ASIA EXPEDITION</div>
       <h2 class="chapter-title">SINGAPORE PIPELINE</h2>
       <p class="chapter-desc">
         Coordinated admission targets in Singapore. Compact 45-km metropolitan ecosystem allowing shared housing and concurrent study at NUS, NTU, SMU, and ESSEC.
@@ -1587,7 +1739,7 @@
 
     <!-- CHAPTER 05: SECONDARY TRACK — GERMANY -->
     <section class="content-chapter" id="germany">
-      <div class="chapter-tag">CHAPTER 05 &bull; SECONDARY RELOCATION &bull; EUROPE EXPEDITION</div>
+      <div class="chapter-tag">CHAPTER 06 &bull; SECONDARY RELOCATION &bull; EUROPE EXPEDITION</div>
       <h2 class="chapter-title">GERMANY / EU PIPELINE</h2>
       <p class="chapter-desc">
         Tuition-free master's education at Germany's premier public universities with an 18-month post-study work visa leading directly to the EU Blue Card.
@@ -1623,7 +1775,7 @@
 
     <!-- CHAPTER 06: APPLY TOGETHER AS A DUAL TEAM -->
     <section class="content-chapter" id="hackathons">
-      <div class="chapter-tag">CHAPTER 06 &bull; DUAL CO-FOUNDER PIPELINE &bull; APPLY AS A TEAM</div>
+      <div class="chapter-tag">CHAPTER 07 &bull; DUAL CO-FOUNDER PIPELINE &bull; APPLY AS A TEAM</div>
       <h2 class="chapter-title">APPLY TOGETHER AS A TEAM</h2>
       <p class="chapter-desc">
         <strong>University Master&rsquo;s degrees are individual admissions; these opportunities are distinct.</strong> This curated list consists of elite global competitions, travel grants, and accelerator programs where Satyam &amp; Shravani apply together as a 2-person co-founder team (Technical AI Architect + Strategic Operations Lead):
@@ -1744,7 +1896,7 @@
 
     <!-- CHAPTER 07: TECHNICAL SVG ARCHITECTURE -->
     <section class="content-chapter" id="architecture">
-      <div class="chapter-tag">CHAPTER 07 &bull; TECHNICAL BLUEPRINT &bull; SVG PIPELINE</div>
+      <div class="chapter-tag">CHAPTER 08 &bull; TECHNICAL BLUEPRINT &bull; SVG PIPELINE</div>
       <h2 class="chapter-title">SYSTEM ARCHITECTURE</h2>
       <p class="chapter-desc">
         Google Cloud Vertex AI multi-agent runtime specification with dual Gemini 1.5 cascades, Cloud Run ingress, and ScaNN vector grounding:
@@ -1823,7 +1975,7 @@
 
     <!-- CHAPTER 09: SITE PAGES & PORTFOLIO MAP -->
     <section class="content-chapter" id="pages">
-      <div class="chapter-tag">CHAPTER 09 &bull; NAVIGATION HUB &bull; FULL SITE INDEX</div>
+      <div class="chapter-tag">CHAPTER 10 &bull; NAVIGATION HUB &bull; FULL SITE INDEX</div>
       <h2 class="chapter-title">SITE PAGES</h2>
       <p class="chapter-desc">
         Every live page across the dual portfolio &mdash; one row per page, verified links only. Satyam's engineering track, Shravani's strategy track, and the shared OUTPUT war room.
@@ -1888,8 +2040,13 @@
       </div>
 
 
-      <h3 class="pages-group-label">SATYAM &mdash; ENGINEERING PORTFOLIO <span class="pages-group-count">6 PAGES</span></h3>
-      <div class="pages-grid">
+      <div class="pages-panel pages-panel-satyam">
+        <div class="pages-panel-head">
+          <span class="pages-panel-name">SATYAM</span>
+          <span class="pages-panel-sub">ENGINEERING PORTFOLIO</span>
+          <span class="pages-group-count">6 PAGES</span>
+        </div>
+        <div class="pages-grid">
         <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/index.html">
           <span class="page-idx">S1</span>
           <span class="page-name">Home &mdash; AI Systems &amp; Product Operations</span>
@@ -1922,8 +2079,15 @@
         </a>
       </div>
 
-      <h3 class="pages-group-label">SHRAVANI &mdash; STRATEGY PORTFOLIO <span class="pages-group-count">4 PAGES</span></h3>
-      <div class="pages-grid">
+      </div>
+
+      <div class="pages-panel pages-panel-shravani">
+        <div class="pages-panel-head">
+          <span class="pages-panel-name">SHRAVANI</span>
+          <span class="pages-panel-sub">STRATEGY PORTFOLIO</span>
+          <span class="pages-group-count">4 PAGES</span>
+        </div>
+        <div class="pages-grid">
         <a class="page-row" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html">
           <span class="page-idx">V1</span>
           <span class="page-name">Home &mdash; International Business &amp; Strategy</span>
@@ -1946,8 +2110,15 @@
         </a>
       </div>
 
-      <h3 class="pages-group-label">SHARED &mdash; OUTPUT WAR ROOM <span class="pages-group-count">3 ASSETS</span></h3>
-      <div class="pages-grid">
+      </div>
+
+      <div class="pages-panel pages-panel-shared">
+        <div class="pages-panel-head">
+          <span class="pages-panel-name">SHARED OUTPUT</span>
+          <span class="pages-panel-sub">WAR ROOM</span>
+          <span class="pages-group-count">3 ASSETS</span>
+        </div>
+        <div class="pages-grid">
         <a class="page-row" href="OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html" target="_blank">
           <span class="page-idx">O1</span>
           <span class="page-name">Foreign Master Dossier &mdash; Verified Intelligence</span>
@@ -1964,11 +2135,12 @@
           <span class="page-arrow">&nearr;</span>
         </a>
       </div>
+      </div>
     </section>
 
     <!-- CHAPTER 08: CLOUD RESUMES & OUTPUT MANIFEST -->
     <section class="content-chapter" id="deliverables">
-      <div class="chapter-tag">CHAPTER 08 &bull; CENTRAL DELIVERABLES &bull; OUTPUT DIRECTORY</div>
+      <div class="chapter-tag">CHAPTER 11 &bull; CENTRAL DELIVERABLES &bull; OUTPUT DIRECTORY</div>
       <h2 class="chapter-title">OUTPUT DELIVERABLES</h2>
       <p class="chapter-desc">
         All generated foreign intelligence dossiers, executive resumes, and technical blueprints strictly organized in <code>/Users/satyyy/Desktop/PORTFOLIO/OUTPUT/</code>:
