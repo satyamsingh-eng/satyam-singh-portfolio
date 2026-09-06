@@ -183,6 +183,28 @@
     }
     @media (max-width: 640px) {
       .live-status-bar { font-size: 10px; gap: 6px; padding: 7px 12px; }
+/* Mobile: stack into two centered rows (date row + countdown row) */
+    @media (max-width: 640px) {
+      .live-status-bar {
+        flex-direction: column;
+        gap: 4px;
+        padding: 9px 16px;
+        width: auto;
+        max-width: 100%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .lsb-item, .lsb-item.lsb-sep {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        white-space: nowrap;
+      }
+      .lsb-item.lsb-sep { display: none !important; }
+      .lsb-count { display: inline-block; text-align: center; }
+    }
     }
 
     .hero-kicker::before {
