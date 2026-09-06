@@ -146,6 +146,45 @@
       word-break: break-word;
       line-height: 1.5;
     }
+
+    .live-status-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px auto 0;
+      padding: 8px 14px;
+      width: fit-content;
+      max-width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 999px;
+      background: rgba(28,28,30,0.65);
+      backdrop-filter: blur(8px);
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: #A1A1A6;
+      text-transform: uppercase;
+    }
+    .lsb-item { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+    .lsb-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #2997FF;
+      box-shadow: 0 0 8px rgba(41,151,255,0.9);
+      animation: lsb-pulse 2s ease-in-out infinite;
+      flex: 0 0 auto;
+    }
+    .lsb-count { color: #2997FF; font-weight: 700; }
+    .lsb-sep { opacity: 0.35; }
+    @keyframes lsb-pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.45; transform: scale(0.8); }
+    }
+    @media (max-width: 640px) {
+      .live-status-bar { font-size: 10px; gap: 6px; padding: 7px 12px; }
+    }
+
     .hero-kicker::before {
       content: "■ ";
       color: var(--apple-blue-bright);
@@ -958,6 +997,83 @@
         font-size: 34px !important;
       }
     }
+  
+    /* --- SITE PAGES chapter --- */
+    .pages-group-label {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: 22px;
+      letter-spacing: 0.05em;
+      color: #D1D1D6;
+      margin: 26px 0 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .pages-group-label:first-of-type { margin-top: 4px; }
+    .pages-group-count {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: #2997FF;
+      border: 1px solid rgba(41,151,255,0.35);
+      border-radius: 999px;
+      padding: 3px 10px;
+      white-space: nowrap;
+    }
+    .pages-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 100%;
+    }
+    .page-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--surface, #121215);
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-radius: 14px;
+      text-decoration: none;
+      transition: border-color 0.2s ease, transform 0.2s ease, background 0.2s ease;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+    .page-row:hover {
+      border-color: rgba(41,151,255,0.55);
+      background: rgba(28,28,30,0.9);
+      transform: translateX(4px);
+    }
+    .page-idx {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 11px;
+      font-weight: 700;
+      color: #2997FF;
+      border: 1px solid rgba(41,151,255,0.35);
+      border-radius: 8px;
+      padding: 4px 8px;
+      flex: 0 0 auto;
+    }
+    .page-name {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-family: var(--font-body, 'Plus Jakarta Sans', sans-serif);
+      font-size: 14px;
+      font-weight: 600;
+      color: #F5F5F7;
+      overflow-wrap: break-word;
+    }
+    .page-arrow {
+      flex: 0 0 auto;
+      color: #2997FF;
+      font-size: 16px;
+    }
+    @media (max-width: 640px) {
+      .page-row { padding: 12px 14px; gap: 10px; }
+      .page-name { font-size: 13px; }
+      .pages-group-label { font-size: 19px; }
+    }
+
   </style>
 </head>
 <body>
@@ -985,7 +1101,12 @@
 
     <!-- Hero / Magazine Cover -->
     <section class="hero-section">
-      <div class="hero-kicker">SYNCHRONIZED 2027 RELOCATION PROTOCOL · INDIA &rarr; GLOBAL</div>
+      <div class="hero-kicker">SYNCHRONIZED 2027 RELOCATION PROTOCOL &middot; INDIA &rarr; GLOBAL</div>
+        <div class="live-status-bar" id="liveStatusBar">
+          <span class="lsb-item"><span class="lsb-dot"></span><span id="lsbDate">—</span></span>
+          <span class="lsb-item lsb-sep">&bull;</span>
+          <span class="lsb-item">T-MINUS <span id="lsbCountdown" class="lsb-count">—</span> TO DEPARTURE</span>
+        </div>
       
       <h1 class="hero-title-giant">
         DUAL<br class="mobile-break"> <span class="blue-stroke">HORIZON</span>
@@ -1065,8 +1186,12 @@
           <span>08 &bull; CLOUD EXECUTIVE RESUMES</span>
           <span class="arrow">&rarr;</span>
         </a>
+        <a class="capsule-link" href="#pages">
+          <span>09 &bull; SITE PAGES &amp; PORTFOLIO MAP</span>
+          <span class="arrow">&rarr;</span>
+        </a>
         <a class="capsule-link" href="#deliverables">
-          <span>09 &bull; CENTRAL OUTPUT MANIFEST</span>
+          <span>10 &bull; CENTRAL OUTPUT MANIFEST</span>
           <span class="arrow">&rarr;</span>
         </a>
       </div>
@@ -1650,6 +1775,92 @@
       <a class="btn-action-ghost" href="OUTPUT/HACKATHON_ARCHITECTURE_BLUEPRINT.html" target="_blank">Launch Fullscreen SVG Blueprint &nearr;</a>
     </section>
 
+    <!-- CHAPTER 09: SITE PAGES & PORTFOLIO MAP -->
+    <section class="content-chapter" id="pages">
+      <div class="chapter-tag">CHAPTER 09 &bull; NAVIGATION HUB &bull; FULL SITE INDEX</div>
+      <h2 class="chapter-title">SITE PAGES</h2>
+      <p class="chapter-desc">
+        Every live page across the dual portfolio &mdash; one row per page, verified links only. Satyam's engineering track, Shravani's strategy track, and the shared OUTPUT war room.
+      </p>
+
+      <h3 class="pages-group-label">SATYAM &mdash; ENGINEERING PORTFOLIO <span class="pages-group-count">6 PAGES</span></h3>
+      <div class="pages-grid">
+        <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/index.html">
+          <span class="page-idx">S1</span>
+          <span class="page-name">Home &mdash; AI Systems &amp; Product Operations</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/work.html">
+          <span class="page-idx">S2</span>
+          <span class="page-name">Selected Work &mdash; Builds &amp; Systems</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/job-internship.html">
+          <span class="page-idx">S3</span>
+          <span class="page-name">Job / Internship Track</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/university-education.html">
+          <span class="page-idx">S4</span>
+          <span class="page-name">University / Education Track</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_ROADMAP.html">
+          <span class="page-idx">S5</span>
+          <span class="page-name">Global Escape Roadmap &mdash; Japan + Singapore</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_MASTER_PLAN.html">
+          <span class="page-idx">S6</span>
+          <span class="page-name">Seven-Nation Matrix &mdash; Supported Routes</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <h3 class="pages-group-label">SHRAVANI &mdash; STRATEGY PORTFOLIO <span class="pages-group-count">4 PAGES</span></h3>
+      <div class="pages-grid">
+        <a class="page-row" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html">
+          <span class="page-idx">V1</span>
+          <span class="page-name">Home &mdash; International Business &amp; Strategy</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/work.html">
+          <span class="page-idx">V2</span>
+          <span class="page-name">Selected Work &mdash; Operations &amp; Research</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/singapore-masters.html">
+          <span class="page-idx">V3</span>
+          <span class="page-name">Singapore Master's &amp; Global Track</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+        <a class="page-row" href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/career-roles.html">
+          <span class="page-idx">V4</span>
+          <span class="page-name">Career Roles &amp; Opportunities</span>
+          <span class="page-arrow">&rarr;</span>
+        </a>
+      </div>
+
+      <h3 class="pages-group-label">SHARED &mdash; OUTPUT WAR ROOM <span class="pages-group-count">3 ASSETS</span></h3>
+      <div class="pages-grid">
+        <a class="page-row" href="OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html" target="_blank">
+          <span class="page-idx">O1</span>
+          <span class="page-name">Foreign Master Dossier &mdash; Verified Intelligence</span>
+          <span class="page-arrow">&nearr;</span>
+        </a>
+        <a class="page-row" href="OUTPUT/DUAL_TEAM_OPPORTUNITIES_REGISTRY.html" target="_blank">
+          <span class="page-idx">O2</span>
+          <span class="page-name">Team Opportunities Registry &mdash; 7 Joint Plays</span>
+          <span class="page-arrow">&nearr;</span>
+        </a>
+        <a class="page-row" href="OUTPUT/HACKATHON_ARCHITECTURE_BLUEPRINT.html" target="_blank">
+          <span class="page-idx">O3</span>
+          <span class="page-name">Hackathon Architecture Blueprint</span>
+          <span class="page-arrow">&nearr;</span>
+        </a>
+      </div>
+    </section>
+
     <!-- CHAPTER 08: CLOUD RESUMES & OUTPUT MANIFEST -->
     <section class="content-chapter" id="deliverables">
       <div class="chapter-tag">CHAPTER 08 &bull; CENTRAL DELIVERABLES &bull; OUTPUT DIRECTORY</div>
@@ -1728,11 +1939,36 @@
   </main>
 
   <script>
-    // Live Clock (IST)
+    // Live Clock (IST) + Hero Status Bar: live date & departure countdown
+    const DEPARTURE_ISO = "2027-08-15T00:00:00+05:30"; // Fall 2027 coordinated intake target
+    function istParts(date) {
+      // Returns IST date/time parts regardless of viewer timezone
+      const f = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Asia/Kolkata",
+        weekday: "short", day: "2-digit", month: "short", year: "numeric",
+        hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false
+      });
+      const parts = {};
+      for (const p of f.formatToParts(date)) parts[p.type] = p.value;
+      return parts;
+    }
     function updateClock() {
       const now = new Date();
-      const options = { timeZone: "Asia/Kolkata", hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false };
-      document.getElementById("liveClock").textContent = now.toLocaleTimeString("en-GB", options) + " IST";
+      const p = istParts(now);
+      const clockEl = document.getElementById("liveClock");
+      if (clockEl) clockEl.textContent = p.hour + ":" + p.minute + ":" + p.second + " IST";
+      const dateEl = document.getElementById("lsbDate");
+      if (dateEl) dateEl.textContent = p.weekday + " · " + p.day + " " + p.month + " " + p.year + " · " + p.hour + ":" + p.minute + ":" + p.second + " IST";
+      const cdEl = document.getElementById("lsbCountdown");
+      if (cdEl) {
+        const dep = new Date(DEPARTURE_ISO).getTime();
+        let diff = Math.max(0, dep - now.getTime());
+        const days = Math.floor(diff / 86400000);
+        const hours = Math.floor((diff % 86400000) / 3600000);
+        const mins = Math.floor((diff % 3600000) / 60000);
+        const secs = Math.floor((diff % 60000) / 1000);
+        cdEl.textContent = days + "D " + String(hours).padStart(2,"0") + "H " + String(mins).padStart(2,"0") + "M " + String(secs).padStart(2,"0") + "S";
+      }
     }
     setInterval(updateClock, 1000);
     updateClock();
