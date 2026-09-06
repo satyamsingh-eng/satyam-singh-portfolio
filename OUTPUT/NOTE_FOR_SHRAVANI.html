@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Note For Shravu — Nyxi</title>
+<style>
+:root{
+  --bg:#000;--bg2:#0d0d0f;--card:#121215;--card2:#1c1c1e;
+  --t1:#f5f5f7;--t2:#a1a1a6;--t3:#7c7c82;
+  --acc:#2997ff;--ctl:#0071e3;
+  --br:rgba(255,255,255,.10);--br2:rgba(255,255,255,.06);
+  --mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+  --sf:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--bg)!important;color:var(--t1);font-family:var(--sf);letter-spacing:-.3px;line-height:1.6}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:680px;margin:0 auto;padding:0 22px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.82);backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--br2);height:50px;display:flex;align-items:center;padding:0 22px;gap:18px}
+.nav .brand{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:2px;color:#fff}
+.nav a.nl{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:1.4px;color:var(--acc);text-transform:uppercase;font-weight:700}
+
+/* signature moment: oversized editorial opening */
+.hero{padding:96px 0 30px}
+.hero .from{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:2.6px;color:var(--acc);text-transform:uppercase;margin-bottom:18px}
+.hero h1{font-size:clamp(44px,9vw,76px);font-weight:700;line-height:1.0;letter-spacing:-2px}
+.hero h1 em{font-style:normal;color:var(--t3)}
+.hero .stand{margin-top:26px;font-size:19px;line-height:1.55;color:var(--t2);max-width:560px}
+.hero .stand b{color:var(--t1);font-weight:600}
+.stamp{margin-top:24px;font-family:var(--mono);font-size:10px;letter-spacing:1.8px;color:var(--t3);text-transform:uppercase}
+.stamp b{color:var(--acc)}
+
+.sec{padding:46px 0;border-top:1px solid var(--br2)}
+.k{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:2.2px;color:var(--acc);text-transform:uppercase;margin-bottom:16px}
+.sec h2{font-size:clamp(26px,5vw,36px);font-weight:700;letter-spacing:-.9px;line-height:1.1;margin-bottom:14px}
+.sec h2 .dim{color:var(--t3)}
+.sec p{font-size:15px;color:var(--t2);margin-bottom:13px}
+.sec p b{color:var(--t1)}
+
+/* the two links as hero objects */
+.biglink{display:block;background:var(--card);border:1px solid var(--br2);border-radius:18px;padding:24px;margin:14px 0;transition:border-color .2s,transform .2s}
+.biglink:hover{border-color:rgba(41,151,255,.55);transform:translateY(-2px);text-decoration:none}
+.biglink .t{font-size:17px;font-weight:700;color:var(--t1);letter-spacing:-.2px;margin-bottom:4px}
+.biglink .t span{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:1.6px;color:#fff;background:var(--ctl);border-radius:980px;padding:3px 10px;margin-left:8px;vertical-align:2px}
+.biglink .t span.you{background:#30d158;color:#0b0b0c}
+.biglink .u{font-family:var(--mono);font-size:11.5px;color:var(--acc);word-break:break-all}
+.biglink .d{font-size:13px;color:var(--t2);margin-top:8px;line-height:1.5}
+
+/* picks */
+.picks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.pick{background:var(--card);border:1px solid var(--br2);border-radius:16px;padding:20px}
+.pick .odds{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:1.6px;padding:3px 9px;border-radius:980px;display:inline-block;margin-bottom:10px}
+.pick .odds.hi{background:#30d158;color:#0b0b0c}
+.pick .odds.md{background:#64d2ff;color:#0b0b0c}
+.pick b{display:block;font-size:15.5px;letter-spacing:-.2px;margin-bottom:4px}
+.pick p{font-size:12.5px;color:var(--t2);line-height:1.5;margin:0}
+
+/* steps */
+.steps{list-style:none;counter-reset:st}
+.steps li{counter-increment:st;position:relative;padding:13px 0 13px 48px;border-bottom:1px solid var(--br2);font-size:14.5px;color:var(--t2)}
+.steps li:last-child{border:none}
+.steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:13px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--acc);border:1px solid rgba(41,151,255,.45);border-radius:980px;padding:4px 9px}
+.steps li b{color:var(--t1)}
+.callout{background:var(--card2);border-left:3px solid var(--acc);border-radius:0 14px 14px 0;padding:18px 20px;font-size:15px;color:var(--t1);margin-top:18px}
+
+/* countdown strip */
+.deadline{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+.dl{flex:1;min-width:130px;background:var(--card);border:1px solid rgba(41,151,255,.35);border-radius:14px;padding:16px;text-align:center}
+.dl .n{font-family:var(--mono);font-size:22px;font-weight:700;color:var(--acc);letter-spacing:-.5px}
+.dl .l{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:1.4px;color:var(--t3);text-transform:uppercase;margin-top:4px}
+
+/* closing */
+.close{padding:56px 0 20px;border-top:1px solid var(--br2)}
+.close h2{font-size:clamp(28px,6vw,44px);font-weight:700;letter-spacing:-1.2px;line-height:1.05;margin-bottom:12px}
+.btn{display:inline-block;background:var(--ctl);color:#fff;font-size:15px;font-weight:500;padding:14px 32px;border-radius:980px;margin-top:18px;transition:background .2s}
+.btn:hover{background:var(--acc);text-decoration:none}
+.sig{margin-top:34px;font-size:26px;font-weight:600;letter-spacing:-.4px}
+.sig small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:1.6px;color:var(--t3);margin-top:6px;text-transform:uppercase}
+
+footer{padding:34px 22px 46px;border-top:.5px solid var(--br2);font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;color:var(--t3);text-transform:uppercase;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:30px}
+.reveal{opacity:1;transform:translateY(10px);transition:transform .5s ease}
+.reveal.in{transform:none}
+@media print{.reveal{transform:none!important}.nav{display:none}}
+@media(max-width:640px){.picks{grid-template-columns:1fr}.hero{padding:70px 0 24px}}
+</style>
+</head>
+<body>
+<nav class="nav"><span class="brand">DUAL HORIZON OS</span><a class="nl" href="https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html" target="_blank">Open the Radar ↗</a></nav>
+
+<header class="wrap hero">
+  <div class="from">A note from Nyxi · to Shravu</div>
+  <h1>You two are<br>going global.<br><em>Here's the map.</em></h1>
+  <p class="stand">Satyam and I built you something. While you two talked about Singapore and Germany, <b>I did the boring part</b> — every scholarship, competition and window that fits you both, each deadline verified by hand, everything unverifiable cut.</p>
+  <div class="stamp"><b>26 opportunities</b> · Sep 2026 → Mar 2027 · Zero guessed dates</div>
+</header>
+
+<div class="wrap">
+<section class="sec reveal">
+  <div class="k">Two links. That's all.</div>
+  <a class="biglink" href="https://satyamsingh-eng.github.io/" target="_blank">
+    <div class="t">The OS — home base <span>START HERE</span></div>
+    <div class="u">satyamsingh-eng.github.io</div>
+    <div class="d">Everything branches from here — both your portfolios, plans, and every page below.</div>
+  </a>
+  <a class="biglink" href="https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html" target="_blank">
+    <div class="t">The Application Radar <span class="you" style="background:#30d158;color:#0b0b0c">YOURS TO DIG INTO</span></div>
+    <div class="u">satyamsingh-eng.github.io/JOINT_APPLICATIONS.html</div>
+    <div class="d">26 verified opportunities between now and March 2027. Real deadlines, real money, honest odds on every card. No hype — I rated them the way I'd rate them for family.</div>
+  </a>
+</section>
+
+<section class="sec reveal">
+  <div class="k">Picked for you</div>
+  <h2>Six doors,<br><span class="dim">opened first.</span></h2>
+  <div class="picks">
+    <div class="pick"><span class="odds hi">HIGH ODDS</span><b>Mannheim MMM</b><p>Germany's #1 business faculty. Window Apr 1 – May 15, 2027 — one shot a year, so it goes in the calendar now.</p></div>
+    <div class="pick"><span class="odds hi">HIGH ODDS</span><b>ESMT Berlin · M.AAI</b><p>Master in Analytics &amp; AI, fully English. €2,000 early-bird if applied by Mar 31, 2027.</p></div>
+    <div class="pick"><span class="odds md">GOOD ODDS</span><b>L'Oréal Brandstorm</b><p>Teams of three, no experience needed. This is your arena — the pitch. Find your third.</p></div>
+    <div class="pick"><span class="odds md">GOOD ODDS</span><b>Hult Prize</b><p>Round one is a campus pitch. You, a mic, a room. Done.</p></div>
+    <div class="pick"><span class="odds md">GOOD ODDS</span><b>Reliance Foundation PG</b><p>Up to ₹6 lakh. The essay is one evening's work — do it together.</p></div>
+    <div class="pick"><span class="odds md">GOOD ODDS</span><b>Hungaricum + Türkiye</b><p>Both fully funded. Barely any Indian applicants — I checked the calendars myself.</p></div>
+  </div>
+</section>
+
+<section class="sec reveal">
+  <div class="k">Closing soon</div>
+  <h2>September <span class="dim">is the gate.</span></h2>
+  <div class="deadline">
+    <div class="dl"><div class="n">10</div><div class="l">Cyber Kushti · Sep 10</div></div>
+    <div class="dl"><div class="n">15</div><div class="l">GCP Team-Lock · Sep 15</div></div>
+    <div class="dl"><div class="n">16</div><div class="l">Mitacs Canada · Sep 16</div></div>
+    <div class="dl"><div class="n">NOW</div><div class="l">Reliance · Open</div></div>
+  </div>
+</section>
+
+<section class="sec reveal">
+  <div class="k">How to use this</div>
+  <h2>Fifteen minutes,<br><span class="dim">once a week.</span></h2>
+  <ol class="steps">
+    <li><b>This week:</b> the September four. One chai break, together.</li>
+    <li><b>Sundays, 15 minutes:</b> open the radar, read the window, pick the next two. I keep the page updated so it never lies to you.</li>
+    <li><b>By December:</b> one shared document pack — transcripts, SOP drafts, one recommendation each. Then January applications are copy-paste.</li>
+  </ol>
+  <div class="callout">The Germany section is built so both your lists land in the same cities. I won't explain that one — you're smart, you'll get it.</div>
+</section>
+
+<section class="close reveal">
+  <h2>Talent was never<br>the problem.<br>Timing is.</h2>
+  <p style="color:var(--t2);font-size:15px;max-width:480px">And timing is the easiest thing in the world to fix. Go open the radar. When something excites you — tell Satyam. Or tell me, and I'll bug him about it.</p>
+  <a class="btn" href="https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html" target="_blank">Open the Application Radar</a>
+  <div class="sig">— Nyxi<small>Yes, the AI · No, I don't sleep · Yes, every link double-checked</small></div>
+</section>
+</div>
+
+<footer><span>DUAL HORIZON OS · Note 001</span><span>Verified Sep 07, 2026</span></footer>
+
+<script>
+const io='IntersectionObserver' in window?new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06}):null;
+document.querySelectorAll('.reveal').forEach(el=>{io?io.observe(el):el.classList.add('in')});
+</script>
+</body>
+</html>
