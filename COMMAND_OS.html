@@ -1261,6 +1261,45 @@
       font-size: 10px; letter-spacing: 0.14em; color: #2997FF;
     }
 
+  
+    /* --- Radar summary rows --- */
+    .radar-summary {
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-radius: 18px;
+      background: rgba(18,18,21,0.6);
+      overflow: hidden;
+      max-width: 100%;
+    }
+    .rs-row {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line, rgba(255,255,255,0.08));
+    }
+    .rs-row:last-child { border-bottom: none; }
+    .rs-when {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      color: #2997FF; white-space: nowrap;
+      padding-top: 2px; min-width: 64px;
+    }
+    .rs-what { font-size: 13px; line-height: 1.55; color: #A1A1A6; }
+    .rs-what strong { color: #F5F5F7; }
+    .radar-cta-row { margin-top: 14px; }
+    .radar-cta-btn {
+      display: block;
+      text-align: center;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+      color: #FFFFFF;
+      background: #0071E3;
+      border-radius: 999px;
+      padding: 15px 18px;
+      transition: background .18s ease;
+    }
+    .radar-cta-btn:hover { background: #2997FF; }
+
   </style>
 </head>
 <body>
@@ -1380,32 +1419,33 @@
     </section>
 
 
-    <!-- APPLICATION RADAR STRIP (home screen) -->
+    <!-- APPLICATION RADAR SUMMARY (home screen) -->
     <section class="radar-section" id="radar">
       <div class="mp-header">
         <span class="mp-kicker">LIVE WINDOW &bull; SEP 2026 &ndash; MAR 2027</span>
         <h2 class="mp-title">APPLICATION RADAR</h2>
-        <p class="radar-lede">Where both profiles apply next &mdash; full detail on the <a href="JOINT_APPLICATIONS.html">Application Radar page</a>.</p>
+        <p class="radar-lede">Summary below &mdash; every deadline, program and link lives on the <a href="JOINT_APPLICATIONS.html">full Application Radar page</a>.</p>
       </div>
-      <div class="radar-grid">
-        <a class="radar-card" href="JOINT_APPLICATIONS.html#germany">
-          <span class="radar-when">WINTER 2027/28</span>
-          <h3>GERMANY &mdash; 5 CITY CLUSTERS</h3>
-          <p>Berlin &middot; Mannheim &middot; Munich &middot; Hamburg &middot; Aachen &mdash; paired tech + business programs, same-region strategy.</p>
-          <span class="radar-cta">OPEN CLUSTERS &rarr;</span>
-        </a>
-        <a class="radar-card" href="JOINT_APPLICATIONS.html">
-          <span class="radar-when">SEP 2026</span>
-          <h3>THIS WEEK &mdash; 2 HARD DEADLINES</h3>
-          <p>Cyber Kushti (Sep 10) + Mitacs Globalink Canada (Sep 16) &mdash; both live now.</p>
-          <span class="radar-cta">OPEN RADAR &rarr;</span>
-        </a>
-        <a class="radar-card" href="JOINT_APPLICATIONS.html">
-          <span class="radar-when">OCT 2026 &ndash; MAR 2027</span>
-          <h3>ERASMUS MUNDUS + SCHOLARSHIPS</h3>
-          <p>EMJM apps open Oct&ndash;Dec (&euro;1,400/mo) &middot; Shanghai Govt &middot; MEXT Japan &middot; DAAD.</p>
-          <span class="radar-cta">OPEN RADAR &rarr;</span>
-        </a>
+      <div class="radar-summary">
+        <div class="rs-row">
+          <span class="rs-when">SEPT</span>
+          <span class="rs-what"><strong>4 closing:</strong> Cyber Kushti (Sep 10) &middot; GCP Cup team-lock (Sep 15) &middot; Mitacs Canada (Sep 16) &middot; Reliance Scholarship (open now)</span>
+        </div>
+        <div class="rs-row">
+          <span class="rs-when">OCT&ndash;DEC</span>
+          <span class="rs-what"><strong>6 open:</strong> Adobe Hackathon &middot; L&rsquo;Or&eacute;al Brandstorm &middot; Smart India Hackathon &middot; Hult Prize &middot; Samsung PRISM &middot; Erasmus Mundus</span>
+        </div>
+        <div class="rs-row">
+          <span class="rs-when">JAN&ndash;MAR</span>
+          <span class="rs-what"><strong>Scholarship season:</strong> Shanghai Govt &middot; DAAD &middot; MEXT Japan &middot; Generation Google &mdash; document pack frozen by December</span>
+        </div>
+        <div class="rs-row">
+          <span class="rs-when">2027</span>
+          <span class="rs-what"><strong>Germany, 5 region pairs:</strong> Berlin &middot; Mannheim &middot; Munich &middot; Hamburg &middot; Aachen &mdash; RWTH non-EU deadline Mar 1</span>
+        </div>
+      </div>
+      <div class="radar-cta-row">
+        <a class="radar-cta-btn" href="JOINT_APPLICATIONS.html">OPEN FULL APPLICATION RADAR &mdash; ALL 21 OPPORTUNITIES &rarr;</a>
       </div>
     </section>
 
