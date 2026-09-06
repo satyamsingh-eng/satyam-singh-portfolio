@@ -1225,6 +1225,42 @@
       .pages-panel { padding: 16px 12px 14px; }
     }
 
+  
+    /* --- Radar strip --- */
+    .radar-section { padding: 30px 0 4px; }
+    .radar-lede { font-size: 13px; color: #7C7C82; margin-top: 6px; }
+    .radar-lede a { color: #2997FF; }
+    .radar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      max-width: 100%;
+    }
+    .radar-card {
+      display: block;
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(160deg, rgba(0,113,227,0.10), rgba(18,18,21,0.7));
+      transition: transform .18s ease, border-color .18s ease;
+    }
+    .radar-card:hover { transform: translateY(-3px); border-color: rgba(41,151,255,0.5); }
+    .radar-when {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 9px; font-weight: 700; letter-spacing: 0.18em;
+      color: #2997FF; border: 1px solid rgba(41,151,255,0.4);
+      border-radius: 999px; padding: 3px 10px; display: inline-block; margin-bottom: 10px;
+    }
+    .radar-card h3 {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: 22px; letter-spacing: 0.04em; color: #F5F5F7; margin-bottom: 6px;
+    }
+    .radar-card p { font-size: 12.5px; line-height: 1.55; color: #A1A1A6; margin-bottom: 10px; }
+    .radar-cta {
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 10px; letter-spacing: 0.14em; color: #2997FF;
+    }
+
   </style>
 </head>
 <body>
@@ -1277,14 +1313,14 @@
       <!-- Metric Counter Bar (The Rayhan Metric Pattern) -->
       <div class="metric-counter-bar">
         <div class="metric-block">
-          <div class="metric-num">8.36</div>
+          <div class="metric-num">8.32</div>
           <div class="metric-label">Satyam Final Year SGPA</div>
-          <div class="metric-sub">BCA Sem-VI &bull; Sem-V 8.27 (SBUP)</div>
+          <div class="metric-sub">BCA Sem-V &bull; Sem-VI 8.27 (SBUP)</div>
         </div>
         <div class="metric-block">
           <div class="metric-num">8.36</div>
           <div class="metric-label">Shravani Sem V SGPA</div>
-          <div class="metric-sub">Sem VI 8.30 &bull; CGPA 7.54 across 42 credits</div>
+          <div class="metric-sub">BBA Sem VI 8.30 &bull; 42 credits/sem</div>
         </div>
         <div class="metric-block">
           <div class="metric-num white">100%</div>
@@ -1310,11 +1346,11 @@
       <div class="mixed-grid">
         <div class="mp-card mp-satyam">
           <span class="mp-badge">SATYAM</span>
-          <p class="mp-point">Twin <strong>8.36 SGPA</strong> semester scores &mdash; matching momentum on both tracks.</p>
+          <p class="mp-point">Both hit <strong>8.3+ SGPA</strong> in their latest semesters &mdash; matching momentum on both tracks (8.32 / 8.36).</p>
         </div>
         <div class="mp-card mp-shravani">
           <span class="mp-badge">SHRAVANI</span>
-          <p class="mp-point"><strong>CGPA 7.54</strong> with A+ honors in Int. Business Ops (89) &amp; Decision Making (85).</p>
+          <p class="mp-point"><strong>SGPA 8.36 / 8.30</strong> with A+ honors in Int. Business Ops (89) &amp; Decision Making (85).</p>
         </div>
         <div class="mp-card mp-satyam">
           <span class="mp-badge">SATYAM</span>
@@ -1326,7 +1362,7 @@
         </div>
         <div class="mp-card mp-satyam">
           <span class="mp-badge">SATYAM</span>
-          <p class="mp-point"><strong>C3A Labs founder</strong> &mdash; ships SARVAX, a live B2B AI agents platform.</p>
+          <p class="mp-point"><strong>Perfect-score MOOCs</strong> &mdash; 98/100 research paper + 95/100 Gen AI, plus O grade in security labs.</p>
         </div>
         <div class="mp-card mp-shravani">
           <span class="mp-badge">SHRAVANI</span>
@@ -1338,8 +1374,38 @@
         </div>
         <div class="mp-card mp-joint">
           <span class="mp-badge">JOINT</span>
-          <p class="mp-point"><strong>7 team applications</strong> ready &mdash; hackathons &amp; grants where they enter as one unit.</p>
+          <p class="mp-point"><strong>Application Radar is live</strong> &mdash; <a href="JOINT_APPLICATIONS.html" style="color:#2997FF">open the full apply-list &rarr;</a> Germany city clusters + Sep&ndash;Mar deadlines.</p>
         </div>
+      </div>
+    </section>
+
+
+    <!-- APPLICATION RADAR STRIP (home screen) -->
+    <section class="radar-section" id="radar">
+      <div class="mp-header">
+        <span class="mp-kicker">LIVE WINDOW &bull; SEP 2026 &ndash; MAR 2027</span>
+        <h2 class="mp-title">APPLICATION RADAR</h2>
+        <p class="radar-lede">Where both profiles apply next &mdash; full detail on the <a href="JOINT_APPLICATIONS.html">Application Radar page</a>.</p>
+      </div>
+      <div class="radar-grid">
+        <a class="radar-card" href="JOINT_APPLICATIONS.html#germany">
+          <span class="radar-when">WINTER 2027/28</span>
+          <h3>GERMANY &mdash; 5 CITY CLUSTERS</h3>
+          <p>Berlin &middot; Mannheim &middot; Munich &middot; Hamburg &middot; Aachen &mdash; paired tech + business programs, same-region strategy.</p>
+          <span class="radar-cta">OPEN CLUSTERS &rarr;</span>
+        </a>
+        <a class="radar-card" href="JOINT_APPLICATIONS.html">
+          <span class="radar-when">SEP 2026</span>
+          <h3>THIS WEEK &mdash; 2 HARD DEADLINES</h3>
+          <p>Cyber Kushti (Sep 10) + Mitacs Globalink Canada (Sep 16) &mdash; both live now.</p>
+          <span class="radar-cta">OPEN RADAR &rarr;</span>
+        </a>
+        <a class="radar-card" href="JOINT_APPLICATIONS.html">
+          <span class="radar-when">OCT 2026 &ndash; MAR 2027</span>
+          <h3>ERASMUS MUNDUS + SCHOLARSHIPS</h3>
+          <p>EMJM apps open Oct&ndash;Dec (&euro;1,400/mo) &middot; Shanghai Govt &middot; MEXT Japan &middot; DAAD.</p>
+          <span class="radar-cta">OPEN RADAR &rarr;</span>
+        </a>
       </div>
     </section>
 
@@ -1417,11 +1483,11 @@
           <div class="profile-details-list">
             <div class="detail-item">
               <strong>Six-Semester Trajectory</strong>
-              <span>5.95 &rarr; 5.82 &rarr; 6.82 &rarr; 6.91 &rarr; 8.27 &rarr; 8.36</span>
+              <span>5.95 &rarr; 5.82 &rarr; 6.82 &rarr; 6.91 &rarr; 8.32 &rarr; 8.27</span>
             </div>
             <div class="detail-item">
               <strong>Corporate &amp; Studio</strong>
-              <span>C3A Labs (KARAX/SARVAX) &bull; Lunar Pixels Founder</span>
+              <span>Lunar Pixels Studio &bull; C3A Labs Engineering Contributor</span>
             </div>
             <div class="detail-item">
               <strong>Direct Contacts</strong>
@@ -1506,7 +1572,7 @@
           <div class="profile-details-list">
             <div class="detail-item">
               <strong>Verified Performance</strong>
-              <span>Sem V 8.36 &bull; Sem VI 8.30 &bull; CGPA 7.54 (42 cr, 350 GP)</span>
+              <span>Sem V 8.36 &bull; Sem VI 8.30 &bull; 350 grade points across 42 cr/sem</span>
             </div>
             <div class="detail-item">
               <strong>Coursework Honors</strong>

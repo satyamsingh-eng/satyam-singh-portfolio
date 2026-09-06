@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APPLICATION RADAR — Joint Apply List | DUAL HORIZON OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#000000;--surface:#121215;--surface2:#1C1C1E;--line:rgba(255,255,255,0.08);--blue:#0071E3;--blue2:#2997FF;--txt:#F5F5F7;--silver:#A1A1A6;--dim:#7C7C82;--mono:'JetBrains Mono',monospace;--disp:'Bebas Neue',sans-serif;--body:'Plus Jakarta Sans',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg)}
+body{background:#000000!important;color:var(--txt);font-family:var(--body);min-height:100vh}
+.container{max-width:1240px;margin:0 auto;padding:0 20px}
+a{color:var(--blue2);text-decoration:none}
+.topbar{padding:26px 0;border-bottom:1px solid var(--line)}
+.topbar a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--dim)}
+.topbar a:hover{color:var(--blue2)}
+h1{font-family:var(--disp);font-size:clamp(46px,9vw,86px);letter-spacing:.04em;margin:28px 0 8px}
+h1 span{color:var(--blue2)}
+.lede{color:var(--silver);font-size:15px;line-height:1.6;max-width:760px;margin-bottom:10px}
+.stamp{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--dim)}
+.stamp b{color:var(--blue2)}
+.rule{height:1px;background:linear-gradient(90deg,var(--blue),transparent);margin:26px 0 8px}
+h2{font-family:var(--disp);font-size:clamp(28px,5vw,42px);letter-spacing:.05em;margin:38px 0 6px}
+h2 .tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--blue2);display:block;margin-bottom:4px}
+.note{font-size:12.5px;color:var(--dim);line-height:1.55;margin-bottom:16px;max-width:860px}
+.city-block{border:1px solid var(--line);border-radius:20px;padding:20px 18px;margin:16px 0;background:rgba(18,18,21,.55)}
+.city-block.sat{border-top:3px solid var(--blue2)}
+.city-block.shr{border-top:3px solid #C7C7CC}
+.city-block.mix{border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--blue),#C7C7CC) 1}
+.city-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:10px;margin-bottom:14px;border-bottom:1px dashed rgba(255,255,255,.1)}
+.city-name{font-family:var(--disp);font-size:30px;letter-spacing:.05em}
+.city-block.sat .city-name{color:var(--blue2)}
+.city-block.shr .city-name{color:#C7C7CC}
+.city-block.mix .city-name{color:var(--txt)}
+.city-sub{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
+.fit{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--blue2);margin-left:auto;border:1px solid rgba(41,151,255,.35);border-radius:999px;padding:4px 12px}
+.uni{padding:12px 0;border-bottom:1px solid var(--line)}
+.uni:last-child{border-bottom:none}
+.uni-row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.uni-name{font-weight:700;font-size:14.5px;color:var(--txt)}
+.uni-prog{font-size:13px;color:var(--silver)}
+.deadline{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--blue2);background:rgba(41,151,255,.1);border-radius:6px;padding:2px 8px}
+.deadline.na{color:var(--dim);background:rgba(255,255,255,.05)}
+.uni-why{font-size:12.5px;color:var(--dim);margin-top:5px;line-height:1.5}
+.uni a{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em}
+.opp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-top:14px}
+.opp{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--surface);position:relative;overflow:hidden}
+.opp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue2)}
+.opp.shr::before{background:#C7C7CC}
+.opp.mix::before{background:linear-gradient(180deg,var(--blue2),#C7C7CC)}
+.opp.dead::before{background:#3A3A3C}
+.opp-who{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.18em;padding:3px 9px;border-radius:999px;display:inline-block;margin-bottom:9px}
+.opp.sat .opp-who{color:var(--blue2);border:1px solid rgba(41,151,255,.4)}
+.opp.shr .opp-who{color:#C7C7CC;border:1px solid rgba(199,199,204,.35)}
+.opp.mix .opp-who{color:var(--txt);border:1px solid rgba(245,245,247,.3);background:rgba(41,151,255,.12)}
+.opp h3{font-size:15.5px;font-weight:700;margin-bottom:5px}
+.opp .dl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--blue2);margin-bottom:7px}
+.opp .dl.na{color:var(--dim)}
+.opp p{font-size:12.5px;color:var(--silver);line-height:1.55;margin-bottom:9px}
+.opp a{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em}
+footer{margin:56px 0 30px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim);display:flex;gap:14px;flex-wrap:wrap}
+@media(max-width:640px){.fit{margin-left:0}.uni-row{display:block}.deadline{display:inline-block;margin-top:5px}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="topbar"><a href="index.html">&larr; BACK TO DUAL HORIZON OS</a></div>
+
+  <h1>APPLICATION <span>RADAR</span></h1>
+  <p class="lede">The detailed apply-list behind the homepage radar. Two independent applications &mdash; one technical profile, one business profile &mdash; mapped by deadline, funding and fit. Where both profiles target one city, programs are grouped by region.</p>
+  <p class="stamp">DATA VERIFIED: <b>SEP 07, 2026</b> &bull; WINDOW: SEP 2026 &ndash; MAR 2027 &bull; SGPA-BASED (SGPA METRIC)</p>
+  <div class="rule"></div>
+
+  <!-- ================= GERMANY CITY CLUSTERS ================= -->
+  <h2><span class="tag">PRIORITY TRACK</span>GERMANY &mdash; REGION PAIRS, WINTER 2027/28</h2>
+  <p class="note">Clustered so both application lists land in the same metro region &mdash; independent admissions, shared geography. Winter 2027/28 intake; non-EU deadlines are firm.</p>
+
+  <div class="city-block sat">
+    <div class="city-head"><span class="city-name">BERLIN &mdash; CLUSTER 1</span><span class="city-sub">Tech Capital &bull; Startup Density</span><span class="fit">FIT: HIGH</span></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">TU Berlin</span><span class="uni-prog">M.Sc. Computer Science (English, CEFR B2)</span><span class="deadline">WS window &asymp; Mar&ndash;May 2027 (UNVERIFIED exact date)</span></div><div class="uni-why">Top-tier public, tuition-free, AI/security research groups. The technical anchor of the Berlin cluster.</div><a href="https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/computer-science-informatik-msc" target="_blank">PROGRAM PAGE &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">TU Berlin</span><span class="uni-prog">M.Sc. Innovation Management, Entrepreneurship &amp; Sustainability (IMES, English)</span><span class="deadline">WS window &asymp; Mar&ndash;May 2027 (UNVERIFIED exact date)</span></div><div class="uni-why">Business-side complement inside the same university &mdash; one campus, same city permit rules.</div><a href="https://www.tu.berlin/en/studying/study-programs/all-programs-offered/study-course/innovation-management-entrepreneurship-sustainability-msc" target="_blank">PROGRAM PAGE &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">ESMT Berlin</span><span class="uni-prog">Master in Analytics &amp; AI (MAAI)</span><span class="deadline">&euro;2,000 early-bird by Mar 31, 2027</span></div><div class="uni-why">Private, English-only, AI + management hybrid &mdash; strong scholarship stack, business-school brand.</div><a href="https://esmt.berlin/master-programs/master-analytics-artificial-intelligence/admissions" target="_blank">ADMISSIONS &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">Hertie School</span><span class="uni-prog">Master of Public Policy / Data Science for Policy</span><span class="deadline na">Rounds open autumn 2026 &mdash; verify on admissions page</span></div><div class="uni-why">Governance + data angle; human-rights and merit scholarships documented for 2027 intake.</div><a href="https://www.hertie-school.org/en/mpp/admissions" target="_blank">ADMISSIONS &nearr;</a></div>
+  </div>
+
+  <div class="city-block shr">
+    <div class="city-head"><span class="city-name">MANNHEIM &mdash; CLUSTER 2</span><span class="city-sub">Rhine-Neckar &bull; Business Powerhouse</span><span class="fit">FIT: HIGH</span></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">University of Mannheim</span><span class="uni-prog">Mannheim Master in Management (MMM)</span><span class="deadline">Apply Apr 1 &ndash; May 15/31, 2027 (fall intake)</span></div><div class="uni-why">Germany&rsquo;s #1 business faculty; single window per year &mdash; miss it and you wait a year. The business anchor of the Rhine-Neckar cluster.</div><a href="https://www.uni-mannheim.de/en/academics/dates/application-deadlines/" target="_blank">DEADLINES &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">Mannheim University of Applied Sciences</span><span class="uni-prog">M.Sc. Information Security / Informatics programs</span><span class="deadline na">Verify 2027 window on program page</span></div><div class="uni-why">Tech-side option within the same Rhine-Neckar region; German-taught alternatives exist alongside English tracks.</div><a href="https://www.hs-mannheim.de/en/" target="_blank">PROVIDER &nearr;</a></div>
+  </div>
+
+  <div class="city-block sat">
+    <div class="city-head"><span class="city-name">MUNICH &mdash; CLUSTER 3</span><span class="city-sub">Bavaria &bull; Deep-Tech + Corporate HQs</span><span class="fit">FIT: MEDIUM-HIGH</span></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">TUM</span><span class="uni-prog">M.Sc. Management &amp; Technology (TUM School of Management)</span><span class="deadline">May 31, 2027 (winter intake; per 2026 cycle pattern)</span></div><div class="uni-why">Germany&rsquo;s top-ranked technical university; the M&amp;T degree sits exactly on the tech&times;business seam. Non-EU tuition fees apply since 2024/25.</div><a href="https://www.tum.de/en/studies/degree-programs/detail/management-and-technology-tum-bwl-master" target="_blank">PROGRAM PAGE &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">TUM / LMU Munich</span><span class="uni-prog">M.Sc. Informatics / Data Science tracks</span><span class="deadline">May 31, 2027 pattern (verify per program)</span></div><div class="uni-why">Security and AI specializations available; Munich corporate market (AWS, Siemens, BMW) for part-time work.</div><a href="https://www.tum.de/en/studies/application/application-info-portal/dates-periods-and-deadlines" target="_blank">TUM DATES &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">Munich Business School</span><span class="uni-prog">M.A. International Business</span><span class="deadline na">Rolling with early-bird tiers &mdash; verify 2027</span></div><div class="uni-why">Private, small cohorts, English-only; early-bird tuition discounts reward early application.</div><a href="https://www.munich-business-school.de/en/online-application/application-masters-programs" target="_blank">APPLICATION &nearr;</a></div>
+  </div>
+
+  <div class="city-block shr">
+    <div class="city-head"><span class="city-name">HAMBURG &mdash; CLUSTER 4</span><span class="city-sub">Trade Hub &bull; Tuition-Free Applied Sciences</span><span class="fit">FIT: MEDIUM</span></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">HAW Hamburg</span><span class="uni-prog">M.Sc. International Business (English, 3 sem)</span><span class="deadline na">Verify 2027 window</span></div><div class="uni-why">Low-cost (&asymp;&euro;338/yr), applied, trade-focused &mdash; pragmatic business anchor for the Hamburg cluster.</div><a href="https://haw-hamburg.de/en/master-international-business" target="_blank">PROGRAM PAGE &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">TU Hamburg (TUHH)</span><span class="uni-prog">Engineering programs incl. Information &amp; Communication Systems</span><span class="deadline na">Verify 2027 window</span></div><div class="uni-why">Technical anchor for the same city; admission-free English programs documented for several M.Sc. tracks.</div><a href="https://www.tuhh.de/" target="_blank">TUHH &nearr;</a></div>
+  </div>
+
+  <div class="city-block sat">
+    <div class="city-head"><span class="city-name">AACHEN &mdash; CLUSTER 5</span><span class="city-sub">RWTH Region &bull; Engineering Heavyweight</span><span class="fit">FIT: MEDIUM (TECH-LEAN)</span></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">RWTH Aachen</span><span class="uni-prog">M.Sc. Data Science / Cyber-adjacent Informatics</span><span class="deadline">Mar 1, 2027 (non-EU, winter intake)</span></div><div class="uni-why">One of Europe&rsquo;s largest technical universities; non-EU deadline lands earliest &mdash; prepare documents by January.</div><a href="https://sc.informatik.rwth-aachen.de/en/studium/master/master-data-science/application-for" target="_blank">APPLICATION &nearr;</a></div>
+    <div class="uni"><div class="uni-row"><span class="uni-name">RWTH Aachen</span><span class="uni-prog">Business/Management side (School of Business &amp; Economics)</span><span class="deadline">Mar 1, 2027 pattern (non-EU)</span></div><div class="uni-why">Same-campus business faculty keeps the cluster paired; German B2 required for some tracks &mdash; A2 now, gap year to close.</div><a href="https://www.rwth-aachen.de/cms/root/Studium/" target="_blank">RWTH &nearr;</a></div>
+  </div>
+
+  <!-- ================= ALL-COUNTRY RADAR ================= -->
+  <h2><span class="tag">OPEN WINDOW &bull; SEP 2026 &ndash; MAR 2027</span>ALL-COUNTRY APPLICATION RADAR</h2>
+  <p class="note">Everything with a live deadline in the next 7 months where either or both profiles can apply. SGPA is the academic metric throughout.</p>
+
+  <div class="opp-grid">
+    <div class="opp mix"><span class="opp-who">TEAM &bull; BOTH</span><h3>GCP AI Builder Cup 2026 (JAPAC)</h3><div class="dl">TEAM LOCK SEP 15 &bull; SUBMIT OCT 4, 2026</div><p>$30K pool, Singapore Demo Day Dec 4. Already in pipeline &mdash; the clock is running.</p><a href="https://aibuildercup.com" target="_blank">AIBUILDERCUP.COM &nearr;</a></div>
+    <div class="opp sat"><span class="opp-who">SATYAM</span><h3>Cyber Kushti 2026 (NIELIT)</h3><div class="dl">REGISTER BY SEP 10, 2026</div><p>Free national cybersecurity + AI hackathon; conference Oct 9&ndash;10 New Delhi. Three days out &mdash; register now or drop.</p><a href="https://internshala.com/competitions/cyber-kushti-2026/" target="_blank">REGISTRATION &nearr;</a></div>
+    <div class="opp sat"><span class="opp-who">SATYAM</span><h3>Mitacs Globalink Research Internship 2027</h3><div class="dl">APPLY BY SEP 16, 2026</div><p>Fully funded 12-week Canada research placement (70+ universities). Zenodo paper + GitHub become the application core.</p><a href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank">MITACS &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>Smart India Hackathon 2026</h3><div class="dl">SIH.GOV.IN &mdash; VERIFY CURRENT PHASE</div><p>Nationwide; team-based industry problem statements. Timeline this cycle unverified &mdash; check portal before Sep end.</p><a href="https://www.sih.gov.in/" target="_blank">SIH.GOV.IN &nearr;</a></div>
+    <div class="opp sat"><span class="opp-who">SATYAM</span><h3>Samsung PRISM</h3><div class="dl">ROLLING &mdash; ROUNDS CLOSE WHEN FILLED</div><p>Real R&amp;D projects with Samsung engineers; AI/security problem statements fit the profile. Needs professor co-pitch.</p><a href="https://www.samsungprism.com/" target="_blank">SAMSUNGPRISM.COM &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>USAII Global AI Hackathon 2026</h3><div class="dl">VIRTUAL &mdash; VERIFY CURRENT DEADLINE</div><p>Global virtual student competition; prizes + scholarships. Registered earlier this year &mdash; confirm phase before relying on it.</p><a href="https://aihackathon.usaii.org/" target="_blank">AIHACKATHON.USAII.ORG &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>Generation Google Scholarship APAC</h3><div class="dl">PAST CYCLE CLOSED DEC 31 &mdash; 2027 CYCLE TBA</div><p>~&euro;7,000-equivalent award + Google retreat; watch reopen this autumn.</p><a href="https://buildyourfuture.withgoogle.com/scholarships" target="_blank">GOOGLE SCHOLARSHIPS &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>Erasmus Mundus Joint Masters 2027</h3><div class="dl">APPS OPEN OCT&ndash;DEC 2026 &bull; CLOSE NOV&ndash;FEB</div><p>60+ fully-funded joint masters (&euro;1,400/mo). CYBERSURE (cybersecurity) catalogued for the technical profile; business tracks for the other.</p><a href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank">CATALOGUE &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>Shanghai Government Scholarship 2027</h3><div class="dl">TYPICALLY DEC&ndash;MAR WINDOW</div><p>Type A full scholarship (tuition + housing + CNY 3,500/mo); Fudan/Tongji/Donghua carry CS + business masters.</p><a href="https://edu.sh.gov.cn/study_en_scholarships/" target="_blank">EDU.SH.GOV.CN &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>MEXT Scholarship 2027 (Japan)</h3><div class="dl">EMBASSY TRACK &asymp; APR&ndash;MAY 2027</div><p>Fully funded with monthly stipend; 2027 embassy documents already published. Backup track if Germany shifts.</p><a href="https://www.tt.emb-japan.go.jp/files/101018443.pdf" target="_blank">2027 MEXT PDF &nearr;</a></div>
+    <div class="opp mix"><span class="opp-who">BOTH &bull; INDEPENDENT</span><h3>DAAD Scholarships (Germany)</h3><div class="dl">VARIES BY PROGRAM &mdash; MOSTLY AUTUMN 2026</div><p>The German academic exchange database pairs directly with the city-cluster list above.</p><a href="https://www.daad.de/en/study-and-research-in-germany/scholarships/" target="_blank">DAAD &nearr;</a></div>
+  </div>
+
+  <footer>
+    <span>DUAL HORIZON OS &bull; APPLICATION RADAR</span>
+    <span>ALL DATES FROM OFFICIAL PAGES UNLESS MARKED UNVERIFIED</span>
+    <span><a href="index.html">&larr; OS HOME</a></span>
+  </footer>
+</div>
+</body>
+</html>
