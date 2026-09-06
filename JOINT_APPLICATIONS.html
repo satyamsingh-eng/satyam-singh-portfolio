@@ -3,189 +3,281 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APPLICATION RADAR — Full Detail | DUAL HORIZON OS</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Application Radar — DUAL HORIZON OS</title>
 <style>
-:root{--bg:#000000;--surface:#121215;--line:rgba(255,255,255,0.08);--blue:#0071E3;--blue2:#2997FF;--txt:#F5F5F7;--silver:#A1A1A6;--dim:#7C7C82;--mono:'JetBrains Mono',monospace;--disp:'Bebas Neue',sans-serif;--body:'Plus Jakarta Sans',sans-serif}
+:root{
+  --bg:#000000;--bg2:#0d0d0f;--card:#121215;--card2:#1c1c1e;
+  --t1:#f5f5f7;--t2:#a1a1a6;--t3:#7c7c82;
+  --acc:#2997ff;--acc-ctl:#0071e3;
+  --br:rgba(255,255,255,0.10);--br2:rgba(255,255,255,0.06);
+  --ok:#30d158;--mid:#64d2ff;
+  --sf:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;
+  --mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-html{background:var(--bg)}
-body{background:#000000!important;color:var(--txt);font-family:var(--body);min-height:100vh}
-.container{max-width:1240px;margin:0 auto;padding:0 20px}
-a{color:var(--blue2);text-decoration:none}
-.topbar{padding:26px 0;border-bottom:1px solid var(--line);display:flex;gap:18px;flex-wrap:wrap}
-.topbar a{font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--dim)}
-.topbar a:hover{color:var(--blue2)}
-h1{font-family:var(--disp);font-size:clamp(46px,9vw,86px);letter-spacing:.04em;margin:28px 0 8px}
-h1 span{color:var(--blue2)}
-.lede{color:var(--silver);font-size:15px;line-height:1.6;max-width:780px;margin-bottom:10px}
-.stamp{font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--dim)}
-.stamp b{color:var(--blue2)}
-.rule{height:1px;background:linear-gradient(90deg,var(--blue),transparent);margin:26px 0 8px}
-h2{font-family:var(--disp);font-size:clamp(28px,5vw,42px);letter-spacing:.05em;margin:40px 0 6px}
-h2 .tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:var(--blue2);display:block;margin-bottom:4px}
-.note{font-size:12.5px;color:var(--dim);line-height:1.55;margin-bottom:16px;max-width:880px}
-.opp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:12px;margin-top:14px}
-.opp{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--surface);position:relative;overflow:hidden}
-.opp::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--blue2)}
-.opp.shr::before{background:#C7C7CC}
-.opp.mix::before{background:linear-gradient(180deg,var(--blue2),#C7C7CC)}
-.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:9px}
-.chip{font-family:var(--mono);font-size:8.5px;font-weight:700;letter-spacing:.16em;padding:3px 9px;border-radius:999px}
-.chip.who-sat{color:var(--blue2);border:1px solid rgba(41,151,255,.4)}
-.chip.who-shr{color:#C7C7CC;border:1px solid rgba(199,199,204,.35)}
-.chip.who-mix{color:var(--txt);border:1px solid rgba(245,245,247,.3);background:rgba(41,151,255,.12)}
-.chip.prob-high{color:#0B0B0C;background:#30D158;letter-spacing:.14em}
-.chip.prob-mh{color:#0B0B0C;background:#64D2FF;letter-spacing:.14em}
-.chip.prob-mod{color:#F5F5F7;background:rgba(255,255,255,.14);letter-spacing:.14em}
-.opp h3{font-size:16px;font-weight:700;margin-bottom:5px}
-.opp .dl{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--blue2);margin-bottom:7px}
-.opp .dl.na{color:var(--dim)}
-.opp p{font-size:12.5px;color:var(--silver);line-height:1.55;margin-bottom:8px}
-.opp .why{font-size:11.5px;color:var(--dim);line-height:1.5;margin-bottom:9px;padding-left:10px;border-left:2px solid rgba(41,151,255,.35)}
-.opp a.go{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em}
-.city-block{border:1px solid var(--line);border-radius:20px;padding:20px 18px;margin:16px 0;background:rgba(18,18,21,.55)}
-.city-block.sat{border-top:3px solid var(--blue2)}
-.city-block.shr{border-top:3px solid #C7C7CC}
-.city-block.mix{border-top:3px solid transparent;border-image:linear-gradient(90deg,var(--blue),#C7C7CC) 1}
-.city-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;padding-bottom:10px;margin-bottom:14px;border-bottom:1px dashed rgba(255,255,255,.1)}
-.city-name{font-family:var(--disp);font-size:30px;letter-spacing:.05em}
-.city-block.sat .city-name{color:var(--blue2)}
-.city-block.shr .city-name{color:#C7C7CC}
-.city-block.mix .city-name{color:var(--txt)}
-.city-sub{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase}
-.fit{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--blue2);margin-left:auto;border:1px solid rgba(41,151,255,.35);border-radius:999px;padding:4px 12px}
-.uni{padding:12px 0;border-bottom:1px solid var(--line)}
-.uni:last-child{border-bottom:none}
-.uni-row{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.uni-name{font-weight:700;font-size:14.5px;color:var(--txt)}
-.uni-prog{font-size:13px;color:var(--silver)}
-.deadline{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--blue2);background:rgba(41,151,255,.1);border-radius:6px;padding:2px 8px}
-.deadline.na{color:var(--dim);background:rgba(255,255,255,.05)}
-.uni-why{font-size:12.5px;color:var(--dim);margin-top:5px;line-height:1.5}
-.uni a{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin:14px 0 4px;font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;color:var(--dim);align-items:center}
-.legend .chip{margin-right:4px}
-footer{margin:56px 0 30px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--dim);display:flex;gap:14px;flex-wrap:wrap}
-@media(max-width:640px){.fit{margin-left:0}.uni-row{display:block}.deadline{display:inline-block;margin-top:5px}}
+html{background:var(--bg);-webkit-font-smoothing:antialiased}
+body{background:var(--bg)!important;color:var(--t1);font-family:var(--sf);letter-spacing:-0.35px;line-height:1.55}
+a{color:var(--acc);text-decoration:none}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* glass nav — the ONE blur */
+.nav{position:sticky;top:0;z-index:100;background:rgba(0,0,0,0.8);backdrop-filter:saturate(180%) blur(20px);border-bottom:0.5px solid var(--br2);height:52px;display:flex;align-items:center;gap:22px;padding:0 24px}
+.nav a{font-size:12px;font-weight:600;color:var(--t2);letter-spacing:0.6px}
+.nav a:hover{color:#fff}
+.nav a.brand{color:#fff;font-weight:700}
+
+/* hero */
+.hero{padding:110px 0 70px;text-align:center}
+.hero .eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:2.4px;color:var(--acc);text-transform:uppercase}
+.hero h1{font-size:clamp(52px,9vw,88px);font-weight:700;line-height:1.0;letter-spacing:-2px;margin:18px 0 20px}
+.hero h1 .dim{color:var(--t3)}
+.hero .sub{max-width:640px;margin:0 auto;font-size:17px;color:var(--t2);line-height:1.6}
+.hero .stamp{margin-top:26px;font-family:var(--mono);font-size:10px;letter-spacing:1.8px;color:var(--t3);text-transform:uppercase}
+.hero .stamp b{color:var(--acc);font-weight:700}
+
+/* pills row */
+.pillrow{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.pill{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:1.4px;padding:7px 16px;border-radius:980px;border:1px solid var(--br);color:var(--t2)}
+.pill.hot{border-color:rgba(41,151,255,0.5);color:var(--acc)}
+
+/* legend */
+.legend{display:flex;gap:22px;flex-wrap:wrap;justify-content:center;margin:44px 0 8px;font-size:12px;color:var(--t3)}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.dot.g{background:var(--ok)}.dot.m{background:var(--mid)}.dot.l{background:#3a3a3c}
+
+/* sections */
+.sec{padding:80px 0}
+.sec.dark{background:var(--bg)}
+.sec.alt{background:var(--bg2)}
+.sec-label{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:2.2px;color:var(--acc);text-transform:uppercase;margin-bottom:10px}
+.sec h2{font-size:clamp(34px,5vw,52px);font-weight:700;line-height:1.05;letter-spacing:-1.2px;margin-bottom:12px}
+.sec .lede{font-size:15px;color:var(--t2);max-width:660px;margin-bottom:36px}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px}
+.card{background:var(--card);border:1px solid var(--br2);border-radius:18px;padding:26px;display:flex;flex-direction:column;transition:border-color .2s,transform .2s}
+.card:hover{border-color:rgba(255,255,255,0.2);transform:translateY(-2px)}
+.card .tags{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
+.tag{font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:1.6px;padding:4px 11px;border-radius:980px}
+.tag.sat{color:var(--acc);border:1px solid rgba(41,151,255,0.45)}
+.tag.shr{color:#c7c7cc;border:1px solid rgba(199,199,204,0.4)}
+.tag.team{color:#fff;border:1px solid rgba(255,255,255,0.3);background:rgba(41,151,255,0.14)}
+.tag.hi{background:var(--ok);color:#0b0b0c}
+.tag.md{background:var(--mid);color:#0b0b0c}
+.tag.lo{background:rgba(255,255,255,0.14);color:var(--t1)}
+.card h3{font-size:19px;font-weight:600;line-height:1.2;letter-spacing:-0.3px;margin-bottom:6px}
+.card .dl{font-family:var(--mono);font-size:11px;letter-spacing:0.8px;color:var(--acc);margin-bottom:12px}
+.card .dl.na{color:var(--t3)}
+.card p{font-size:14px;color:var(--t2);line-height:1.6;margin-bottom:12px}
+.card .why{font-size:13px;color:var(--t3);line-height:1.55;padding:10px 0 12px 14px;border-left:2px solid rgba(41,151,255,0.4);margin-bottom:16px}
+.card .go{margin-top:auto;align-self:flex-start;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:1.2px;color:var(--acc);padding:9px 18px;border:1px solid rgba(41,151,255,0.4);border-radius:980px;transition:background .2s,color .2s}
+.card .go:hover{background:var(--acc-ctl);border-color:var(--acc-ctl);color:#fff}
+
+/* city cluster cards */
+.cluster{background:var(--card);border:1px solid var(--br2);border-radius:20px;padding:28px;margin-bottom:14px}
+.cluster .chead{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding-bottom:14px;margin-bottom:6px;border-bottom:1px solid var(--br2)}
+.cluster .cname{font-size:26px;font-weight:700;letter-spacing:-0.5px}
+.cluster .csub{font-family:var(--mono);font-size:10px;letter-spacing:1.6px;color:var(--t3);text-transform:uppercase}
+.cluster .fit{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:1.2px;color:var(--acc);border:1px solid rgba(41,151,255,0.4);border-radius:980px;padding:5px 14px}
+.uni{padding:16px 0;border-bottom:1px solid var(--br2)}
+.uni:last-child{border-bottom:none;padding-bottom:2px}
+.uni .urow{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.uni .uname{font-weight:600;font-size:15px}
+.uni .uprog{font-size:13.5px;color:var(--t2)}
+.uni .udl{font-family:var(--mono);font-size:10.5px;letter-spacing:0.6px;color:var(--acc);background:rgba(41,151,255,0.1);border-radius:6px;padding:3px 9px}
+.uni .udl.na{color:var(--t3);background:rgba(255,255,255,0.05)}
+.uni .uwhy{font-size:13px;color:var(--t3);margin-top:5px;line-height:1.55}
+.uni a.ulink{font-family:var(--mono);font-size:10.5px;letter-spacing:1px;font-weight:700}
+
+/* big CTA */
+.cta{text-align:center;padding:80px 24px}
+.cta h2{font-size:clamp(30px,4.5vw,44px);font-weight:700;letter-spacing:-1px;margin-bottom:14px}
+.cta p{color:var(--t2);font-size:15px;margin-bottom:30px}
+.btn-primary{display:inline-block;background:var(--acc-ctl);color:#fff;font-size:16px;font-weight:400;padding:15px 34px;border-radius:980px;transition:background .2s}
+.btn-primary:hover{background:var(--acc)}
+.btn-ghost{display:inline-block;color:var(--acc);font-size:14px;font-weight:600;padding:15px 26px;border-radius:980px;border:1px solid rgba(41,151,255,0.45);margin-left:12px;transition:background .2s}
+.btn-ghost:hover{background:rgba(41,151,255,0.12)}
+
+footer{padding:44px 24px;border-top:0.5px solid var(--br2);font-family:var(--mono);font-size:10px;letter-spacing:1.4px;color:var(--t3);text-transform:uppercase;display:flex;gap:20px;flex-wrap:wrap;justify-content:space-between}
+
+/* reveal — fail-open: opacity always 1, transform only */
+.reveal{opacity:1;transform:translateY(12px);transition:transform .55s ease}
+.reveal.visible{transform:none}
+@media print{.reveal{opacity:1!important;transform:none!important}.nav{display:none}}
+
+@media(max-width:640px){
+  .hero{padding:70px 0 46px}
+  .sec{padding:56px 0}
+  .grid{grid-template-columns:1fr}
+  .cluster .fit{margin-left:0}
+  .uni .urow{display:block}
+  .uni .udl{display:inline-block;margin-top:6px}
+  .btn-ghost{margin-left:0;margin-top:10px}
+}
 </style>
 </head>
 <body>
-<div class="container">
-  <div class="topbar">
-    <a href="index.html">&larr; OS HOME</a>
-    <a href="#sep">SEP 2026</a>
-    <a href="#octdec">OCT&ndash;DEC</a>
-    <a href="#janmar">JAN&ndash;MAR 2027</a>
-    <a href="#germany">GERMANY CLUSTERS</a>
-    <a href="#gems" style="color:#2997FF">HIDDEN GEMS</a>
+<nav class="nav">
+  <a class="brand" href="index.html">DUAL HORIZON OS</a>
+  <a href="#sep">September</a>
+  <a href="#octdec">Oct–Dec</a>
+  <a href="#janmar">Jan–Mar</a>
+  <a href="#germany">Germany</a>
+  <a href="#gems">Hidden Gems</a>
+</nav>
+
+<header class="hero">
+  <div class="eyebrow">Joint Application Radar · 2026–27</div>
+  <h1>Every deadline.<br><span class="dim">Both profiles.</span></h1>
+  <p class="sub">Twenty-six verified opportunities across Europe and Asia — each with its deadline, funding package, odds assessment, and the official link. Built for one technical and one business application track.</p>
+  <div class="stamp">Data verified <b>Sep 07, 2026</b> · SGPA metric · All links from official organizers</div>
+  <div class="pillrow">
+    <span class="pill hot">4 CLOSE THIS MONTH</span>
+    <span class="pill">5 GERMANY REGION PAIRS</span>
+    <span class="pill">11 EUROPEAN ROUTES</span>
+    <span class="pill">FULLY FUNDED × 14</span>
   </div>
+</header>
 
-  <h1>APPLICATION <span>RADAR</span></h1>
-  <p class="lede">The complete apply-list for both profiles &mdash; every competition, scholarship and program with a live window from today through March 2027. Home page shows the summary; this page holds every point: deadline, what it takes, why the odds are good, and the verified link.</p>
-  <p class="stamp">DATA VERIFIED: <b>SEP 07, 2026</b> &bull; SGPA METRIC &bull; EVERY LINK FROM THE OFFICIAL ORGANIZER</p>
-  <div class="rule"></div>
-
-  <div class="legend">
-    <span><span class="chip prob-high">HIGH ODDS</span> large award volume / open entry / profile-fit</span>
-    <span><span class="chip prob-mh">GOOD ODDS</span> competitive but strong fit</span>
-    <span><span class="chip prob-mod">LONG SHOT</span> apply only if documents are ready</span>
-  </div>
-
-  <!-- ============ SEPTEMBER 2026 ============ -->
-  <h2 id="sep"><span class="tag">WINDOW 01 &bull; NEXT 10 DAYS</span>SEPTEMBER 2026 &mdash; CLOSING NOW</h2>
-  <p class="note">Four items die this month. Three are free-to-enter. This is the highest-leverage window on the whole page.</p>
-  <div class="opp-grid">
-    <div class="opp mix"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-high">HIGH ODDS</span></div><h3>Cyber Kushti 2026 &mdash; NIELIT</h3><div class="dl">REGISTER BY SEP 10, 2026 &mdash; 3 DAYS OUT</div><p>Free national Cybersecurity + AI hackathon by NIELIT (Govt of India body); conference Oct 9&ndash;10, New Delhi.</p><div class="why">Why odds are high: free entry, national scale (thousands of slots, not dozens), and the problem domains map 1:1 to your VAPT + MOOC research paper.</div><a class="go" href="https://internshala.com/competitions/cyber-kushti-2026/" target="_blank">REGISTRATION &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">TEAM (2)</span><span class="chip prob-high">HIGH ODDS</span></div><h3>GCP AI Builder Cup 2026 (JAPAC)</h3><div class="dl">TEAM LOCK SEP 15 &bull; SUBMIT OCT 4</div><p>$30,000 pool, Singapore Demo Day Dec 4, 2026. Already in the pipeline with Deviprasad.</p><div class="why">Why odds are high: team is already formed and the Gemini/Vertex build stack matches what SARVAX prototypes already do. Execution risk is low.</div><a class="go" href="https://aibuildercup.com" target="_blank">AIBUILDERCUP.COM &nearr;</a></div>
-    <div class="opp sat"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Mitacs Globalink Research Internship 2027</h3><div class="dl">APPLY BY SEP 16, 2026</div><p>Fully funded 12-week summer research placement at 70+ Canadian universities; airfare, housing, stipend covered.</p><div class="why">Why odds are good: the application is a research-profile match &mdash; a published Zenodo paper, a 98/100 MOOC and live GitHub put the file above the median applicant. Needs 1 professor recommendation: ask this week.</div><a class="go" href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank">MITACS &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-high">HIGH ODDS</span></div><h3>Reliance Foundation Scholarships 2026&ndash;27</h3><div class="dl">OPEN NOW &bull; EXPECTED CLOSE OCT&ndash;NOV (VERIFY ON PORTAL)</div><p>Up to &euro;2L for UG / &euro;6L for PG; 5,000 UG + 100 PG awards, no application fee. Both are eligible in their final years.</p><div class="why">Why odds are high: largest-volume private scholarship in India &mdash; 5,000 awards per cycle against typical hackathon finals of 20&ndash;50 slots. A merit essay + SGPA transcript is the whole application.</div><a class="go" href="https://scholarships.reliancefoundation.org/" target="_blank">SCHOLARSHIPS PORTAL &nearr;</a></div>
-  </div>
-
-  <!-- ============ OCT-DEC 2026 ============ -->
-  <h2 id="octdec"><span class="tag">WINDOW 02 &bull; MID-TERM</span>OCTOBER &ndash; DECEMBER 2026</h2>
-  <p class="note">Team competitions with open entry + the scholarship season opener. Everything here tolerates a 2&ndash;4 week preparation runway.</p>
-  <div class="opp-grid">
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">TEAM (2&ndash;3)</span><span class="chip prob-high">HIGH ODDS</span></div><h3>Adobe University Hackathon 2026</h3><div class="dl">OPEN NOW ON UNSTOP &bull; DEADLINE TBA &mdash; WATCH WEEKLY</div><p>National engineering hackathon; teams of 2&ndash;3 from the same institute; prizes incl. MacBooks + Adobe internships/interviews.</p><div class="why">Why odds are high: open to ALL branches and years (classes 2027&ndash;2030), multiple prize tracks, and registration volume is unrestricted. A 2-person team with one AI builder + one presenter fits the judging format exactly.</div><a class="go" href="https://unstop.com/hackathons/crp-adobe-university-hackathon-2026-adobe-1715333" target="_blank">UNSTOP PAGE &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">TEAM (3)</span><span class="chip prob-high">HIGH ODDS</span></div><h3>L&rsquo;Or&eacute;al Brandstorm 2027</h3><div class="dl">SIGN-UPS OPEN &bull; NATIONAL ROUNDS &asymp; JAN&ndash;MAR 2027</div><p>World&rsquo;s largest innovation competition for under-30s; teams of 3; explicit &ldquo;no experience or specific background required.&rdquo;</p><div class="why">Why odds are high: entry is deliberately open &mdash; the filter is the pitch, not a CV. Marketing strategy (Shravani) + AI prototyping (Satyam) + a third teammate covers the exact judging triangle.</div><a class="go" href="https://brandstorm.loreal.com/" target="_blank">BRANDSTORM &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">TEAM (4)</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Smart India Hackathon 2026</h3><div class="dl">PHASES LIVE ON SIH.GOV.IN &bull; VERIFY CURRENT PORTAL STATE</div><p>Nationwide student hackathon solving ministry/industry problem statements; team of 6.</p><div class="why">Why odds are good: 50+ problem statements per track means many parallel doors; cybersecurity and AI statements fit the team. Needs internal-college SPOC routing &mdash; start that paperwork early.</div><a class="go" href="https://www.sih.gov.in/" target="_blank">SIH.GOV.IN &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Hult Prize 2027</h3><div class="dl">REGISTRATION OPEN YEAR-ROUND &bull; CAMPUS ROUND FIRST</div><p>$1M global startup prize; 5-stage ladder starting at campus/open qualifiers.</p><div class="why">Why odds are good: the first stage is a campus pitch, not a global filter &mdash; odds at stage 1 are structurally high, and a tech+business duo is the canonical Hult team shape.</div><a class="go" href="https://www.hultprize.org/register" target="_blank">REGISTER &nearr;</a></div>
-    <div class="opp sat"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Samsung PRISM</h3><div class="dl">ROLLING &bull; ROUNDS CLOSE WHEN FILLED</div><p>Paid real-world R&amp;D projects mentored by Samsung engineers; AI/security statements available.</p><div class="why">Why odds are good: not an exam &mdash; a professor + student pitch into an open project list. Fewer than 1% of eligible students ever apply, simply because almost nobody knows it exists.</div><a class="go" href="https://www.samsungprism.com/" target="_blank">SAMSUNGPRISM.COM &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Erasmus Mundus Joint Masters 2027</h3><div class="dl">APPS OPEN OCT&ndash;DEC 2026 &bull; CLOSE NOV 2026&ndash;FEB 2027</div><p>60+ fully-funded joint masters across 2&ndash;3 European countries; &euro;1,400/month + tuition + travel.</p><div class="why">Why odds are good: you don&rsquo;t pick one program &mdash; you file 3&ndash;4 parallel applications from one document stack. CYBERSURE (cybersecurity &amp; assurance) is catalogued for the technical profile; management tracks for the business profile.</div><a class="go" href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank">CATALOGUE &nearr;</a></div>
-  </div>
-
-  <!-- ============ JAN-MAR 2027 ============ -->
-  <h2 id="janmar"><span class="tag">WINDOW 03 &bull; SCHOLARSHIP SEASON</span>JANUARY &ndash; MARCH 2027</h2>
-  <p class="note">Government scholarships + the first German deadlines. Document pack (transcripts, SOP, LORs) must be frozen by December 2026.</p>
-  <div class="opp-grid">
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-high">HIGH ODDS</span></div><h3>Shanghai Government Scholarship 2027</h3><div class="dl">WINDOW &asymp; DEC 2026 &ndash; MAR 2027</div><p>Type A full scholarship: tuition + accommodation + medical insurance + CNY 3,500/month living. Fudan, Tongji, Donghua carry both CS and business masters.</p><div class="why">Why odds are high: Type A+B pools at 4+ universities = many parallel chances from one profile; Chinese municipal scholarships are volume-based, and Indian applicants are still under-represented.</div><a class="go" href="https://edu.sh.gov.cn/study_en_scholarships/" target="_blank">EDU.SH.GOV.CN &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>DAAD Scholarship Database (Germany)</h3><div class="dl">VARIES BY PROGRAM &bull; MOSTLY AUTUMN 2026&ndash;SPRING 2027</div><p>The official German academic exchange scholarship engine &mdash; filter by subject + degree + deadline.</p><div class="why">Why odds are good: DAAD lists hundreds of smaller named scholarships (monthly &euro;930&ndash;1,300 range) with applicant pools in the hundreds, not tens of thousands.</div><a class="go" href="https://www.daad.de/en/study-and-research-in-germany/scholarships/" target="_blank">DAAD &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>MEXT Scholarship 2027 (Japan)</h3><div class="dl">EMBASSY TRACK &asymp; APR&ndash;MAY 2027 (2027 DOCs ALREADY PUBLISHED)</div><p>Fully funded Japanese government scholarship: tuition + monthly stipend + round-trip airfare.</p><div class="why">Why odds are good: the embassy-track exam rewards preparation, not pedigree; the 2027 guidelines PDF is already live &mdash; a full year of runway from today.</div><a class="go" href="https://www.tt.emb-japan.go.jp/files/101018443.pdf" target="_blank">2027 MEXT GUIDELINES &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; INDEPENDENT</span><span class="chip prob-mod">LONG SHOT</span></div><h3>Generation Google Scholarship APAC</h3><div class="dl">2026 CYCLE CLOSED DEC 31 &bull; 2027 CYCLE OPENS &asymp; AUTUMN</div><p>&asymp;&euro;7,000 award + Google retreat; for CS/business students in APAC.</p><div class="why">Why flagged long-shot: single-window, essay-judged, global pool. File it, but never build the plan on it.</div><a class="go" href="https://buildyourfuture.withgoogle.com/scholarships" target="_blank">GOOGLE &nearr;</a></div>
-  </div>
-
-  <!-- ============ GERMANY CLUSTERS ============ -->
-  <h2 id="germany"><span class="tag">DEGREE TRACK &bull; WINTER 2027/28 INTAKE</span>GERMANY &mdash; 5 REGION PAIRS</h2>
-  <p class="note">Both profiles mapped into the same metro region &mdash; independent admissions decisions, shared geography. Public universities = tuition-free or near-free; private = scholarships documented.</p>
-
-  <div class="city-block mix">
-    <div class="city-head"><span class="city-name">BERLIN &mdash; CLUSTER 1</span><span class="city-sub">Tech Capital &bull; Startup Density</span><span class="fit">FIT: HIGH</span></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">TU Berlin</span><span class="uni-prog">M.Sc. Computer Science (English, CEFR B2)</span><span class="deadline">WS window &asymp; Mar&ndash;May 2027 (UNVERIFIED exact date)</span></div><div class="uni-why">Top-tier public, tuition-free, AI/security research groups. Technical anchor of the cluster.</div><a href="https://www.tu.berlin/en/eecs/academics-teaching/study-offer/masters-programs/msc-computer-science-informatik" target="_blank">PROGRAM PAGE &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">TU Berlin</span><span class="uni-prog">M.Sc. Innovation Management, Entrepreneurship &amp; Sustainability (IMES, English)</span><span class="deadline">WS window &asymp; Mar&ndash;May 2027 (UNVERIFIED exact date)</span></div><div class="uni-why">Business-side complement inside the same university &mdash; one campus, one city.</div><a href="https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7636/" target="_blank">PROGRAM PAGE &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">ESMT Berlin</span><span class="uni-prog">Master in Analytics &amp; AI (MAAI)</span><span class="deadline">&euro;2,000 early-bird by Mar 31, 2027</span></div><div class="uni-why">Private, English-only, AI &times; management hybrid with a documented scholarship stack.</div><a href="https://esmt.berlin/master-programs/master-analytics-artificial-intelligence/admissions" target="_blank">ADMISSIONS &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">Hertie School</span><span class="uni-prog">Master of Public Policy / Data Science for Policy</span><span class="deadline na">Rounds open autumn 2026 &mdash; verify on admissions page</span></div><div class="uni-why">Governance + data angle; named human-rights and merit scholarships for 2027.</div><a href="https://www.hertie-school.org/en/mpp/admissions" target="_blank">ADMISSIONS &nearr;</a></div>
-  </div>
-
-  <div class="city-block mix">
-    <div class="city-head"><span class="city-name">MANNHEIM &mdash; CLUSTER 2</span><span class="city-sub">Rhine-Neckar &bull; Business Powerhouse</span><span class="fit">FIT: HIGH</span></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">University of Mannheim</span><span class="uni-prog">Mannheim Master in Management (MMM)</span><span class="deadline">Apply Apr 1 &ndash; May 15/31, 2027 (single window)</span></div><div class="uni-why">Germany&rsquo;s #1 business faculty. One window per year &mdash; a miss costs a full year.</div><a href="https://www.uni-mannheim.de/en/academics/dates/application-deadlines/" target="_blank">DEADLINES &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">Mannheim University of Applied Sciences</span><span class="uni-prog">M.Sc. Information Security / Informatics</span><span class="deadline na">Verify 2027 window on program page</span></div><div class="uni-why">Tech-side option in the same Rhine-Neckar region.</div><a href="https://www.english.hs-mannheim.de/study-programmes/master-courses.html" target="_blank">PROVIDER &nearr;</a></div>
-  </div>
-
-  <div class="city-block mix">
-    <div class="city-head"><span class="city-name">MUNICH &mdash; CLUSTER 3</span><span class="city-sub">Bavaria &bull; Deep-Tech + Corporate HQs</span><span class="fit">FIT: MEDIUM-HIGH</span></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">TUM</span><span class="uni-prog">M.Sc. Management &amp; Technology</span><span class="deadline">May 31, 2027 pattern (per 2026 cycle; verify)</span></div><div class="uni-why">Germany&rsquo;s top-ranked technical university; the degree sits exactly on the tech&times;business seam. Non-EU tuition applies.</div><a href="https://www.mgt.tum.de/programs/master-in-management-technology" target="_blank">PROGRAM PAGE &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">TUM / LMU Munich</span><span class="uni-prog">M.Sc. Informatics / Data Science</span><span class="deadline">May 31, 2027 pattern (verify per program)</span></div><div class="uni-why">Security + AI specializations; Munich corporate market for working students.</div><a href="https://www.tum.de/en/studies/application/application-info-portal/dates-periods-and-deadlines" target="_blank">TUM DATES &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">Munich Business School</span><span class="uni-prog">M.A. International Business</span><span class="deadline na">Rolling with early-bird tiers</span></div><div class="uni-why">Private, small cohorts, English-only; early application = tuition discount.</div><a href="https://www.munich-business-school.de/en/online-application/application-masters-programs" target="_blank">APPLICATION &nearr;</a></div>
-  </div>
-
-  <div class="city-block mix">
-    <div class="city-head"><span class="city-name">HAMBURG &mdash; CLUSTER 4</span><span class="city-sub">Trade Hub &bull; Applied Sciences</span><span class="fit">FIT: MEDIUM</span></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">HAW Hamburg</span><span class="uni-prog">M.Sc. International Business (English, 3 sem)</span><span class="deadline na">Verify 2027 window</span></div><div class="uni-why">&asymp;&euro;338/year total cost &mdash; the budget-safe business anchor.</div><a href="https://www.haw-hamburg.de/en/" target="_blank">PROGRAM PAGE &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">TU Hamburg (TUHH)</span><span class="uni-prog">Engineering incl. Information &amp; Communication Systems</span><span class="deadline na">Verify 2027 window</span></div><div class="uni-why">Technical anchor in the same city; several admission-free English M.Sc. tracks.</div><a href="https://www.tuhh.de/" target="_blank">TUHH &nearr;</a></div>
-  </div>
-
-  <div class="city-block mix">
-    <div class="city-head"><span class="city-name">AACHEN &mdash; CLUSTER 5</span><span class="city-sub">RWTH Region &bull; Engineering Heavyweight</span><span class="fit">FIT: MEDIUM (TECH-LEAN)</span></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">RWTH Aachen</span><span class="uni-prog">M.Sc. Data Science / Informatics</span><span class="deadline">Mar 1, 2027 (non-EU, winter intake)</span></div><div class="uni-why">Europe-scale engineering brand; the earliest hard deadline on this page &mdash; documents ready by January.</div><a href="https://sc.informatik.rwth-aachen.de/en/" target="_blank">APPLICATION &nearr;</a></div>
-    <div class="uni"><div class="uni-row"><span class="uni-name">RWTH Aachen</span><span class="uni-prog">School of Business &amp; Economics masters</span><span class="deadline">Mar 1, 2027 pattern (non-EU)</span></div><div class="uni-why">Same-campus business faculty; some tracks need German B2 &mdash; A2 now, close the gap during Sem VIII.</div><a href="https://www.rwth-aachen.de/" target="_blank">RWTH &nearr;</a></div>
-  </div>
-
-
-  <!-- ============ HIDDEN GEMS ============ -->
-  <h2 id="gems"><span class="tag">LOW-COMPETITION &bull; FULLY FUNDED</span>HIDDEN GEMS &mdash; THE LIST NOBODY SHARES</h2>
-  <p class="note">Fully-funded national scholarship programs that most Indian applicants never hear about &mdash; hundreds of awards, not five. Eligibility checked: both profiles clear the age and degree gates. Deadlines from official organizer pages; marked where a date is a known annual pattern rather than a confirmed 2027 posting.</p>
-  <div class="opp-grid">
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-high">HIGH ODDS</span></div><h3>T&uuml;rkiye Burslar&#305; (Turkey Govt)</h3><div class="dl">JAN 10 &ndash; FEB 20, 2027 &bull; OFFICIAL CALENDAR</div><p>Fully funded master&rsquo;s: tuition + housing + stipend + Turkish course + flight. One application, up to 12 program choices.</p><div class="why">Why hidden: Indian applicants treat Turkey as a holiday destination, not a degree destination &mdash; thousands of slots, a tiny Indian applicant pool. Calendar verified on turkiyeburslari.gov.tr.</div><a class="go" href="https://turkiyeburslari.gov.tr/calendar" target="_blank">OFFICIAL CALENDAR &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-high">HIGH ODDS</span></div><h3>Stipendium Hungaricum (Hungary)</h3><div class="dl">OPENS NOV 2026 &bull; CLOSES &asymp; MID-JAN 2027</div><p>Hungarian government full-ride: tuition, dorm, medical, monthly stipend; 5,000+ slots across 28 Indian partner universities quota.</p><div class="why">Why hidden: zero marketing in India. CS/engineering and business both covered. Applications channel through the Sending Partner (ICCROM/Ministry) &mdash; India quota has unfilled categories some years.</div><a class="go" href="https://stipendiumhungaricum.hu/apply/" target="_blank">APPLY PAGE &nearr;</a></div>
-    
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Turkish Private Unis &mdash; Sabanc&#305; / Ko&ccedil; / Bilkent</h3><div class="dl">ROLLING &asymp; JAN&ndash;JUL 2027</div><p>Top research unis (Ko&ccedil; is QS-top-500) with FULL scholarships for admitted grad students: tuition + stipend + housing at all three.</p><div class="why">Why hidden: they market in Pakistan/Bangladesh harder than India. English-language programs, US-style campuses, and acceptance rates far above Western peers with equal research output.</div><a class="go" href="https://admission.sabanciuniv.edu/" target="_blank">SABANCI &nearr;</a></div>
-    <div class="opp sat"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Swedish Institute SISGP</h3><div class="dl">APPLY &asymp; FEB 2027 (AFTER UNI ADMIT)</div><p>Sweden&rsquo;s full-ride: tuition + SEK 12,000/month + travel grant. Requires an admitted Swedish master&rsquo;s first &mdash; KTH/Lund/Stockholm have AI + infosec tracks.</p><div class="why">Why hidden: two-stage process scares off casual applicants. Your published AI paper is exactly the &ldquo;professional profile&rdquo; evidence SISGP screens for. Sweden fees ~&euro;12K/yr make this decisive.</div><a class="go" href="https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/" target="_blank">SI.SE &nearr;</a></div>
-    <div class="opp sat"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>Charpak Master&rsquo;s (France Govt)</h3><div class="dl">&asymp; JAN&ndash;FEB 2027 VIA CAMPUS FRANCE INDIA</div><p>&euro;860/month living grant + fee waiver + visa fee exemption for a French master&rsquo;s. Public French unis charge &asymp;&euro;3,770/yr total for non-EU.</p><div class="why">Why hidden: Indians default to UK/US/Australia. France&rsquo;s cybersecurity programs (ENSIMAG, T&eacute;l&eacute;com Paris) rank globally with 1/10th the applicant noise.</div><a class="go" href="https://www.inde.campusfrance.org/charpak-master-s-scholarship" target="_blank">CAMPUS FRANCE &nearr;</a></div>
-    <div class="opp sat"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-mod">LONG SHOT</span></div><h3>Schwarzman Scholars (China)</h3><div class="dl">SEPT 9, 2026 &mdash; 2 DAYS OUT (GLOBAL ROUND)</div><p>Full-ride one-year master&rsquo;s at Tsinghua Beijing: tuition, stipend, travel, leadership program.</p><div class="why">Age check: you qualify (under 29 at enrollment). Long shot on the leadership-essay bar &mdash; file only if a mentor can review the essays within 48 hours; otherwise target next cycle intentionally.</div><a class="go" href="https://www.schwarzmanscholars.org/admissions/" target="_blank">ADMISSIONS &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-mod">LONG SHOT</span></div><h3>East-West Center Fellowship (Hawaii)</h3><div class="dl">&asymp; DEC 2026 (VERIFY ON EWC PAGE)</div><p>US graduate study at University of Hawai&rsquo;i with EWC funding + Asia-Pacific community housing.</p><div class="why">Why listed: almost zero Indian applicants; funding covers what US aid never does. Needs independent US university admission alongside.</div><a class="go" href="https://www.eastwestcenter.org/apply/east-west-center-graduate-degree-fellowship-apply-n" target="_blank">EWC APPLY &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-mod">LONG SHOT</span></div><h3>Australia Awards 2027 (India window)</h3><div class="dl">&asymp; FEB 2027 &mdash; INDIA ELIGIBILITY RESTRICTED, VERIFY</div><p>Australia&rsquo;s government full-ride (tuition + stipend + travel + health). India eligibility has been limited to partner-institution lists in recent cycles.</p><div class="why">Why listed despite restriction: if either profile connects through a partner institution, the award pays for everything. Verify the India country page before investing effort.</div><a class="go" href="https://www.dfat.gov.au/people-to-people/australia-awards" target="_blank">DFAT &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>France Excellence Eiffel</h3><div class="dl">CALL OPENS &asymp; OCT 2026 &bull; CAMPUS FRANCE DEADLINE &asymp; EARLY JAN 2027</div><p>France&rsquo;s flagship: &euro;1,200/month (master&rsquo;s) + flights + insurance, routed THROUGH the university &mdash; you apply via the French school, not a central portal.</p><div class="why">Why hidden: Indians apply to unis directly and never ask the school to nominate them for Eiffel. Cyber (T&eacute;l&eacute;com Paris, ENSIMAG) and management (HEC, ESSEC) programs both nominate. One email to the admissions office unlocks it.</div><a class="go" href="https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program" target="_blank">CAMPUS FRANCE &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-high">HIGH ODDS</span></div><h3>Italian Government MAECI</h3><div class="dl">CALL PUBLISHES &asymp; MARCH &bull; DEADLINE &asymp; LATE MAY 2027</div><p>Italy&rsquo;s national scholarship: &euro;900/month + tuition exemption at public universities. Politecnico di Milano/Torino (CS, AI, cyber) + Bocconi (business) all qualify.</p><div class="why">Why hidden: the latest call for 2026-27 is already published as an official PDF on esteri.it &mdash; Indians treat Italy as a vacation country. 2027-28 deadline pattern: late May 2027, months after every other scheme closes. Perfect backup.</div><a class="go" href="https://www.esteri.it/en/servizi-opportunita/opportunita/borse-di-studio/per-cittadini-stranieri/" target="_blank">ESTERI.IT &nearr;</a></div>
-    <div class="opp sat"><div class="chips"><span class="chip who-sat">SATYAM</span><span class="chip prob-mh">GOOD ODDS</span></div><h3>University of Twente Scholarship (NL)</h3><div class="dl">&asymp; FEB &amp; MAY 2027 ROUNDS (VERIFY EXACT DATES)</div><p>&euro;3,000&ndash;&euro;22,000/year toward tuition at the Netherlands&rsquo; top technical campus &mdash; M.Sc. programs in embedded systems, cybersecurity, AI are its core.</p><div class="why">Why good odds: merit-based but volume-friendly; Twente admits thousands of internationals and layers multiple scholarships (UTS + Holland Scholarship stackable). Dutch post-study work visa: 1-year orientation year, no strings.</div><a class="go" href="https://www.utwente.nl/en/education/scholarship-finder/university-of-twente-scholarship/" target="_blank">UTWENTE.NL &nearr;</a></div>
-    <div class="opp mix"><div class="chips"><span class="chip who-mix">BOTH &bull; GRAD</span><span class="chip prob-mod">LONG SHOT</span></div><h3>Government of Ireland GOI-IES</h3><div class="dl">&asymp; MAR&ndash;APR 2027 (2026 CYCLE CLOSED MAR 20)</div><p>&euro;10,000 stipend + full tuition waiver for one year of master&rsquo;s study in Ireland.</p><div class="why">Why listed: 60 scholarships across all fields &mdash; tiny globally, but India is a priority market for Irish higher education. Apply through the admitted Irish university; Trinity/UCD cybersecurity + business programs both eligible.</div><a class="go" href="https://hea.ie/" target="_blank">HEA.IE &nearr;</a></div>
-
-  </div>
-  <footer>
-    <span>DUAL HORIZON OS &bull; APPLICATION RADAR &bull; FULL DETAIL</span>
-    <span>ODDS RATINGS ARE EDITORIAL ASSESSMENTS FROM ENTRY VOLUME + PROFILE FIT &mdash; NOT GUARANTEES</span>
-    <span>ALL DATES FROM OFFICIAL ORGANIZER PAGES UNLESS MARKED UNVERIFIED</span>
-  </footer>
+<div class="legend">
+  <span><span class="dot g"></span>High odds — open entry / volume awards / exact profile fit</span>
+  <span><span class="dot m"></span>Good odds — competitive but strong fit</span>
+  <span><span class="dot l"></span>Long shot — file only if documents are ready</span>
 </div>
+
+<!-- SEPTEMBER -->
+<section class="sec dark" id="sep">
+  <div class="container reveal">
+    <div class="sec-label">Window 01 · Closing now</div>
+    <h2>September 2026</h2>
+    <p class="lede">Four items die this month. Three are free to enter. This is the highest-leverage window on the entire page.</p>
+    <div class="grid">
+      <div class="card"><div class="tags"><span class="tag team">TEAM · 2</span><span class="tag hi">HIGH ODDS</span></div><h3>GCP AI Builder Cup 2026</h3><div class="dl">TEAM LOCK SEP 15 · SUBMIT OCT 4</div><p>$30,000 pool · JAPAC · Singapore Demo Day Dec 4. Already in the pipeline with the team formed.</p><div class="why">Execution risk is low — the build stack matches existing prototypes, and the team locked months before most competitors start.</div><a class="go" href="https://aibuildercup.com" target="_blank">aibuildercup.com ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag hi">HIGH ODDS</span></div><h3>Cyber Kushti 2026 — NIELIT</h3><div class="dl">REGISTER BY SEP 10</div><p>Free national Cybersecurity + AI hackathon by a Government of India body. Conference Oct 9–10, New Delhi.</p><div class="why">Free entry at national scale, and the problem domains map directly to VAPT coursework and the published AI-phishing paper.</div><a class="go" href="https://internshala.com/competitions/cyber-kushti-2026/" target="_blank">Register ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag md">GOOD ODDS</span></div><h3>Mitacs Globalink 2027</h3><div class="dl">APPLY BY SEP 16</div><p>Fully funded 12-week research placement at 70+ Canadian universities — airfare, housing, stipend included.</p><div class="why">Selection is profile-matched: a published Zenodo paper, a 98/100 MOOC and an active GitHub sit above the median file. Needs one professor recommendation — ask this week.</div><a class="go" href="https://www.mitacs.ca/our-programs/globalink-research-internship-students/" target="_blank">mitacs.ca ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag hi">HIGH ODDS</span></div><h3>Reliance Foundation Scholarships</h3><div class="dl">OPEN NOW · CLOSES OCT–NOV (VERIFY ON PORTAL)</div><p>Up to ₹2 lakh (UG) / ₹6 lakh (PG). 5,000 UG + 100 PG awards per cycle, no application fee.</p><div class="why">The largest-volume private scholarship in India — 5,000 awards against hackathon finals of 20–50 slots. Essay + transcript is the entire application.</div><a class="go" href="https://scholarships.reliancefoundation.org/" target="_blank">Apply ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- OCT-DEC -->
+<section class="sec alt" id="octdec">
+  <div class="container reveal">
+    <div class="sec-label">Window 02 · Mid-term</div>
+    <h2>October – December 2026</h2>
+    <p class="lede">Open-entry team competitions and the scholarship season opener. Every item tolerates a 2–4 week preparation runway.</p>
+    <div class="grid">
+      <div class="card"><div class="tags"><span class="tag team">TEAM · 2–3</span><span class="tag hi">HIGH ODDS</span></div><h3>Adobe University Hackathon</h3><div class="dl">OPEN NOW · DEADLINE TBA — WATCH WEEKLY</div><p>National engineering hackathon; teams of 2–3 from the same institute. Prizes include MacBooks and Adobe internship interviews.</p><div class="why">Open to all branches and years (classes 2027–2030) with unrestricted registration volume and multiple prize tracks. One AI builder + one presenter is the exact judging shape.</div><a class="go" href="https://unstop.com/hackathons/crp-adobe-university-hackathon-2026-adobe-1715333" target="_blank">Unstop ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">TEAM · 3</span><span class="tag hi">HIGH ODDS</span></div><h3>L'Oréal Brandstorm 2027</h3><div class="dl">SIGN-UPS OPEN · NATIONAL ROUNDS ≈ JAN–MAR</div><p>The world's largest innovation competition for under-30s. Explicitly "no previous experience or background required."</p><div class="why">The filter is the pitch, not the CV. Marketing strategy plus AI prototyping plus a third teammate covers the exact judging triangle.</div><a class="go" href="https://brandstorm.loreal.com/" target="_blank">brandstorm.loreal.com ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">TEAM · 6</span><span class="tag md">GOOD ODDS</span></div><h3>Smart India Hackathon 2026</h3><div class="dl">PHASES LIVE · VERIFY PORTAL STATE</div><p>Nationwide student hackathon on ministry and industry problem statements.</p><div class="why">Fifty-plus parallel problem statements per track means many doors; cybersecurity and AI statements fit the team. College SPOC paperwork takes weeks — start early.</div><a class="go" href="https://www.sih.gov.in/" target="_blank">sih.gov.in ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag md">GOOD ODDS</span></div><h3>Hult Prize 2027</h3><div class="dl">REGISTRATION OPEN YEAR-ROUND</div><p>The $1M global student startup prize. Five stages, starting at campus or open qualifiers.</p><div class="why">Stage one is a campus pitch, not a global filter — the odds structure favors entering early, and a tech-plus-business duo is the canonical Hult team.</div><a class="go" href="https://www.hultprize.org/register" target="_blank">Register ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag md">GOOD ODDS</span></div><h3>Samsung PRISM</h3><div class="dl">ROLLING · CLOSES WHEN FILLED</div><p>Paid R&D projects mentored by Samsung engineers, with AI and security problem statements.</p><div class="why">Not an exam — a professor-student pitch into an open project list. Fewer than 1% of eligible students ever apply because almost nobody knows it exists.</div><a class="go" href="https://www.samsungprism.com/" target="_blank">samsungprism.com ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag md">GOOD ODDS</span></div><h3>Erasmus Mundus 2027</h3><div class="dl">APPS OPEN OCT–DEC · CLOSE NOV–FEB</div><p>60+ fully-funded joint master's across 2–3 European countries: €1,400/month plus tuition and travel.</p><div class="why">One document stack files 3–4 parallel applications. The CYBERSURE cybersecurity consortium fits the technical track; management consortia fit the business track.</div><a class="go" href="https://www.eacea.ec.europa.eu/scholarships/erasmus-mundus-catalogue_en" target="_blank">Catalogue ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- JAN-MAR -->
+<section class="sec dark" id="janmar">
+  <div class="container reveal">
+    <div class="sec-label">Window 03 · Scholarship season</div>
+    <h2>January – March 2027</h2>
+    <p class="lede">Government scholarships plus the first German deadlines. The document pack — transcripts, SOP, recommendations — should be frozen by December 2026.</p>
+    <div class="grid">
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag hi">HIGH ODDS</span></div><h3>Shanghai Government Scholarship</h3><div class="dl">WINDOW ≈ DEC 2026 – MAR 2027</div><p>Type A full scholarship: tuition, accommodation, insurance, and CNY 3,500/month living. Fudan, Tongji and Donghua carry both CS and business master's.</p><div class="why">Type A and B pools across four-plus universities create many parallel chances from one profile, and Indian applicants remain under-represented.</div><a class="go" href="https://edu.sh.gov.cn/study_en_scholarships/" target="_blank">edu.sh.gov.cn ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag md">GOOD ODDS</span></div><h3>DAAD Scholarship Database</h3><div class="dl">VARIES BY PROGRAM · MOSTLY AUTUMN–SPRING</div><p>Germany's official exchange scholarship engine — filter by subject, degree and deadline.</p><div class="why">Hundreds of smaller named awards in the €930–1,300/month range with applicant pools in the hundreds, not tens of thousands.</div><a class="go" href="https://www.daad.de/en/study-and-research-in-germany/scholarships/" target="_blank">daad.de ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag md">GOOD ODDS</span></div><h3>MEXT Scholarship 2027 — Japan</h3><div class="dl">EMBASSY TRACK ≈ APR–MAY 2027</div><p>Fully funded: tuition, monthly stipend, round-trip airfare. The 2027 embassy guidelines are already published.</p><div class="why">The embassy-track exam rewards preparation rather than pedigree, and a full year of runway exists from today.</div><a class="go" href="https://www.tt.emb-japan.go.jp/files/101018443.pdf" target="_blank">2027 Guidelines PDF ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · INDEPENDENT</span><span class="tag lo">LONG SHOT</span></div><h3>Generation Google APAC</h3><div class="dl">2026 CYCLE CLOSED · 2027 OPENS ≈ AUTUMN</div><p>≈ €7,000 award plus the Google retreat, for CS and business students across APAC.</p><div class="why">Single window, essay-judged, global pool. Worth filing, but never build the plan on it.</div><a class="go" href="https://buildyourfuture.withgoogle.com/scholarships" target="_blank">Google ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- GERMANY -->
+<section class="sec alt" id="germany">
+  <div class="container reveal">
+    <div class="sec-label">Degree track · Winter 2027/28</div>
+    <h2>Germany — Five Region Pairs</h2>
+    <p class="lede">Both profiles mapped into the same metro region. Independent admissions decisions, shared geography. Public universities are tuition-free or near-free; private programs carry documented scholarship stacks.</p>
+
+    <div class="cluster">
+      <div class="chead"><span class="cname">Berlin</span><span class="csub">Tech capital · Startup density</span><span class="fit">FIT: HIGH</span></div>
+      <div class="uni"><div class="urow"><span class="uname">TU Berlin</span><span class="uprog">M.Sc. Computer Science — English, CEFR B2</span><span class="udl">WS window ≈ Mar–May 2027 (verify)</span></div><div class="uwhy">Top-tier public, tuition-free, with AI and security research groups. The technical anchor of the cluster.</div><a class="ulink" href="https://www.tu.berlin/en/eecs/academics-teaching/study-offer/masters-programs/msc-computer-science-informatik" target="_blank">PROGRAM PAGE ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">TU Berlin</span><span class="uprog">M.Sc. Innovation Management, Entrepreneurship & Sustainability</span><span class="udl">WS window ≈ Mar–May 2027 (verify)</span></div><div class="uwhy">The business-side complement inside the same university — one campus, one city.</div><a class="ulink" href="https://www2.daad.de/deutschland/studienangebote/international-programmes/en/detail/7636/" target="_blank">DAAD ENTRY ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">ESMT Berlin</span><span class="uprog">Master in Analytics & AI</span><span class="udl">€2,000 EARLY-BIRD BY MAR 31, 2027</span></div><div class="uwhy">Private, English-only, AI-times-management hybrid with a documented scholarship stack.</div><a class="ulink" href="https://esmt.berlin/master-programs/master-analytics-artificial-intelligence/admissions" target="_blank">ADMISSIONS ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">Hertie School</span><span class="uprog">Master of Public Policy / Data Science for Policy</span><span class="udl na">Rounds open autumn 2026 — verify</span></div><div class="uwhy">Governance-plus-data angle with named human-rights and merit scholarships for 2027.</div><a class="ulink" href="https://www.hertie-school.org/en/mpp/admissions" target="_blank">ADMISSIONS ↗</a></div>
+    </div>
+
+    <div class="cluster">
+      <div class="chead"><span class="cname">Mannheim</span><span class="csub">Rhine-Neckar · Business powerhouse</span><span class="fit">FIT: HIGH</span></div>
+      <div class="uni"><div class="urow"><span class="uname">University of Mannheim</span><span class="uprog">Mannheim Master in Management</span><span class="udl">APPLY APR 1 – MAY 15/31, 2027</span></div><div class="uwhy">Germany's #1 business faculty — a single annual window, so a miss costs a full year.</div><a class="ulink" href="https://www.uni-mannheim.de/en/academics/dates/application-deadlines/" target="_blank">DEADLINES ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">TH Mannheim</span><span class="uprog">M.Sc. Cyber Security</span><span class="udl">VERIFY 2027 WINDOW</span></div><div class="uwhy">Dedicated cybersecurity master's in the same Rhine-Neckar region — the technical anchor.</div><a class="ulink" href="https://www.informatik.hs-mannheim.de/en/masterstudiengaenge/cyber-security-m-sc.html" target="_blank">PROGRAM PAGE ↗</a></div>
+    </div>
+
+    <div class="cluster">
+      <div class="chead"><span class="cname">Munich</span><span class="csub">Bavaria · Deep-tech + corporate HQs</span><span class="fit">FIT: MEDIUM-HIGH</span></div>
+      <div class="uni"><div class="urow"><span class="uname">TUM</span><span class="uprog">Master in Management & Technology</span><span class="udl">MAY 31, 2027 PATTERN (VERIFY)</span></div><div class="uwhy">Germany's top-ranked technical university; the degree sits exactly on the tech-times-business seam. Non-EU tuition applies.</div><a class="ulink" href="https://www.mgt.tum.de/programs/master-in-management-technology" target="_blank">PROGRAM PAGE ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">TUM / LMU</span><span class="uprog">M.Sc. Informatics / Data Science</span><span class="udl">MAY 31, 2027 PATTERN (VERIFY)</span></div><div class="uwhy">Security and AI specializations, with Munich's corporate market for working students.</div><a class="ulink" href="https://www.tum.de/en/studies/application/application-info-portal/dates-periods-and-deadlines" target="_blank">TUM DATES ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">Munich Business School</span><span class="uprog">M.A. International Business</span><span class="udl na">Rolling with early-bird tiers</span></div><div class="uwhy">Private, small cohorts, English-only — early application buys a tuition discount.</div><a class="ulink" href="https://www.munich-business-school.de/en/online-application/application-masters-programs" target="_blank">APPLICATION ↗</a></div>
+    </div>
+
+    <div class="cluster">
+      <div class="chead"><span class="cname">Hamburg</span><span class="csub">Trade hub · Applied sciences</span><span class="fit">FIT: MEDIUM</span></div>
+      <div class="uni"><div class="urow"><span class="uname">HAW Hamburg</span><span class="uprog">M.Sc. International Business — English, 3 sem</span><span class="udl">VERIFY 2027 WINDOW</span></div><div class="uwhy">≈ €338/year total cost — the budget-safe business anchor.</div><a class="ulink" href="https://www.haw-hamburg.de/en/" target="_blank">HAW HAMBURG ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">TU Hamburg</span><span class="uprog">Engineering incl. Information & Communication Systems</span><span class="udl">VERIFY 2027 WINDOW</span></div><div class="uwhy">The technical anchor in the same city; several admission-free English M.Sc. tracks.</div><a class="ulink" href="https://www.tuhh.de/" target="_blank">TUHH ↗</a></div>
+    </div>
+
+    <div class="cluster">
+      <div class="chead"><span class="cname">Aachen</span><span class="csub">RWTH region · Engineering heavyweight</span><span class="fit">FIT: MEDIUM · TECH-LEAN</span></div>
+      <div class="uni"><div class="urow"><span class="uname">RWTH Aachen</span><span class="uprog">M.Sc. Data Science / Informatics</span><span class="udl">MAR 1, 2027 — NON-EU</span></div><div class="uwhy">Europe-scale engineering brand with the earliest hard deadline on this page — documents ready by January.</div><a class="ulink" href="https://sc.informatik.rwth-aachen.de/en/" target="_blank">STUDIENCENTER ↗</a></div>
+      <div class="uni"><div class="urow"><span class="uname">RWTH Aachen</span><span class="uprog">School of Business & Economics master's</span><span class="udl">MAR 1, 2027 PATTERN (NON-EU)</span></div><div class="uwhy">Same-campus business faculty; some tracks require German B2 — close the gap during the final semester.</div><a class="ulink" href="https://www.rwth-aachen.de/" target="_blank">RWTH ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- HIDDEN GEMS -->
+<section class="sec dark" id="gems">
+  <div class="container reveal">
+    <div class="sec-label">Low competition · Fully funded</div>
+    <h2>Hidden Gems</h2>
+    <p class="lede">National scholarship programs most Indian applicants never hear about — hundreds of awards, not five. Both profiles clear the age and degree gates. Dates from official organizers; annual-pattern dates are marked.</p>
+    <div class="grid">
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag hi">HIGH ODDS</span></div><h3>Türkiye Bursları</h3><div class="dl">JAN 10 – FEB 20, 2027 · OFFICIAL CALENDAR</div><p>Fully funded master's: tuition, housing, stipend, language year, flight. One application covers up to 12 program choices.</p><div class="why">Indians treat Turkey as a holiday destination, not a degree destination — thousands of slots against a tiny Indian applicant pool.</div><a class="go" href="https://turkiyeburslari.gov.tr/calendar" target="_blank">Official calendar ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag hi">HIGH ODDS</span></div><h3>Stipendium Hungaricum</h3><div class="dl">OPENS NOV 2026 · CLOSES ≈ MID-JAN 2027</div><p>Hungary's government full-ride: tuition, dorm, medical, monthly stipend — 5,000+ slots with an India country quota.</p><div class="why">Zero marketing in India; some India-quota categories go unfilled some years. CS and business both covered.</div><a class="go" href="https://stipendiumhungaricum.hu/apply/" target="_blank">Apply ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag hi">HIGH ODDS</span></div><h3>Italian Government MAECI</h3><div class="dl">CALL ≈ MARCH · DEADLINE ≈ LATE MAY 2027</div><p>€900/month plus tuition exemption at public universities. Politecnico Milano/Torino and Bocconi both qualify.</p><div class="why">Closes months after every other scheme — the perfect backup. The current call is already published as an official PDF on esteri.it.</div><a class="go" href="https://www.esteri.it/en/servizi-opportunita/opportunita/borse-di-studio/per-cittadini-stranieri/" target="_blank">esteri.it ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag md">GOOD ODDS</span></div><h3>France Excellence Eiffel</h3><div class="dl">CALL ≈ OCT 2026 · FILES DUE ≈ EARLY JAN 2027</div><p>€1,200/month plus flights and insurance — nominated through the French university, not a central portal.</p><div class="why">Most applicants never ask the school to nominate them. Télécom Paris (cyber) and HEC/ESSEC (business) both nominate; one email unlocks it.</div><a class="go" href="https://www.campusfrance.org/en/france-excellence-eiffel-scholarship-program" target="_blank">Campus France ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag md">GOOD ODDS</span></div><h3>Turkish Private Universities</h3><div class="dl">ROLLING ≈ JAN–JUL 2027</div><p>Sabancı, Koç and Bilkent — QS-ranked research universities with full scholarships: tuition, stipend, housing.</p><div class="why">They recruit harder in Pakistan and Bangladesh than India. English programs, US-style campuses, acceptance rates far above Western peers.</div><a class="go" href="https://admission.sabanciuniv.edu/" target="_blank">Sabancı admissions ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag md">GOOD ODDS</span></div><h3>Swedish Institute SISGP</h3><div class="dl">APPLY ≈ FEB 2027 · AFTER SWEDISH ADMIT</div><p>Tuition plus SEK 12,000/month plus travel grant. KTH, Lund and Stockholm carry AI and infosec tracks.</p><div class="why">The two-stage process filters casuals; a published AI paper is exactly the professional-profile evidence SISGP screens for.</div><a class="go" href="https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/" target="_blank">si.se ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag md">GOOD ODDS</span></div><h3>Charpak Master's — France</h3><div class="dl">≈ JAN–FEB 2027 · CAMPUS FRANCE INDIA</div><p>€860/month living grant, fee waiver, visa-fee exemption. Public French universities cost ≈ €3,770/year for non-EU students.</p><div class="why">Indians default to UK/US; French cybersecurity programs rank globally with a tenth of the applicant noise.</div><a class="go" href="https://www.inde.campusfrance.org/charpak-master-s-scholarship" target="_blank">Campus France India ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag md">GOOD ODDS</span></div><h3>University of Twente Scholarship</h3><div class="dl">≈ FEB & MAY 2027 ROUNDS</div><p>€3,000–22,000/year toward tuition at the Netherlands' top technical campus — embedded systems, cybersecurity, AI.</p><div class="why">Merit-based but volume-friendly, stackable with the Holland Scholarship, and the Dutch orientation-year visa adds a job-search year.</div><a class="go" href="https://www.utwente.nl/en/education/scholarship-finder/university-of-twente-scholarship/" target="_blank">utwente.nl ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag sat">SATYAM</span><span class="tag lo">LONG SHOT</span></div><h3>Schwarzman Scholars</h3><div class="dl">SEPT 9, 2026 · GLOBAL ROUND</div><p>Full-ride one-year master's at Tsinghua, Beijing: tuition, stipend, travel, leadership program.</p><div class="why">Age-eligible. The bar is the leadership essay — file now only if a mentor can review within 48 hours; otherwise target next cycle deliberately.</div><a class="go" href="https://www.schwarzmanscholars.org/admissions/" target="_blank">Admissions ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag lo">LONG SHOT</span></div><h3>East-West Center Fellowship</h3><div class="dl">≈ DEC 2026 · VERIFY ON EWC PAGE</div><p>US graduate study at the University of Hawai'i with EWC funding and Asia-Pacific community housing.</p><div class="why">Almost zero Indian applicants; funding covers what US aid never does. Requires separate US university admission.</div><a class="go" href="https://www.eastwestcenter.org/apply/east-west-center-graduate-degree-fellowship-apply-n" target="_blank">EWC ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag lo">LONG SHOT</span></div><h3>GOI-IES Ireland</h3><div class="dl">≈ MAR–APR 2027 · 2026 CYCLE CLOSED MAR 20</div><p>€10,000 stipend plus full tuition waiver for one year of master's study in Ireland.</p><div class="why">Sixty awards across all fields with India as a priority market. Apply through the admitted Irish university.</div><a class="go" href="https://hea.ie/" target="_blank">hea.ie ↗</a></div>
+      <div class="card"><div class="tags"><span class="tag team">BOTH · GRAD</span><span class="tag lo">LONG SHOT</span></div><h3>Australia Awards 2027</h3><div class="dl">≈ FEB 2027 · INDIA ELIGIBILITY RESTRICTED</div><p>Australia's government full-ride: tuition, stipend, travel, health cover.</p><div class="why">Recent cycles limited India eligibility to partner-institution lists — verify the country page before investing effort.</div><a class="go" href="https://www.dfat.gov.au/people-to-people/australia-awards" target="_blank">DFAT ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta alt">
+  <h2>Four deadlines close this month.</h2>
+  <p>Cyber Kushti (Sep 10) · GCP team-lock (Sep 15) · Mitacs (Sep 16) · Reliance (open now)</p>
+  <a class="btn-primary" href="index.html">Back to the OS</a>
+  <a class="btn-ghost" href="#sep">Start with September ↑</a>
+</section>
+
+<footer>
+  <span>DUAL HORIZON OS · Application Radar</span>
+  <span>Odds ratings are editorial assessments — not guarantees</span>
+  <span>All dates from official organizer pages unless marked verify</span>
+</footer>
+
+<script>
+// fail-open reveal: transform only, opacity always 1
+const items=[...document.querySelectorAll('.reveal')];
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}}),{threshold:.05});
+  items.forEach(x=>io.observe(x));
+}else{items.forEach(x=>x.classList.add('visible'));}
+</script>
 </body>
 </html>
