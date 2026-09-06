@@ -1,0 +1,78 @@
+Hi Shravu,
+
+I built something for us — the Application Radar. It's live on our site and I want you to actually use it, so here's the honest walkthrough.
+
+THE LINK
+https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html
+(Also reachable from the homepage — the big blue "Application Radar" button.)
+
+WHAT IT IS
+One page, 26 verified opportunities that we can apply to between now and March 2027. Not a motivational list — every single entry has: the real deadline, what it pays, why our profile fits, and a link I personally checked against the official organizer's page. Nothing there is guessed. Where a date follows a yearly pattern but isn't officially confirmed for 2027, it's marked "verify" — that's deliberate, I don't write dates I can't prove.
+
+WHY IT MATTERS
+Most people miss funded opportunities not because they're not good enough, but because they find out after the deadline. This page flips that. It's sorted into four windows:
+
+- SEPTEMBER (closing now): 4 items. Cyber Kushti Sep 10, GCP Cup team-lock Sep 15, Mitacs Canada Sep 16, Reliance Foundation Scholarship (open now, closes Oct-Nov). These need action THIS week.
+- OCT-DEC: Adobe Hackathon, L'Oreal Brandstorm, Smart India Hackathon, Hult Prize, Samsung PRISM, Erasmus Mundus (opens Oct-Dec).
+- JAN-MAR: Shanghai Govt Scholarship, DAAD, MEXT Japan, Generation Google.
+- GERMANY: 5 city clusters with paired programs — Berlin, Mannheim, Munich, Hamburg, Aachen. Your strongest: Mannheim MMM (Germany's #1 business faculty, apply Apr 1 - May 15, 2027, one window per year) and ESMT Berlin (analytics+AI, EUR 2,000 early-bird discount by Mar 31).
+
+THE ODDS TAGS
+Each card is tagged: HIGH ODDS / GOOD ODDS / LONG SHOT. High = big award volume or open entry where our profile is exactly what they want. Long shot = worth one application if documents are ready, but never plan around it. Don't skip the long shots — but don't build the strategy on them either.
+
+WHAT'S THERE FOR YOU SPECIFICALLY
+- Mannheim MMM — your anchor application. Single window, Germany's best business faculty.
+- ESMT Berlin MAAI — analytics + AI, English-only, scholarship stack documented.
+- Reliance Foundation PG scholarship (up to Rs 6 lakh) — you're eligible now, 100 PG awards.
+- L'Oreal Brandstorm — teams of 3, explicitly no experience required. You + me + one more. Your territory.
+- Hult Prize — the first round is a campus pitch. Your presentation strength carries that stage.
+- Stipendium Hungaricum and Turkiye Burslari — fully funded, low competition from India, both open to business master's.
+
+HOW TO USE IT (this is the part that matters)
+1. This week: we do the September four together. I'll handle GCP and Mitacs; the Reliance scholarship essay is a two-hour job for both of us in one sitting.
+2. Every Sunday, 15 minutes: open the page, check the current window, pick the next two items.
+3. By December: one shared document pack — transcripts, SOP skeletons, one recommendation letter each — so every Jan-Mar application becomes a fill-in-the-blanks job instead of a scramble.
+4. The rule: nothing gets missed because of a deadline. That's the whole point.
+
+THE GOAL
+Singapore or Germany by fall 2027 — that hasn't changed. This radar is how we get there without leaving it to luck: every competition we enter adds a line to the CV, every scholarship application is a shot at funding the move, and the Germany clusters mean our two application lists land in the same city. Independent admissions, same geography. We execute this like a project, not a wish.
+
+Start with the September four. Tell me when you've looked at the page and I'll walk you through anything.
+
+— Satyam
+
+EVERY IMPORTANT LINK (all working — I checked each one just now)
+
+MAIN — START HERE
+- Our OS (the home dashboard, everything branches from here):
+  https://satyamsingh-eng.github.io/
+
+FOR BOTH OF US
+- Application Radar (26 opportunities, deadlines, odds — the page this message is about):
+  https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html
+- Foreign Master Dossier (the full relocation plan: Singapore + Germany routes, timelines):
+  https://satyamsingh-eng.github.io/OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html
+- Team Opportunities Registry (team competitions detail sheet):
+  https://satyamsingh-eng.github.io/OUTPUT/DUAL_TEAM_OPPORTUNITIES_REGISTRY.html
+
+YOUR PAGES
+- Your portfolio (start here):
+  https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html
+- Your Singapore Masters page (your Route A detail):
+  https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/singapore-masters.html
+- Your Career Roles page:
+  https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/career-roles.html
+- Your Work page:
+  https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/work.html
+- Your resume (live HTML):
+  https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/01_RESUME/SHRAVANI_VEER_RESUME.html
+
+MY PAGES (if you want to see my side)
+- My portfolio:
+  https://satyamsingh-eng.github.io/SATYAM%20PORTFOLIO/00_WEBSITE/index.html
+- Global Escape Master Plan:
+  https://satyamsingh-eng.github.io/SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_MASTER_PLAN.html
+- Fully Funded Opportunities:
+  https://satyamsingh-eng.github.io/SATYAM%20PORTFOLIO/00_WEBSITE/FULLY_FUNDED_OPPORTUNITIES.html
+
+Bookmark the OS link. Everything else lives inside it — if you ever lose one, the homepage points to all of them.

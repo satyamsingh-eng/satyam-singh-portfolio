@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Shravani — The Plan, In Writing</title>
+<style>
+:root{
+  --bg:#000;--bg2:#0d0d0f;--card:#121215;--card2:#1c1c1e;
+  --t1:#f5f5f7;--t2:#a1a1a6;--t3:#7c7c82;
+  --acc:#2997ff;--ctl:#0071e3;
+  --br:rgba(255,255,255,.10);--br2:rgba(255,255,255,.06);
+  --mono:'JetBrains Mono','SF Mono',Menlo,monospace;
+  --sf:-apple-system,BlinkMacSystemFont,'SF Pro Display','SF Pro Text','Helvetica Neue',Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{background:var(--bg);-webkit-font-smoothing:antialiased}
+body{background:var(--bg)!important;color:var(--t1);font-family:var(--sf);letter-spacing:-.3px;line-height:1.6}
+a{color:var(--acc);text-decoration:none;word-break:break-all}
+a:hover{text-decoration:underline}
+.wrap{max-width:720px;margin:0 auto;padding:0 22px}
+.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.82);backdrop-filter:saturate(180%) blur(20px);border-bottom:.5px solid var(--br2);height:50px;display:flex;align-items:center;padding:0 22px}
+.nav .brand{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:2px;color:#fff}
+.nav .to{margin-left:auto;font-family:var(--mono);font-size:10px;letter-spacing:1.6px;color:var(--t3);text-transform:uppercase}
+.eyebrow{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:2.6px;color:var(--acc);text-transform:uppercase;margin-bottom:16px}
+h1{font-size:clamp(40px,8vw,64px);font-weight:700;line-height:1.02;letter-spacing:-1.6px;margin-bottom:18px}
+h1 .dim{color:var(--t3)}
+.lede{font-size:17px;color:var(--t2);line-height:1.65}
+.meta{margin-top:22px;font-family:var(--mono);font-size:10px;letter-spacing:1.6px;color:var(--t3);text-transform:uppercase}
+.meta b{color:var(--acc)}
+header{padding:84px 0 56px}
+.sec{padding:52px 0;border-top:1px solid var(--br2)}
+.sec h2{font-size:13px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase;color:var(--acc);font-family:var(--mono);margin-bottom:18px}
+.sec p{font-size:15.5px;color:var(--t2);margin-bottom:14px}
+.sec p strong{color:var(--t1);font-weight:600}
+.big{font-size:22px!important;line-height:1.45!important;color:var(--t1)!important;letter-spacing:-.4px;font-weight:500!important}
+ul.cl{list-style:none}
+ul.cl li{padding:11px 0 11px 0;border-bottom:1px solid var(--br2);font-size:14.5px;color:var(--t2)}
+ul.cl li:last-child{border-bottom:none}
+ul.cl li b{color:var(--t1);font-weight:600}
+.tag{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:1.4px;padding:3px 10px;border-radius:980px;margin-right:8px;vertical-align:1px}
+.tag.hi{background:#30d158;color:#0b0b0c}
+.tag.md{background:#64d2ff;color:#0b0b0c}
+.tag.now{background:var(--acc);color:#fff}
+.win{background:var(--card);border:1px solid var(--br2);border-radius:16px;padding:22px;margin-bottom:12px}
+.win .wt{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:6px}
+.win .wt b{font-size:17px;letter-spacing:-.2px}
+.win .wt span{font-family:var(--mono);font-size:10px;letter-spacing:1.4px;color:var(--acc);text-transform:uppercase}
+.win p{font-size:13.5px;color:var(--t2);margin:0}
+.linkrow{display:flex;gap:12px;flex-direction:column;padding:12px 0;border-bottom:1px solid var(--br2)}
+.linkrow:last-child{border-bottom:none}
+.linkrow .ll{font-size:13px;font-weight:600;color:var(--t1)}
+.linkrow .lu{font-family:var(--mono);font-size:11.5px;letter-spacing:0;color:var(--acc)}
+.group{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--t3);text-transform:uppercase;margin:18px 0 4px}
+.rule{background:var(--card2);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;padding:16px 18px;font-size:14.5px;color:var(--t1);margin:16px 0}
+.steps{counter-reset:st;list-style:none}
+.steps li{counter-increment:st;position:relative;padding:12px 0 12px 46px;border-bottom:1px solid var(--br2);font-size:14.5px;color:var(--t2)}
+.steps li:last-child{border-bottom:none}
+.steps li::before{content:counter(st,decimal-leading-zero);position:absolute;left:0;top:12px;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--acc);border:1px solid rgba(41,151,255,.45);border-radius:980px;padding:4px 9px}
+.steps li b{color:var(--t1)}
+.cta{padding:64px 0;border-top:1px solid var(--br2);text-align:center}
+.cta h2{font-size:clamp(26px,5vw,38px);font-weight:700;letter-spacing:-.8px;margin-bottom:10px}
+.cta p{color:var(--t2);font-size:14.5px;margin-bottom:26px}
+.btn{display:inline-block;background:var(--ctl);color:#fff;font-size:15px;font-weight:500;padding:14px 30px;border-radius:980px;transition:background .2s}
+.btn:hover{background:var(--acc);text-decoration:none}
+footer{padding:36px 22px 44px;border-top:.5px solid var(--br2);font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;color:var(--t3);text-transform:uppercase;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.sig{font-size:26px;font-weight:600;letter-spacing:-.4px;color:var(--t1);margin-top:8px}
+.reveal{opacity:1;transform:translateY(10px);transition:transform .5s ease}
+.reveal.in{transform:none}
+@media print{.reveal{transform:none!important}.nav{display:none}}
+</style>
+</head>
+<body>
+<nav class="nav"><span class="brand">DUAL HORIZON OS</span><span class="to">For Shravani</span></nav>
+
+<header class="wrap">
+  <div class="eyebrow">Briefing 001 · Application Radar</div>
+  <h1>The plan,<br><span class="dim">in writing.</span></h1>
+  <p class="lede">You and I have one target: Singapore or Germany by fall 2027. This is the operating document for it — what we apply to, when, and why our profiles fit. Read it once end to end; it takes eight minutes.</p>
+  <div class="meta">Verified <b>Sep 07, 2026</b> · 26 opportunities · Every link checked · Zero guessed dates</div>
+</header>
+
+<div class="wrap">
+<section class="sec reveal">
+  <h2>01 — The instrument</h2>
+  <p class="big">One page. Twenty-six verified opportunities between now and March 2027. Real deadlines, real funding, and the honest reason each one fits us.</p>
+  <p>Nothing on the radar is motivational filler. Every entry carries its deadline, its payout, our fit logic, and a link to the official organizer — which I checked individually. Where a date follows a yearly pattern but isn't officially confirmed for 2027, the page says <strong>verify</strong>. That marker is the honesty policy, not a hedge.</p>
+</section>
+
+<section class="sec reveal">
+  <h2>02 — Why this matters</h2>
+  <p class="big">People don't miss opportunities because they're weak. They miss them because they found out late.</p>
+  <p>The radar exists to flip that. It sorts the next seven months into four windows so that at any moment, we both know exactly what's closing soon and what's worth preparing. The expensive mistakes — a missed Mannheim window, a half-filed scholarship — are structural, not talent problems. Structure is the part we control.</p>
+</section>
+
+<section class="sec reveal">
+  <h2>03 — The four windows</h2>
+  <div class="win"><div class="wt"><b>September</b><span>closing now</span><span class="tag now">ACT THIS WEEK</span></div><p>Cyber Kushti — Sep 10. GCP AI Cup team-lock — Sep 15. Mitacs Canada — Sep 16. Reliance Foundation Scholarship — open now. Four doors, this month.</p></div>
+  <div class="win"><div class="wt"><b>October – December</b><span>build season</span></div><p>Adobe University Hackathon, L'Oréal Brandstorm, Smart India Hackathon, Hult Prize, Samsung PRISM, Erasmus Mundus opening. Team-entry season — this is where we compete together.</p></div>
+  <div class="win"><div class="wt"><b>January – March</b><span>scholarship season</span></div><p>Shanghai Government Scholarship, DAAD, MEXT Japan, Generation Google. One frozen document pack makes all of these fill-in-the-blanks.</p></div>
+  <div class="win"><div class="wt"><b>Germany 2027/28</b><span>degree track</span><span class="tag hi">HIGH ODDS</span></div><p>Five city clusters — Berlin, Mannheim, Munich, Hamburg, Aachen. Your anchors: <b>Mannheim MMM</b> (Germany's top business faculty; window Apr 1 – May 15, one shot per year) and <b>ESMT Berlin MAAI</b> (€2,000 early-bird by Mar 31). Independent admissions, same city.</p></div>
+</section>
+
+<section class="sec reveal">
+  <h2>04 — What's yours specifically</h2>
+  <ul class="cl">
+    <li><span class="tag hi">HIGH</span><b>Mannheim MMM</b> — your anchor. Germany's #1 business faculty. One window; we treat the date as immovable.</li>
+    <li><span class="tag hi">HIGH</span><b>ESMT Berlin, Master in Analytics &amp; AI</b> — English-only, AI-times-management, documented scholarship stack.</li>
+    <li><span class="tag md">GOOD</span><b>Reliance Foundation PG</b> — up to ₹6 lakh; the essay is one sitting for both of us.</li>
+    <li><span class="tag md">GOOD</span><b>L'Oréal Brandstorm</b> — explicitly no experience required. Your territory: the pitch. Me plus one more.</li>
+    <li><span class="tag md">GOOD</span><b>Hult Prize</b> — the first stage is a campus pitch. Your presentation strength carries it.</li>
+    <li><span class="tag md">GOOD</span><b>Stipendium Hungaricum &amp; Türkiye Bursları</b> — fully funded, thin Indian applicant pools, business master's eligible.</li>
+  </ul>
+</section>
+
+<section class="sec reveal">
+  <h2>05 — How we run it</h2>
+  <ol class="steps">
+    <li><b>This week:</b> the September four. GCP and Mitacs are mine; the Reliance essay is ours, one two-hour sitting.</li>
+    <li><b>Sundays, 15 minutes:</b> open the radar, read the current window, pick the next two items. Calendar block, not a mood decision.</li>
+    <li><b>By December:</b> one shared document pack — transcripts, SOP skeletons, one recommendation each — so every January application is clerical.</li>
+    <li><b>The rule:</b> nothing gets missed because of a deadline. Ever. That's the entire point of the instrument.</li>
+  </ol>
+  <div class="rule">The radar is a cockpit, not a museum. If a window opens that isn't on it, we add it. If an item dies, we mark it dead. Fifteen minutes a week keeps it true.</div>
+</section>
+
+<section class="sec reveal">
+  <h2>06 — Every link</h2>
+  <div class="group">Main — start here</div>
+  <div class="linkrow"><span class="ll">Our OS — the home dashboard</span><a class="lu" href="https://satyamsingh-eng.github.io/" target="_blank">satyamsingh-eng.github.io</a></div>
+  <div class="group">Ours</div>
+  <div class="linkrow"><span class="ll">Application Radar — 26 opportunities, odds, deadlines</span><a class="lu" href="https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html" target="_blank">satyamsingh-eng.github.io/JOINT_APPLICATIONS.html</a></div>
+  <div class="linkrow"><span class="ll">Foreign Master Dossier — the full relocation plan</span><a class="lu" href="https://satyamsingh-eng.github.io/OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html" target="_blank">…/OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html</a></div>
+  <div class="linkrow"><span class="ll">Team Opportunities Registry — team competitions detail</span><a class="lu" href="https://satyamsingh-eng.github.io/OUTPUT/DUAL_TEAM_OPPORTUNITIES_REGISTRY.html" target="_blank">…/OUTPUT/DUAL_TEAM_OPPORTUNITIES_REGISTRY.html</a></div>
+  <div class="group">Yours</div>
+  <div class="linkrow"><span class="ll">Your portfolio</span><a class="lu" href="https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html" target="_blank">…/SHRAVU - PORTFOLIO/00_WEBSITE/</a></div>
+  <div class="linkrow"><span class="ll">Your Singapore Masters page</span><a class="lu" href="https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/singapore-masters.html" target="_blank">…/singapore-masters.html</a></div>
+  <div class="linkrow"><span class="ll">Your resume, live</span><a class="lu" href="https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/01_RESUME/SHRAVANI_VEER_RESUME.html" target="_blank">…/SHRAVANI_VEER_RESUME.html</a></div>
+  <div class="linkrow"><span class="ll">Career Roles page</span><a class="lu" href="https://satyamsingh-eng.github.io/SHRAVU%20-%20PORTFOLIO/00_WEBSITE/career-roles.html" target="_blank">…/career-roles.html</a></div>
+  <div class="group">Mine</div>
+  <div class="linkrow"><span class="ll">My portfolio</span><a class="lu" href="https://satyamsingh-eng.github.io/SATYAM%20PORTFOLIO/00_WEBSITE/index.html" target="_blank">…/SATYAM PORTFOLIO/00_WEBSITE/</a></div>
+  <div class="linkrow"><span class="ll">Global Escape Master Plan</span><a class="lu" href="https://satyamsingh-eng.github.io/SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_MASTER_PLAN.html" target="_blank">…/GLOBAL_ESCAPE_MASTER_PLAN.html</a></div>
+  <div class="linkrow"><span class="ll">Fully Funded Opportunities</span><a class="lu" href="https://satyamsingh-eng.github.io/SATYAM%20PORTFOLIO/00_WEBSITE/FULLY_FUNDED_OPPORTUNITIES.html" target="_blank">…/FULLY_FUNDED_OPPORTUNITIES.html</a></div>
+  <p style="margin-top:14px;font-size:12.5px;color:var(--t3)">Bookmark the OS link — every page above branches from it.</p>
+</section>
+</div>
+
+<section class="cta">
+  <h2>Four doors close this month.</h2>
+  <p>Open the radar. We start with September.</p>
+  <a class="btn" href="https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html" target="_blank">Open the Application Radar</a>
+  <p style="margin-top:26px;font-size:15px;color:var(--t2)">Questions on anything — call me, don't text. Faster.</p>
+  <div class="sig">— Satyam</div>
+</section>
+
+<footer><span>DUAL HORIZON OS · Briefing 001</span><span>All dates verified · Sep 07, 2026</span></footer>
+
+<script>
+const io='IntersectionObserver' in window ? new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.06}) : null;
+document.querySelectorAll('.reveal').forEach(el=>{io?io.observe(el):el.classList.add('in')});
+</script>
+</body>
+</html>
