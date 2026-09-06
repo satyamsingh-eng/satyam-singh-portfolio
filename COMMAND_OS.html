@@ -1074,6 +1074,52 @@
       .pages-group-label { font-size: 19px; }
     }
 
+  
+    /* --- Sitemap chart --- */
+    .sitemap-title {
+      font-family: var(--font-display, 'Bebas Neue', sans-serif);
+      font-size: 22px;
+      letter-spacing: 0.05em;
+      color: #D1D1D6;
+      margin: 30px 0 12px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    .sitemap-scroll {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--line, rgba(255,255,255,0.08));
+      border-radius: 16px;
+      background: rgba(18,18,21,0.6);
+      padding: 10px 6px;
+    }
+    .sitemap-chart {
+      display: block;
+      min-width: 640px;
+      width: 100%;
+      height: auto;
+    }
+    .sitemap-chart a { cursor: pointer; }
+    .sitemap-chart a:hover rect { stroke: #2997FF; stroke-opacity: 0.8; }
+    .sitemap-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 10px;
+      font-family: var(--font-mono, 'JetBrains Mono', monospace);
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      color: #7C7C82;
+    }
+    .lg-item { display: inline-flex; align-items: center; gap: 6px; }
+    .lg-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+    .lg-blue { background: #0071E3; }
+    .lg-line { background: rgba(41,151,255,0.5); border-radius: 2px; }
+    .lg-outline { background: transparent; border: 1px solid rgba(41,151,255,0.5); }
+
   </style>
 </head>
 <body>
@@ -1782,6 +1828,65 @@
       <p class="chapter-desc">
         Every live page across the dual portfolio &mdash; one row per page, verified links only. Satyam's engineering track, Shravani's strategy track, and the shared OUTPUT war room.
       </p>
+      <div class="sitemap-title">SITEMAP CHART <span class="pages-group-count">13 LIVE NODES</span></div>
+      <div class="sitemap-scroll">
+        <svg class="sitemap-chart" viewBox="0 0 900 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Site map chart: Dual Horizon OS root connecting Satyam, Shravani and Shared page branches">
+          <!-- connector lines -->
+          <line x1="450" y1="82" x2="450" y2="116" stroke="#2997FF" stroke-opacity="0.5" stroke-width="1.5"/>
+          <line x1="170" y1="116" x2="730" y2="116" stroke="#2997FF" stroke-opacity="0.5" stroke-width="1.5"/>
+          <line x1="170" y1="116" x2="170" y2="146" stroke="#2997FF" stroke-opacity="0.5" stroke-width="1.5"/>
+          <line x1="450" y1="116" x2="450" y2="146" stroke="#2997FF" stroke-opacity="0.5" stroke-width="1.5"/>
+          <line x1="730" y1="116" x2="730" y2="146" stroke="#2997FF" stroke-opacity="0.5" stroke-width="1.5"/>
+          <line x1="170" y1="190" x2="170" y2="473" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <line x1="450" y1="190" x2="450" y2="377" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+          <line x1="730" y1="190" x2="730" y2="329" stroke="rgba(255,255,255,0.18)" stroke-width="1.5"/>
+
+          <!-- ROOT -->
+          <rect x="310" y="28" width="280" height="54" rx="12" fill="#0071E3"/>
+          <text x="450" y="53" text-anchor="middle" font-family="&quot;Bebas Neue&quot;,sans-serif" font-size="19" letter-spacing="1.5" fill="#FFFFFF">DUAL HORIZON &#183; OS</text>
+          <text x="450" y="71" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="9" letter-spacing="2" fill="#D5E8FF">INDEX.HTML &#8212; LIVE HUB</text>
+
+          <!-- BRANCH: SATYAM -->
+          <rect x="80" y="146" width="180" height="44" rx="10" fill="#1C1C1E" stroke="#2997FF" stroke-opacity="0.55"/>
+          <text x="170" y="165" text-anchor="middle" font-family="&quot;Bebas Neue&quot;,sans-serif" font-size="15" letter-spacing="1.5" fill="#2997FF">SATYAM</text>
+          <text x="170" y="181" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="8.5" letter-spacing="2" fill="#A1A1A6">ENGINEERING &#183; 6 PAGES</text>
+
+          <!-- BRANCH: SHRAVANI -->
+          <rect x="360" y="146" width="180" height="44" rx="10" fill="#1C1C1E" stroke="#2997FF" stroke-opacity="0.55"/>
+          <text x="450" y="165" text-anchor="middle" font-family="&quot;Bebas Neue&quot;,sans-serif" font-size="15" letter-spacing="1.5" fill="#2997FF">SHRAVANI</text>
+          <text x="450" y="181" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="8.5" letter-spacing="2" fill="#A1A1A6">STRATEGY &#183; 4 PAGES</text>
+
+          <!-- BRANCH: SHARED -->
+          <rect x="640" y="146" width="180" height="44" rx="10" fill="#1C1C1E" stroke="#2997FF" stroke-opacity="0.55"/>
+          <text x="730" y="165" text-anchor="middle" font-family="&quot;Bebas Neue&quot;,sans-serif" font-size="15" letter-spacing="1.5" fill="#2997FF">SHARED OUTPUT</text>
+          <text x="730" y="181" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="8.5" letter-spacing="2" fill="#A1A1A6">WAR ROOM &#183; 3 ASSETS</text>
+
+          <!-- SATYAM LEAVES -->
+          <a href="SATYAM%20PORTFOLIO/00_WEBSITE/index.html"><rect x="75" y="214" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="170" y="238" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">S1 &#183; HOME</text></a>
+          <a href="SATYAM%20PORTFOLIO/00_WEBSITE/work.html"><rect x="75" y="262" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="170" y="286" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">S2 &#183; SELECTED WORK</text></a>
+          <a href="SATYAM%20PORTFOLIO/00_WEBSITE/job-internship.html"><rect x="75" y="310" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="170" y="334" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">S3 &#183; JOB TRACK</text></a>
+          <a href="SATYAM%20PORTFOLIO/00_WEBSITE/university-education.html"><rect x="75" y="358" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="170" y="382" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">S4 &#183; EDUCATION</text></a>
+          <a href="SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_ROADMAP.html"><rect x="75" y="406" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="170" y="430" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">S5 &#183; ESCAPE ROADMAP</text></a>
+          <a href="SATYAM%20PORTFOLIO/00_WEBSITE/GLOBAL_ESCAPE_MASTER_PLAN.html"><rect x="75" y="454" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="170" y="478" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">S6 &#183; 7-NATION MATRIX</text></a>
+
+          <!-- SHRAVANI LEAVES -->
+          <a href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/index.html"><rect x="355" y="214" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="450" y="238" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">V1 &#183; HOME</text></a>
+          <a href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/work.html"><rect x="355" y="262" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="450" y="286" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">V2 &#183; SELECTED WORK</text></a>
+          <a href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/singapore-masters.html"><rect x="355" y="310" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="450" y="334" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">V3 &#183; SG MASTERS</text></a>
+          <a href="SHRAVU%20-%20PORTFOLIO/00_WEBSITE/career-roles.html"><rect x="355" y="358" width="190" height="38" rx="9" fill="#121215" stroke="rgba(255,255,255,0.10)"/><text x="450" y="382" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">V4 &#183; CAREER ROLES</text></a>
+
+          <!-- SHARED LEAVES -->
+          <a href="OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html" target="_blank"><rect x="635" y="214" width="190" height="38" rx="9" fill="#121215" stroke="rgba(41,151,255,0.35)"/><text x="730" y="238" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">O1 &#183; DOSSIER &#8599;</text></a>
+          <a href="OUTPUT/DUAL_TEAM_OPPORTUNITIES_REGISTRY.html" target="_blank"><rect x="635" y="262" width="190" height="38" rx="9" fill="#121215" stroke="rgba(41,151,255,0.35)"/><text x="730" y="286" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">O2 &#183; TEAM REGISTRY &#8599;</text></a>
+          <a href="OUTPUT/HACKATHON_ARCHITECTURE_BLUEPRINT.html" target="_blank"><rect x="635" y="310" width="190" height="38" rx="9" fill="#121215" stroke="rgba(41,151,255,0.35)"/><text x="730" y="334" text-anchor="middle" font-family="&quot;JetBrains Mono&quot;,monospace" font-size="11.5" letter-spacing="1" fill="#D1D1D6">O3 &#183; BLUEPRINT &#8599;</text></a>
+        </svg>
+      </div>
+      <div class="sitemap-legend">
+        <span class="lg-item"><span class="lg-dot lg-blue"></span>ROOT HUB</span>
+        <span class="lg-item"><span class="lg-dot lg-line"></span>BRANCH CONNECTOR</span>
+        <span class="lg-item"><span class="lg-dot lg-outline"></span>OPENS IN NEW TAB</span>
+      </div>
+
 
       <h3 class="pages-group-label">SATYAM &mdash; ENGINEERING PORTFOLIO <span class="pages-group-count">6 PAGES</span></h3>
       <div class="pages-grid">
