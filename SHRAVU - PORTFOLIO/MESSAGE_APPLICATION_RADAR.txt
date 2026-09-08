@@ -7,7 +7,7 @@ https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html
 (Also reachable from the homepage — the big blue "Application Radar" button.)
 
 WHAT IT IS
-One page, 26 verified opportunities that we can apply to between now and March 2027. Not a motivational list — every single entry has: the real deadline, what it pays, why our profile fits, and a link I personally checked against the official organizer's page. Nothing there is guessed. Where a date follows a yearly pattern but isn't officially confirmed for 2027, it's marked "verify" — that's deliberate, I don't write dates I can't prove.
+One page, 25 verified opportunities that we can apply to between now and March 2027. Not a motivational list — every single entry has: the real deadline, what it pays, why our profile fits, and a link I personally checked against the official organizer's page. Nothing there is guessed. Where a date follows a yearly pattern but isn't officially confirmed for 2027, it's marked "verify" — that's deliberate, I don't write dates I can't prove.
 
 WHY IT MATTERS
 Most people miss funded opportunities not because they're not good enough, but because they find out after the deadline. This page flips that. It's sorted into four windows:
@@ -48,7 +48,7 @@ MAIN — START HERE
   https://satyamsingh-eng.github.io/
 
 FOR BOTH OF US
-- Application Radar (26 opportunities, deadlines, odds — the page this message is about):
+- Application Radar (25 opportunities, deadlines, odds — the page this message is about):
   https://satyamsingh-eng.github.io/JOINT_APPLICATIONS.html
 - Foreign Master Dossier (the full relocation plan: Singapore + Germany routes, timelines):
   https://satyamsingh-eng.github.io/OUTPUT/DUAL_RELOCATION_FOREIGN_MASTER_DOSSIER.html
